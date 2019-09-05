@@ -18,4 +18,17 @@
     <Folder Include="View\" />
     <Folder Include="ViewModel\" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="View\HomeScreen_User.xaml" />
+    <EmbeddedResource Remove="View\HomeScreen_UserDetail.xaml" />
+    <EmbeddedResource Remove="View\HomeScreen_UserMaster.xaml" />
+    <EmbeddedResource Remove="View\USer.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="View\HomeScreen_User.xaml.cs" />
+    <Compile Remove="View\HomeScreen_UserDetail.xaml.cs" />
+    <Compile Remove="View\HomeScreen_UserMaster.xaml.cs" />
+    <Compile Remove="View\HomeScreen_UserMenuItem.cs" />
+    <Compile Remove="View\USer.xaml.cs" />
+  </ItemGroup>
 </Project>
