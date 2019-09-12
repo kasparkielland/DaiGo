@@ -10,9 +10,9 @@ namespace DaiGo.View
         {
             InitializeComponent();
         }
-        async void OnButtonClicked(object sender, EventArgs args)
+        async void OnSearchButtonClicked(object sender, EventArgs args)
         {
-            await DisplayAlert("Last warning...", "DON'T click OK!", "OK");
+            await DisplayAlert("Cicked", "Searching...", "OK");
         }
     }
 }

@@ -16,6 +16,7 @@ namespace DaiGo
         protected override void OnStart()
         {
             // Handle when your app starts
+            MainPage = new View.UserMainPage();
         }
 
         protected override void OnSleep()
