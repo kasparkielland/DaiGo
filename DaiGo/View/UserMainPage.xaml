@@ -3,20 +3,74 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="DaiGo.View.UserMainPage"
+    BackgroundColor="#DEDEDE"
     Title="User Main Page">
 
-    <StackLayout>
+        <Grid Margin="0, 35, 0, 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*" />
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="0.6*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*" />
+            </Grid.ColumnDefinitions>
+            <Image
+                Margin="20, 0, 20, 0"
+                Grid.Row="0"
+                Grid.Column="0"
+                Source="Profile_Icon-Black"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
 
-        <Label x:Name="label"
-               Text="Do not click the Button below"
-               FontSize="Large"
-               VerticalOptions="CenterAndExpand"
-               HorizontalOptions="Center" />
+                />
+            <Image
+                Margin="20, 0, 20, 0"
+                Grid.Row="0"
+                Grid.Column="2"
+                Source="Message_Icon-Black"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
 
-        <Button Text="Do NOT click me!"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="Center"
-                Clicked="OnButtonClicked" />
-
-    </StackLayout>
+                />
+            <Image
+                Margin="20, 150, 20, 0"
+                Grid.Row="1"
+                Grid.ColumnSpan="3"
+                Source="Quick_Access-User_Red"
+                Width="300"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="Center"
+                />
+            <Image
+                Margin="0, 0, 0, -10"
+                Grid.Row="2"
+                Grid.ColumnSpan="3"
+                Source="Search_Area_Background-User_Red"
+                VerticalOptions="End"
+                HorizontalOptions="CenterAndExpand"
+                />
+            <ImageButton
+                Grid.Row="2"
+                Grid.ColumnSpan="3"
+                Source="Search_Button"
+                VerticalOptions="End"
+                HorizontalOptions="CenterAndExpand"
+                />
+            <Entry
+                Grid.Row="2"
+                Grid.ColumnSpan="3"
+                VerticalOptions="Center"
+                HorizontalOptions="CenterAndExpand"
+                WidthRequest="350"
+                HeightRequest="50"
+                Text="What are you looking for?"
+                BackgroundColor="#DEDEDE"
+                FontFamily=""
+                FontSize="Title"
+                TextColor="#555555"
+                />
+        </Grid>
 </ContentPage>

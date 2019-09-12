@@ -71,6 +71,15 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-80x80.png" />
+    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-1024x1024.png" />
+    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-58x58.png" />
+    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-60x60.png" />
+    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-120x120.png" />
+    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-87x87.png" />
+    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-40x40.png" />
+    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-180x180.png" />
+    <None Include="Resources\drawable\AppIcon\DaiGo_Logo.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.xml" />
@@ -89,6 +98,26 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\drawable\Message_Icon-Black.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\Profile_Icon-Black.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\Quick_Access-User_Red.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\Search_Area_Background-User_Red.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\Search_Button.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -96,6 +125,8 @@
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
+    <Folder Include="Resources\drawable\UserMainPage\" />
+    <Folder Include="Resources\drawable\AppIcon\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DaiGo\DaiGo.csproj">

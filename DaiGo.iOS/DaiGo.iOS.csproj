@@ -71,45 +71,32 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
-      <Visible>false</Visible>
-    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Profile_Icon-Black.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Profile_Icon-Black.imageset\Profile_Icon-Black.png" />
+    <ImageAsset Include="Assets.xcassets\Quick_Access-User_Red.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Quick_Access-User_Red.imageset\Quick_Access-User_Red.png" />
+    <ImageAsset Include="Assets.xcassets\Search_Area_Background-User_Red.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Search_Button.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Search_Button.imageset\Search_Button.png" />
+    <ImageAsset Include="Assets.xcassets\Search_Area_Background-User_Red.imageset\Search_Area_Background-User_Red.png" />
+    <ImageAsset Include="Assets.xcassets\Message_Icon-Black.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Message_Icon-Black.imageset\Message_Icon-Black.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-87x87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-58x58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-120x120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-180x180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-60x60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-40x40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-120x120-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-80x80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-1024x1024.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-40x40-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-58x58-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-40x40-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-80x80-2.png" />
+    <ImageAsset Include="Assets.xcassets\Quick_Access-User_Red.imageset\Quick_Access-User_Red-1.png" />
+    <ImageAsset Include="Assets.xcassets\Search_Bar.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Search_Bar.imageset\Search_Bar.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -129,5 +116,13 @@
       <Project>{3E7DE937-8F92-4EF9-9EAD-D315AB69205B}</Project>
       <Name>DaiGo</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\Profile_Icon-Black.imageset\" />
+    <Folder Include="Assets.xcassets\Quick_Access-User_Red.imageset\" />
+    <Folder Include="Assets.xcassets\Search_Area_Background-User_Red.imageset\" />
+    <Folder Include="Assets.xcassets\Search_Button.imageset\" />
+    <Folder Include="Assets.xcassets\Message_Icon-Black.imageset\" />
+    <Folder Include="Assets.xcassets\Search_Bar.imageset\" />
   </ItemGroup>
 </Project>
