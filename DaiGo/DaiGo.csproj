@@ -23,6 +23,7 @@
     <EmbeddedResource Remove="View\HomeScreen_UserDetail.xaml" />
     <EmbeddedResource Remove="View\HomeScreen_UserMaster.xaml" />
     <EmbeddedResource Remove="View\USer.xaml" />
+    <EmbeddedResource Remove="View\UserMainScreen.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="View\HomeScreen_User.xaml.cs" />
@@ -30,5 +31,6 @@
     <Compile Remove="View\HomeScreen_UserMaster.xaml.cs" />
     <Compile Remove="View\HomeScreen_UserMenuItem.cs" />
     <Compile Remove="View\USer.xaml.cs" />
+    <Compile Remove="View\UserMainScreen.xaml.cs" />
   </ItemGroup>
 </Project>
