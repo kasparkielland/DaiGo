@@ -10,10 +10,13 @@
             <Label Text="We have successfully sent you an email"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <Button Text="LOGIN"
+            <Button
+                Text="LOGIN"
                 BackgroundColor="White"
                 BorderRadius="10"
-                HorizontalOptions="Center"/>
+                HorizontalOptions="Center"
+                Clicked="OnLoginButtonClicked"
+                />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

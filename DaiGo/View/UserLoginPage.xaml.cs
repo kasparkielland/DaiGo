@@ -16,10 +16,16 @@ namespace DaiGo.View
             InitializeComponent();
         }
 
+        async void OnSignupButtonClicked(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new UserSignUp());
+        }
+
         async void OnLoginButtonClicked(object sender, EventArgs args)
         {
             // Do login sequense
 
+            
             // Go to UserMainPage
             await Navigation.PushAsync(new UserMainPage());
         }

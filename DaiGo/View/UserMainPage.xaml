@@ -6,95 +6,94 @@
     BackgroundColor="#DEDEDE"
     Title="User Main Page">
 
-        <Grid Margin="0, 35, 0, 0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="0.1*" />
-                <RowDefinition Height="0.5*" />
-                <RowDefinition Height="0.6*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.5*" />
-                <ColumnDefinition Width="0.5*" />
-                <ColumnDefinition Width="0.5*" />
-            </Grid.ColumnDefinitions>
-            <ImageButton
-                Margin="20, 0, 20, 0"
-                Grid.Row="0"
-                Grid.Column="0"
-                Source="ProfileIconBlack"
-                HorizontalOptions="Start"
-                VerticalOptions="Center"
-                Clicked="OnProfileIconButtonClicked"
-                />
-            <ImageButton
-                Margin="20, 0, 20, 0"
-                Grid.Row="0"
-                Grid.Column="2"
-                Source="MessageIconBlack"
-                HorizontalOptions="End"
-                VerticalOptions="Center"
-                Clicked="OnMessageIconButtonClicked"
-                />
-            <Label
-                Margin="50, 0, 50, 200"
-                Grid.Row="1"
-                Grid.ColumnSpan="3"
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="CenterAndExpand"
-                Text="Good morning, Mr. Obama"
-                FontSize="Title"
-                TextColor="#555555"
-                LineBreakMode="WordWrap"
-                />
-            <ImageButton
-                Margin="20, 150, 20, 0"
-                Grid.Row="1"
-                Grid.ColumnSpan="3"
-                Source="QuickAccessUserRed"
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="Center"
-                Clicked="OnQuickAccessButtonClicked"
-                />
-            <Label
-                Margin="50, 130, 70, 0"
-                Grid.Row="1"
-                Grid.ColumnSpan="3"
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="Center"
-                Text="You are up to date!"
-                FontSize="Title"
-                TextColor="#DEDEDE"
-                LineBreakMode="WordWrap"
-                />
-            <Image
-                Margin="0, 0, 0, -10"
-                Grid.Row="2"
-                Grid.ColumnSpan="3"
-                Source="SearchAreaBackgroundUserRed"
-                VerticalOptions="End"
-                HorizontalOptions="CenterAndExpand"
-                />
-            <ImageButton
-                Grid.Row="2"
-                Grid.ColumnSpan="3"
-                Source="SearchButton"
-                VerticalOptions="End"
-                HorizontalOptions="CenterAndExpand"
-                Clicked="OnSearchButtonClicked"
-                />
-            <Entry
-                Margin="0, 0, 0, 50"
-                Grid.Row="2"
-                Grid.ColumnSpan="3"
-                VerticalOptions="Center"
-                HorizontalOptions="CenterAndExpand"
-                WidthRequest="350"
-                HeightRequest="50"
-                Text="What are you looking for?"
-                BackgroundColor="#DEDEDE"
-                FontFamily=""
-                FontSize="Title"
-                TextColor="#555555"
-                />
-        </Grid>
+    <Grid Margin="0, 35, 0, 10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.6*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="0.5*" />
+        </Grid.ColumnDefinitions>
+        <ImageButton
+            Margin="20, 0, 20, 0"
+            Grid.Row="0"
+            Grid.Column="0"
+            Source="ProfileIconBlack"
+            HorizontalOptions="Start"
+            VerticalOptions="Center"
+            Clicked="OnProfileIconButtonClicked"
+            />
+        <ImageButton
+            Margin="20, 0, 20, 0"
+            Grid.Row="0"
+            Grid.Column="2"
+            Source="MessageIconBlack"
+            HorizontalOptions="End"
+            VerticalOptions="Center"
+            Clicked="OnMessageIconButtonClicked"
+            />
+        <Label
+            Margin="50, 0, 50, 200"
+            Grid.Row="1"
+            Grid.ColumnSpan="3"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
+            Text="Good morning, Mr. Obama"
+            FontSize="Title"
+            TextColor="#555555"
+            LineBreakMode="WordWrap"
+            />
+        <ImageButton
+            Margin="20, 150, 20, 0"
+            Grid.Row="1"
+            Grid.ColumnSpan="3"
+            Source="QuickAccessUserRed"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="Center"
+            Clicked="OnQuickAccessButtonClicked"
+            />
+        <Label
+            Margin="50, 130, 70, 0"
+            Grid.Row="1"
+            Grid.ColumnSpan="3"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="Center"
+            Text="You are up to date!"
+            FontSize="Title"
+            TextColor="#DEDEDE"
+            LineBreakMode="WordWrap"
+            />
+        <Image
+            Margin="0, 0, 0, -20"
+            Grid.Row="2"
+            Grid.ColumnSpan="3"
+            Source="SearchAreaBackgroundUserRed"
+            VerticalOptions="End"
+            HorizontalOptions="CenterAndExpand"
+            />
+        <ImageButton
+            Grid.Row="2"
+            Grid.ColumnSpan="3"
+            Source="SearchButton"
+            VerticalOptions="End"
+            HorizontalOptions="CenterAndExpand"
+            Clicked="OnSearchButtonClicked"
+            />
+        <Entry
+            Margin="0, 0, 0, 40"
+            Grid.Row="2"
+            Grid.ColumnSpan="3"
+            VerticalOptions="Center"
+            HorizontalOptions="CenterAndExpand"
+            WidthRequest="350"
+            HeightRequest="50"
+            Placeholder="What are you looking for?"
+            BackgroundColor="#DEDEDE"
+            FontSize="Title"
+            TextColor="#555555"
+            />
+    </Grid>
 </ContentPage>

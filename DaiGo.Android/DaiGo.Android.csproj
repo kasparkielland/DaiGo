@@ -113,11 +113,15 @@
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable\DaiGo_Logo.png">
+    <AndroidResource Include="Resources\drawable\daigoLogo.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\MessageIconBlack.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\LogoutButton.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>

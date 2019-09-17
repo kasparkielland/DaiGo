@@ -24,6 +24,7 @@
     <EmbeddedResource Remove="View\USer.xaml" />
     <EmbeddedResource Remove="View\UserMainScreen.xaml" />
     <EmbeddedResource Remove="View\MyPage.xaml" />
+    <EmbeddedResource Remove="View\MyPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="View\HomeScreen_User.xaml.cs" />

@@ -149,6 +149,10 @@
     <ImageAsset Include="Assets.xcassets\ProfileIconBlack.imageset\Profile_Icon-Black.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\UserPageBackgroundFrameUserRed.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\UserPageBackgroundFrameUserRed.imageset\UserPageBackgroundFrameUserRed.png" />
+    <ImageAsset Include="Assets.xcassets\LogoutButton.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LogoutButton.imageset\Logout_Button.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -176,5 +180,7 @@
     <Folder Include="Assets.xcassets\SearchAreaBackgroundUserRed.imageset\" />
     <Folder Include="Assets.xcassets\QuickAccessUserRed.imageset\" />
     <Folder Include="Assets.xcassets\ProfileIconBlack.imageset\" />
+    <Folder Include="Assets.xcassets\UserPageBackgroundFrameUserRed.imageset\" />
+    <Folder Include="Assets.xcassets\LogoutButton.imageset\" />
   </ItemGroup>
 </Project>

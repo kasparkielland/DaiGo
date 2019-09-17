@@ -10,13 +10,12 @@ namespace DaiGo
         {
             InitializeComponent();
 
-            MainPage = new View.UserMainPage();
+            MainPage = new NavigationPage(new View.UserLoginPage());
         }
 
         protected override void OnStart()
         {
             // Handle when your app starts
-            MainPage = new View.UserMainPage();
         }
 
         protected override void OnSleep()

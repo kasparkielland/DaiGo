@@ -9,12 +9,13 @@ namespace DaiGo.View
         public UserMainPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
         async void OnProfileIconButtonClicked(object sender, EventArgs args)
         {
             await Navigation.PushAsync(new UserProfile());
         }
-        async void OnMessageButtonClicked(object sender, EventArgs args)
+        async void OnMessageIconButtonClicked(object sender, EventArgs args)
         {
             await DisplayAlert("Cicked", "Searching...", "OK");
         }

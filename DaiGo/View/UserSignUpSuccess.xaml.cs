@@ -16,5 +16,10 @@ namespace DaiGo.View
         {
             InitializeComponent();
         }
+        async void OnLoginButtonClicked(object sender, EventArgs args)
+        {
+            await Navigation.PopToRootAsync(false);
+
+        }
     }
 }

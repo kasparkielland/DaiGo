@@ -10,6 +10,16 @@ namespace DaiGo.View
         public UserProfile()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
+
+        async void OnLogoutButtonClicked(object sender, EventArgs args)
+        {
+            // Do logout procydure
+
+            // Go to firstpage
+            await Navigation.PopToRootAsync(false);
+        }
+
     }
 }

@@ -17,16 +17,20 @@
                 IsPassword="True" />
             <Label Text="Forgot password" />
             <StackLayout Orientation="Horizontal">
-                <Button Text="SINGUP"
+                <Button
+                    Text="SINGUP"
                     BackgroundColor="White"
                     BorderRadius="10"
-                    HorizontalOptions="Center"/>
-                <Button Text="LOGIN"
-                        BackgroundColor="White"
-                        BorderRadius="10"
-                        HorizontalOptions="Center"
-                        Clicked="OnLoginButtonClicked"
-                        />
+                    HorizontalOptions="Center"
+                    Clicked="OnSignupButtonClicked"
+                    />
+                <Button
+                    Text="LOGIN"
+                    BackgroundColor="White"
+                    BorderRadius="10"
+                    HorizontalOptions="Center"
+                    Clicked="OnLoginButtonClicked"
+                    />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
