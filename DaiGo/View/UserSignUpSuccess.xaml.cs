@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace DaiGo.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Page1 : ContentPage
+    public partial class SignUpSuccess : ContentPage
     {
-        public Page1()
+        public SignUpSuccess()
         {
             InitializeComponent();
         }
