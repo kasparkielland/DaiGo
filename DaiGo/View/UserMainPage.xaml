@@ -24,6 +24,7 @@
                 Source="ProfileIconBlack"
                 HorizontalOptions="Start"
                 VerticalOptions="Center"
+                Clicked="OnProfileIconButtonClicked"
                 />
             <ImageButton
                 Margin="20, 0, 20, 0"
@@ -32,6 +33,7 @@
                 Source="MessageIconBlack"
                 HorizontalOptions="End"
                 VerticalOptions="Center"
+                Clicked="OnMessageIconButtonClicked"
                 />
             <Label
                 Margin="50, 0, 50, 200"
@@ -51,6 +53,7 @@
                 Source="QuickAccessUserRed"
                 HorizontalOptions="CenterAndExpand"
                 VerticalOptions="Center"
+                Clicked="OnQuickAccessButtonClicked"
                 />
             <Label
                 Margin="50, 130, 70, 0"

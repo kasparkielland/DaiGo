@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="DaiGo.View.Page1">
+             x:Class="DaiGo.View.UserLoginPage">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to DaiGo"
@@ -22,9 +22,11 @@
                     BorderRadius="10"
                     HorizontalOptions="Center"/>
                 <Button Text="LOGIN"
-                    BackgroundColor="White"
-                    BorderRadius="10"
-                    HorizontalOptions="Center"/>
+                        BackgroundColor="White"
+                        BorderRadius="10"
+                        HorizontalOptions="Center"
+                        Clicked="OnLoginButtonClicked"
+                        />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
