@@ -9,8 +9,8 @@ namespace DaiGo.View
     {
         public UserProfile()
         {
-            InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+            InitializeComponent();
         }
 
         async void OnLogoutButtonClicked(object sender, EventArgs args)
