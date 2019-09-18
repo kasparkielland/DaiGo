@@ -10,6 +10,13 @@ namespace DaiGo.View
         public EditRequest()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+
+        }
+
+        async void OnGoBackButtonClicked(object sender, EventArgs args)
+        {
+            await Navigation.PopAsync();
         }
     }
 }

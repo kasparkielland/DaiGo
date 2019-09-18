@@ -127,6 +127,8 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-1024x1024-1.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-80x80.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-40x40-1.png" />
+    <ImageAsset Include="Assets.xcassets\GoBack.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\GoBack.imageset\GoBack.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -156,5 +158,6 @@
     <Folder Include="Assets.xcassets\ProfileIconBlack.imageset\" />
     <Folder Include="Assets.xcassets\UserPageBackgroundFrameUserRed.imageset\" />
     <Folder Include="Assets.xcassets\LogoutButton.imageset\" />
+    <Folder Include="Assets.xcassets\GoBack.imageset\" />
   </ItemGroup>
 </Project>
