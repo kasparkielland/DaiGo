@@ -14,7 +14,7 @@
             <Color x:Key="darkTextColor">#24292C</Color>
            
             <Style x:Key="H1" TargetType="Label">
-                <!--<Setter Property="Foreground" Value="{StaticResource darkTextColor}"/>-->
+                <Setter Property="Textcolor" Value="{StaticResource darkTextColor}"/>
                 <Setter Property="FontFamily" Value="Arial"/>
                 <Setter Property="FontSize" Value="40"/>
             </Style>
