@@ -71,14 +71,6 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
-    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-80x80.png" />
-    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-1024x1024.png" />
-    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-58x58.png" />
-    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-60x60.png" />
-    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-120x120.png" />
-    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-87x87.png" />
-    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-40x40.png" />
-    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-180x180.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.xml" />
@@ -113,15 +105,15 @@
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable\daigoLogo.png">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
     <AndroidResource Include="Resources\drawable\MessageIconBlack.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\LogoutButton.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\DaiGo_Logo.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>

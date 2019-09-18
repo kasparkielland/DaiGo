@@ -71,45 +71,6 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-87x87.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-58x58.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-120x120.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-180x180.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-60x60.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-40x40.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-120x120-1.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-80x80.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-1024x1024.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-40x40-1.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-58x58-1.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-40x40-2.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-80x80-2.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\SearchBar.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -153,6 +114,19 @@
     <ImageAsset Include="Assets.xcassets\UserPageBackgroundFrameUserRed.imageset\UserPageBackgroundFrameUserRed.png" />
     <ImageAsset Include="Assets.xcassets\LogoutButton.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\LogoutButton.imageset\Logout_Button.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-40x40-3.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-60x60-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-58x58-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-87x87-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-80x80-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-120x120-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-120x120-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-180x180-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-40x40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-58x58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-1024x1024-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-80x80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-40x40-1.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
