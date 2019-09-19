@@ -155,8 +155,8 @@
     <ITunesArtwork Include="iTunesArtwork%402x" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\FontAwesome5Solid.otf" />
-    <BundleResource Include="Resources\FontAwesome5Regular.otf" />
-    <BundleResource Include="Resources\FontAwesome5Brands.otf" />
+    <BundleResource Include="Resources\FontAwesome5Regular.ttf" />
+    <BundleResource Include="Resources\FontAwesome5Solid.ttf" />
+    <BundleResource Include="Resources\FontAwesome5Brands.ttf" />
   </ItemGroup>
 </Project>

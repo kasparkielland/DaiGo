@@ -24,9 +24,9 @@ namespace DaiGo.View
         {
             await DisplayAlert("Cicked", "Searching...", "OK");
         }
-        //async void OnSearchButtonClicked(object sender, EventArgs args)
-        //{
-        //    await DisplayAlert("Cicked", "Searching...", "OK");
-        //}
+        async void OnSearchButtonClicked(object sender, EventArgs args)
+        {
+            await DisplayAlert("Cicked", "Searching...", "OK");
+        }
     }
 }

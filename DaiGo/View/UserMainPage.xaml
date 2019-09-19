@@ -109,13 +109,17 @@
                     HorizontalOptions="CenterAndExpand"
                     HeightRequest="50"
                     WidthRequest="1000"
-                    Placeholder="What are you looking for?" />
+                    Placeholder="What are you looking for?"
+                    Keyboard="Text"
+                    ReturnType="Search"
+                    Completed="OnSearchButtonClicked" />
                 <Button
                     Margin="90, 0, 90, 100"
                     VerticalOptions="EndAndExpand"
                     Style="{StaticResource primaryButton}"
                     Text="SEARCH"
-                    CornerRadius="25" />
+                    CornerRadius="25"
+                    Clicked="OnSearchButtonClicked" />
             </StackLayout>
         </Frame>
     </Grid>
