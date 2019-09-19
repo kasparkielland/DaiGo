@@ -23,10 +23,6 @@
     <EmbeddedResource Remove="View\HomeScreen_UserMaster.xaml" />
     <EmbeddedResource Remove="View\USer.xaml" />
     <EmbeddedResource Remove="View\UserMainScreen.xaml" />
-    <EmbeddedResource Remove="View\MyPage.xaml" />
-    <EmbeddedResource Remove="View\MyPage.xaml" />
-    <EmbeddedResource Remove="View\EditRequest.xaml" />
-    <EmbeddedResource Remove="View\EditRequest.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="View\HomeScreen_User.xaml.cs" />
@@ -35,28 +31,5 @@
     <Compile Remove="View\HomeScreen_UserMenuItem.cs" />
     <Compile Remove="View\USer.xaml.cs" />
     <Compile Remove="View\UserMainScreen.xaml.cs" />
-    <Compile Remove="View\EditRequest.xaml.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="View\UserSignUpSuccess.xaml.cs">
-      <DependentUpon>UserSignUpSuccess.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="View\UserLoginPage.xaml.cs">
-      <DependentUpon>UserLoginPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="View\UserSignUp.xaml.cs">
-      <DependentUpon>UserSignUp.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Update="View\UserSignUpSuccess.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="View\UserLoginPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="View\UserSignUp.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
   </ItemGroup>
 </Project>
