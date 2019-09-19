@@ -6,7 +6,7 @@
     BackgroundColor="{StaticResource userThemeColor}">
     <ContentPage.Content>
         <StackLayout
-            Margin="20, 35, 20, 20">
+            Margin="20, 35, 20, 30">
             <ImageButton
                 HorizontalOptions="Start"
                 Source="GoBack"
@@ -86,19 +86,16 @@
                         />
                 </Frame.GestureRecognizers>
             </Frame>
-            <Frame
+            
+            <Button
+                Margin="100, 0, 100, 0"
                 VerticalOptions="EndAndExpand"
-                CornerRadius="30"
-                HeightRequest="20"
-                WidthRequest="0"
-                BackgroundColor="{StaticResource backgroundColor}"
-                >
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer
-                        Command="{Binding OnCountryFrameClicked}"
-                        />
-                </Frame.GestureRecognizers>
-            </Frame>
+                Style="{StaticResource secondaryButton}"
+                Text="SEND REQUEST"
+                HeightRequest="50"
+                CornerRadius="25"
+                FontSize="Medium"
+                />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

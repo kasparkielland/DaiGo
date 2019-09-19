@@ -6451,19 +6451,16 @@ namespace DaiGo.Droid
 			public const int ProfileIconBlack = 2131165500;
 			
 			// aapt resource value: 0x7F07013D
-			public const int QuickAccessUserRed = 2131165501;
+			public const int SearchAreaBackgroundUserRed = 2131165501;
 			
 			// aapt resource value: 0x7F07013E
-			public const int SearchAreaBackgroundUserRed = 2131165502;
+			public const int SearchButton = 2131165502;
 			
 			// aapt resource value: 0x7F07013F
-			public const int SearchButton = 2131165503;
+			public const int tooltip_frame_dark = 2131165503;
 			
 			// aapt resource value: 0x7F070140
-			public const int tooltip_frame_dark = 2131165504;
-			
-			// aapt resource value: 0x7F070141
-			public const int tooltip_frame_light = 2131165505;
+			public const int tooltip_frame_light = 2131165504;
 			
 			static Drawable()
 			{

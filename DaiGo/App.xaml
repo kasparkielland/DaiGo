@@ -6,33 +6,100 @@
              mc:Ignorable="d"
              x:Class="DaiGo.App">
     <Application.Resources>
-            <Color x:Key="backgroundColor">#E2E1DF</Color>
-            <Color x:Key="userThemeColor">#E64448</Color>
-            <Color x:Key="agentThemeColor">#30AAB3</Color>
+        <Color x:Key="backgroundColor">#E2E1DF</Color>
+        <Color x:Key="userThemeColor">#E64448</Color>
+        <Color x:Key="agentThemeColor">#30AAB3</Color>
 
-            <Color x:Key="lightTextColor">#E2E1DF</Color>
-            <Color x:Key="darkTextColor">#24292C</Color>
-           
-            <Style x:Key="H1" TargetType="Label">
-                <Setter Property="TextColor" Value="{StaticResource darkTextColor}"/>
-                <Setter Property="FontFamily" Value="Arial"/>
-                <Setter Property="FontSize" Value="40"/>
-            </Style>
-            <Style x:Key="H2" TargetType="Label" BasedOn="{StaticResource H1}">
-                <Setter Property="FontSize" Value="30"/>
-            </Style>
-            <Style x:Key="H3" TargetType="Label" BasedOn="{StaticResource H1}">
-                <Setter Property="FontSize" Value="26"/>
-            </Style>
-            <Style x:Key="H4" TargetType="Label" BasedOn="{StaticResource H1}">
-                <Setter Property="FontSize" Value="23"/>
-            </Style>
-           
-            <Style x:Key ="primaryButton" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="#555555"/>
-                <Setter Property="TextColor" Value="#EEEEEE"/>
-                <Setter Property="FontSize" Value="20"/>
-                <Setter Property="CornerRadius" Value="20"/>
-            </Style>
+        <Color x:Key="lightTextColor">#E2E1DF</Color>
+        <Color x:Key="darkTextColor">#24292C</Color>
+
+        <Style x:Key="H1"
+               TargetType="Label">
+            <Setter Property="TextColor"
+                    Value="{StaticResource darkTextColor}" />
+            <Setter Property="FontFamily"
+                    Value="Arial" />
+            <Setter Property="FontSize"
+                    Value="Title" />
+        </Style>
+        <Style x:Key="H2"
+               TargetType="Label"
+               BasedOn="{StaticResource H1}">
+            <Setter Property="FontSize"
+                    Value="Subtitle" />
+        </Style>
+        <Style x:Key="H3"
+               TargetType="Label"
+               BasedOn="{StaticResource H1}">
+            <Setter Property="FontSize"
+                    Value="Large" />
+        </Style>
+        <Style x:Key="H4"
+               TargetType="Label"
+               BasedOn="{StaticResource H1}">
+            <Setter Property="FontSize"
+                    Value="Default" />
+        </Style>
+
+        <Style x:Key="primaryButton"
+               TargetType="Button">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource lightTextColor}" />
+            <Setter Property="TextColor"
+                    Value="{StaticResource darkTextColor}" />
+            <Setter Property="FontSize"
+                    Value="20" />
+            <Setter Property="CornerRadius"
+                    Value="40" />
+            <Setter Property="HeightRequest"
+                    Value="50" />
+        </Style>
+
+        <Style x:Key="secondaryButton"
+               TargetType="Button"
+               BasedOn="{StaticResource primaryButton}">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource darkTextColor}" />
+            <Setter Property="TextColor"
+                    Value="{StaticResource lightTextColor}" />
+        </Style>
+
+        <Style x:Key="entryField"
+               TargetType="Entry">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource lightTextColor}" />
+            <Setter Property="TextColor"
+                    Value="{StaticResource darkTextColor}" />
+            <Setter Property="FontSize"
+                    Value="20" />
+            <Setter Property="HeightRequest"
+                    Value="30" />
+        </Style>
+
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String"
+                        x:Key="FontAwesomeBrands">
+                <On Platform="Android"
+                    Value="FontAwesome5Brands.otf#Regular" />
+                <On Platform="iOS"
+                    Value="FontAwesome5Brands" />
+            </OnPlatform>
+
+            <OnPlatform x:TypeArguments="x:String"
+                        x:Key="FontAwesomeSolid">
+                <On Platform="Android"
+                    Value="FontAwesome5Solid.otf#Regular" />
+                <On Platform="iOS"
+                    Value="FontAwesome5Solid" />
+            </OnPlatform>
+
+            <OnPlatform x:TypeArguments="x:String"
+                        x:Key="FontAwesomeRegular">
+                <On Platform="Android"
+                    Value="FontAwesome5Regular.otf#Regular" />
+                <On Platform="iOS"
+                    Value="FontAwesome5Regular" />
+            </OnPlatform>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
