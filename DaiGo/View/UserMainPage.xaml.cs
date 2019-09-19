@@ -9,10 +9,24 @@ namespace DaiGo.View
         public UserMainPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+            Navigation.PopAsync();
         }
-        async void OnButtonClicked(object sender, EventArgs args)
+        async void OnProfileIconButtonClicked(object sender, EventArgs args)
         {
-            await DisplayAlert("Last warning...", "DON'T click OK!", "OK");
+            await Navigation.PushAsync(new UserProfile());
         }
+        //async void OnMessageIconButtonClicked(object sender, EventArgs args)
+        //{
+        //    await DisplayAlert("Cicked", "Searching...", "OK");
+        //}
+        //async void OnQuickAccessButtonClicked(object sender, EventArgs args)
+        //{
+        //    await DisplayAlert("Cicked", "Searching...", "OK");
+        //}
+        //async void OnSearchButtonClicked(object sender, EventArgs args)
+        //{
+        //    await DisplayAlert("Cicked", "Searching...", "OK");
+        //}
     }
 }

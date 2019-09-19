@@ -6,6 +6,33 @@
              mc:Ignorable="d"
              x:Class="DaiGo.App">
     <Application.Resources>
+            <Color x:Key="backgroundColor">#E2E1DF</Color>
+            <Color x:Key="userThemeColor">#E64448</Color>
+            <Color x:Key="agentThemeColor">#30AAB3</Color>
 
+            <Color x:Key="lightTextColor">#E2E1DF</Color>
+            <Color x:Key="darkTextColor">#24292C</Color>
+           
+            <Style x:Key="H1" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource darkTextColor}"/>
+                <Setter Property="FontFamily" Value="Arial"/>
+                <Setter Property="FontSize" Value="40"/>
+            </Style>
+            <Style x:Key="H2" TargetType="Label" BasedOn="{StaticResource H1}">
+                <Setter Property="FontSize" Value="30"/>
+            </Style>
+            <Style x:Key="H3" TargetType="Label" BasedOn="{StaticResource H1}">
+                <Setter Property="FontSize" Value="26"/>
+            </Style>
+            <Style x:Key="H4" TargetType="Label" BasedOn="{StaticResource H1}">
+                <Setter Property="FontSize" Value="23"/>
+            </Style>
+           
+            <Style x:Key ="primaryButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#555555"/>
+                <Setter Property="TextColor" Value="#EEEEEE"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="CornerRadius" Value="20"/>
+            </Style>
     </Application.Resources>
 </Application>

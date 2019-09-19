@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DaiGo.View.EditRequest"
+    BackgroundColor="{StaticResource userThemeColor}">
+    <ContentPage.Content>
+        <StackLayout
+            Margin="20, 35, 20, 20">
+            <ImageButton
+                HorizontalOptions="Start"
+                Source="GoBack"
+                Clicked="OnGoBackButtonClicked"
+                />
+            <Label
+                Margin="0, 50, 0, 20"
+                HorizontalOptions="End"
+                Text="Preferences"
+                Style="{StaticResource H1}"
+                />
+            <Label
+                Margin="30, 20, 0, 0"
+                Text="Country"
+                Style="{StaticResource H3}"
+                TextColor="{StaticResource lightTextColor}"
+                />
+            <Frame
+                CornerRadius="30"
+                HeightRequest="20"
+                BackgroundColor="{StaticResource backgroundColor}"
+                >
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding OnCountryFrameClicked}"
+                        />
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Label
+                Margin="30, 20, 0, 0"
+                Text="Country"
+                Style="{StaticResource H3}"
+                TextColor="{StaticResource lightTextColor}"
+                />
+            <Frame
+                CornerRadius="30"
+                HeightRequest="20"
+                BackgroundColor="{StaticResource backgroundColor}"
+                >
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding OnCountryFrameClicked}"
+                        />
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Label
+                Margin="30, 20, 0, 0"
+                Text="Country"
+                Style="{StaticResource H3}"
+                TextColor="{StaticResource lightTextColor}"
+                />
+            <Frame
+                CornerRadius="30"
+                HeightRequest="20"
+                BackgroundColor="{StaticResource backgroundColor}"
+                >
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding OnCountryFrameClicked}"
+                        />
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Label
+                Margin="30, 20, 0, 0"
+                Text="Country"
+                Style="{StaticResource H3}"
+                TextColor="{StaticResource lightTextColor}"
+                />
+            <Frame
+                CornerRadius="30"
+                HeightRequest="20"
+                BackgroundColor="{StaticResource backgroundColor}"
+                >
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding OnCountryFrameClicked}"
+                        />
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Frame
+                VerticalOptions="EndAndExpand"
+                CornerRadius="30"
+                HeightRequest="20"
+                WidthRequest="0"
+                BackgroundColor="{StaticResource backgroundColor}"
+                >
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding OnCountryFrameClicked}"
+                        />
+                </Frame.GestureRecognizers>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
