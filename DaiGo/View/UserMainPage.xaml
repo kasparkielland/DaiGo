@@ -76,24 +76,27 @@
             Grid.Row="2"
             Grid.ColumnSpan="3"
             BackgroundColor="{StaticResource userThemeColor}"
-            CornerRadius="50">
+            CornerRadius="50"
+            HasShadow="False">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="OnQuickAccessFrameClicked" />
+            </Frame.GestureRecognizers>
             <StackLayout>
                 <Label
                     Margin="50, 0, 70, 0"
                     Grid.Row="1"
                     Grid.ColumnSpan="3"
                     HorizontalOptions="CenterAndExpand"
-                    VerticalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
                     Text="You are up to date!"
+                    FontSize="Title"
                     LineBreakMode="WordWrap"
                     TextColor="{StaticResource lightTextColor}" />
             </StackLayout>
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer
-                    Command="{Binding OnQuickAccessFrameClicked}" />
-            </Frame.GestureRecognizers>
         </Frame>
         <Frame
+            x:Name="backgroundTab"
             Margin="0, 100, 0, -100"
             Grid.Row="3"
             Grid.ColumnSpan="3"

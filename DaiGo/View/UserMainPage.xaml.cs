@@ -18,15 +18,15 @@ namespace DaiGo.View
         }
         async void OnMessageIconButtonClicked(object sender, EventArgs args)
         {
-            await DisplayAlert("Cicked", "Searching...", "OK");
+            await DisplayAlert("Clicked on messageIcon", "...", "OK");
         }
         async void OnQuickAccessFrameClicked(object sender, EventArgs args)
         {
-            await DisplayAlert("Cicked", "Searching...", "OK");
+            await DisplayAlert("Clicked on QA", "...", "OK");
         }
         async void OnSearchButtonClicked(object sender, EventArgs args)
         {
-            await DisplayAlert("Cicked", "Searching...", "OK");
+            await DisplayAlert("Clicked", "Searching...", "OK");
         }
     }
 }
