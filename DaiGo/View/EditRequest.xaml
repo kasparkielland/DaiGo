@@ -1,101 +1,47 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<ContentPage
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="DaiGo.View.EditRequest"
-    BackgroundColor="{StaticResource userThemeColor}">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DaiGo.View.EditRequest" BackgroundColor="{StaticResource userThemeColor}">
     <ContentPage.Content>
-        <StackLayout
-            Margin="20, 35, 20, 30">
-            <ImageButton
-                HorizontalOptions="Start"
-                Source="GoBack"
-                Clicked="OnGoBackButtonClicked"
-                />
-            <Label
-                Margin="0, 50, 0, 20"
-                HorizontalOptions="End"
-                Text="Preferences"
-                Style="{StaticResource H1}"
-                />
-            <Label
-                Margin="30, 20, 0, 0"
-                Text="Country"
-                Style="{StaticResource H3}"
-                TextColor="{StaticResource lightTextColor}"
-                />
-            <Frame
-                CornerRadius="30"
-                HeightRequest="20"
-                BackgroundColor="{StaticResource backgroundColor}"
-                >
+        <StackLayout Margin="20, 35, 20, 30">
+            <Frame Margin="0, 0, 250, 0" BackgroundColor="{StaticResource userThemeColor}" HasShadow="False" Padding="2">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                    <Label FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf053;" TextColor="{StaticResource lightTextColor}" FontAttributes="Bold" FontSize="Subtitle" />
+                    <Label HorizontalOptions="StartAndExpand" Text="Go back" TextColor="{StaticResource lightTextColor}" FontAttributes="Bold" FontSize="Subtitle" />
+                </StackLayout>
                 <Frame.GestureRecognizers>
-                    <TapGestureRecognizer
-                        Command="{Binding OnCountryFrameClicked}"
-                        />
+                    <TapGestureRecognizer Command="{Binding OnCountryFrameClicked}" />
                 </Frame.GestureRecognizers>
             </Frame>
-            <Label
-                Margin="30, 20, 0, 0"
-                Text="Country"
-                Style="{StaticResource H3}"
-                TextColor="{StaticResource lightTextColor}"
-                />
-            <Frame
-                CornerRadius="30"
-                HeightRequest="20"
-                BackgroundColor="{StaticResource backgroundColor}"
-                >
+            <Label Margin="0, 50, 0, 20" HorizontalOptions="End" Text="Preferences" Style="{StaticResource H1}" />
+            <Label Margin="30, 20, 0, 0" Text="Country" Style="{StaticResource H3}" TextColor="{StaticResource lightTextColor}" />
+            <Frame CornerRadius="30" HeightRequest="50" Padding="5" BackgroundColor="{StaticResource backgroundColor}">
+                <Label HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf054;" TextColor="{StaticResource darkTextColor}" FontSize="40" />
                 <Frame.GestureRecognizers>
-                    <TapGestureRecognizer
-                        Command="{Binding OnCountryFrameClicked}"
-                        />
+                    <TapGestureRecognizer Command="{Binding OnCountryFrameClicked}" />
                 </Frame.GestureRecognizers>
             </Frame>
-            <Label
-                Margin="30, 20, 0, 0"
-                Text="Country"
-                Style="{StaticResource H3}"
-                TextColor="{StaticResource lightTextColor}"
-                />
-            <Frame
-                CornerRadius="30"
-                HeightRequest="20"
-                BackgroundColor="{StaticResource backgroundColor}"
-                >
+            <Label Margin="30, 20, 0, 0" Text="Price" Style="{StaticResource H3}" TextColor="{StaticResource lightTextColor}" />
+            <Frame CornerRadius="30" HeightRequest="50" Padding="5" BackgroundColor="{StaticResource backgroundColor}">
+                <Label HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf054;" TextColor="{StaticResource darkTextColor}" FontSize="40" />
                 <Frame.GestureRecognizers>
-                    <TapGestureRecognizer
-                        Command="{Binding OnCountryFrameClicked}"
-                        />
+                    <TapGestureRecognizer Command="{Binding OnPriceFrameClicked}" />
                 </Frame.GestureRecognizers>
             </Frame>
-            <Label
-                Margin="30, 20, 0, 0"
-                Text="Country"
-                Style="{StaticResource H3}"
-                TextColor="{StaticResource lightTextColor}"
-                />
-            <Frame
-                CornerRadius="30"
-                HeightRequest="20"
-                BackgroundColor="{StaticResource backgroundColor}"
-                >
+            <Label Margin="30, 20, 0, 0" Text="Category" Style="{StaticResource H3}" TextColor="{StaticResource lightTextColor}" />
+            <Frame CornerRadius="30" HeightRequest="50" Padding="5" BackgroundColor="{StaticResource backgroundColor}">
+                <Label HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf054;" TextColor="{StaticResource darkTextColor}" FontSize="40" />
                 <Frame.GestureRecognizers>
-                    <TapGestureRecognizer
-                        Command="{Binding OnCountryFrameClicked}"
-                        />
+                    <TapGestureRecognizer Command="{Binding OnCategoryFrameClicked}" />
                 </Frame.GestureRecognizers>
             </Frame>
-            
-            <Button
-                Margin="100, 0, 100, 0"
-                VerticalOptions="EndAndExpand"
-                Style="{StaticResource secondaryButton}"
-                Text="SEND REQUEST"
-                HeightRequest="50"
-                CornerRadius="25"
-                FontSize="Medium"
-                />
+            <Label Margin="30, 20, 0, 0" Text="Agent" Style="{StaticResource H3}" TextColor="{StaticResource lightTextColor}" />
+            <Frame CornerRadius="30" HeightRequest="50" Padding="5" BackgroundColor="{StaticResource backgroundColor}">
+                <Label HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf054;" TextColor="{StaticResource darkTextColor}" FontSize="40" />
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OnAgentFrameClicked}" />
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Button Margin="100, 0, 100, 0" VerticalOptions="EndAndExpand" Style="{StaticResource secondaryButton}" Text="SEND REQUEST" HeightRequest="50" CornerRadius="25" FontSize="Large" Clicked="OnSendRequestButtonClicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

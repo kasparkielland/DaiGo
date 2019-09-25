@@ -157,6 +157,8 @@
   <ItemGroup>
     <BundleResource Include="Resources\FontAwesome5Regular.ttf" />
     <BundleResource Include="Resources\FontAwesome5Solid.ttf" />
-    <BundleResource Include="Resources\FontAwesome5Brands.ttf" />
+    <BundleResource Include="Resources\FontAwesome5Brands.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
   </ItemGroup>
 </Project>

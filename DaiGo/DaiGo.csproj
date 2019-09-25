@@ -16,6 +16,7 @@
   <ItemGroup>
     <Folder Include="Model\" />
     <Folder Include="ViewModel\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="View\HomeScreen_User.xaml" />
@@ -23,7 +24,6 @@
     <EmbeddedResource Remove="View\HomeScreen_UserMaster.xaml" />
     <EmbeddedResource Remove="View\USer.xaml" />
     <EmbeddedResource Remove="View\UserMainScreen.xaml" />
-    <EmbeddedResource Remove="View\MyPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="View\HomeScreen_User.xaml.cs" />
@@ -32,5 +32,8 @@
     <Compile Remove="View\HomeScreen_UserMenuItem.cs" />
     <Compile Remove="View\USer.xaml.cs" />
     <Compile Remove="View\UserMainScreen.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="View\.DS_Store" />
   </ItemGroup>
 </Project>
