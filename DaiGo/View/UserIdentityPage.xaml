@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DaiGo.Views.UserIdentityPage"
+             xmlns:vm="clr-namespace:DaiGo.ViewModels"
+             Title="{Binding Title}">
+        <ContentPage.BindingContext>
+            <vm:UserIdentityViewModel />
+        </ContentPage.BindingContext>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" x:Name="userGrid" BackgroundColor="{StaticResource userThemeColor}"  >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="^"/>
+                    <RowDefinition Height="8*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" Text="Home>"  TextColor="{StaticResource lightTextColor}" HorizontalOptions="End" />
+                <ActivityIndicator Grid.Row="1" IsRunning="{Binding Source={x:Reference userphoto}, Path=IsLoading}" Color="White" 
+                               HorizontalOptions="Center" VerticalOptions="Center" />
+                <Image Grid.Row="1" x:Name="userphoto" Source="http://placekitten.com/400/300" Scale="0.8"
+                   HorizontalOptions="Center" VerticalOptions="Center" Aspect="AspectFill"/>
+                <Label Grid.Row="2" Text="User's name" Style="{StaticResource H2}"   HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Label Grid.Row="3" Text="4 Star" Style="{StaticResource H3}"  HorizontalOptions="Center" VerticalOptions="Center"/>
+
+
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="^"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Switch to agent" Style="{StaticResource H4}"
+                   HorizontalOptions="End" VerticalOptions="Center"/>
+                <Switch x:Name="switch"   Grid.Row="0" Grid.Column="2" IsToggled="{Binding IsAgent}"  HorizontalOptions="Start"/>
+                <Button Grid.Row="2" Grid.Column="1" Text="LOGOUT" Style="{StaticResource primaryButton}" 
+                    VerticalOptions="Start" HorizontalOptions="CenterAndExpand" Command="{Binding IsLogoutCommand}" />
+
+            </Grid>
+        </Grid>
+</ContentPage>
+
