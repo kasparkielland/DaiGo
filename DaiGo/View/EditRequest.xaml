@@ -12,30 +12,38 @@
                 </Frame.GestureRecognizers>
             </Frame>
             <Label Margin="0, 50, 0, 20" HorizontalOptions="End" Text="Preferences" Style="{StaticResource H1}" />
-            <Label Margin="30, 20, 0, 0" Text="Country" Style="{StaticResource H3}" TextColor="{StaticResource lightTextColor}" />
-            <Frame CornerRadius="30" HeightRequest="50" Padding="5" BackgroundColor="{StaticResource backgroundColor}">
-                <Label HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf054;" TextColor="{StaticResource darkTextColor}" FontSize="40" />
+            <Frame Margin="0, 40, 0, 0" CornerRadius="30" HeightRequest="50" Padding="5" BackgroundColor="{StaticResource backgroundColor}">
+                <StackLayout Orientation="Horizontal">
+                    <Label Margin="20, 0, 0, 0" HorizontalTextAlignment="Start" Text="Country" VerticalTextAlignment="Center" TextColor="{StaticResource darkTextColor}" FontSize="25" />
+                    <Label HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf054;" TextColor="{StaticResource userThemeColor}" FontSize="40" />
+                </StackLayout>
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding OnCountryFrameClicked}" />
                 </Frame.GestureRecognizers>
             </Frame>
-            <Label Margin="30, 20, 0, 0" Text="Price" Style="{StaticResource H3}" TextColor="{StaticResource lightTextColor}" />
-            <Frame CornerRadius="30" HeightRequest="50" Padding="5" BackgroundColor="{StaticResource backgroundColor}">
-                <Label HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf054;" TextColor="{StaticResource darkTextColor}" FontSize="40" />
+            <Frame Margin="0, 40, 0, 0" CornerRadius="30" HeightRequest="50" Padding="5" BackgroundColor="{StaticResource backgroundColor}">
+                <StackLayout Orientation="Horizontal">
+                    <Label Margin="20, 0, 0, 0" HorizontalTextAlignment="Start" Text="Price" VerticalTextAlignment="Center" TextColor="{StaticResource darkTextColor}" FontSize="25" />
+                    <Label HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf054;" TextColor="{StaticResource userThemeColor}" FontSize="40" />
+                </StackLayout>
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding OnPriceFrameClicked}" />
                 </Frame.GestureRecognizers>
             </Frame>
-            <Label Margin="30, 20, 0, 0" Text="Category" Style="{StaticResource H3}" TextColor="{StaticResource lightTextColor}" />
-            <Frame CornerRadius="30" HeightRequest="50" Padding="5" BackgroundColor="{StaticResource backgroundColor}">
-                <Label HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf054;" TextColor="{StaticResource darkTextColor}" FontSize="40" />
+            <Frame Margin="0, 40, 0, 0" CornerRadius="30" HeightRequest="50" Padding="5" BackgroundColor="{StaticResource backgroundColor}">
+                <StackLayout Orientation="Horizontal">
+                    <Label Margin="20, 0, 0, 0" HorizontalTextAlignment="Start" Text="Category" VerticalTextAlignment="Center" TextColor="{StaticResource darkTextColor}" FontSize="25" />
+                    <Label HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf054;" TextColor="{StaticResource userThemeColor}" FontSize="40" />
+                </StackLayout>
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding OnCategoryFrameClicked}" />
                 </Frame.GestureRecognizers>
             </Frame>
-            <Label Margin="30, 20, 0, 0" Text="Agent" Style="{StaticResource H3}" TextColor="{StaticResource lightTextColor}" />
-            <Frame CornerRadius="30" HeightRequest="50" Padding="5" BackgroundColor="{StaticResource backgroundColor}">
-                <Label HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf054;" TextColor="{StaticResource darkTextColor}" FontSize="40" />
+            <Frame Margin="0, 40, 0, 0" CornerRadius="30" HeightRequest="50" Padding="5" BackgroundColor="{StaticResource backgroundColor}">
+                <StackLayout Orientation="Horizontal">
+                    <Label Margin="20, 0, 0, 0" HorizontalTextAlignment="Start" Text="Agent" VerticalTextAlignment="Center" TextColor="{StaticResource darkTextColor}" FontSize="25" />
+                    <Label HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf054;" TextColor="{StaticResource userThemeColor}" FontSize="40" />
+                </StackLayout>
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding OnAgentFrameClicked}" />
                 </Frame.GestureRecognizers>
