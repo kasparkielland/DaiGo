@@ -4,18 +4,34 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="DaiGo.View.UserLoginPage">
+             x:Class="DaiGo.View.UserLoginPage"
+             BackgroundColor="{StaticResource userThemeColor}">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to DaiGo"
-                VerticalOptions="Center" 
-                HorizontalOptions="Center" />
-            <Label Text="Login"
-                FontSize="30" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Login"
+                FontSize="30"
+                TextColor="{StaticResource lightTextColor}" />
+                <StackLayout HorizontalOptions="End">
+                    <Label Text="Welcome to"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="End"
+                    Style="{StaticResource H1}"
+                    TextColor="{StaticResource darkTextColor}" />
+                    <Label Text="DaiGo"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource darkTextColor}" />
+                </StackLayout>
+            </StackLayout>
             <Entry Placeholder="E-mail" />
             <Entry Placeholder="Password"
-                IsPassword="True" />
-            <Label Text="Forgot password" />
+                IsPassword="True"
+                TextColor="{StaticResource lightTextColor}"
+                 PlaceholderColor="Black"
+                    />
+            <Label Text="Forgot password"
+                TextColor="{StaticResource lightTextColor}" />
             <StackLayout Orientation="Horizontal">
                 <Button
                     Text="SINGUP"
