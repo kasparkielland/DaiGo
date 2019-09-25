@@ -21,5 +21,13 @@ namespace DaiGo.View
             await Navigation.PopToRootAsync(false);
         }
 
+        async void OnActivateAgentView(object sender, EventArgs args)
+        {
+            // Do logout procydure
+
+            // Go to firstpage
+            await Navigation.PopToRootAsync(false);
+        }
+
     }
 }

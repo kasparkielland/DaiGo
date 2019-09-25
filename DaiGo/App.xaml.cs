@@ -27,5 +27,7 @@ namespace DaiGo
         {
             // Handle when your app resumes
         }
+
+
     }
 }

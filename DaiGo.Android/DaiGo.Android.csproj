@@ -71,14 +71,6 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
-    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-80x80.png" />
-    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-1024x1024.png" />
-    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-58x58.png" />
-    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-60x60.png" />
-    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-120x120.png" />
-    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-87x87.png" />
-    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-40x40.png" />
-    <None Include="Resources\drawable\AppIcon\DaiGo_Logo-180x180.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.xml" />
@@ -101,10 +93,6 @@
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable\QuickAccessUserRed.png">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
     <AndroidResource Include="Resources\drawable\SearchAreaBackgroundUserRed.png">
       <SubType></SubType>
       <Generator></Generator>
@@ -113,15 +101,15 @@
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable\daigoLogo.png">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
     <AndroidResource Include="Resources\drawable\MessageIconBlack.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\LogoutButton.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\DaiGo_Logo.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
@@ -140,6 +128,11 @@
       <Project>{3E7DE937-8F92-4EF9-9EAD-D315AB69205B}</Project>
       <Name>DaiGo</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\FontAwesome5Brands.otf" />
+    <AndroidAsset Include="Assets\FontAwesome5Regular.otf" />
+    <AndroidAsset Include="Assets\FontAwesome5Solid.otf" />
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

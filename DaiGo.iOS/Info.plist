@@ -34,5 +34,13 @@
 	<string>DaiGo</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>FontAwesome5Brands.ttf</string>
+		<string>FontAwesome5Regular.ttf</string>
+		<string>FontAwesome5Solid.ttf</string>
+	</array>
+	<key>XSLaunchImageAssets</key>
+	<string>Assets.xcassets/LaunchImage.launchimage</string>
 </dict>
 </plist>

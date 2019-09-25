@@ -16,17 +16,17 @@ namespace DaiGo.View
         {
             await Navigation.PushAsync(new UserProfile());
         }
-        //async void OnMessageIconButtonClicked(object sender, EventArgs args)
-        //{
-        //    await DisplayAlert("Cicked", "Searching...", "OK");
-        //}
-        //async void OnQuickAccessButtonClicked(object sender, EventArgs args)
-        //{
-        //    await DisplayAlert("Cicked", "Searching...", "OK");
-        //}
-        //async void OnSearchButtonClicked(object sender, EventArgs args)
-        //{
-        //    await DisplayAlert("Cicked", "Searching...", "OK");
-        //}
+        async void OnMessageIconButtonClicked(object sender, EventArgs args)
+        {
+            await DisplayAlert("Clicked on messageIcon", "...", "OK");
+        }
+        async void OnQuickAccessFrameClicked(object sender, EventArgs args)
+        {
+            await DisplayAlert("Clicked on QA", "...", "OK");
+        }
+        async void OnSearchButtonClicked(object sender, EventArgs args)
+        {
+            await DisplayAlert("Clicked", "Searching...", "OK");
+        }
     }
 }
