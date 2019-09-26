@@ -28,7 +28,7 @@
 
         <StackLayout Grid.Row="1" Orientation="Vertical" Padding="40" >
             <Label Style="{StaticResource H1}" Text="We will be in touch with all appropriate agents"/>
-            <Button Text="GO HOME" Style="{StaticResource primaryButton}" Command="{Binding OpenWebCommand}" VerticalOptions="End"/>
+            <Button Text="GO HOME" Margin="50,0,50,0"  Style="{StaticResource secondaryButton}" Command="{Binding OpenWebCommand}" VerticalOptions="EndAndExpand"/>
         </StackLayout>
 
     </Grid>

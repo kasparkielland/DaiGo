@@ -7,12 +7,24 @@
              x:Class="DaiGo.Views.ItemDetailPage"
              Title="{Binding Title}">
 
+    
+        <StackLayout Padding="40" BackgroundColor="{StaticResource agentThemeColor}">
+        
+        <Label Text="Description" Style="{StaticResource H1}" TextColor="{StaticResource darkTextColor}" 
+               VerticalOptions="EndAndExpand" HorizontalOptions="End" />
+        <Frame CornerRadius="50" BackgroundColor="{StaticResource lightTextColor}">
+            <Label Text="{Binding Item.Description}" d:Text="Description" 
+               Style="{StaticResource H4}" />
+        </Frame>
+        <Label Text="Offer Price" Style="{StaticResource H1}" TextColor="{StaticResource darkTextColor}" 
+               VerticalOptions="EndAndExpand" HorizontalOptions="End" />
+        <Frame CornerRadius="50" BackgroundColor="{StaticResource lightTextColor}" >
+            <Label Text="{Binding Item.Text}" d:Text="User's offer"   
+               Style="{StaticResource H4}" />
+        </Frame>
+        <Button Text="Send Quote" Margin="50,0,50,0" Style="{StaticResource primaryButton}" VerticalOptions="EndAndExpand"/>
+
+        </StackLayout>
    
-    <StackLayout Padding="40" BackgroundColor="{StaticResource agentThemeColor}">
-        <Label Text="Description" Style="{StaticResource H2}" TextColor="{StaticResource darkTextColor}" VerticalOptions="Center" HorizontalOptions="End" />
-        <Label Text="{Binding Item.Description}" d:Text="Description"  Style="{StaticResource H4}" BackgroundColor="{StaticResource lightTextColor}"/>
-        <Label Text="Offer Price" Style="{StaticResource H2}" TextColor="{StaticResource darkTextColor}" VerticalOptions="Center" HorizontalOptions="End" />
-        <Label Text="{Binding Item.Text}" d:Text="User's offer"    Style="{StaticResource H4}" BackgroundColor="{StaticResource lightTextColor}"/>
-        <Button Text="Send Quote" Style="{StaticResource primaryButton}" VerticalOptions="EndAndExpand"/>
-    </StackLayout>
+
 </ContentPage>
