@@ -36,18 +36,19 @@
                 <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" Glyph="&#xf01c;" Size="44" Color="{StaticResource userThemeColor}" />
             </ImageButton.Source>
         </ImageButton>
-        <Label Margin="50, 0, 50, 0" Grid.Row="1" Grid.ColumnSpan="3" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="Good morning, Mr. Obama" FontSize="Title" TextColor="{StaticResource darkTextColor}" LineBreakMode="WordWrap" />
+        <Label x:Name="PersonalMessageLabel" Margin="50, 0, 50, 0" Grid.Row="1" Grid.ColumnSpan="3" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="Good morning, Mr. Obama" FontSize="Title" TextColor="{StaticResource darkTextColor}" LineBreakMode="WordWrap" />
         <Frame Margin="20, 0, 20, 0" Grid.Row="2" Grid.ColumnSpan="3" BackgroundColor="{StaticResource userThemeColor}" CornerRadius="50" HasShadow="False">
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnQuickAccessFrameClicked" />
             </Frame.GestureRecognizers>
-            <StackLayout>
-                <Label Margin="50, 0, 70, 0" Grid.Row="1" Grid.ColumnSpan="3" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="You are up to date!" FontSize="Title" LineBreakMode="WordWrap" TextColor="{StaticResource lightTextColor}" />
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="QuickAccessLabel" Margin="50, 0, 70, 0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="You are up to date!" FontSize="Title" LineBreakMode="WordWrap" TextColor="{StaticResource lightTextColor}" />
+                <Label x:Name="QuickAccessSymbol" HorizontalOptions="Center" VerticalOptions="Center" Text="&#xf054;" FontSize="40" FontFamily="{StaticResource FontAwesomeSolid}" TextColor="{StaticResource lightTextColor}" />
             </StackLayout>
         </Frame>
         <Frame x:Name="backgroundTab" Margin="0, 100, 0, -100" Grid.Row="3" Grid.ColumnSpan="3" BackgroundColor="{StaticResource userThemeColor}" CornerRadius="50">
             <StackLayout>
-                <Entry Style="{StaticResource entryField}" Margin="10, 0, 10, 40" Grid.Row="2" Grid.ColumnSpan="3" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="1000" Placeholder="What are you looking for?" Keyboard="Text" ReturnType="Search" Completed="OnSearchButtonClicked" />
+                <Entry x:Name="ItemEntry" Style="{StaticResource entryField}" Margin="10, 0, 10, 40" Grid.Row="2" Grid.ColumnSpan="3" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="1000" Placeholder="What are you looking for?" Keyboard="Text" ReturnType="Search" Completed="OnSearchButtonClicked" />
                 <Button Margin="90, 0, 90, 100" VerticalOptions="EndAndExpand" Style="{StaticResource primaryButton}" Text="SEARCH" CornerRadius="25" Clicked="OnSearchButtonClicked" />
             </StackLayout>
         </Frame>
