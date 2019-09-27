@@ -14,8 +14,7 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.3.0" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
-    <Folder Include="Helpers\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="View\HomeScreen_User.xaml" />

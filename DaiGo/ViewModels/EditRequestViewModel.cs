@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections.ObjectModel;
+using DaiGo.Models;
+using DaiGo.Views;
+
 namespace DaiGo.ViewModel
 {
-    public class EditRequestViewModell
+    public class EditRequestViewModel
     {
-        public EditRequestViewModell()
-        {
 
-
-        }
     }
+
 }
