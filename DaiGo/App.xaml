@@ -7,38 +7,35 @@
              x:Class="DaiGo.App">
     <Application.Resources>
         <Color x:Key="backgroundColor">#E2E1DF</Color>
+        <Color x:Key="lightgrayColor">#E2E1DF</Color>
+        <Color x:Key="darkgrayColor">#E2E1DF</Color>
+        <Color x:Key="blackgrayColor">#E2E1DF</Color>
         <Color x:Key="userThemeColor">#E64448</Color>
+        <Color x:Key="userThemeColor1">#EAB224</Color>
+
         <Color x:Key="agentThemeColor">#30AAB3</Color>
+        <Color x:Key="agentThemeColor1">#89C5C7</Color>
+        <Color x:Key="agentThemeColor2">#0B354B</Color>
 
         <Color x:Key="lightTextColor">#E2E1DF</Color>
         <Color x:Key="darkTextColor">#24292C</Color>
 
-        <Style x:Key="H1"
-               TargetType="Label">
+        <Style x:Key="H1" TargetType="Label">
             <Setter Property="TextColor"
                     Value="{StaticResource darkTextColor}" />
             <Setter Property="FontFamily"
-                    Value="Arial" />
+                    Value="Arial Regular" />
             <Setter Property="FontSize"
                     Value="Title" />
         </Style>
-        <Style x:Key="H2"
-               TargetType="Label"
-               BasedOn="{StaticResource H1}">
-            <Setter Property="FontSize"
-                    Value="Subtitle" />
+        <Style x:Key="H2" TargetType="Label" BasedOn="{StaticResource H1}">
+            <Setter Property="FontSize" Value="Subtitle" />
         </Style>
-        <Style x:Key="H3"
-               TargetType="Label"
-               BasedOn="{StaticResource H1}">
-            <Setter Property="FontSize"
-                    Value="Large" />
+        <Style x:Key="H3" TargetType="Label" BasedOn="{StaticResource H1}">
+            <Setter Property="FontSize" Value="Large" />
         </Style>
-        <Style x:Key="H4"
-               TargetType="Label"
-               BasedOn="{StaticResource H1}">
-            <Setter Property="FontSize"
-                    Value="Default" />
+        <Style x:Key="H4" TargetType="Label" BasedOn="{StaticResource H1}">
+            <Setter Property="FontSize" Value="Default" />
         </Style>
 
         <Style x:Key="primaryButton"

@@ -7,20 +7,15 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace DaiGo.View
+namespace DaiGo.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SignUpSuccess : ContentPage
+    public partial class UserIdentityPage : ContentPage
     {
-        public SignUpSuccess()
+        public UserIdentityPage()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-
-        }
-        async void OnLoginButtonClicked(object sender, EventArgs args)
-        {
-            await Navigation.PopToRootAsync(false);
 
         }
     }

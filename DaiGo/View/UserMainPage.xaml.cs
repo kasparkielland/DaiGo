@@ -14,7 +14,7 @@ namespace DaiGo.View
         }
         async void OnProfileIconButtonClicked(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new UserProfile());
+            //await Navigation.PushAsync(new UserIdentityPage());
         }
         async void OnMessageIconButtonClicked(object sender, EventArgs args)
         {
