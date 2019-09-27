@@ -13,5 +13,15 @@ namespace DaiGo.View
             NavigationPage.SetHasNavigationBar(this, false);
 
         }
+        async void OnGoBackButtonClicked(object sender, EventArgs args)
+        {
+            await Navigation.PopAsync();
+        }
+        async void OnSendRequestButtonClicked(object sender, EventArgs args)
+        {
+
+        }
     }
 }
+
+

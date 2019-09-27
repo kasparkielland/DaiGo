@@ -1,14 +1,30 @@
-﻿namespace DaiGo.Model
+﻿using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
+
+namespace DaiGo.Models.RequestModel
 {
     public class RequestModel { }
 
-    public class Request
+    public class Request : INotifyCompletion
     {
-        private int requestID, userID, agentID;
-        private double minPrice, maxPrice;
-        private string country, description;
+        public event PropertyChangedEventHandler PropertyChanged;
 
-        public int RequestID
+        // This method is called by the Set accessor of each property.  
+        // The CallerMemberName attribute that is applied to the optional propertyName  
+        // parameter causes the property name of the caller to be substituted as an argument.  
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+
+        private Guid requestID = new Guid(), userID = new Guid(), agentID = new Guid();
+        private double minPrice, maxPrice;
+        private string country = String.Empty, description = String.Empty;
+
+        public Guid RequestID
         {
             get
             {
@@ -19,11 +35,12 @@
                 if (requestID != value)
                 {
                     requestID = value;
+                    NotifyPropertyChanged();
                 }
             }
         }
 
-        public int UserID
+        public Guid UserID
         {
             get
             {
@@ -34,11 +51,12 @@
                 if (userID != value)
                 {
                     userID = value;
+                    NotifyPropertyChanged();
                 }
             }
         }
 
-        public int AgentID
+        public Guid AgentID
         {
             get
             {
@@ -49,6 +67,7 @@
                 if (agentID != value)
                 {
                     agentID = value;
+                    NotifyPropertyChanged();
                 }
             }
         }
@@ -64,6 +83,7 @@
                 if (minPrice != value)
                 {
                     minPrice = value;
+                    NotifyPropertyChanged();
                 }
             }
         }
@@ -79,6 +99,7 @@
                 if (maxPrice != value)
                 {
                     maxPrice = value;
+                    NotifyPropertyChanged();
                 }
             }
         }
@@ -94,6 +115,7 @@
                 if (country != value)
                 {
                     country = value;
+                    NotifyPropertyChanged();
                 }
             }
         }
@@ -109,8 +131,14 @@
                 if (description != value)
                 {
                     description = value;
+                    NotifyPropertyChanged();
                 }
             }
+        }
+
+        public void OnCompleted(Action continuation)
+        {
+            throw new NotImplementedException();
         }
     }
 }
