@@ -15,6 +15,8 @@ namespace DaiGo.View
         public AgentIdentifyPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+
         }
     }
 }

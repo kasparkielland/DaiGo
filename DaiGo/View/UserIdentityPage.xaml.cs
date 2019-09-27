@@ -15,6 +15,8 @@ namespace DaiGo.Views
         public UserIdentityPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+
         }
     }
 }

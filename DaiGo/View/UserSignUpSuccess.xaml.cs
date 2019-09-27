@@ -15,6 +15,8 @@ namespace DaiGo.View
         public SignUpSuccess()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+
         }
         async void OnLoginButtonClicked(object sender, EventArgs args)
         {

@@ -5,6 +5,7 @@ namespace DaiGo.ViewModel
     {
         public EditRequestViewModell()
         {
+
         }
     }
 }

@@ -14,6 +14,8 @@ namespace DaiGo.View
         public UserLoginPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+
         }
 
         async void OnSignupButtonClicked(object sender, EventArgs args)
@@ -25,7 +27,7 @@ namespace DaiGo.View
         {
             // Do login sequense
 
-            
+
             // Go to UserMainPage
             await Navigation.PushAsync(new UserMainPage());
         }

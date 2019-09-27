@@ -13,7 +13,7 @@
             </Frame>
             <Label Margin="0, 50, 0, 20" HorizontalOptions="End" Text="Preferences" Style="{StaticResource H1}" />
             <Label Margin="20, 0, 0, 0" HorizontalTextAlignment="Start" Text="Country" VerticalTextAlignment="Center" TextColor="{StaticResource lightTextColor}" FontSize="25" />
-            <Picker x:Name="CountryPicker" class="CountryPicker" Margin="0, 0, 0, 20" Title="Select preferred reseller location" BackgroundColor="{StaticResource backgroundColor}">
+            <Picker x:Name="CountryPicker" Margin="0, 0, 0, 20" Title="Select preferred reseller location" BackgroundColor="{StaticResource backgroundColor}">
                 <!--
                 <StackLayout Orientation="Horizontal">
                     <Label HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf078;" TextColor="{StaticResource userThemeColor}" FontSize="40" />

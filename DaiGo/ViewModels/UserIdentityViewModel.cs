@@ -6,6 +6,6 @@ namespace DaiGo.ViewModels
 {
     class UserIdentityViewModel
     {
-        Title = "UserIdentity";
+        //Title = "UserIdentity";
     }
 }
