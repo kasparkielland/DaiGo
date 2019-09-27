@@ -23,6 +23,9 @@
     <EmbeddedResource Remove="View\HomeScreen_UserMaster.xaml" />
     <EmbeddedResource Remove="View\USer.xaml" />
     <EmbeddedResource Remove="View\UserMainScreen.xaml" />
+    <EmbeddedResource Remove="View\ItemDetailPage.xaml" />
+    <EmbeddedResource Remove="View\ItemsPage.xaml" />
+    <EmbeddedResource Remove="View\NewItemPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="View\HomeScreen_User.xaml.cs" />
@@ -31,14 +34,17 @@
     <Compile Remove="View\HomeScreen_UserMenuItem.cs" />
     <Compile Remove="View\USer.xaml.cs" />
     <Compile Remove="View\UserMainScreen.xaml.cs" />
-    <Compile Remove="ViewModels\EditRequestViewModel.cs" />
+    <Compile Remove="ViewModel\EditRequestViewModel.cs" />
+    <Compile Remove="View\AboutPage2.xaml.cs" />
+    <Compile Remove="View\ItemDetailPage.xaml.cs" />
+    <Compile Remove="View\ItemsPage.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="View\.DS_Store" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Update="View\AgentIdentifyPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
+    <Reference Include="CountryPickerBind">
+      <HintPath>..\..\..\Downloads\PickerSample-master\CountryPickerBind\CountryPickerBind\bin\Debug\CountryPickerBind.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>
