@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DaiGo.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,11 @@ namespace DaiGo.Views
         public UserIdentityPage()
         {
             InitializeComponent();
+        }
+
+        private void Switch_Toggled(object sender, ToggledEventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new AgentIdentityPage());
         }
     }
 }

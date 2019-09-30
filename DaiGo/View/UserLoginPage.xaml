@@ -5,14 +5,18 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="DaiGo.View.UserLoginPage"
-             BackgroundColor="{StaticResource userThemeColor}">
-    <ContentPage.Content>
-        <StackLayout>
+             BackgroundColor="{StaticResource userThemeColor}"
+             NavigationPage.HasNavigationBar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*" />
+            <RowDefinition Height="45*" />
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="0">
             <StackLayout Orientation="Horizontal">
-                <Label Text="Login"
-                FontSize="30"
-                TextColor="{StaticResource lightTextColor}" />
-                <StackLayout HorizontalOptions="End">
+                <Label Text="Login" Style="{StaticResource H1}" VerticalOptions="End"                
+                    TextColor="{StaticResource lightTextColor}" />
+                <StackLayout Orientation="Vertical"   HorizontalOptions="EndAndExpand">
                     <Label Text="Welcome to"
                     VerticalOptions="Center" 
                     HorizontalOptions="End"
@@ -21,7 +25,7 @@
                     <Label Text="DaiGo"
                     VerticalOptions="Center" 
                     HorizontalOptions="End"
-                    TextColor="{StaticResource darkTextColor}" />
+                    TextColor="{StaticResource darkTextColor}"  Style="{StaticResource H1}" FontAttributes="Bold"/>
                 </StackLayout>
             </StackLayout>
             <Entry Placeholder="E-mail" />
@@ -30,24 +34,32 @@
                 TextColor="{StaticResource lightTextColor}"
                  PlaceholderColor="Black"
                     />
-            <Label Text="Forgot password"
-                TextColor="{StaticResource lightTextColor}" />
-            <StackLayout Orientation="Horizontal">
+            <Label Text="Forgot password?"
+                TextColor="{StaticResource lightTextColor}" FontSize="Micro" HorizontalOptions="End" />
+            <Button Text="Login as Agent" BackgroundColor="{StaticResource userThemeColor}" Clicked="Button_Clicked"
+                TextColor="{StaticResource agentThemeColor}" FontSize="Micro" HorizontalOptions="End" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="20" Spacing="10">
                 <Button
                     Text="SINGUP"
-                    BackgroundColor="White"
-                    BorderRadius="10"
-                    HorizontalOptions="Center"
+                    
+                    Style="{StaticResource primaryButton}"
+                    
                     Clicked="OnSignupButtonClicked"
                     />
                 <Button
                     Text="LOGIN"
-                    BackgroundColor="White"
-                    BorderRadius="10"
-                    HorizontalOptions="Center"
+                    Style="{StaticResource secondaryButton}"
                     Clicked="OnLoginButtonClicked"
                     />
             </StackLayout>
         </StackLayout>
-    </ContentPage.Content>
+        <StackLayout Grid.Row="1" HorizontalOptions="Center" Padding="40" BackgroundColor="{StaticResource backgroundColor}">
+            <Label Text="Do you know that you will save up to 70% if you are buying from the right agent in the right market?" 
+                   Style="{StaticResource H2}" TextColor="{StaticResource darkTextColor}" />
+            <Label Text="It is as easy as 1, 2, 3..." TextColor="{StaticResource darkTextColor}" 
+                   Style="{StaticResource H2}"/>
+            <Label Text="DaiGo" Style="{StaticResource H1}" TextColor="{StaticResource userThemeColor}" VerticalOptions="EndAndExpand"
+                   HorizontalOptions="Center"/>
+        </StackLayout>
+    </Grid>
 </ContentPage>

@@ -1,198 +1,29 @@
-﻿using System;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using DaiGo.Models;
+﻿using DaiGo.View;
 using DaiGo.Views;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
-
 
 namespace DaiGo.ViewModels
 {
-    public class EditRequestViewModel
+    class EditRequestViewModel:BaseViewModel
     {
+        public ICommand GoAbout2Command { get; }
+        public ICommand GoUserMainCommand { get; }
         public EditRequestViewModel()
         {
-            OnRequestButtonClicked = new Command(async () => await SaveRequest(),
-                                                () => !isBusy);
-
+            this.GoAbout2Command = new Command(SendRequestClicked);
+            this.GoUserMainCommand = new Command(BackClicked);
         }
-
-
-        int requestID;
-        string subject;
-        string country;
-        string category;
-        int minPrice;
-        int maxPrice;
-        string description;
-        int userID;
-        bool isBusy;
-
-        public int RequestID
+        void SendRequestClicked()
         {
-            get
-            {
-                return requestID;
-            }
-            set
-            {
-                requestID = value;
-            }
+            Application.Current.MainPage = new NavigationPage(new About2Page());
         }
-        public string Subject
+        void BackClicked()
         {
-            get
-            {
-                return subject;
-            }
-            set
-            {
-                subject = value;
-            }
+            Application.Current.MainPage = new NavigationPage(new UserMainPage());
         }
-        public string Country
-        {
-            get
-            {
-                return country;
-            }
-            set
-            {
-                country = value;
-            }
-=======
-namespace DaiGo.ViewModel
-{
-    public class EditRequestViewModell
-    {
-        public EditRequestViewModell()
-        {
->>>>>>> parent of 7cae416... I have change Agent Page and related message page
-        }
-        public string Category
-        {
-            get
-            {
-                return category;
-            }
-            set
-            {
-                category = value;
-            }
-        }
-        public int MinPrice
-        {
-            get
-            {
-                return minPrice;
-            }
-            set
-            {
-                minPrice = value;
-            }
-        }
-        public int MaxPrice
-        {
-            get
-            {
-                return maxPrice;
-            }
-            set
-            {
-                maxPrice = value;
-            }
-        }
-        public string Description
-        {
-            get
-            {
-                return description;
-            }
-            set
-            {
-                description = value;
-            }
-=======
-namespace DaiGo.ViewModel
-{
-    public class EditRequestViewModell
-    {
-        public EditRequestViewModell()
-        {
->>>>>>> parent of 7cae416... I have change Agent Page and related message page
-        }
-        public int UserID
-        {
-            get
-            {
-                return userID;
-            }
-            set
-            {
-                userID = value;
-            }
-        }
-        public bool IsBusy
-        {
-            get
-            {
-                return isBusy;
-            }
-            set
-            {
-                isBusy = value;
-                OnRequestButtonClicked.ChangeCanExecute();
-            }
-=======
-namespace DaiGo.ViewModel
-{
-    public class EditRequestViewModell
-    {
-        public EditRequestViewModell()
-        {
->>>>>>> parent of 7cae416... I have change Agent Page and related message page
-        }
-
-        public Command OnRequestButtonClicked
-        {
-            get;
-        }
-
-        async Task SaveRequest()
-        {
-            IsBusy = true;
-
-            await App.Database.SaveUserRequestAsync(new UserRequst
-            {
-                RequestID = RequestID++,
-                Country = Country,
-                Category = Category,
-                minPrice = MinPrice,
-                maxPrice = MaxPrice,
-                Description = Description
-            });
-
-            IsBusy = false;
-
-
-=======
-namespace DaiGo.ViewModel
-{
-    public class EditRequestViewModell
-    {
-        public EditRequestViewModell()
-        {
->>>>>>> parent of 7cae416... I have change Agent Page and related message page
-        }
-
     }
-
 }

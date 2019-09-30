@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DaiGo.Views;
+using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
 
@@ -9,24 +10,28 @@ namespace DaiGo.View
         public UserMainPage()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
-            Navigation.PopAsync();
+           
         }
-        async void OnProfileIconButtonClicked(object sender, EventArgs args)
-        {
-            await Navigation.PushAsync(new UserProfile());
-        }
-        async void OnMessageIconButtonClicked(object sender, EventArgs args)
-        {
-            await DisplayAlert("Clicked on messageIcon", "...", "OK");
-        }
+       
+        
         async void OnQuickAccessFrameClicked(object sender, EventArgs args)
         {
-            await DisplayAlert("Clicked on QA", "...", "OK");
+            await Navigation.PushAsync(new UserMessagePage());
         }
-        async void OnSearchButtonClicked(object sender, EventArgs args)
+
+        private void Entry_Completed(object sender, EventArgs e)
         {
-            await DisplayAlert("Clicked", "Searching...", "OK");
+
+        }
+
+        private void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new UserIdentityPage());
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new UserMessagePage());
         }
     }
 }

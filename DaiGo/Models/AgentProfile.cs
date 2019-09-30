@@ -1,17 +1,15 @@
 ﻿using System;
-using SQLite;
+using System.Collections.Generic;
+using System.Text;
+
 namespace DaiGo.Models
 {
-    public class AgentProfile
+    class AgentInfo
     {
-        [PrimaryKey, AutoIncrement]
-        public int AgentID { get; set; }
-        public int UserID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public double Rating { get; set; }
-
+        public string AgentId { get; set; }
+        public string Agentname { get; set; }
+        public string AgentEmail { get; set; }
+        public string AgentFirstName { get; set; }
+        public string AgentLastName { get; set; }
     }
 }

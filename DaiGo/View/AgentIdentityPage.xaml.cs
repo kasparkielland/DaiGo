@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DaiGo.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,18 +11,16 @@ using Xamarin.Forms.Xaml;
 namespace DaiGo.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SignUpSuccess : ContentPage
+    public partial class AgentIdentityPage : ContentPage
     {
-        public SignUpSuccess()
+        public AgentIdentityPage()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
-
         }
-        async void OnLoginButtonClicked(object sender, EventArgs args)
-        {
-            await Navigation.PopToRootAsync(false);
 
+        private void Switch_Toggled(object sender, ToggledEventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new UserIdentityPage());
         }
     }
 }

@@ -10,11 +10,16 @@ using Xamarin.Forms.Xaml;
 namespace DaiGo.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AgentIdentifyPage : ContentPage
+    public partial class SignUpSuccess : ContentPage
     {
-        public AgentIdentifyPage()
+        public SignUpSuccess()
         {
             InitializeComponent();
+        }
+        async void OnLoginButtonClicked(object sender, EventArgs args)
+        {
+            await Navigation.PopToRootAsync(false);
+
         }
     }
 }

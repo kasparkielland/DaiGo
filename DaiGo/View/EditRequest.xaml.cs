@@ -18,7 +18,7 @@ namespace DaiGo.View
         {
             await Navigation.PopAsync();
         }
-        async void OnSendRequestButtonClicked(object sender, EventArgs args)
+        void OnSendRequestButtonClicked(object sender, EventArgs args)
         {
 
         }

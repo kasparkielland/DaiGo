@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage NavigationPage.HasNavigationBar="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -8,30 +9,44 @@
              Title="{Binding Title}"
              x:Name="BrowseItemsPage">
 
-    <ContentPage.ToolbarItems>
+    <!--ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="MessageIconBlack.png" Clicked="AddItem_Clicked" />
-    </ContentPage.ToolbarItems>
+    </-->
     <Grid BackgroundColor="{StaticResource backgroundColor }">
         <Grid.RowDefinitions>
-            <RowDefinition Height="45*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="40*" />
             <RowDefinition Height="55*" />
         </Grid.RowDefinitions>
-
-        <StackLayout Grid.Row="0" Padding="40" HorizontalOptions="Center">
+        
+            <ImageButton Margin="20, 0, 0, 0" Grid.Row="0"  HorizontalOptions="Start" 
+                         Command="{Binding GoAgentProfileCommand}">
+                <ImageButton.Source>
+                    <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" Glyph="&#xf2bd;" Size="44" 
+                                     Color="{StaticResource agentThemeColor}" />
+                </ImageButton.Source>
+            </ImageButton>
+            <ImageButton Margin="0, 0, 20, 0" Grid.Row="0" HorizontalOptions="End"  Command="{Binding GoAgentMessageCommand}" >
+                <ImageButton.Source>
+                    <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" Glyph="&#xf01c;" Size="44" Color="{StaticResource agentThemeColor}" />
+                </ImageButton.Source>
+                </ImageButton>
+       
+        <StackLayout Grid.Row="1" Padding="40" HorizontalOptions="Center">
             <Label/>
             <Label Text="Good Evening," Style="{StaticResource H1}"  
                    TextColor="{StaticResource darkTextColor}" />
             <Label Text="Agent Obama" Style="{StaticResource H1}"  
                    TextColor="{StaticResource darkTextColor}" />
             <Label/>
-            <Button Text="You have 5 new notification>"  Style="{StaticResource primaryButton }" TextColor="{StaticResource lightTextColor}"
-                Clicked="Button_Clicked" CornerRadius="30" BackgroundColor="{StaticResource agentThemeColor}" VerticalOptions="CenterAndExpand"
+            <Button Text="You have 2 new notification>"  Style="{StaticResource primaryButton }" TextColor="{StaticResource lightTextColor}"
+                Command="{Binding GoAgentMessageCommand}" CornerRadius="30" BackgroundColor="{StaticResource agentThemeColor}" VerticalOptions="CenterAndExpand"
                     HeightRequest="100" />
             <Label/>
             <Label Text="Recent Request" Style="{StaticResource H1}" TextColor="{StaticResource darkTextColor}"
                 HorizontalOptions="End" LineBreakMode="WordWrap"/>
         </StackLayout>
-        <StackLayout Grid.Row="1" Padding="40"  >
+        <StackLayout Grid.Row="2" Padding="40"  >
             <ScrollView>
             <ListView x:Name="ItemsListView" 
                     ItemsSource="{Binding Items}"
@@ -57,10 +72,10 @@
                             <StackLayout>
                                 <StackLayout Orientation="Horizontal" Padding="5" BackgroundColor="White" >
                                     <StackLayout HorizontalOptions="StartAndExpand">
-                                        <Label Text="{Binding Text}" d:Text="{Binding .}"/>
+                                        <Label Text="{Binding Request}" d:Text="{Binding .}"/>
                                         <Label Text="{Binding Description}" d:Text="Item description"/>
                                     </StackLayout>
-                                    <Label Text="Offer" VerticalOptions="Center"/>
+                                    <Label Text="{Binding Offer}" d:Text="Offer" VerticalOptions="Center"/>
                                 </StackLayout>
                                 <Label HeightRequest="10"/>
                             </StackLayout>
