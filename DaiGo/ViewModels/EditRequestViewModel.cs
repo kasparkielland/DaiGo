@@ -152,6 +152,8 @@ namespace DaiGo.ViewModels
                 Description = Description
             });
 
+            Application.Current.
+
             IsBusy = false;
 
 
