@@ -10,6 +10,7 @@ namespace DaiGo.ViewModels
 {
     class UserMainViewModel : BaseViewModel
     {
+
         public ICommand GoEditRequestCommand { get; }
         public ICommand GoProfileCommand { get; }
         public ICommand GoMessageCommand { get; }

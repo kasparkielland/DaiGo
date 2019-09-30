@@ -42,11 +42,11 @@
         <Label Margin="50, 0, 50, 0" Grid.Row="1" Grid.ColumnSpan="3" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="Good morning, Mr. Obama" FontSize="Title" TextColor="{StaticResource darkTextColor}" LineBreakMode="WordWrap" />
         <Frame Margin="20, 0, 20, 0" Grid.Row="2" Grid.ColumnSpan="3" BackgroundColor="{StaticResource userThemeColor}" CornerRadius="50" HasShadow="False">
             <Frame.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnQuickAccessFrameClicked" />
+                <TapGestureRecognizer Tapped="Button_Clicked" />
             </Frame.GestureRecognizers>
-            <StackLayout>
-                <Button Text="You have 2 new messages>" Style="{StaticResource primaryButton }" TextColor="{StaticResource lightTextColor}" Clicked="Button_Clicked" CornerRadius="30" BackgroundColor="{StaticResource userThemeColor}" VerticalOptions="CenterAndExpand" HeightRequest="100" />
-
+            <StackLayout Orientation="Horizontal">
+                <Button Text="You have 2 new messages" Style="{StaticResource primaryButton }" TextColor="{StaticResource lightTextColor}" Clicked="Button_Clicked" CornerRadius="30" BackgroundColor="{StaticResource userThemeColor}" VerticalOptions="CenterAndExpand" HeightRequest="100" Margin="0, 0, 20, 0" />
+                <Label FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf2bd;" FontSize="40" TextColor="{StaticResource lightTextColor}" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" />
             </StackLayout>
         </Frame>
         <Frame x:Name="backgroundTab" Margin="0, 100, 0, -100" Grid.Row="3" Grid.ColumnSpan="3" BackgroundColor="{StaticResource userThemeColor}" CornerRadius="50">
