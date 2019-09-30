@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DaiGo.View.EditRequest" BackgroundColor="{StaticResource userThemeColor}">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DaiGo.Views.EditRequest" BackgroundColor="{StaticResource userThemeColor}">
     <ContentPage.Content>
-        <StackLayout Margin="20, 35, 20, 30">
+        <StackLayout Margin="20, 35, 20, 30" x:Name="EditRequestView">
             <Frame Margin="0, 0, 200, 0" BackgroundColor="{StaticResource userThemeColor}" HasShadow="False" Padding="2">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
                     <Label FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf053;" TextColor="{StaticResource lightTextColor}" FontAttributes="Bold" FontSize="Subtitle" />
                     <Label HorizontalOptions="StartAndExpand" Text="Go back" TextColor="{StaticResource lightTextColor}" FontAttributes="Bold" FontSize="Subtitle" />
                 </StackLayout>
                 <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding OnCountryFrameClicked}" />
+                    <TapGestureRecognizer Command="{Binding OnGoBackFrameClicked}" />
                 </Frame.GestureRecognizers>
             </Frame>
             <Label Margin="0, 50, 0, 20" HorizontalOptions="End" Text="Preferences" Style="{StaticResource H1}" />
@@ -33,10 +33,10 @@
                     <ColumnDefinition Width="0.8*" />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="End" Text="Min:" VerticalTextAlignment="Center" TextColor="{StaticResource lightTextColor}" FontSize="20" />
-                <Entry x:Name="MinPriceEntry" Grid.Row="0" Grid.Column="1" VerticalOptions="CenterAndExpand" BackgroundColor="{StaticResource backgroundColor}" Placeholder="Enter lower price value" Keyboard="Numeric">
+                <Entry x:Name="MinPriceEntry" Grid.Row="0" Grid.Column="1" VerticalOptions="CenterAndExpand" BackgroundColor="{StaticResource backgroundColor}" Placeholder="Enter lower price value" Keyboard="Numeric" Text="{Binding MinPrice}">
                 </Entry>
                 <Label Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="End" Text="Max:" VerticalTextAlignment="Center" TextColor="{StaticResource lightTextColor}" FontSize="20" />
-                <Entry x:Name="MaxPriceEntry" Grid.Row="1" Grid.Column="1" VerticalOptions="CenterAndExpand" BackgroundColor="{StaticResource backgroundColor}" Placeholder="Enter upper price value" Keyboard="Numeric">
+                <Entry x:Name="MaxPriceEntry" Grid.Row="1" Grid.Column="1" VerticalOptions="CenterAndExpand" BackgroundColor="{StaticResource backgroundColor}" Placeholder="Enter upper price value" Keyboard="Numeric" Text="{Binding MaxPrice}">
                 </Entry>
             </Grid>
 
@@ -50,10 +50,11 @@
                 </Frame.GestureRecognizers>
             </Frame>
             <Label Margin="20, 0, 0, 0" HorizontalTextAlignment="Start" Text="Description" VerticalTextAlignment="Center" TextColor="{StaticResource lightTextColor}" FontSize="25" />
-            <Editor x:Name="ItemDescriptionEditor" Margin="0, 0, 0, 20" HeightRequest="100" BackgroundColor="{StaticResource backgroundColor}" Placeholder="Describe your product" AutoSize="TextChanges" />
+            <Editor x:Name="ItemDescriptionEditor" Margin="0, 0, 0, 20" HeightRequest="100" BackgroundColor="{StaticResource backgroundColor}" Placeholder="Describe your product" AutoSize="TextChanges" Text="{Binding Description}" />
 
+            <ActivityIndicator IsRunning="{Binding IsBusy}" />
 
-            <Button Margin="100, 0, 100, 0" VerticalOptions="EndAndExpand" Style="{StaticResource secondaryButton}" Text="SEND REQUEST" HeightRequest="50" CornerRadius="25" FontSize="Large" Clicked="OnSendRequestButtonClicked" />
+            <Button Margin="100, 0, 100, 0" VerticalOptions="EndAndExpand" Style="{StaticResource secondaryButton}" Text="SEND REQUEST" HeightRequest="50" CornerRadius="25" FontSize="Large" Clicked="{Binding OnRequestButtonClicked}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

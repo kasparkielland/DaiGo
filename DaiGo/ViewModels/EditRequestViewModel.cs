@@ -1,92 +1,162 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using DaiGo.Models.RequestModel;
+using DaiGo.Models;
+using DaiGo.Views;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
-namespace DaiGo.ViewModel
+
+namespace DaiGo.ViewModels
 {
     public class EditRequestViewModel
     {
+        public EditRequestViewModel()
+        {
+            OnRequestButtonClicked = new Command(async () => await SaveRequest(),
+                                                () => !isBusy);
+
+        }
+
+
+        int requestID;
+        string subject;
+        string country;
+        string category;
+        int minPrice;
+        int maxPrice;
+        string description;
+        int userID;
+        bool isBusy;
+
+        public int RequestID
+        {
+            get
+            {
+                return requestID;
+            }
+            set
+            {
+                requestID = value;
+            }
+        }
+        public string Subject
+        {
+            get
+            {
+                return subject;
+            }
+            set
+            {
+                subject = value;
+            }
+        }
+        public string Country
+        {
+            get
+            {
+                return country;
+            }
+            set
+            {
+                country = value;
+            }
+        }
+        public string Category
+        {
+            get
+            {
+                return category;
+            }
+            set
+            {
+                category = value;
+            }
+        }
+        public int MinPrice
+        {
+            get
+            {
+                return minPrice;
+            }
+            set
+            {
+                minPrice = value;
+            }
+        }
+        public int MaxPrice
+        {
+            get
+            {
+                return maxPrice;
+            }
+            set
+            {
+                maxPrice = value;
+            }
+        }
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+            }
+        }
+        public int UserID
+        {
+            get
+            {
+                return userID;
+            }
+            set
+            {
+                userID = value;
+            }
+        }
+        public bool IsBusy
+        {
+            get
+            {
+                return isBusy;
+            }
+            set
+            {
+                isBusy = value;
+                OnRequestButtonClicked.ChangeCanExecute();
+            }
+        }
+
+        public Command OnRequestButtonClicked
+        {
+            get;
+        }
+
+        async Task SaveRequest()
+        {
+            IsBusy = true;
+
+            await App.Database.SaveUserRequestAsync(new UserRequst
+            {
+                RequestID = RequestID++,
+                Country = Country,
+                Category = Category,
+                minPrice = MinPrice,
+                maxPrice = MaxPrice,
+                Description = Description
+            });
+
+            IsBusy = false;
+
+
+        }
 
     }
 
-
-
-}
-
-// Either change the following namespace to the name of your project,   
-// or name your project with the following name when you create it.  
-namespace DaiGo.ViewModels
-{
-    // This is a simple customer class that   
-    // implements the IPropertyChange interface.  
-    public class DemoCustomer : INotifyPropertyChanged
-    {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        // This method is called by the Set accessor of each property.  
-        // The CallerMemberName attribute that is applied to the optional propertyName  
-        // parameter causes the property name of the caller to be substituted as an argument.  
-        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        // The constructor is private to enforce the factory pattern.  
-        private DemoCustomer()
-        {
-            customerNameValue = "Customer";
-            phoneNumberValue = "(312)555-0100";
-        }
-
-        // This is the public factory method.  
-        public static DemoCustomer CreateNewCustomer()
-        {
-            return new DemoCustomer();
-        }
-
-        // This property represents an ID, suitable  
-        // for use as a primary key in a database.  
-        public Guid ID
-        {
-            get
-            {
-                return this.idValue;
-            }
-        }
-
-        public string CustomerName
-        {
-            get
-            {
-                return this.customerNameValue;
-            }
-
-            set
-            {
-                if (value != this.customerNameValue)
-                {
-                    this.customerNameValue = value;
-                    NotifyPropertyChanged();
-                }
-            }
-        }
-
-        public string PhoneNumber
-        {
-            get
-            {
-                return this.phoneNumberValue;
-            }
-
-            set
-            {
-                if (value != this.phoneNumberValue)
-                {
-                    this.phoneNumberValue = value;
-                    NotifyPropertyChanged();
-                }
-            }
-        }
-    }
 }

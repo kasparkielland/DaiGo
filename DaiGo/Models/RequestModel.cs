@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 
+
 namespace DaiGo.Models.RequestModel
 {
     public class RequestModel { }
