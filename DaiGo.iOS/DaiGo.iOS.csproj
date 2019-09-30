@@ -179,15 +179,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets.xcassets\GoBack.imageset\" />
-    <Folder Include="Assets.xcassets\LogoutButton.imageset\" />
-    <Folder Include="Assets.xcassets\MessageIconBlack.imageset\" />
-    <Folder Include="Assets.xcassets\ProfileIconBlack.imageset\" />
-    <Folder Include="Assets.xcassets\QuickAccessUserRed.imageset\" />
-    <Folder Include="Assets.xcassets\SearchAreaBackgroundUserRed.imageset\" />
     <Folder Include="Assets.xcassets\SearchBar.imageset\" />
+    <Folder Include="Assets.xcassets\MessageIconBlack.imageset\" />
     <Folder Include="Assets.xcassets\SearchButton.imageset\" />
+    <Folder Include="Assets.xcassets\SearchAreaBackgroundUserRed.imageset\" />
+    <Folder Include="Assets.xcassets\QuickAccessUserRed.imageset\" />
+    <Folder Include="Assets.xcassets\ProfileIconBlack.imageset\" />
     <Folder Include="Assets.xcassets\UserPageBackgroundFrameUserRed.imageset\" />
+    <Folder Include="Assets.xcassets\LogoutButton.imageset\" />
+    <Folder Include="Assets.xcassets\GoBack.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

@@ -1,15 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using SQLite;
 
 namespace DaiGo.Models
 {
-    class UserInfo
+    public class UserProfile
     {
-        public string UserId { get; set; }
-        public string Username { get; set; }
-        public string UserEmail { get; set; }
-        public string UserFirstName { get; set; }
-        public string UserLastName { get; set; }
+        [PrimaryKey, AutoIncrement]
+        public int UserID { get; set; }
+        public int UserName { get; set; }
+        public int Password { get; set; }
+        public string FirstName { get; set; }
+        public int LastName { get; set; }
+        public int Email { get; set; }
+        public int Phonenumber { get; set; }
     }
 }

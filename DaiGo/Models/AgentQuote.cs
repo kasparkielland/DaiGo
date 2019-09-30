@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using SQLite;
 
 namespace DaiGo.Models
 {
     public class AgentQuote
     {
-        public string QuoteID { get; set; }
-        public string QuoteAmount { get; set; }
-        public string AgentID { get; set; }
-        public string RequestID { get; set; }
+        [PrimaryKey, AutoIncrement]
+        public int QuoteID { get; set; }
+        public int Quote { get; set; }
+        public int AgentID { get; set; }
+        public int RequestID { get; set; }
     }
 }

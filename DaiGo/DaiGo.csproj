@@ -10,15 +10,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Helpers\**" />
-    <EmbeddedResource Remove="Helpers\**" />
-    <None Remove="Helpers\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
     <PackageReference Include="Xamarin.Forms" Version="4.2.0.778463" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.0" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="View\HomeScreen_User.xaml" />
@@ -26,6 +23,9 @@
     <EmbeddedResource Remove="View\HomeScreen_UserMaster.xaml" />
     <EmbeddedResource Remove="View\USer.xaml" />
     <EmbeddedResource Remove="View\UserMainScreen.xaml" />
+    <EmbeddedResource Remove="View\ItemDetailPage.xaml" />
+    <EmbeddedResource Remove="View\ItemsPage.xaml" />
+    <EmbeddedResource Remove="View\NewItemPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="View\HomeScreen_User.xaml.cs" />
@@ -34,27 +34,17 @@
     <Compile Remove="View\HomeScreen_UserMenuItem.cs" />
     <Compile Remove="View\USer.xaml.cs" />
     <Compile Remove="View\UserMainScreen.xaml.cs" />
+    <Compile Remove="ViewModel\EditRequestViewModel.cs" />
+    <Compile Remove="View\AboutPage2.xaml.cs" />
+    <Compile Remove="View\ItemDetailPage.xaml.cs" />
+    <Compile Remove="View\ItemsPage.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="View\.DS_Store" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="View\About2Page.xaml.cs">
-      <DependentUpon>About2Page.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="View\AgentIdentityPage.xaml.cs">
-      <DependentUpon>AgentIdentityPage.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Update="View\AgentIdentityPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="View\AgentMessagePage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="View\UserMessagePage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
+    <Reference Include="CountryPickerBind">
+      <HintPath>..\..\..\Downloads\PickerSample-master\CountryPickerBind\CountryPickerBind\bin\Debug\CountryPickerBind.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>
