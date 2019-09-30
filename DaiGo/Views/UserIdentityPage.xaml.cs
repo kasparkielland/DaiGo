@@ -15,8 +15,11 @@ namespace DaiGo.Views
         public UserIdentityPage()
         {
             InitializeComponent();
+<<<<<<< HEAD:DaiGo/Views/UserIdentityPage.xaml.cs
             NavigationPage.SetHasNavigationBar(this, false);
 
+=======
+>>>>>>> parent of 7cae416... I have change Agent Page and related message page:DaiGo/View/UserIdentityPage.xaml.cs
         }
     }
 }

@@ -18,6 +18,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Model\" />
+    <Folder Include="Helpers\" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Remove="View\HomeScreen_User.xaml" />
     <EmbeddedResource Remove="View\HomeScreen_UserDetail.xaml" />
     <EmbeddedResource Remove="View\HomeScreen_UserMaster.xaml" />
@@ -34,17 +38,27 @@
     <Compile Remove="View\HomeScreen_UserMenuItem.cs" />
     <Compile Remove="View\USer.xaml.cs" />
     <Compile Remove="View\UserMainScreen.xaml.cs" />
+<<<<<<< HEAD
     <Compile Remove="ViewModel\EditRequestViewModel.cs" />
     <Compile Remove="View\AboutPage2.xaml.cs" />
     <Compile Remove="View\ItemDetailPage.xaml.cs" />
     <Compile Remove="View\ItemsPage.xaml.cs" />
+=======
+    <Compile Remove="ViewModels\EditRequestViewModel.cs" />
+>>>>>>> parent of 7cae416... I have change Agent Page and related message page
   </ItemGroup>
   <ItemGroup>
     <None Remove="View\.DS_Store" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Reference Include="CountryPickerBind">
       <HintPath>..\..\..\Downloads\PickerSample-master\CountryPickerBind\CountryPickerBind\bin\Debug\CountryPickerBind.dll</HintPath>
     </Reference>
+=======
+    <EmbeddedResource Update="View\AgentIdentifyPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+>>>>>>> parent of 7cae416... I have change Agent Page and related message page
   </ItemGroup>
 </Project>

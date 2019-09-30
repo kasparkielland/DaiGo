@@ -28,7 +28,10 @@ namespace DaiGo
             InitializeComponent();
 
             MainPage = new NavigationPage(new View.UserLoginPage());
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 7cae416... I have change Agent Page and related message page
         }
 
         protected override void OnStart()

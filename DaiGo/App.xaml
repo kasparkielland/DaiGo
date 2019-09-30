@@ -68,7 +68,11 @@
             <Setter Property="TextColor"
                     Value="{StaticResource darkTextColor}" />
             <Setter Property="FontSize"
+<<<<<<< HEAD
                     Value="20" />
+=======
+                    Value="20" />
+>>>>>>> parent of 7cae416... I have change Agent Page and related message page
             <Setter Property="HeightRequest"
                     Value="30" />
         </Style>
