@@ -17,7 +17,7 @@
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
                 <Label FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf053;" TextColor="{StaticResource lightTextColor}" FontAttributes="Bold" FontSize="Subtitle" />
-                <Button HorizontalOptions="StartAndExpand" Text="Go back" TextColor="{StaticResource lightTextColor}" FontAttributes="Bold" FontSize="Subtitle" VerticalOptions="Center" Command="{Binding GoBack}" />
+                <Label HorizontalOptions="StartAndExpand" Text="Go back" TextColor="{StaticResource lightTextColor}" FontAttributes="Bold" FontSize="Subtitle" VerticalOptions="Center" />
             </StackLayout>
         </Frame>
         <Label Text="Signup" FontSize="40" Style="{StaticResource H1}" TextColor="{StaticResource darkTextColor}" VerticalOptions="Center" HorizontalOptions="End" />
