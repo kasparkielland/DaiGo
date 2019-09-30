@@ -29,7 +29,10 @@ namespace DaiGo
 
             MainPage = new NavigationPage(new View.UserLoginPage());
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 7cae416... I have change Agent Page and related message page
 =======
 >>>>>>> parent of 7cae416... I have change Agent Page and related message page
         }

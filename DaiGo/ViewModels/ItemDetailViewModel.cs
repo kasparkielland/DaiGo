@@ -1,6 +1,7 @@
 ﻿using System;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 namespace DaiGo.ViewModels
 {
@@ -14,6 +15,8 @@ namespace DaiGo.ViewModels
     //    }
     //}
 =======
+=======
+>>>>>>> parent of 7cae416... I have change Agent Page and related message page
 using DaiGo.Models;
 
 namespace DaiGo.ViewModels
