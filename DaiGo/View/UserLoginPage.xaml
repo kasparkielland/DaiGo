@@ -25,10 +25,10 @@
             </StackLayout>
         </Frame>
 
-        <StackLayout Grid.Row="1" HorizontalOptions="Center" Padding="40">
+        <StackLayout Grid.Row="1" HorizontalOptions="Center">
             <Label Text="Do you know that you will save up to 70% if you are buying from the right agent in the right market?" HorizontalTextAlignment="Center" Style="{StaticResource H2}" TextColor="{StaticResource darkTextColor}" />
-            <Label Text="It is as easy as 1, 2, 3..." TextColor="{StaticResource darkTextColor}" Style="{StaticResource H2}" HorizontalTextAlignment="Center" />
-            <Label Text="DaiGo" Style="{StaticResource H1}" TextColor="{StaticResource userThemeColor}" VerticalOptions="EndAndExpand" HorizontalTextAlignment="Center" HorizontalOptions="Center" />
+            <Label Text="It is as easy as 1, 2, 3..." TextColor="{StaticResource darkTextColor}" Style="{StaticResource H2}" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand" />
+            <Label Text="DaiGo" Style="{StaticResource H1}" TextColor="{StaticResource userThemeColor}" VerticalOptions="EndAndExpand" HorizontalTextAlignment="Center" HorizontalOptions="Center" Margin="0, 0, 0, 50" />
         </StackLayout>
     </Grid>
 </ContentPage>

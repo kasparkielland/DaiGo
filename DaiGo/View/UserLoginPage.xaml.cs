@@ -19,9 +19,9 @@ namespace DaiGo.View
         {
             InitializeComponent();
             userLoginViewModel = new UserLoginViewModel();
-            MessagingCenter.Subscribe<UserLoginViewModel, string>(this, "LoginAlert", (sender, username) =>
+            MessagingCenter.Subscribe<UserLoginViewModel, string>(this, "LoginAlert", (sender, args) =>
             {
-                DisplayAlert("Title", username, "Okay");
+                DisplayAlert("Login failed", args, "Okay");
             });
             this.BindingContext = userLoginViewModel;
 

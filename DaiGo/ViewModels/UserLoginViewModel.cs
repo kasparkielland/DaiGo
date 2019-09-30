@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Input;
+using DaiGo.View;
 using Xamarin.Forms;
 
 namespace DaiGo.ViewModels
@@ -16,9 +17,17 @@ namespace DaiGo.ViewModels
 
         private void OnLogin()
         {
-            if (string.IsNullOrEmpty(Username))
+            if (!string.IsNullOrEmpty(Username))
             {
                 MessagingCenter.Send(this, "LoginAlert", Username);
+            }
+            else if (string.IsNullOrEmpty(Password))
+            {
+                MessagingCenter.Send(this, "LoginAlert", Password);
+            }
+            else
+            {
+                Application.Current.MainPage = new NavigationPage(new UserMainPage());
             }
         }
         public string username;
@@ -43,20 +52,4 @@ namespace DaiGo.ViewModels
         }
         public ICommand LoginCommand { get; set; }
     }
-
-    // Example to Login handling (https://docs.microsoft.com/nb-no/xamarin/xamarin-forms/app-fundamentals/navigation/hierarchical)
-    //async void OnLoginButtonClicked(object sender, EventArgs e)
-    //{
-    //    var isValid = AreCredentialsCorrect(user);
-    //    if (isValid)
-    //    {
-    //        App.IsUserLoggedIn = true;
-    //        Navigation.InsertPageBefore(new MainPage(), this);
-    //        await Navigation.PopAsync();
-    //    }
-    //    else
-    //    {
-    //        // Login failed
-    //    }
-    //}
 }
