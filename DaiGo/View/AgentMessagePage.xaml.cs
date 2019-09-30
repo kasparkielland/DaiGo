@@ -19,8 +19,6 @@ namespace DaiGo.View
 
             AgentMessageListView.ItemsSource = new List<UserRequest>
             {
-                new UserRequest { RequestID = "LV serial 003", Request = "Can you hand deliver?", UserID="003" },       
-                new UserRequest { RequestID = "BlackMore FishOil 1000mg" , Request= "no more than USD300", UserID="033"}
             };
 
 

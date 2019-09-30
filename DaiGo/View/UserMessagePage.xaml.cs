@@ -18,8 +18,6 @@ namespace DaiGo.View
             InitializeComponent();
             UserMessageListView.ItemsSource = new List<AgentQuote>
             {
-                new AgentQuote { QuoteID = "005", QuoteAmount = "AUD300", AgentID = "090", RequestID = "LV serial 003" },
-                new AgentQuote { QuoteID = "006", QuoteAmount = "USD30", AgentID = "090", RequestID = "BlackMore FishOil 1000mg" }
             };
         }
 

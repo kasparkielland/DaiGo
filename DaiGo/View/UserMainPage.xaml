@@ -1,14 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<ContentPage NavigationPage.HasNavigationBar="False"
-             xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="DaiGo.View.UserMainPage" 
-             xmlns:vm="clr-namespace:DaiGo.ViewModels"
-             BackgroundColor="{StaticResource backgroundColor}" 
-             Title="{Binding Title}">
+<ContentPage NavigationPage.HasNavigationBar="False" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="DaiGo.View.UserMainPage" xmlns:vm="clr-namespace:DaiGo.ViewModels" BackgroundColor="{StaticResource backgroundColor}" Title="{Binding Title}">
     <ContentPage.BindingContext>
         <vm:UserMainViewModel />
     </ContentPage.BindingContext>
@@ -38,41 +29,30 @@
             >
         </Label>-->
 
-        <ImageButton Margin="20, 0, 20, 0" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"
-                     Clicked="ImageButton_Clicked">
+        <ImageButton Margin="20, 0, 20, 0" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" Clicked="ImageButton_Clicked">
             <ImageButton.Source>
-                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" Glyph="&#xf2bd;" Size="44" 
-                                 Color="{StaticResource userThemeColor}" />
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" Glyph="&#xf2bd;" Size="44" Color="{StaticResource userThemeColor}" />
             </ImageButton.Source>
         </ImageButton>
-        <ImageButton Margin="20, 0, 20, 0" Grid.Row="0" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" 
-                     Clicked="Button_Clicked" >
+        <ImageButton Margin="20, 0, 20, 0" Grid.Row="0" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" Clicked="Button_Clicked">
             <ImageButton.Source>
                 <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" Glyph="&#xf01c;" Size="44" Color="{StaticResource userThemeColor}" />
             </ImageButton.Source>
         </ImageButton>
-        <Label Margin="50, 0, 50, 0" Grid.Row="1" Grid.ColumnSpan="3" HorizontalOptions="CenterAndExpand" 
-               VerticalOptions="CenterAndExpand" Text="Good morning, Mr. Obama" FontSize="Title" TextColor="{StaticResource darkTextColor}" LineBreakMode="WordWrap" />
-        <Frame Margin="20, 0, 20, 0" Grid.Row="2" Grid.ColumnSpan="3" BackgroundColor="{StaticResource userThemeColor}"
-               CornerRadius="50" HasShadow="False">
+        <Label Margin="50, 0, 50, 0" Grid.Row="1" Grid.ColumnSpan="3" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="Good morning, Mr. Obama" FontSize="Title" TextColor="{StaticResource darkTextColor}" LineBreakMode="WordWrap" />
+        <Frame Margin="20, 0, 20, 0" Grid.Row="2" Grid.ColumnSpan="3" BackgroundColor="{StaticResource userThemeColor}" CornerRadius="50" HasShadow="False">
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnQuickAccessFrameClicked" />
             </Frame.GestureRecognizers>
             <StackLayout>
-                <Button Text="You have 2 new messages>"  Style="{StaticResource primaryButton }" TextColor="{StaticResource lightTextColor}"
-                Clicked="Button_Clicked" CornerRadius="30" BackgroundColor="{StaticResource userThemeColor}" VerticalOptions="CenterAndExpand"
-                    HeightRequest="100" />
-               
+                <Button Text="You have 2 new messages>" Style="{StaticResource primaryButton }" TextColor="{StaticResource lightTextColor}" Clicked="Button_Clicked" CornerRadius="30" BackgroundColor="{StaticResource userThemeColor}" VerticalOptions="CenterAndExpand" HeightRequest="100" />
+
             </StackLayout>
         </Frame>
-        <Frame x:Name="backgroundTab" Margin="0, 100, 0, -100" Grid.Row="3" Grid.ColumnSpan="3" BackgroundColor="{StaticResource userThemeColor}"
-               CornerRadius="50">
+        <Frame x:Name="backgroundTab" Margin="0, 100, 0, -100" Grid.Row="3" Grid.ColumnSpan="3" BackgroundColor="{StaticResource userThemeColor}" CornerRadius="50">
             <StackLayout>
-                <Entry Style="{StaticResource entryField}" Margin="10, 0, 10, 40" Grid.Row="2" Grid.ColumnSpan="3" 
-                       VerticalOptions="Center" HorizontalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="1000" 
-                       Placeholder="What are you looking for?" Keyboard="Text" ReturnType="Search" Completed="Entry_Completed" />
-                <Button Margin="90, 0, 90, 100" VerticalOptions="EndAndExpand" Style="{StaticResource primaryButton}" 
-                        Text="SEARCH" CornerRadius="25" Command="{Binding GoEditRequestCommand}"  />
+                <Entry Style="{StaticResource entryField}" Margin="10, 0, 10, 40" Grid.Row="2" Grid.ColumnSpan="3" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="1000" Placeholder="What are you looking for?" Keyboard="Text" ReturnType="Search" Completed="Entry_Completed" Text="{Binding Subject}" />
+                <Button Margin="90, 0, 90, 100" VerticalOptions="EndAndExpand" Style="{StaticResource primaryButton}" Text="SEARCH" CornerRadius="25" Command="{Binding GoEditRequestCommand}" />
             </StackLayout>
         </Frame>
     </Grid>
