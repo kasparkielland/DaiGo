@@ -70,7 +70,11 @@
             <Setter Property="FontSize"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     Value="20" />
+=======
+                    Value="20" />
+>>>>>>> parent of 7cae416... I have change Agent Page and related message page
 =======
                     Value="20" />
 >>>>>>> parent of 7cae416... I have change Agent Page and related message page

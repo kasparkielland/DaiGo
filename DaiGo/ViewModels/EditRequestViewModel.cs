@@ -1,6 +1,7 @@
 ﻿using System;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using DaiGo.Models;
@@ -66,6 +67,14 @@ namespace DaiGo.ViewModels
             {
                 country = value;
             }
+=======
+namespace DaiGo.ViewModel
+{
+    public class EditRequestViewModell
+    {
+        public EditRequestViewModell()
+        {
+>>>>>>> parent of 7cae416... I have change Agent Page and related message page
         }
         public string Category
         {
