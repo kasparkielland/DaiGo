@@ -19,7 +19,7 @@
                 <Label Text="Forgot password?" TextColor="{StaticResource lightTextColor}" FontSize="Micro" HorizontalOptions="End" />
                 <Button Text="Login as Agent" BackgroundColor="Transparent" Clicked="Button_Clicked" TextColor="{StaticResource agentThemeColor}" FontSize="Micro" HorizontalOptions="End" />
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="EndAndExpand">
-                    <Button Text="SINGUP" WidthRequest="150" Style="{StaticResource primaryButton}" CornerRadius="25" Clicked="OnSignupButtonClicked" />
+                    <Button Text="SIGNUP" WidthRequest="150" Style="{StaticResource primaryButton}" CornerRadius="25" Clicked="OnSignupButtonClicked" />
                     <Button Text="LOGIN" WidthRequest="150" Style="{StaticResource secondaryButton}" CornerRadius="25" Command="{Binding LoginCommand}" />
                 </StackLayout>
             </StackLayout>

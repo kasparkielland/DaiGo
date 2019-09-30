@@ -7,18 +7,17 @@ using Xamarin.Forms;
 
 namespace DaiGo.ViewModels
 {
-    class UserSignUpViewModel:BaseViewModel
+    class UserSignUpViewModel : BaseViewModel
     {
-        public ICommand GoMainCommand { get; }
+        public new ICommand GoBack { private get; set; }
         public UserSignUpViewModel()
         {
-            Title = "User Signup Page";
-            this.GoMainCommand = new Command(SignUpClicked);
+            this.GoBack = new Command(BackClicked);
         }
 
-        void SignUpClicked()
+        void BackClicked()
         {
-            Application.Current.MainPage = new NavigationPage(new UserMainPage());
+            Application.Current.MainPage = new NavigationPage(new UserLoginPage());
         }
     }
 }

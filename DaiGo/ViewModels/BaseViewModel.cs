@@ -51,6 +51,11 @@ namespace DaiGo.ViewModels
 
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        public void GoBack()
+        {
+
+        }
         #endregion
     }
 }

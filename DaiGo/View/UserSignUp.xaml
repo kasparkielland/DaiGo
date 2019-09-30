@@ -1,23 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage NavigationPage.HasNavigationBar="False"
-             xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="DaiGo.View.UserSignUp"
-    
-             xmlns:vm="clr-namespace:DaiGo.ViewModels"
-             Title="{Binding Title}">
+<ContentPage NavigationPage.HasNavigationBar="False" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="DaiGo.View.UserSignUp" xmlns:vm="clr-namespace:DaiGo.ViewModels" Title="{Binding Title}" BackgroundColor="{StaticResource userThemeColor}">
 
     <ContentPage.BindingContext>
         <vm:UserSignUpViewModel />
     </ContentPage.BindingContext>
-    <StackLayout BackgroundColor="{StaticResource userThemeColor}" Padding="40">
-        <Label Text="Signup"
-                Style="{StaticResource H1}" TextColor="{StaticResource lightTextColor}"
-                VerticalOptions="Center" />
-        <TableView Intent="Form">
+
+    <StackLayout Margin="20, 40, 20, 35">
+        <StackLayout.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Left" Command="{Binding GoBack}" />
+        </StackLayout.GestureRecognizers>
+        <Frame Margin="0, 0, 200, 0" BackgroundColor="{StaticResource userThemeColor}" HasShadow="False" Padding="2">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                <Label FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf053;" TextColor="{StaticResource lightTextColor}" FontAttributes="Bold" FontSize="Subtitle" />
+                <Label HorizontalOptions="StartAndExpand" Text="Go back" TextColor="{StaticResource lightTextColor}" FontAttributes="Bold" FontSize="Subtitle" />
+            </StackLayout>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding GoBack}" />
+            </Frame.GestureRecognizers>
+        </Frame>
+        <Label Text="Signup" TextDecorations="Underline" Style="{StaticResource H1}" TextColor="{StaticResource lightTextColor}" VerticalOptions="Center" HorizontalOptions="End" />
+
+        <ScrollView>
+
+            <StackLayout Margin="20, 35, 20, 35">
+
+                <Label Text="Username" TextColor="{StaticResource darkTextColor}" />
+                <Entry x:Name="usernameEntry" Placeholder="Username" Margin="0, 0, 0, 10" BackgroundColor="{StaticResource backgroundColor}" PlaceholderColor="{StaticResource darkTextColor}" TextColor="{StaticResource darkTextColor}" Text="{Binding Username}" />
+
+                <Label Text="Password" TextColor="{StaticResource darkTextColor}" />
+                <Entry x:Name="passwordEntry" Placeholder="Password" Margin="0, 0, 0, 10" IsPassword="True" BackgroundColor="{StaticResource backgroundColor}" TextColor="{StaticResource darkTextColor}" PlaceholderColor="{StaticResource darkTextColor}" Text="{Binding Password}" />
+
+                <Label Text="Re-enter password" TextColor="{StaticResource darkTextColor}" />
+                <Entry x:Name="passwordReEntry" Placeholder="Re-enter password" Margin="0, 0, 0, 10" IsPassword="True" BackgroundColor="{StaticResource backgroundColor}" TextColor="{StaticResource darkTextColor}" PlaceholderColor="{StaticResource darkTextColor}" Text="{Binding PasswordRe}" />
+
+                <Label Text="First name" TextColor="{StaticResource darkTextColor}" />
+                <Entry x:Name="firstnameEntry" Placeholder="First name" Margin="0, 0, 0, 10" BackgroundColor="{StaticResource backgroundColor}" PlaceholderColor="{StaticResource darkTextColor}" TextColor="{StaticResource darkTextColor}" Text="{Binding Firstname}" />
+
+                <Label Text="Last name" TextColor="{StaticResource darkTextColor}" />
+                <Entry x:Name="lastnameEntry" Placeholder="Last name" Margin="0, 0, 0, 10" BackgroundColor="{StaticResource backgroundColor}" TextColor="{StaticResource darkTextColor}" PlaceholderColor="{StaticResource darkTextColor}" Text="{Binding Lastname}" />
+
+                <Label Text="E-mail" TextColor="{StaticResource darkTextColor}" />
+                <Entry x:Name="emailEntry" Placeholder="E-mail" Margin="0, 0, 0, 10" BackgroundColor="{StaticResource backgroundColor}" PlaceholderColor="{StaticResource darkTextColor}" TextColor="{StaticResource darkTextColor}" Text="{Binding Email}" Keyboard="Email" />
+
+                <Label Text="Phone number" TextColor="{StaticResource darkTextColor}" />
+                <Entry x:Name="phonenumberEntry" Placeholder="Phone number" Margin="0, 0, 0, 0" BackgroundColor="{StaticResource backgroundColor}" TextColor="{StaticResource darkTextColor}" PlaceholderColor="{StaticResource darkTextColor}" Text="{Binding Phonenumber}" Keyboard="Telephone" />
+            </StackLayout>
+
+        </ScrollView>
+
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="EndAndExpand">
+
+            <Button Text="SIGNUP" WidthRequest="150" Style="{StaticResource primaryButton}" CornerRadius="25" Command="{Binding OnSubmit}" />
+
+        </StackLayout>
+    </StackLayout>
+
+    <!--<TableView Intent="Form">
        
             <TableRoot>
                 <TableSection >
@@ -31,20 +70,5 @@
                 </TableSection>
             </TableRoot>
         
-        </TableView>
-       
-       
-        <StackLayout Orientation="Horizontal">
-            <Button
-                    Text="Sign up"
-                    Style="{StaticResource primaryButton}"
-                    Padding="50,0,50,0" VerticalOptions="EndAndExpand"
-                    Command="{Binding GoMainCommand}"/>
-            <Button Text="Signup as Agent " TextColor="{StaticResource agentThemeColor}" 
-                    FontSize="Micro" 
-                    BackgroundColor="{StaticResource userThemeColor}"/>
-        </StackLayout>
-
-    </StackLayout>
-    
+        </TableView>-->
 </ContentPage>

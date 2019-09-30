@@ -15,18 +15,7 @@ namespace DaiGo.View
         public UserSignUp()
         {
             InitializeComponent();
-            if (Application.Current.Properties.ContainsKey("Email"))    
-                email.Text = Application.Current.Properties["Email"].ToString();
         }
 
-        private void OnChange(object sender, EventArgs e)
-        {
-            Application.Current.Properties["Email"] = email.Text;
-            Application.Current.Properties["Nickname"] = nickname.Text;
-            Application.Current.SavePropertiesAsync();
-        }
-
-
-        
     }
 }
