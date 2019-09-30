@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 namespace DaiGo.ViewModels
 {
@@ -16,6 +17,8 @@ namespace DaiGo.ViewModels
     //    }
     //}
 =======
+=======
+>>>>>>> parent of 7cae416... I have change Agent Page and related message page
 =======
 >>>>>>> parent of 7cae416... I have change Agent Page and related message page
 =======
