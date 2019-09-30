@@ -30,11 +30,6 @@ namespace DaiGo.ViewModels
             return _database.InsertAsync(user);
         }
 
-        internal Task SavePersonAsync(Person person)
-        {
-            throw new NotImplementedException();
-        }
-
         public Task<List<AgentProfile>> GetAgentProfileAsync()
         {
             return _database.Table<AgentProfile>().ToListAsync();
