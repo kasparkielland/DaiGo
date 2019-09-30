@@ -5,22 +5,22 @@
             <RowDefinition Height="55*" />
             <RowDefinition Height="45*" />
         </Grid.RowDefinitions>
-        <Frame Margin="0, -100, 0, 100" BackgroundColor="{StaticResource userThemeColor}" CornerRadius="50">
+        <Frame Margin="0, -100, 0, 100" BackgroundColor="{StaticResource userThemeColor}" CornerRadius="25">
             <StackLayout Grid.Row="0" Margin="20, 100, 20, 0">
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Login" Style="{StaticResource H1}" VerticalOptions="End" TextColor="{StaticResource lightTextColor}" TextDecorations="Underline" />
                     <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand">
                         <Label Text="Welcome to" VerticalOptions="Center" HorizontalOptions="End" Style="{StaticResource H1}" TextColor="{StaticResource darkTextColor}" />
-                        <Label Text="DaiGo" VerticalOptions="Centera" HorizontalOptions="End" TextColor="{StaticResource darkTextColor}" Style="{StaticResource H1}" FontAttributes="Bold" />
+                        <Label Text="DaiGo" VerticalOptions="Center" HorizontalOptions="End" TextColor="{StaticResource darkTextColor}" Style="{StaticResource H1}" FontAttributes="Bold" />
                     </StackLayout>
                 </StackLayout>
-                <Entry Placeholder="E-mail" Margin="0, 20, 0, 0" BackgroundColor="{StaticResource backgroundColor}" PlaceholderColor="{StaticResource darkTextColor}" />
-                <Entry Placeholder="Password" Margin="0, 20, 0, 0" IsPassword="True" BackgroundColor="{StaticResource backgroundColor}" TextColor="{StaticResource darkTextColor}" PlaceholderColor="{StaticResource darkTextColor}" />
+                <Entry x:Name="usernameEntry" Placeholder="Username" Margin="0, 20, 0, 0" BackgroundColor="{StaticResource backgroundColor}" PlaceholderColor="{StaticResource darkTextColor}" TextColor="{StaticResource darkTextColor}" Text="{Binding Username}" />
+                <Entry x:Name="passwordEntry" Placeholder="Password" Margin="0, 20, 0, 0" IsPassword="True" BackgroundColor="{StaticResource backgroundColor}" TextColor="{StaticResource darkTextColor}" PlaceholderColor="{StaticResource darkTextColor}" Text="{Binding Password}" />
                 <Label Text="Forgot password?" TextColor="{StaticResource lightTextColor}" FontSize="Micro" HorizontalOptions="End" />
                 <Button Text="Login as Agent" BackgroundColor="Transparent" Clicked="Button_Clicked" TextColor="{StaticResource agentThemeColor}" FontSize="Micro" HorizontalOptions="End" />
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="0" Spacing="20" Margin="0, 5, 0, 0" VerticalOptions="EndAndExpand">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="EndAndExpand">
                     <Button Text="SINGUP" WidthRequest="150" Style="{StaticResource primaryButton}" CornerRadius="25" Clicked="OnSignupButtonClicked" />
-                    <Button Text="LOGIN" WidthRequest="150" Style="{StaticResource secondaryButton}" CornerRadius="25" Clicked="OnLoginButtonClicked" />
+                    <Button Text="LOGIN" WidthRequest="150" Style="{StaticResource secondaryButton}" CornerRadius="25" Command="{Binding LoginCommand}" />
                 </StackLayout>
             </StackLayout>
         </Frame>
