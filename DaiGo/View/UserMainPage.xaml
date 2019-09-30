@@ -51,7 +51,7 @@
         </Frame>
         <Frame x:Name="backgroundTab" Margin="0, 100, 0, -100" Grid.Row="3" Grid.ColumnSpan="3" BackgroundColor="{StaticResource userThemeColor}" CornerRadius="50">
             <StackLayout>
-                <Entry Style="{StaticResource entryField}" Margin="10, 0, 10, 40" Grid.Row="2" Grid.ColumnSpan="3" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="1000" Placeholder="What are you looking for?" Keyboard="Text" ReturnType="Search" Completed="Entry_Completed" Text="{Binding Subject}" />
+                <Entry Style="{StaticResource entryField}" Margin="10, 0, 10, 40" Grid.Row="2" Grid.ColumnSpan="3" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="1000" Placeholder="What are you looking for?" Keyboard="Text" ReturnType="Search" Completed="Entry_Completed" Text="{Binding Subject}" ReturnCommand="{Binding GoEditRequestCommand}" />
                 <Button Margin="90, 0, 90, 100" VerticalOptions="EndAndExpand" Style="{StaticResource primaryButton}" Text="SEARCH" CornerRadius="25" Command="{Binding GoEditRequestCommand}" />
             </StackLayout>
         </Frame>

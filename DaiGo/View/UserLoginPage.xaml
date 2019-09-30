@@ -14,8 +14,8 @@
                         <Label Text="DaiGo" VerticalOptions="Center" HorizontalOptions="End" TextColor="{StaticResource darkTextColor}" Style="{StaticResource H1}" FontAttributes="Bold" />
                     </StackLayout>
                 </StackLayout>
-                <Entry x:Name="usernameEntry" Placeholder="Username" Margin="0, 20, 0, 0" BackgroundColor="{StaticResource backgroundColor}" PlaceholderColor="{StaticResource darkTextColor}" TextColor="{StaticResource darkTextColor}" Text="{Binding Username}" />
-                <Entry x:Name="passwordEntry" Placeholder="Password" Margin="0, 20, 0, 0" IsPassword="True" BackgroundColor="{StaticResource backgroundColor}" TextColor="{StaticResource darkTextColor}" PlaceholderColor="{StaticResource darkTextColor}" Text="{Binding Password}" />
+                <Entry x:Name="usernameEntry" Placeholder="Username" Margin="0, 20, 0, 0" BackgroundColor="{StaticResource backgroundColor}" PlaceholderColor="{StaticResource darkTextColor}" TextColor="{StaticResource darkTextColor}" Text="{Binding Username}" TabIndex="1" />
+                <Entry x:Name="passwordEntry" Placeholder="Password" Margin="0, 20, 0, 0" IsPassword="True" BackgroundColor="{StaticResource backgroundColor}" TextColor="{StaticResource darkTextColor}" PlaceholderColor="{StaticResource darkTextColor}" Text="{Binding Password}" TabIndex="2" />
                 <Label Text="Forgot password?" TextColor="{StaticResource lightTextColor}" FontSize="Micro" HorizontalOptions="End" />
                 <Button Text="Login as Agent" BackgroundColor="Transparent" Clicked="Button_Clicked" TextColor="{StaticResource agentThemeColor}" FontSize="Micro" HorizontalOptions="End" />
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="EndAndExpand">

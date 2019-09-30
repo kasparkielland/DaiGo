@@ -21,7 +21,7 @@ namespace DaiGo.View
             userLoginViewModel = new UserLoginViewModel();
             MessagingCenter.Subscribe<UserLoginViewModel, string>(this, "LoginAlert", (sender, args) =>
             {
-                DisplayAlert("Login failed", args, "Okay");
+                DisplayAlert("Login failed", args + "\nEntry fields cannot be empty", "Try again");
             });
             this.BindingContext = userLoginViewModel;
 

@@ -17,7 +17,7 @@ namespace DaiGo.ViewModels
 
         private void OnLogin()
         {
-            if (!string.IsNullOrEmpty(Username))
+            if (string.IsNullOrEmpty(Username))
             {
                 MessagingCenter.Send(this, "LoginAlert", Username);
             }
