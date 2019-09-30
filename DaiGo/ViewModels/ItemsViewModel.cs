@@ -7,6 +7,8 @@ using Xamarin.Forms;
 
 using DaiGo.Models;
 using DaiGo.Views;
+using System.Windows.Input;
+using DaiGo.View;
 
 namespace DaiGo.ViewModels
 {
@@ -14,7 +16,10 @@ namespace DaiGo.ViewModels
     {
         public ObservableCollection<Item> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
+        public ICommand GoAgentProfileCommand { get; }
+        public ICommand GoAgentMessageCommand { get; }
 
+        
         public ItemsViewModel()
         {
             Title = "Browse";
@@ -27,8 +32,17 @@ namespace DaiGo.ViewModels
                 Items.Add(newItem);
                 await DataStore.AddItemAsync(newItem);
             });
+            this.GoAgentProfileCommand = new Command(AgentIconClicked);
+            this.GoAgentMessageCommand = new Command(MessageIconClicked);
         }
-
+        void AgentIconClicked()
+        {
+            Application.Current.MainPage = new NavigationPage(new AgentIdentityPage());
+        }
+        void MessageIconClicked()
+        {
+            Application.Current.MainPage = new NavigationPage(new AgentMessagePage()); 
+        }
         async Task ExecuteLoadItemsCommand()
         {
             if (IsBusy)

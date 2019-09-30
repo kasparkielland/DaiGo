@@ -1,4 +1,4 @@
-﻿using DaiGo.Views;
+﻿using DaiGo.View;
 using System;
 using System.Windows.Input;
 
@@ -6,19 +6,19 @@ using Xamarin.Forms;
 
 namespace DaiGo.ViewModels
 {
-    public class AboutViewModel : BaseViewModel
+    class About2ViewModel : BaseViewModel
     {
         public ICommand GoHomeCommand { get; }
-        public AboutViewModel()
+        public About2ViewModel()
         {
-            Title = "About";
+            Title = "About2";
             this.GoHomeCommand = new Command(this.GoHomeClicked);
- 
+                     
         }
         void GoHomeClicked()
         {
-            Application.Current.MainPage = new NavigationPage(new ItemsPage());
+            Application.Current.MainPage = new NavigationPage(new UserMainPage());
         }
- 
+        
     }
 }

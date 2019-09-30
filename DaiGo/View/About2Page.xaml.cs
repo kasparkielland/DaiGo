@@ -7,14 +7,19 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace DaiGo.View
+namespace DaiGo.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AgentIdentifyPage : ContentPage
+    public partial class About2Page : ContentPage
     {
-        public AgentIdentifyPage()
+        public About2Page()
         {
             InitializeComponent();
+        }
+
+        async private void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
         }
     }
 }

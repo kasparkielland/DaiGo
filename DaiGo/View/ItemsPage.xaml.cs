@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 using DaiGo.Models;
 using DaiGo.Views;
 using DaiGo.ViewModels;
+using DaiGo.View;
 
 namespace DaiGo.Views
 {
@@ -52,9 +53,9 @@ namespace DaiGo.Views
                 viewModel.LoadItemsCommand.Execute(null);
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        async private void Button_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new AgentMessagePage());
         }
     }
 }

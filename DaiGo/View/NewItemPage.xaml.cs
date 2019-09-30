@@ -21,7 +21,7 @@ namespace DaiGo.Views
 
             Item = new Item
             {
-                Text = "Item name",
+                Offer = "Price Offer",
                 Description = "This is an item description."
             };
 

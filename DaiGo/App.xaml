@@ -68,7 +68,7 @@
             <Setter Property="TextColor"
                     Value="{StaticResource darkTextColor}" />
             <Setter Property="FontSize"
-                    Value="20" />
+                    Value="15" />
             <Setter Property="HeightRequest"
                     Value="30" />
         </Style>

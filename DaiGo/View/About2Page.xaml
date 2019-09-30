@@ -1,15 +1,16 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage NavigationPage.HasNavigationBar="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="DaiGo.Views.AboutPage"
+             x:Class="DaiGo.Views.About2Page"
              xmlns:vm="clr-namespace:DaiGo.ViewModels"
              Title="{Binding Title}">
 
     <ContentPage.BindingContext>
-        <vm:AboutViewModel />
+        <vm:About2ViewModel />
     </ContentPage.BindingContext>
 
 
@@ -28,7 +29,7 @@
 
         <StackLayout Grid.Row="1" Orientation="Vertical" Padding="40" >
             <Label Style="{StaticResource H1}" Text="We will be in touch with all appropriate agents"/>
-            <Button Text="GO HOME" Margin="50,0,50,0"  Style="{StaticResource secondaryButton}" Command="{Binding OpenWebCommand}" VerticalOptions="EndAndExpand"/>
+            <Button Text="GO HOME" Margin="50,0,50,0"  Style="{StaticResource secondaryButton}" Command="{Binding GoHomeCommand}" VerticalOptions="EndAndExpand"/>
         </StackLayout>
 
     </Grid>

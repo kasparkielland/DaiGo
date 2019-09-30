@@ -11,6 +11,7 @@ namespace DaiGo
             InitializeComponent();
 
             MainPage = new NavigationPage(new View.UserLoginPage());
+            
         }
 
         protected override void OnStart()

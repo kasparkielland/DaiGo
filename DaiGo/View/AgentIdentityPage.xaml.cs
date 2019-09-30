@@ -1,4 +1,4 @@
-﻿using DaiGo.View;
+﻿using DaiGo.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,19 +8,19 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace DaiGo.Views
+namespace DaiGo.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class UserIdentityPage : ContentPage
+    public partial class AgentIdentityPage : ContentPage
     {
-        public UserIdentityPage()
+        public AgentIdentityPage()
         {
             InitializeComponent();
         }
 
         private void Switch_Toggled(object sender, ToggledEventArgs e)
         {
-            Application.Current.MainPage = new NavigationPage(new AgentIdentityPage());
+            Application.Current.MainPage = new NavigationPage(new UserIdentityPage());
         }
     }
 }

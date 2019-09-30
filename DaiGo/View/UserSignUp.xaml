@@ -1,31 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage NavigationPage.HasNavigationBar="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="DaiGo.View.UserSignUp">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Signup"
-                FontSize="30"
-                VerticalOptions="Center" 
-                HorizontalOptions="Center" />
-            <Entry Placeholder="Email" />
-            <Entry Placeholder="Password" 
-                   IsPassword="True" />
-            <Entry Placeholder="Re-type password"
-                   IsPassword="True" />
-            <Entry Placeholder="First name" />
-            <Entry Placeholder="Last name" />
-            <Entry Placeholder="User name" />
+             x:Class="DaiGo.View.UserSignUp"
+    
+             xmlns:vm="clr-namespace:DaiGo.ViewModels"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:UserSignUpViewModel />
+    </ContentPage.BindingContext>
+    <StackLayout BackgroundColor="{StaticResource userThemeColor}" Padding="40">
+        <Label Text="Signup"
+                Style="{StaticResource H1}" TextColor="{StaticResource lightTextColor}"
+                VerticalOptions="Center" />
+        <TableView Intent="Form">
+       
+            <TableRoot>
+                <TableSection >
+                    <EntryCell x:Name="email"    Label="Email"  Completed="OnChange"/>
+                    
+                    <EntryCell x:Name="nickname" Label="Nick Name"  Completed="OnChange"/>
+                    <EntryCell Label="Last Name"  />
+                    <EntryCell Label ="First Name" />
+                    <EntryCell Label ="Password"  />
+                    <EntryCell Label="Re-type password"  />
+                </TableSection>
+            </TableRoot>
+        
+        </TableView>
+       
+       
+        <StackLayout Orientation="Horizontal">
             <Button
-                Text="Sign up"
-                BackgroundColor="White"
-                BorderRadius="10"
-                HorizontalOptions="Center"
-                Clicked="OnSignupButtonClicked"
-                />
+                    Text="Sign up"
+                    Style="{StaticResource primaryButton}"
+                    Padding="50,0,50,0" VerticalOptions="EndAndExpand"
+                    Command="{Binding GoMainCommand}"/>
+            <Button Text="Signup as Agent " TextColor="{StaticResource agentThemeColor}" 
+                    FontSize="Micro" 
+                    BackgroundColor="{StaticResource userThemeColor}"/>
         </StackLayout>
-    </ContentPage.Content>
+
+    </StackLayout>
+    
 </ContentPage>

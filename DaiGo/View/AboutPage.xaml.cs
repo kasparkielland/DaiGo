@@ -14,5 +14,7 @@ namespace DaiGo.Views
         {
             InitializeComponent();
         }
+
+        
     }
 }
