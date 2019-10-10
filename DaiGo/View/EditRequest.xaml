@@ -1,18 +1,41 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<ContentPage NavigationPage.HasNavigationBar="False" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" xmlns:vm="clr-namespace:DaiGo.ViewModels" Title="{Binding Title}" x:Class="DaiGo.View.EditRequest" BackgroundColor="{StaticResource userThemeColor}">
+<ContentPage NavigationPage.HasNavigationBar="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:vm="clr-namespace:DaiGo.ViewModels"
+             Title="{Binding Title}"
+             x:Class="DaiGo.View.EditRequest"
+             BackgroundColor="{StaticResource userThemeColor}">
     <ContentPage.BindingContext>
         <vm:EditRequestViewModel />
     </ContentPage.BindingContext>
 
     <StackLayout Margin="20, 35, 20, 20">
 
-        <Frame Margin="0, 0, 200, 0" BackgroundColor="{StaticResource userThemeColor}" HasShadow="False" Padding="2">
+        <Frame Margin="0, 0, 200, 0"
+               BackgroundColor="{StaticResource userThemeColor}"
+               HasShadow="False"
+               Padding="2">
 
-            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="StartAndExpand">
 
-                <Label FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf053;" TextColor="{StaticResource lightTextColor}" FontAttributes="Bold" FontSize="Subtitle" />
+                <Label FontFamily="{StaticResource FontAwesomeSolid}"
+                       Text="&#xf053;"
+                       TextColor="{StaticResource lightTextColor}"
+                       FontAttributes="Bold"
+                       FontSize="Subtitle"
+                       VerticalTextAlignment="Center" />
 
-                <Label HorizontalOptions="StartAndExpand" Text="Go back" TextColor="{StaticResource lightTextColor}" FontAttributes="Bold" FontSize="Subtitle" />
+                <Label HorizontalOptions="StartAndExpand"
+                       Text="Go back"
+                       TextColor="{StaticResource lightTextColor}"
+                       FontAttributes="Bold"
+                       FontSize="Subtitle"
+                       VerticalTextAlignment="Center" />
 
             </StackLayout>
             <Frame.GestureRecognizers>
@@ -25,11 +48,22 @@
             <StackLayout Margin="20, 35, 20, 30">
 
 
-                <Label Margin="0, 50, 0, 20" HorizontalOptions="End" Text="Preferences" Style="{StaticResource H1}" />
+                <Label Margin="0, 50, 0, 20"
+                       HorizontalOptions="End"
+                       Text="Preferences"
+                       Style="{StaticResource H1}" />
 
-                <Label Margin="20, 0, 0, 0" HorizontalTextAlignment="Start" Text="Country" VerticalTextAlignment="Center" TextColor="{StaticResource darkTextColor}" FontSize="25" />
+                <Label Margin="20, 0, 0, 0"
+                       HorizontalTextAlignment="Start"
+                       Text="Country"
+                       VerticalTextAlignment="Center"
+                       TextColor="{StaticResource darkTextColor}"
+                       FontSize="25" />
 
-                <Picker x:Name="CountryPicker" Margin="0, 0, 0, 20" Title="Select preferred reseller location" BackgroundColor="{StaticResource backgroundColor}">
+                <Picker x:Name="CountryPicker"
+                        Margin="0, 0, 0, 20"
+                        Title="Select preferred reseller location"
+                        BackgroundColor="{StaticResource backgroundColor}">
                     <!--
                 <StackLayout Orientation="Horizontal">
                     <Label HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf078;" TextColor="{StaticResource userThemeColor}" FontSize="40" />
@@ -40,7 +74,12 @@
 
                 </Picker>
 
-                <Label Margin="20, 0, 0, 0" HorizontalTextAlignment="Start" Text="Price" VerticalTextAlignment="Center" TextColor="{StaticResource darkTextColor}" FontSize="25" />
+                <Label Margin="20, 0, 0, 0"
+                       HorizontalTextAlignment="Start"
+                       Text="Price"
+                       VerticalTextAlignment="Center"
+                       TextColor="{StaticResource darkTextColor}"
+                       FontSize="25" />
 
                 <Grid Margin="0, 0, 0, 20">
                     <Grid.RowDefinitions>
@@ -51,26 +90,65 @@
                         <ColumnDefinition Width="0.2*" />
                         <ColumnDefinition Width="0.8*" />
                     </Grid.ColumnDefinitions>
-                    <Label Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="End" Text="Min:" VerticalTextAlignment="Center" TextColor="{StaticResource darkTextColor}" FontSize="20" />
+                    <Label Grid.Row="0"
+                           Grid.Column="0"
+                           HorizontalTextAlignment="End"
+                           Text="Min:"
+                           VerticalTextAlignment="Center"
+                           TextColor="{StaticResource darkTextColor}"
+                           FontSize="20" />
 
-                    <Entry x:Name="MinPriceEntry" Grid.Row="0" Grid.Column="1" VerticalOptions="CenterAndExpand" BackgroundColor="{StaticResource backgroundColor}" Placeholder="Enter lower price value" Keyboard="Numeric">
+                    <Entry x:Name="MinPriceEntry"
+                           Grid.Row="0"
+                           Grid.Column="1"
+                           VerticalOptions="CenterAndExpand"
+                           BackgroundColor="{StaticResource backgroundColor}"
+                           Placeholder="Enter lower price value"
+                           Keyboard="Numeric">
 
                     </Entry>
 
-                    <Label Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="End" Text="Max:" VerticalTextAlignment="Center" TextColor="{StaticResource lightTextColor}" FontSize="20" />
+                    <Label Grid.Row="1"
+                           Grid.Column="0"
+                           HorizontalTextAlignment="End"
+                           Text="Max:"
+                           VerticalTextAlignment="Center"
+                           TextColor="{StaticResource lightTextColor}"
+                           FontSize="20" />
 
-                    <Entry x:Name="MaxPriceEntry" Grid.Row="1" Grid.Column="1" VerticalOptions="CenterAndExpand" BackgroundColor="{StaticResource backgroundColor}" Placeholder="Enter upper price value" Keyboard="Numeric">
+                    <Entry x:Name="MaxPriceEntry"
+                           Grid.Row="1"
+                           Grid.Column="1"
+                           VerticalOptions="CenterAndExpand"
+                           BackgroundColor="{StaticResource backgroundColor}"
+                           Placeholder="Enter upper price value"
+                           Keyboard="Numeric">
 
                     </Entry>
                 </Grid>
 
-                <Label Margin="20, 0, 0, 0" HorizontalTextAlignment="Start" Text="Category" VerticalTextAlignment="Center" TextColor="{StaticResource lightTextColor}" FontSize="25" />
+                <Label Margin="20, 0, 0, 0"
+                       HorizontalTextAlignment="Start"
+                       Text="Category"
+                       VerticalTextAlignment="Center"
+                       TextColor="{StaticResource lightTextColor}"
+                       FontSize="25" />
 
-                <Frame Margin="0, 0, 0, 20" CornerRadius="30" HeightRequest="50" Padding="5" BackgroundColor="{StaticResource backgroundColor}">
+                <Frame Margin="0, 0, 0, 20"
+                       CornerRadius="30"
+                       HeightRequest="50"
+                       Padding="5"
+                       BackgroundColor="{StaticResource backgroundColor}">
 
                     <StackLayout Orientation="Horizontal">
 
-                        <Label HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf054;" TextColor="{StaticResource userThemeColor}" FontSize="40" />
+                        <Label HorizontalOptions="EndAndExpand"
+                               HorizontalTextAlignment="End"
+                               VerticalTextAlignment="Center"
+                               FontFamily="{StaticResource FontAwesomeSolid}"
+                               Text="&#xf054;"
+                               TextColor="{StaticResource userThemeColor}"
+                               FontSize="40" />
 
                     </StackLayout>
 
@@ -82,15 +160,30 @@
 
                 </Frame>
 
-                <Label Margin="20, 0, 0, 0" HorizontalTextAlignment="Start" Text="Description" VerticalTextAlignment="Center" TextColor="{StaticResource lightTextColor}" FontSize="25" />
+                <Label Margin="20, 0, 0, 0"
+                       HorizontalTextAlignment="Start"
+                       Text="Description"
+                       VerticalTextAlignment="Center"
+                       TextColor="{StaticResource lightTextColor}"
+                       FontSize="25" />
 
-                <Editor x:Name="ItemDescriptionEditor" Margin="0, 0, 0, 20" HeightRequest="100" BackgroundColor="{StaticResource backgroundColor}" Placeholder="Describe your product" AutoSize="TextChanges" />
+                <Editor x:Name="ItemDescriptionEditor"
+                        Margin="0, 0, 0, 20"
+                        HeightRequest="100"
+                        BackgroundColor="{StaticResource backgroundColor}"
+                        Placeholder="Describe your product"
+                        AutoSize="TextChanges" />
 
             </StackLayout>
 
         </ScrollView>
 
-        <Button VerticalOptions="EndAndExpand" Margin="100, 50, 100, 30" Text="SEND REQUEST" Style="{StaticResource secondaryButton}" CornerRadius="25" Command="{Binding GoAbout2Command}" />
+        <Button VerticalOptions="EndAndExpand"
+                Margin="80, 50, 80, 10"
+                Text="SEND REQUEST"
+                Style="{StaticResource secondaryButton}"
+                CornerRadius="25"
+                Command="{Binding GoAbout2Command}" />
 
 
     </StackLayout>

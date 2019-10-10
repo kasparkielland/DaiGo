@@ -2,18 +2,20 @@
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace DaiGo.View
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UserMainPage : ContentPage
     {
         public UserMainPage()
         {
             InitializeComponent();
-           
+
         }
-       
-        
+
+
         async void OnQuickAccessFrameClicked(object sender, EventArgs args)
         {
             await Navigation.PushAsync(new UserMessagePage());

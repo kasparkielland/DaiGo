@@ -7,41 +7,110 @@
              mc:Ignorable="d"
              x:Class="DaiGo.View.AgentIdentityPage"
              xmlns:vm="clr-namespace:DaiGo.ViewModels"
-             Title="{Binding Title}">
-        <ContentPage.BindingContext>
-            <vm:AgentIdentityViewModel />
-        </ContentPage.BindingContext>
-        
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="55*"/>
-                <RowDefinition Height="45*"/>
-            </Grid.RowDefinitions>
-            <StackLayout Grid.Row="0" BackgroundColor="{StaticResource agentThemeColor}">
-                <Button Text="HOME>" TextColor="{StaticResource lightgrayColor}" Command="{Binding GoToItemsCommand}"
-                            HorizontalOptions="End" BackgroundColor="{StaticResource agentThemeColor}"/>
-                <!--ActivityIndicator  IsRunning="{Binding Source={x:Reference agentphoto}, Path=IsLoading}" Color="White" 
-                                   HorizontalOptions="Center" VerticalOptions="Center" /-->
-                <Image  x:Name="agentphoto" Source="http://placekitten.com/400/300" Scale="1" 
-                       HorizontalOptions="Center" VerticalOptions="Start" Aspect="AspectFill"/>
-                <Label Text="Agent's name" Style="{StaticResource H1}"   HorizontalOptions="Center" VerticalOptions="Center"/>
-                <Label Text="* * * *" Style="{StaticResource H1}"  HorizontalOptions="Center" VerticalOptions="Center"/>
+             xmlns:custom="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             Title="{Binding Title}"
+             BackgroundColor="{StaticResource backgroundColor}">
+    <ContentPage.BindingContext>
+        <vm:AgentIdentityViewModel />
+    </ContentPage.BindingContext>
 
 
-            </StackLayout>
+    <Grid Margin="0, 0, 0, 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="450" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.5*" />
+        </Grid.RowDefinitions>
+        <Frame Margin="0, -100, 0, 100"
+               BackgroundColor="{StaticResource agentThemeColor}"
+               CornerRadius="25">
 
-            <StackLayout Grid.Row ="1" Padding="40">
-                <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand" Spacing="0"> 
-                    <Label Text="Switch to " Style="{StaticResource H2}" 
-                           HorizontalOptions="Fill" VerticalOptions="Center"/>
-                    <Label Text="user" Style="{StaticResource H2}" TextColor="{StaticResource userThemeColor}"
-                           HorizontalOptions="Fill" VerticalOptions="Center"/>
-                    <Switch x:Name="switch" IsToggled="False"  HorizontalOptions="End" Margin="0,0,50,0"
-                            ThumbColor="{StaticResource agentThemeColor}" Toggled="Switch_Toggled"/>
+            <StackLayout Grid.Row="0"
+                         Margin="20, 35, 0, 20">
+                <Frame Margin="0, 80, 0, 25"
+                       BackgroundColor="{StaticResource agentThemeColor}"
+                       HasShadow="False"
+                       Padding="2"
+                       HorizontalOptions="End">
+
+                    <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="EndAndExpand"
+                                 Margin="0, 0, 0, 0">
+
+                        <Label HorizontalOptions="StartAndExpand"
+                               Text="Go back"
+                               TextColor="{StaticResource lightTextColor}"
+                               FontAttributes="Bold"
+                               FontSize="Subtitle"
+                               VerticalTextAlignment="Center" />
+                        <Label FontFamily="{StaticResource FontAwesomeSolid}"
+                               Text="&#xf054;"
+                               TextColor="{StaticResource lightTextColor}"
+                               FontAttributes="Bold"
+                               FontSize="Subtitle"
+                               VerticalTextAlignment="Center" />
+
+
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+
+                        <TapGestureRecognizer Command="{Binding GoAgentMainCommand }" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <custom:CircleImage x:Name="agentphoto"
+                                    Source="http://placekitten.com/400/300"
+                                    WidthRequest='150'
+                                    HeightRequest="150"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Start" />
+                <Label Text="Agent Obama"
+                       Style="{StaticResource H1}"
+                       HorizontalTextAlignment="Center"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="Center">
+                    <Label Text="&#xf005;&#xf005;&#xf005;&#xf5c0;"
+                           FontFamily="{StaticResource FontAwesomeSolid}"
+                           TextColor="{StaticResource yellowColor}"
+                           Style="{StaticResource H1}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" />
+
+                    <Label Margin="-5, 0, 0, 0"
+                           Text="&#xf005;"
+                           FontFamily="{StaticResource FontAwesomeRegular}"
+                           TextColor="{StaticResource yellowColor}"
+                           Style="{StaticResource H1}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" />
                 </StackLayout>
-                <Button Text="LOGOUT" Margin="50,0,50,0" Style="{StaticResource secondaryButton}" 
-                        VerticalOptions="End" Command="{Binding LogoutCommand}"  />
+                <Label HorizontalOptions="Center"
+                       Text="3.5 (97)"
+                       Style="{StaticResource H4}" />
+            </StackLayout>
+        </Frame>
+        <Grid Grid.Row="1"
+              Margin="20, 0, 20, 0">
+            <Label Text="Change to user"
+                   FontSize="Large" />
+            <Switch HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Start"
+                    IsToggled="{Binding GoToUserCommand}"
+                    ThumbColor="{StaticResource agentThemeColor}"
+                    OnColor="{StaticResource userThemeColor}" />
 
-        </StackLayout>
+        </Grid>
+
+
+        <Button Grid.Row="2"
+                Margin="80, 0, 80, 20"
+                VerticalOptions="End"
+                Text="LOGOUT"
+                Style="{StaticResource secondaryButton}"
+                CornerRadius="25"
+                Command="{Binding LogoutCommand}" />
+
+
     </Grid>
 </ContentPage>
