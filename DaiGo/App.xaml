@@ -1,10 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="DaiGo.App">
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="DaiGo.App">
     <Application.Resources>
         <Color x:Key="backgroundColor">#E2E1DF</Color>
         <Color x:Key="lightgrayColor">#E2E1DF</Color>
@@ -21,12 +16,9 @@
         <Color x:Key="darkTextColor">#24292C</Color>
 
         <Style x:Key="H1" TargetType="Label">
-            <Setter Property="TextColor"
-                    Value="{StaticResource darkTextColor}" />
-            <Setter Property="FontFamily"
-                    Value="Arial Regular" />
-            <Setter Property="FontSize"
-                    Value="Title" />
+            <Setter Property="TextColor" Value="{StaticResource darkTextColor}" />
+            <Setter Property="FontFamily" Value="Arial Regular" />
+            <Setter Property="FontSize" Value="Title" />
         </Style>
         <Style x:Key="H2" TargetType="Label" BasedOn="{StaticResource H1}">
             <Setter Property="FontSize" Value="Subtitle" />
@@ -38,64 +30,40 @@
             <Setter Property="FontSize" Value="Default" />
         </Style>
 
-        <Style x:Key="primaryButton"
-               TargetType="Button">
-            <Setter Property="BackgroundColor"
-                    Value="{StaticResource lightTextColor}" />
-            <Setter Property="TextColor"
-                    Value="{StaticResource darkTextColor}" />
-            <Setter Property="FontSize"
-                    Value="20" />
-            <Setter Property="CornerRadius"
-                    Value="40" />
-            <Setter Property="HeightRequest"
-                    Value="50" />
+        <Style x:Key="primaryButton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource lightTextColor}" />
+            <Setter Property="TextColor" Value="{StaticResource darkTextColor}" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="CornerRadius" Value="40" />
+            <Setter Property="HeightRequest" Value="50" />
         </Style>
 
-        <Style x:Key="secondaryButton"
-               TargetType="Button"
-               BasedOn="{StaticResource primaryButton}">
-            <Setter Property="BackgroundColor"
-                    Value="{StaticResource darkTextColor}" />
-            <Setter Property="TextColor"
-                    Value="{StaticResource lightTextColor}" />
+        <Style x:Key="secondaryButton" TargetType="Button" BasedOn="{StaticResource primaryButton}">
+            <Setter Property="BackgroundColor" Value="{StaticResource darkTextColor}" />
+            <Setter Property="TextColor" Value="{StaticResource lightTextColor}" />
         </Style>
 
-        <Style x:Key="entryField"
-               TargetType="Entry">
-            <Setter Property="BackgroundColor"
-                    Value="{StaticResource lightTextColor}" />
-            <Setter Property="TextColor"
-                    Value="{StaticResource darkTextColor}" />
-            <Setter Property="FontSize"
-                    Value="15" />
-            <Setter Property="HeightRequest"
-                    Value="30" />
+        <Style x:Key="entryField" TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="{StaticResource lightTextColor}" />
+            <Setter Property="TextColor" Value="{StaticResource darkTextColor}" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="HeightRequest" Value="30" />
         </Style>
 
         <ResourceDictionary>
-            <OnPlatform x:TypeArguments="x:String"
-                        x:Key="FontAwesomeBrands">
-                <On Platform="Android"
-                    Value="FontAwesome5Brands.otf#Regular" />
-                <On Platform="iOS"
-                    Value="FontAwesome5Brands" />
+            <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeBrands">
+                <On Platform="Android" Value="FontAwesome5Brands.otf#Regular" />
+                <On Platform="iOS" Value="FontAwesome5Brands-Regular" />
             </OnPlatform>
 
-            <OnPlatform x:TypeArguments="x:String"
-                        x:Key="FontAwesomeSolid">
-                <On Platform="Android"
-                    Value="FontAwesome5Solid.otf#Regular" />
-                <On Platform="iOS"
-                    Value="FontAwesome5Solid" />
+            <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeSolid">
+                <On Platform="Android" Value="FontAwesome5Solid.otf#Regular" />
+                <On Platform="iOS" Value="FontAwesome5Free-Solid" />
             </OnPlatform>
 
-            <OnPlatform x:TypeArguments="x:String"
-                        x:Key="FontAwesomeRegular">
-                <On Platform="Android"
-                    Value="FontAwesome5Regular.otf#Regular" />
-                <On Platform="iOS"
-                    Value="FontAwesome5Regular" />
+            <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeRegular">
+                <On Platform="Android" Value="FontAwesome5Regular.otf#Regular" />
+                <On Platform="iOS" Value="FontAwesome5Free-Regular" />
             </OnPlatform>
         </ResourceDictionary>
     </Application.Resources>
