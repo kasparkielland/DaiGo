@@ -59,15 +59,9 @@
                        TextColor="{StaticResource lightTextColor}"
                        FontSize="Micro"
                        HorizontalOptions="End" />
-                <Button Text="Login as Agent"
-                        BackgroundColor="Transparent"
-                        Clicked="Button_Clicked"
-                        TextColor="{StaticResource agentThemeColor}"
-                        FontSize="Micro"
-                        HorizontalOptions="End" />
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="Center"
-                             VerticalOptions="EndAndExpand">
+                             VerticalOptions="Start">
                     <Button Text="SIGNUP"
                             WidthRequest="150"
                             Style="{StaticResource primaryButton}"
