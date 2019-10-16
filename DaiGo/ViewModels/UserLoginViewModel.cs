@@ -8,14 +8,16 @@ namespace DaiGo.ViewModels
 {
     public class UserLoginViewModel : INotifyPropertyChanged
     {
+        public ICommand LoginCommand { get; }
+
         public UserLoginViewModel()
         {
-            LoginCommand = new Command(OnLogin);
+            this.LoginCommand = new Command(OnLogin);
         }
 
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
-        private void OnLogin()
+        void OnLogin()
         {
             if (string.IsNullOrEmpty(Username))
             {
@@ -50,6 +52,5 @@ namespace DaiGo.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs("Password"));
             }
         }
-        public ICommand LoginCommand { get; set; }
     }
 }

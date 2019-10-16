@@ -11,7 +11,8 @@
         <Color x:Key="darkgrayColor">#E2E1DF</Color>
         <Color x:Key="blackgrayColor">#E2E1DF</Color>
         <Color x:Key="userThemeColor">#E64448</Color>
-        <Color x:Key="userThemeColor1">#EAB224</Color>
+
+        <Color x:Key="yellowColor">#EAB244</Color>
 
         <Color x:Key="agentThemeColor">#30AAB3</Color>
         <Color x:Key="agentThemeColor1">#89C5C7</Color>
@@ -20,7 +21,8 @@
         <Color x:Key="lightTextColor">#E2E1DF</Color>
         <Color x:Key="darkTextColor">#24292C</Color>
 
-        <Style x:Key="H1" TargetType="Label">
+        <Style x:Key="H1"
+               TargetType="Label">
             <Setter Property="TextColor"
                     Value="{StaticResource darkTextColor}" />
             <Setter Property="FontFamily"
@@ -28,14 +30,23 @@
             <Setter Property="FontSize"
                     Value="Title" />
         </Style>
-        <Style x:Key="H2" TargetType="Label" BasedOn="{StaticResource H1}">
-            <Setter Property="FontSize" Value="Subtitle" />
+        <Style x:Key="H2"
+               TargetType="Label"
+               BasedOn="{StaticResource H1}">
+            <Setter Property="FontSize"
+                    Value="Subtitle" />
         </Style>
-        <Style x:Key="H3" TargetType="Label" BasedOn="{StaticResource H1}">
-            <Setter Property="FontSize" Value="Large" />
+        <Style x:Key="H3"
+               TargetType="Label"
+               BasedOn="{StaticResource H1}">
+            <Setter Property="FontSize"
+                    Value="Large" />
         </Style>
-        <Style x:Key="H4" TargetType="Label" BasedOn="{StaticResource H1}">
-            <Setter Property="FontSize" Value="Default" />
+        <Style x:Key="H4"
+               TargetType="Label"
+               BasedOn="{StaticResource H1}">
+            <Setter Property="FontSize"
+                    Value="Default" />
         </Style>
 
         <Style x:Key="primaryButton"
@@ -79,7 +90,7 @@
                 <On Platform="Android"
                     Value="FontAwesome5Brands.otf#Regular" />
                 <On Platform="iOS"
-                    Value="FontAwesome5Brands" />
+                    Value="FontAwesome5Brands-Regular" />
             </OnPlatform>
 
             <OnPlatform x:TypeArguments="x:String"
@@ -87,7 +98,7 @@
                 <On Platform="Android"
                     Value="FontAwesome5Solid.otf#Regular" />
                 <On Platform="iOS"
-                    Value="FontAwesome5Solid" />
+                    Value="FontAwesome5Free-Solid" />
             </OnPlatform>
 
             <OnPlatform x:TypeArguments="x:String"
@@ -95,7 +106,7 @@
                 <On Platform="Android"
                     Value="FontAwesome5Regular.otf#Regular" />
                 <On Platform="iOS"
-                    Value="FontAwesome5Regular" />
+                    Value="FontAwesome5Free-Regular" />
             </OnPlatform>
         </ResourceDictionary>
     </Application.Resources>
