@@ -32,7 +32,7 @@
                      Grid.Column="0"
                      HorizontalOptions="Start"
                      VerticalOptions="Center"
-                     Clicked="ImageButton_Clicked">
+                     Command="{Binding ImageButton_Clicked}">
             <ImageButton.Source>
                 <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
                                  Glyph="&#xf2bd;"
@@ -45,7 +45,7 @@
                      Grid.Column="2"
                      HorizontalOptions="End"
                      VerticalOptions="Center"
-                     Clicked="Button_Clicked">
+                     Command="{Binding Button_Clicked}">
             <ImageButton.Source>
                 <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
                                  Glyph="&#xf01c;"
@@ -69,11 +69,10 @@
                CornerRadius="50"
                HasShadow="False">
             <Frame.GestureRecognizers>
-                <TapGestureRecognizer Tapped="Button_Clicked" />
+                <TapGestureRecognizer Command="{Binding Button_Clicked}" />
             </Frame.GestureRecognizers>
             <Grid>
-                <Label x:Name="QuickAccessText"
-                       Text="You have 2 new messages"
+                <Label Text="{Binding QuickAccessText}"
                        Style="{StaticResource primaryButton}"
                        TextColor="{StaticResource lightTextColor}"
                        BackgroundColor="{StaticResource userThemeColor}"
@@ -88,8 +87,7 @@
                        HorizontalOptions="End" />
             </Grid>
         </Frame>
-        <Frame x:Name="backgroundTab"
-               Margin="0, 100, 0, -100"
+        <Frame Margin="0, 100, 0, -100"
                Grid.Row="3"
                Grid.ColumnSpan="3"
                BackgroundColor="{StaticResource userThemeColor}"
@@ -106,7 +104,6 @@
                        Placeholder="What are you looking for?"
                        Keyboard="Text"
                        ReturnType="Search"
-                       Completed="Entry_Completed"
                        Text="{Binding Subject}"
                        ReturnCommand="{Binding GoEditRequestCommand}" />
                 <Button Margin="90, 0, 90, 100"

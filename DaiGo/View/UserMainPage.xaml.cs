@@ -19,24 +19,24 @@ namespace DaiGo.View
         }
 
 
-        async void OnQuickAccessFrameClicked(object sender, EventArgs args)
-        {
-            await Navigation.PushAsync(new UserMessagePage());
-        }
+        //async void OnQuickAccessFrameClicked(object sender, EventArgs args)
+        //{
+        //    await Navigation.PushAsync(new UserMessagePage());
+        //}
 
-        private void Entry_Completed(object sender, EventArgs e)
-        {
+        //private void Entry_Completed(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
-        private void ImageButton_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new UserIdentityPage());
-        }
+        //private void ImageButton_Clicked(object sender, EventArgs e)
+        //{
+        //    Navigation.PushAsync(new UserIdentityPage());
+        //}
 
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new UserMessagePage());
-        }
+        //private void Button_Clicked(object sender, EventArgs e)
+        //{
+        //    Navigation.PushAsync(new UserMessagePage());
+        //}
     }
 }
