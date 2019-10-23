@@ -40,13 +40,5 @@ namespace DaiGo.View
         {
             await Navigation.PushAsync(new UserSignUp());
         }
-
-        async void Button_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new ItemsPage());
-        }
-
-
-
     }
 }
