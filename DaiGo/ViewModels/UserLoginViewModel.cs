@@ -30,6 +30,7 @@ namespace DaiGo.ViewModels
             else
             {
                 Application.Current.MainPage = new NavigationPage(new UserMainPage());
+                System.Diagnostics.Debug.WriteLine("Go to user main page");
             }
         }
         public string username;
