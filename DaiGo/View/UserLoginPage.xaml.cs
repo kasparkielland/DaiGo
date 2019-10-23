@@ -1,13 +1,7 @@
 ﻿using DaiGo.ViewModels;
-using DaiGo.Views;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace DaiGo.View
 {
@@ -30,15 +24,10 @@ namespace DaiGo.View
                 passwordEntry.Focus();
             };
 
-            passwordEntry.Completed += (object sender, EventArgs e) =>
-            {
-                userLoginViewModel.LoginCommand.Execute(null);
-            };
-        }
-
-        async void OnSignupButtonClicked(object sender, EventArgs args)
-        {
-            await Navigation.PushAsync(new UserSignUp());
+            //passwordEntry.Completed += (object sender, EventArgs e) =>
+            //{
+            //    userLoginViewModel.LoginCommand.Execute(null);
+            //};
         }
     }
 }

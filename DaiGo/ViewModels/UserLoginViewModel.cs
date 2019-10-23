@@ -8,11 +8,13 @@ namespace DaiGo.ViewModels
 {
     public class UserLoginViewModel : INotifyPropertyChanged
     {
-        public new ICommand LoginCommand { get; set; }
+        public new ICommand OnLoginButtonClicked { get; set; }
+        public new ICommand OnSignupButtonClicked { get; set; }
 
         public UserLoginViewModel()
         {
-            LoginCommand = new Command(OnLogin);
+            OnLoginButtonClicked = new Command(OnLogin);
+            OnSignupButtonClicked = new Command(OnSignup);
         }
 
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
@@ -32,6 +34,12 @@ namespace DaiGo.ViewModels
                 Application.Current.MainPage = new NavigationPage(new UserMainPage());
             }
         }
+
+        void OnSignup()
+        {
+            Application.Current.MainPage = new NavigationPage(new UserSignUp());
+        }
+
         public string username;
         public string Username
         {

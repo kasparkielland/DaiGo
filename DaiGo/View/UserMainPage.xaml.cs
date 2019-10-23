@@ -1,4 +1,5 @@
-﻿using DaiGo.Views;
+﻿using DaiGo.ViewModels;
+using DaiGo.Views;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
@@ -9,6 +10,8 @@ namespace DaiGo.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UserMainPage : ContentPage
     {
+        private UserMainViewModel userMainViewModel;
+
         public UserMainPage()
         {
             InitializeComponent();

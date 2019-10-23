@@ -9,6 +9,7 @@
              xmlns:vm="clr-namespace:DaiGo.ViewModels"
              BackgroundColor="{StaticResource backgroundColor}"
              Title="{Binding Title}">
+
     <ContentPage.BindingContext>
         <vm:UserMainViewModel />
     </ContentPage.BindingContext>

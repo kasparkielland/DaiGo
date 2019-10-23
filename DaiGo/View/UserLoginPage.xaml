@@ -3,10 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ViewModels="clr-namespace:DaiGo.ViewModels"
              mc:Ignorable="d"
              x:Class="DaiGo.View.UserLoginPage"
              BackgroundColor="{StaticResource backgroundColor}"
              NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <ViewModels:UserLoginViewModel />
+    </ContentPage.BindingContext>
+
     <Grid Margin="0, 35, 0, 0">
         <Grid.RowDefinitions>
             <RowDefinition Height="55*" />
@@ -14,7 +20,7 @@
         </Grid.RowDefinitions>
         <Frame Margin="0, -100, 0, 100"
                BackgroundColor="{StaticResource userThemeColor}"
-               CornerRadius="25">
+               CornerRadius="30">
             <StackLayout Grid.Row="0"
                          Margin="20, 100, 20, 0"
                          VerticalOptions="FillAndExpand">
@@ -67,12 +73,12 @@
                             WidthRequest="150"
                             Style="{StaticResource primaryButton}"
                             CornerRadius="25"
-                            Clicked="OnSignupButtonClicked" />
+                            Command="{Binding OnSignupButtonClicked}" />
                     <Button Text="LOGIN"
                             WidthRequest="150"
                             Style="{StaticResource secondaryButton}"
                             CornerRadius="25"
-                            Command="{Binding LoginCommand}" />
+                            Command="{Binding OnLoginButtonClicked}" />
                 </StackLayout>
             </StackLayout>
         </Frame>
