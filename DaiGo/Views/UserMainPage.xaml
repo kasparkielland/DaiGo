@@ -13,7 +13,7 @@
         <vm:UserMainViewModel />
     </ContentPage.BindingContext>
 
-    <Grid Margin="0, 35, 0, 10">
+    <Grid Margin="0, 35, 0, 30">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*" />
             <RowDefinition Height="0.25*" />

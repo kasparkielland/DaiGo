@@ -5,14 +5,10 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="DaiGo.Views.ItemsPage"
+             x:Class="DaiGo.Views.AgentMainPage"
              Title="{Binding Title}"
              x:Name="BrowseItemsPage"
              BackgroundColor="{StaticResource backgroundColor}">
-
-    <!--ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="MessageIconBlack.png" Clicked="AddItem_Clicked" />
-    </-->
 
     <Grid Margin="0, 35, 0, 10">
         <Grid.RowDefinitions>

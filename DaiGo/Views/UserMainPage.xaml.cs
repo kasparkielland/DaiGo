@@ -1,5 +1,7 @@
-﻿using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using System;
+using System.Collections.Generic;
+
+using Xamarin.Forms;
 
 namespace DaiGo.Views
 {
@@ -8,7 +10,6 @@ namespace DaiGo.Views
         public UserMainPage()
         {
             InitializeComponent();
-
         }
     }
 }
