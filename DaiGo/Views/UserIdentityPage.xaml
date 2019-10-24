@@ -5,33 +5,46 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="DaiGo.View.AgentIdentityPage"
+             x:Class="DaiGo.Views.UserIdentityPage"
              xmlns:vm="clr-namespace:DaiGo.ViewModels"
-             xmlns:custom="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              Title="{Binding Title}"
              BackgroundColor="{StaticResource backgroundColor}">
     <ContentPage.BindingContext>
-        <vm:AgentIdentityViewModel />
+        <vm:UserIdentityViewModel />
     </ContentPage.BindingContext>
 
 
     <Grid Margin="0, 0, 0, 0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="450" />
             <RowDefinition Height="0.5*" />
-            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="0.2*" />
         </Grid.RowDefinitions>
+        <Grid.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Left"
+                                    Command="{Binding GoToMainCommand}" />
+        </Grid.GestureRecognizers>
+
         <Frame Margin="0, -100, 0, 100"
-               BackgroundColor="{StaticResource agentThemeColor}"
-               CornerRadius="25">
+               BackgroundColor="{StaticResource userThemeColor}"
+               CornerRadius="25"
+               VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand">
 
             <StackLayout Grid.Row="0"
-                         Margin="20, 35, 0, 20">
+                         Margin="20, 35, 0, 20"
+                         VerticalOptions="FillAndExpand"
+                         HorizontalOptions="FillAndExpand">
                 <Frame Margin="0, 80, 0, 25"
-                       BackgroundColor="{StaticResource agentThemeColor}"
+                       BackgroundColor="{StaticResource userThemeColor}"
                        HasShadow="False"
                        Padding="2"
-                       HorizontalOptions="End">
+                       VerticalOptions="FillAndExpand"
+                       HorizontalOptions="EndAndExpand">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToMainCommand}" />
+                    </Frame.GestureRecognizers>
 
                     <StackLayout Orientation="Horizontal"
                                  HorizontalOptions="EndAndExpand"
@@ -52,60 +65,42 @@
 
 
                     </StackLayout>
-                    <Frame.GestureRecognizers>
-
-                        <TapGestureRecognizer Command="{Binding GoAgentMainCommand }" />
-                    </Frame.GestureRecognizers>
                 </Frame>
-                <custom:CircleImage x:Name="agentphoto"
-                                    Source="http://placekitten.com/400/300"
-                                    WidthRequest='150'
-                                    HeightRequest="150"
-                                    HorizontalOptions="Center"
-                                    VerticalOptions="Start" />
-                <Label Text="Agent Obama"
+                <controls:CircleImage x:Name="agentPhoto"
+                                      Source="https://www.placecage.com/c/600/600"
+                                      Aspect="AspectFill"
+                                      BorderThickness="5"
+                                      BorderColor="{StaticResource lightTextColor}"
+                                      WidthRequest="200"
+                                      HeightRequest="200"
+                                      VerticalOptions="StartAndExpand"
+                                      HorizontalOptions="CenterAndExpand" />
+                <Label Text="{Binding Name}"
                        Style="{StaticResource H1}"
                        HorizontalTextAlignment="Center"
                        HorizontalOptions="Center"
                        VerticalOptions="Center" />
-                <StackLayout Orientation="Horizontal"
-                             HorizontalOptions="Center">
-                    <Label Text="&#xf005;&#xf005;&#xf005;&#xf5c0;"
-                           FontFamily="{StaticResource FontAwesomeSolid}"
-                           TextColor="{StaticResource yellowColor}"
-                           Style="{StaticResource H1}"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center" />
-
-                    <Label Margin="-5, 0, 0, 0"
-                           Text="&#xf005;"
-                           FontFamily="{StaticResource FontAwesomeRegular}"
-                           TextColor="{StaticResource yellowColor}"
-                           Style="{StaticResource H1}"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center" />
-                </StackLayout>
-                <Label HorizontalOptions="Center"
-                       Text="3.5 (97)"
-                       Style="{StaticResource H4}" />
             </StackLayout>
         </Frame>
         <Grid Grid.Row="1"
-              Margin="20, 0, 20, 0">
-            <Label Text="Change to user"
-                   FontSize="Large" />
+              Margin="20, 0, 20, 0"
+              VerticalOptions="FillAndExpand"
+              HorizontalOptions="FillAndExpand">
+            <Label Text="Change to agent"
+                   FontSize="Large"
+                   TextColor="{StaticResource darkTextColor}" />
             <Switch HorizontalOptions="EndAndExpand"
                     VerticalOptions="Start"
-                    IsToggled="{Binding GoToUserCommand}"
-                    ThumbColor="{StaticResource agentThemeColor}"
-                    OnColor="{StaticResource userThemeColor}" />
+                    IsToggled="{Binding ActivateAgent, Mode=TwoWay}"
+                    ThumbColor="{StaticResource userThemeColor}"
+                    OnColor="{StaticResource agentThemeColor}" />
 
         </Grid>
 
 
         <Button Grid.Row="2"
                 Margin="80, 0, 80, 20"
-                VerticalOptions="End"
+                VerticalOptions="EndAndExpand"
                 Text="LOGOUT"
                 Style="{StaticResource secondaryButton}"
                 CornerRadius="25"

@@ -20,9 +20,8 @@ namespace DaiGo.Droid
 
             base.OnCreate(savedInstanceState);
 
-            ImageCircleRenderer.Init();
-
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            ImageCircleRenderer.Init();
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }

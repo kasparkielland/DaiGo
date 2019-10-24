@@ -3,7 +3,7 @@ using DaiGo.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace DaiGo.View
+namespace DaiGo.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UserSignUp : ContentPage

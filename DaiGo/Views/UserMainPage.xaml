@@ -5,10 +5,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="DaiGo.View.UserMainPage"
+             x:Class="Daigo.Views.UserMainPage"
              xmlns:vm="clr-namespace:DaiGo.ViewModels"
-             BackgroundColor="{StaticResource backgroundColor}"
-             Title="{Binding Title}">
+             BackgroundColor="{StaticResource backgroundColor}">
 
     <ContentPage.BindingContext>
         <vm:UserMainViewModel />
@@ -26,13 +25,20 @@
             <ColumnDefinition Width="0.5*" />
             <ColumnDefinition Width="0.5*" />
         </Grid.ColumnDefinitions>
+        <Grid.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Right"
+                                    Command="{Binding executeProfileCommand}" />
+            <SwipeGestureRecognizer Direction="Left"
+                                    Command="{Binding executeMessageCommand}" />
+        </Grid.GestureRecognizers>
+
 
         <ImageButton Margin="20, 0, 20, 0"
                      Grid.Row="0"
                      Grid.Column="0"
                      HorizontalOptions="Start"
                      VerticalOptions="Center"
-                     Command="{Binding ImageButton_Clicked}">
+                     Command="{Binding executeProfileCommand}">
             <ImageButton.Source>
                 <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
                                  Glyph="&#xf2bd;"
@@ -45,7 +51,7 @@
                      Grid.Column="2"
                      HorizontalOptions="End"
                      VerticalOptions="Center"
-                     Command="{Binding Button_Clicked}">
+                     Command="{Binding executeMessageCommand}">
             <ImageButton.Source>
                 <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
                                  Glyph="&#xf01c;"
@@ -58,7 +64,7 @@
                Grid.ColumnSpan="3"
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="CenterAndExpand"
-               Text="Good morning, Mr. Obama"
+               Text="{Binding WelcomeText}"
                FontSize="Title"
                TextColor="{StaticResource darkTextColor}"
                LineBreakMode="WordWrap" />
@@ -69,16 +75,16 @@
                CornerRadius="50"
                HasShadow="False">
             <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding Button_Clicked}" />
+                <TapGestureRecognizer Command="{Binding executeQuicAccessCommand}" />
             </Frame.GestureRecognizers>
             <Grid>
                 <Label Text="{Binding QuickAccessText}"
-                       Style="{StaticResource primaryButton}"
                        TextColor="{StaticResource lightTextColor}"
                        BackgroundColor="{StaticResource userThemeColor}"
                        VerticalOptions="CenterAndExpand"
-                       HorizontalOptions="Center"
-                       Margin="0, 0, 0, 0" />
+                       HorizontalOptions="CenterAndExpand"
+                       Margin="0, 0, 20, 0"
+                       Padding="5" />
                 <Label FontFamily="{StaticResource FontAwesomeSolid}"
                        Text="&#xf054;"
                        FontSize="40"

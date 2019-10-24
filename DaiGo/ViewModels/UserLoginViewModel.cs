@@ -1,20 +1,20 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Input;
-using DaiGo.View;
+using DaiGo.Views;
 using Xamarin.Forms;
 
 namespace DaiGo.ViewModels
 {
     public class UserLoginViewModel : INotifyPropertyChanged
     {
-        public new ICommand OnLoginButtonClicked { get; set; }
-        public new ICommand OnSignupButtonClicked { get; set; }
+        public new ICommand executeLogin { get; set; }
+        public new ICommand executeSignUp { get; set; }
 
         public UserLoginViewModel()
         {
-            OnLoginButtonClicked = new Command(OnLogin);
-            OnSignupButtonClicked = new Command(OnSignup);
+            executeLogin = new Command(OnLogin);
+            executeSignUp = new Command(OnSignup);
         }
 
         public event PropertyChangedEventHandler PropertyChanged = delegate { };

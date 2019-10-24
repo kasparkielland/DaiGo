@@ -7,7 +7,7 @@
              mc:Ignorable="d"
              xmlns:vm="clr-namespace:DaiGo.ViewModels"
              Title="{Binding Title}"
-             x:Class="DaiGo.View.EditRequest"
+             x:Class="DaiGo.Views.EditRequest"
              BackgroundColor="{StaticResource userThemeColor}">
     <ContentPage.BindingContext>
         <vm:EditRequestViewModel />

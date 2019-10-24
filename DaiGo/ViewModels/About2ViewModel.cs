@@ -1,4 +1,4 @@
-﻿using DaiGo.View;
+﻿using DaiGo.Views;
 using System;
 using System.Windows.Input;
 

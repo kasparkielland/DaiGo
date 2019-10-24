@@ -29,12 +29,12 @@ namespace DaiGo.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-
             ImageCircleRenderer.Init();
-
             LoadApplication(new App());
 
             KeyboardOverlapRenderer.Init();
+
+
 
             return base.FinishedLaunching(app, options);
         }

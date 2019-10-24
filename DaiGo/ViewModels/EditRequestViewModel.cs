@@ -1,4 +1,4 @@
-﻿using DaiGo.View;
+﻿using DaiGo.Views;
 using DaiGo.Views;
 using System.Windows.Input;
 using Xamarin.Forms;

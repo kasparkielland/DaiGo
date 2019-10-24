@@ -3,7 +3,7 @@ using System;
 
 using Xamarin.Forms;
 
-namespace DaiGo.View
+namespace DaiGo.Views
 {
     public partial class UserLoginPage : ContentPage
     {
@@ -24,10 +24,12 @@ namespace DaiGo.View
                 passwordEntry.Focus();
             };
 
-            //passwordEntry.Completed += (object sender, EventArgs e) =>
-            //{
-            //    userLoginViewModel.LoginCommand.Execute(null);
-            //};
+            passwordEntry.Completed += (object sender, EventArgs e) =>
+            {
+                if (userLoginViewModel.executeLogin.CanExecute(null))
+                    userLoginViewModel.executeLogin.Execute(null);
+                //userLoginViewModel.executeLogin.Execute(null);
+            };
         }
     }
 }

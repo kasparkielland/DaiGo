@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace DaiGo.View
+namespace DaiGo.Views
 {
     public partial class EditRequest : ContentPage
     {

@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using System.IO;
 using DaiGo.ViewModels;
+using DaiGo.Views;
 
 namespace DaiGo
 {
@@ -27,7 +28,7 @@ namespace DaiGo
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new View.UserLoginPage());
+            MainPage = new NavigationPage(new UserLoginPage());
 
         }
 

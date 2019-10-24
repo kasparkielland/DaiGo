@@ -17,7 +17,7 @@ namespace DaiGo.ViewModels
         }
         void GoHomeClicked()
         {
-            Application.Current.MainPage = new NavigationPage(new ItemsPage());
+            Application.Current.MainPage = new NavigationPage(new AgentMainPage());
         }
  
     }

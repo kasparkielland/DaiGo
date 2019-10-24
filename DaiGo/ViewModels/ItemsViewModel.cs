@@ -8,7 +8,7 @@ using Xamarin.Forms;
 using DaiGo.Models;
 using DaiGo.Views;
 using System.Windows.Input;
-using DaiGo.View;
+using DaiGo.Views;
 
 namespace DaiGo.ViewModels
 {

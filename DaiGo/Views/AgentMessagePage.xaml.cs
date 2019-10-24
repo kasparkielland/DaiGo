@@ -8,17 +8,21 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace DaiGo.View
+namespace DaiGo.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class UserMessagePage : ContentPage
+    public partial class AgentMessagePage : ContentPage
     {
-        public UserMessagePage()
+        public AgentMessagePage()
         {
             InitializeComponent();
-            UserMessageListView.ItemsSource = new List<AgentQuote>
+
+            AgentMessageListView.ItemsSource = new List<UserRequest>
             {
             };
+
+
+
         }
 
         private void Button_Clicked(object sender, EventArgs e)

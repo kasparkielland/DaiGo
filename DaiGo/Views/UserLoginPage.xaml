@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage NavigationPage.HasNavigationBar="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:ViewModels="clr-namespace:DaiGo.ViewModels"
              mc:Ignorable="d"
-             x:Class="DaiGo.View.UserLoginPage"
-             BackgroundColor="{StaticResource backgroundColor}"
-             NavigationPage.HasNavigationBar="False">
+             x:Class="DaiGo.Views.UserLoginPage"
+             BackgroundColor="{StaticResource backgroundColor}">
 
     <ContentPage.BindingContext>
         <ViewModels:UserLoginViewModel />
@@ -51,7 +51,7 @@
                        BackgroundColor="{StaticResource backgroundColor}"
                        PlaceholderColor="{StaticResource darkTextColor}"
                        TextColor="{StaticResource darkTextColor}"
-                       Text="{Binding Username}"
+                       Text="{Binding Username, Mode = TwoWay}"
                        TabIndex="1" />
                 <Entry x:Name="passwordEntry"
                        Placeholder="Password"
@@ -60,12 +60,17 @@
                        BackgroundColor="{StaticResource backgroundColor}"
                        TextColor="{StaticResource darkTextColor}"
                        PlaceholderColor="{StaticResource darkTextColor}"
-                       Text="{Binding Password}"
+                       Text="{Binding Password, Mode = TwoWay}"
                        TabIndex="2" />
                 <Label Text="Forgot password?"
                        TextColor="{StaticResource lightTextColor}"
                        FontSize="Micro"
-                       HorizontalOptions="End" />
+                       HorizontalOptions="End">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding executeForgotPassword}" />
+                    </Label.GestureRecognizers>
+
+                </Label>
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="Center"
                              VerticalOptions="EndAndExpand">
@@ -73,19 +78,20 @@
                             WidthRequest="150"
                             Style="{StaticResource primaryButton}"
                             CornerRadius="25"
-                            Command="{Binding OnSignupButtonClicked}" />
+                            Command="{Binding executeSignUp}" />
                     <Button Text="LOGIN"
                             WidthRequest="150"
                             Style="{StaticResource secondaryButton}"
                             CornerRadius="25"
-                            Command="{Binding OnLoginButtonClicked}" />
+                            Command="{Binding executeLogin}" />
                 </StackLayout>
             </StackLayout>
         </Frame>
 
         <StackLayout Grid.Row="1"
                      HorizontalOptions="Center">
-            <Label Text="Do you know that you will save up to 70% if you are buying from the right agent in the right market?"
+            <Label Margin="10, 0, 10, 0"
+                   Text="Do you know that you will save up to 70% if you are buying from the right agent in the right market?"
                    HorizontalTextAlignment="Center"
                    Style="{StaticResource H2}"
                    TextColor="{StaticResource darkTextColor}" />
