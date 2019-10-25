@@ -1,4 +1,5 @@
 ﻿using DaiGo.Models;
+using DaiGo.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +14,15 @@ namespace DaiGo.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AgentMessagePage : ContentPage
     {
+        private AgentMessageViewModel agentMessageViewModel;
+
         public AgentMessagePage()
         {
             InitializeComponent();
+            agentMessageViewModel = new AgentMessageViewModel();
+            this.BindingContext = agentMessageViewModel;
 
-            AgentMessageListView.ItemsSource = new List<UserRequest>
+            agentMessageListView.ItemsSource = new List<UserRequest>
             {
             };
 

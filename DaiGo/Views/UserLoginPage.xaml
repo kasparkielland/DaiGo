@@ -13,18 +13,25 @@
         <ViewModels:UserLoginViewModel />
     </ContentPage.BindingContext>
 
-    <Grid Margin="0, 35, 0, 0">
+    <Grid Margin="0, 20, 0, 0">
         <Grid.RowDefinitions>
             <RowDefinition Height="55*" />
             <RowDefinition Height="45*" />
         </Grid.RowDefinitions>
+        <Grid.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Up"
+                                    Command="{Binding directLogin}" />
+        </Grid.GestureRecognizers>
+
         <Frame Margin="0, -100, 0, 100"
                BackgroundColor="{StaticResource userThemeColor}"
-               CornerRadius="30">
+               CornerRadius="50"
+               HasShadow="True">
             <StackLayout Grid.Row="0"
-                         Margin="20, 100, 20, 0"
+                         Margin="20, 100, 20, -50"
                          VerticalOptions="FillAndExpand">
-                <StackLayout Orientation="Horizontal">
+                <StackLayout VerticalOptions="StartAndExpand"
+                             Orientation="Horizontal">
                     <Label Text="Login"
                            Style="{StaticResource H1}"
                            VerticalOptions="EndAndExpand"
@@ -34,45 +41,50 @@
                                  HorizontalOptions="EndAndExpand">
                         <Label Text="Welcome to"
                                VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="End"
+                               HorizontalOptions="EndAndExpand"
                                Style="{StaticResource H1}"
                                TextColor="{StaticResource darkTextColor}" />
                         <Label Text="DaiGo"
                                VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="End"
+                               HorizontalOptions="EndAndExpand"
                                TextColor="{StaticResource darkTextColor}"
                                Style="{StaticResource H1}"
                                FontAttributes="Bold" />
                     </StackLayout>
                 </StackLayout>
-                <Entry x:Name="usernameEntry"
-                       Placeholder="Username"
-                       Margin="0, 20, 0, 0"
-                       BackgroundColor="{StaticResource backgroundColor}"
-                       PlaceholderColor="{StaticResource darkTextColor}"
-                       TextColor="{StaticResource darkTextColor}"
-                       Text="{Binding Username, Mode = TwoWay}"
-                       TabIndex="1" />
-                <Entry x:Name="passwordEntry"
-                       Placeholder="Password"
-                       Margin="0, 20, 0, 0"
-                       IsPassword="True"
-                       BackgroundColor="{StaticResource backgroundColor}"
-                       TextColor="{StaticResource darkTextColor}"
-                       PlaceholderColor="{StaticResource darkTextColor}"
-                       Text="{Binding Password, Mode = TwoWay}"
-                       TabIndex="2" />
-                <Label Text="Forgot password?"
-                       TextColor="{StaticResource lightTextColor}"
-                       FontSize="Micro"
-                       HorizontalOptions="End">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding executeForgotPassword}" />
-                    </Label.GestureRecognizers>
+                <StackLayout VerticalOptions="StartAndExpand">
+                    <Entry x:Name="usernameEntry"
+                           Placeholder="Username"
+                           Margin="0, 10, 0, 0"
+                           BackgroundColor="{StaticResource backgroundColor}"
+                           PlaceholderColor="{StaticResource darkTextColor}"
+                           TextColor="{StaticResource darkTextColor}"
+                           Text="{Binding Username, Mode = TwoWay}"
+                           TabIndex="1"
+                           ReturnType="Next" />
+                    <Entry x:Name="passwordEntry"
+                           Placeholder="Password"
+                           Margin="0, 10, 0, 0"
+                           IsPassword="True"
+                           BackgroundColor="{StaticResource backgroundColor}"
+                           TextColor="{StaticResource darkTextColor}"
+                           PlaceholderColor="{StaticResource darkTextColor}"
+                           Text="{Binding Password, Mode = TwoWay}"
+                           TabIndex="2"
+                           ReturnType="Done" />
+                    <!-- ReturnCommand="{Binding executeLoginCommand}" /> -->
+                    <Label Text="Forgot password?"
+                           TextColor="{StaticResource lightTextColor}"
+                           FontSize="Micro"
+                           HorizontalOptions="EndAndExpand">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding executeForgotPassword}" />
+                        </Label.GestureRecognizers>
 
-                </Label>
+                    </Label>
+                </StackLayout>
                 <StackLayout Orientation="Horizontal"
-                             HorizontalOptions="Center"
+                             HorizontalOptions="CenterAndExpand"
                              VerticalOptions="EndAndExpand">
                     <Button Text="SIGNUP"
                             WidthRequest="150"
@@ -89,7 +101,8 @@
         </Frame>
 
         <StackLayout Grid.Row="1"
-                     HorizontalOptions="Center">
+                     HorizontalOptions="CenterAndExpand"
+                     VerticalOptions="FillAndExpand">
             <Label Margin="10, 0, 10, 0"
                    Text="Do you know that you will save up to 70% if you are buying from the right agent in the right market?"
                    HorizontalTextAlignment="Center"
@@ -105,7 +118,7 @@
                    TextColor="{StaticResource userThemeColor}"
                    VerticalOptions="EndAndExpand"
                    HorizontalTextAlignment="Center"
-                   HorizontalOptions="Center"
+                   HorizontalOptions="CenterAndExpand"
                    Margin="0, 0, 0, 50" />
         </StackLayout>
     </Grid>

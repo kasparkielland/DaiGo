@@ -23,11 +23,13 @@ namespace DaiGo.ViewModels
 
         void BackClicked()
         {
+            //Application.Current.MainPage.Navigation.PopAsync();
             Application.Current.MainPage = new NavigationPage(new UserLoginPage());
         }
 
         void OnSignUp()
         {
+            //Application.Current.MainPage.Navigation.PushAsync(new UserLoginPage());
             Application.Current.MainPage = new NavigationPage(new UserLoginPage());
         }
     }

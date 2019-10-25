@@ -5,7 +5,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Daigo.Views.UserMainPage"
+             x:Class="DaiGo.Views.UserMainPage"
              xmlns:vm="clr-namespace:DaiGo.ViewModels"
              BackgroundColor="{StaticResource backgroundColor}">
 
@@ -13,7 +13,7 @@
         <vm:UserMainViewModel />
     </ContentPage.BindingContext>
 
-    <Grid Margin="0, 35, 0, 30">
+    <Grid Margin="0, 35, 0, 20">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*" />
             <RowDefinition Height="0.25*" />
@@ -111,14 +111,16 @@
                        Keyboard="Text"
                        ReturnType="Search"
                        Text="{Binding Subject}"
-                       ReturnCommand="{Binding GoEditRequestCommand}" />
-                <Button Margin="90, 0, 90, 100"
-                        VerticalOptions="EndAndExpand"
+                       ReturnCommand="{Binding executeRequestCommand}" />
+                <Button VerticalOptions="EndAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="0, 0, 0, 100"
                         Style="{StaticResource primaryButton}"
                         Text="SEARCH"
                         CornerRadius="25"
-                        Command="{Binding GoEditRequestCommand}" />
+                        Command="{Binding executeRequestCommand}" />
             </StackLayout>
+
         </Frame>
     </Grid>
 </ContentPage>

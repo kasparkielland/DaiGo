@@ -8,30 +8,29 @@ using Xamarin.Forms;
 using DaiGo.Models;
 using DaiGo.Views;
 using System.Windows.Input;
-using DaiGo.Views;
 
 namespace DaiGo.ViewModels
 {
-    public class ItemsViewModel : BaseViewModel
+    public class AgentMainViewModel : BaseViewModel
     {
         public ObservableCollection<Item> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
-        public ICommand GoAgentProfileCommand { get; }
-        public ICommand GoAgentMessageCommand { get; }
+        public new ICommand GoAgentProfileCommand { get; set; }
+        public new ICommand GoAgentMessageCommand { get; set; }
 
-        
-        public ItemsViewModel()
+
+        public AgentMainViewModel()
         {
             Title = "Browse";
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
-            {
-                var newItem = item as Item;
-                Items.Add(newItem);
-                await DataStore.AddItemAsync(newItem);
-            });
+            //MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
+            //{
+            //    var newItem = item as Item;
+            //    Items.Add(newItem);
+            //    await DataStore.AddItemAsync(newItem);
+            //});
             this.GoAgentProfileCommand = new Command(AgentIconClicked);
             this.GoAgentMessageCommand = new Command(MessageIconClicked);
         }
@@ -41,7 +40,7 @@ namespace DaiGo.ViewModels
         }
         void MessageIconClicked()
         {
-            Application.Current.MainPage = new NavigationPage(new AgentMessagePage()); 
+            Application.Current.MainPage = new NavigationPage(new AgentMessagePage());
         }
         async Task ExecuteLoadItemsCommand()
         {

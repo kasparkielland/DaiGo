@@ -63,17 +63,20 @@
                         <ViewCell>
                             <StackLayout Padding="10">
                                 <StackLayout Orientation="Horizontal"
-                                             BackgroundColor="{StaticResource backgroundColor}">
+                                             BackgroundColor="WhiteSmoke">
                                     <Label Text="{Binding RequestID}"
                                            d:Text="{Binding .}"
                                            HorizontalOptions="StartAndExpand"
-                                           FontSize="Small" />
+                                           FontSize="Small"
+                                           TextColor="{StaticResource darkTextColor}" />
                                     <Label Text="{Binding QuoteAmount}"
                                            d:Text="{Binding .}"
-                                           FontSize="Small" />
+                                           FontSize="Small"
+                                           TextColor="{StaticResource darkTextColor}" />
                                     <Button Text="Contact"
                                             FontSize="Large"
-                                            HorizontalOptions="End" />
+                                            HorizontalOptions="EndAndExpand"
+                                            TextColor="{StaticResource darkTextColor}" />
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>

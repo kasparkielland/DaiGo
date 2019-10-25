@@ -12,13 +12,13 @@ namespace DaiGo.Views
     [DesignTimeVisible(false)]
     public partial class AgentMainPage : ContentPage
     {
-        ItemsViewModel viewModel;
+        AgentMainViewModel viewModel;
 
         public AgentMainPage()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ItemsViewModel();
+            BindingContext = viewModel = new AgentMainViewModel();
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -33,10 +33,10 @@ namespace DaiGo.Views
             ItemsListView.SelectedItem = null;
         }
 
-        async void AddItem_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
-        }
+        //async void AddItem_Clicked(object sender, EventArgs e)
+        //{
+        //    await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
+        //}
 
         protected override void OnAppearing()
         {

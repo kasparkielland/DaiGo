@@ -15,10 +15,11 @@
 
     <StackLayout Margin="20, 35, 20, 20">
 
-        <Frame Margin="0, 0, 200, 0"
+        <Frame Margin="0, 0, 0, 0"
                BackgroundColor="{StaticResource userThemeColor}"
                HasShadow="False"
-               Padding="2">
+               Padding="2"
+               HorizontalOptions="StartAndExpand">
 
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="StartAndExpand">
@@ -43,45 +44,41 @@
                 <TapGestureRecognizer Command="{Binding GoUserMainCommand }" />
             </Frame.GestureRecognizers>
         </Frame>
-
-        <ScrollView>
-            <StackLayout Margin="20, 35, 20, 30">
-
-
-                <Label Margin="0, 50, 0, 20"
-                       HorizontalOptions="End"
-                       Text="Preferences"
-                       Style="{StaticResource H1}" />
-
+        <Label Text="Signup"
+               FontAttributes="Italic"
+               FontSize="40"
+               Style="{StaticResource H1}"
+               TextColor="{StaticResource darkTextColor}"
+               VerticalOptions="Center"
+               HorizontalOptions="EndAndExpand" />
+        <ScrollView VerticalOptions="EndAndExpand">
+            <StackLayout Margin="20, 0, 20, 30">
                 <Label Margin="20, 0, 0, 0"
                        HorizontalTextAlignment="Start"
+                       HorizontalOptions="StartAndExpand"
                        Text="Country"
                        VerticalTextAlignment="Center"
+                       VerticalOptions="EndAndExpand"
                        TextColor="{StaticResource darkTextColor}"
                        FontSize="25" />
 
                 <Picker x:Name="CountryPicker"
                         Margin="0, 0, 0, 20"
                         Title="Select preferred reseller location"
+                        VerticalOptions="EndAndExpand"
                         BackgroundColor="{StaticResource backgroundColor}">
-                    <!--
-                <StackLayout Orientation="Horizontal">
-                    <Label HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf078;" TextColor="{StaticResource userThemeColor}" FontSize="40" />
-                </StackLayout>
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding OnCountryFrameClicked}" />
-                </Frame.GestureRecognizers>-->
-
                 </Picker>
 
                 <Label Margin="20, 0, 0, 0"
                        HorizontalTextAlignment="Start"
                        Text="Price"
                        VerticalTextAlignment="Center"
+                       VerticalOptions="EndAndExpand"
                        TextColor="{StaticResource darkTextColor}"
                        FontSize="25" />
 
-                <Grid Margin="0, 0, 0, 20">
+                <Grid Margin="0, 0, 0, 20"
+                      VerticalOptions="EndAndExpand">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="0.5*" />
                         <RowDefinition Height="0.5*" />
@@ -131,6 +128,7 @@
                        HorizontalTextAlignment="Start"
                        Text="Category"
                        VerticalTextAlignment="Center"
+                       VerticalOptions="EndAndExpand"
                        TextColor="{StaticResource lightTextColor}"
                        FontSize="25" />
 
@@ -138,7 +136,8 @@
                        CornerRadius="30"
                        HeightRequest="50"
                        Padding="5"
-                       BackgroundColor="{StaticResource backgroundColor}">
+                       BackgroundColor="{StaticResource backgroundColor}"
+                       VerticalOptions="EndAndExpand">
 
                     <StackLayout Orientation="Horizontal">
 
@@ -164,6 +163,7 @@
                        HorizontalTextAlignment="Start"
                        Text="Description"
                        VerticalTextAlignment="Center"
+                       VerticalOptions="EndAndExpand"
                        TextColor="{StaticResource lightTextColor}"
                        FontSize="25" />
 
@@ -172,20 +172,20 @@
                         HeightRequest="100"
                         BackgroundColor="{StaticResource backgroundColor}"
                         Placeholder="Describe your product"
-                        AutoSize="TextChanges" />
+                        AutoSize="TextChanges"
+                        VerticalOptions="EndAndExpand" />
 
             </StackLayout>
 
         </ScrollView>
 
         <Button VerticalOptions="EndAndExpand"
-                Margin="80, 50, 80, 10"
+                HorizontalOptions="FillAndExpand"
+                Margin="0, 0, 0, 20"
                 Text="SEND REQUEST"
                 Style="{StaticResource secondaryButton}"
                 CornerRadius="25"
                 Command="{Binding GoAbout2Command}" />
-
-
     </StackLayout>
 
 </ContentPage>
