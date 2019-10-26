@@ -50,7 +50,7 @@ namespace DaiGo.ViewModels
 
         void OnSignup()
         {
-            Application.Current.MainPage = new NavigationPage(new UserSignUp());
+            Application.Current.MainPage = new NavigationPage(new SignUpPage());
         }
 
         public string username;

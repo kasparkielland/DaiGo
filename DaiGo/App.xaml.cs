@@ -28,7 +28,7 @@ namespace DaiGo
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new UserLoginPage());
+            MainPage = new NavigationPage(new LoginPage());
 
         }
 
