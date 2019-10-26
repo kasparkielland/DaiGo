@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage NavigationPage.HasNavigationBar="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DaiGo.Views.SignUpPage"
+             xmlns:vm="clr-namespace:DaiGo.ViewModels"
+             Title="{Binding Title}"
+             BackgroundColor="{StaticResource userThemeColor}">
+
+    <ContentPage.BindingContext>
+        <vm:SignUpPageViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Margin="20, 40, 20, 20">
+        <StackLayout.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Right"
+                                    Command="{Binding GoBack}" />
+        </StackLayout.GestureRecognizers>
+
+        <Frame Margin="0, 0, 0, 0"
+               BackgroundColor="{StaticResource userThemeColor}"
+               HasShadow="False"
+               Padding="2">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding GoBack}" />
+            </Frame.GestureRecognizers>
+
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="StartAndExpand">
+                <Label FontFamily="{StaticResource FontAwesomeSolid}"
+                       Text="&#xf053;"
+                       TextColor="{StaticResource lightTextColor}"
+                       FontAttributes="Bold"
+                       FontSize="Subtitle"
+                       VerticalOptions="CenterAndExpand" />
+                <Label HorizontalOptions="StartAndExpand"
+                       Text="Go back"
+                       TextColor="{StaticResource lightTextColor}"
+                       FontAttributes="Bold"
+                       FontSize="Subtitle"
+                       VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+        </Frame>
+        <Label Text="Signup"
+               FontAttributes="Italic"
+               FontSize="40"
+               Style="{StaticResource H1}"
+               TextColor="{StaticResource darkTextColor}"
+               VerticalOptions="Center"
+               HorizontalOptions="End" />
+
+        <ScrollView IsClippedToBounds="True">
+
+            <StackLayout Margin="20, 35, 20, 35">
+
+                <Label Text="Username"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource darkTextColor}" />
+                <Entry x:Name="usernameEntry"
+                       Placeholder="Username"
+                       Margin="0, 0, 0, 10"
+                       BackgroundColor="{StaticResource backgroundColor}"
+                       PlaceholderColor="{StaticResource darkTextColor}"
+                       TextColor="{StaticResource darkTextColor}"
+                       Text="{Binding Username}"
+                       TabIndex="1"
+                       IsTabStop="False"
+                       ReturnType="Next" />
+
+                <Label Text="Password"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource darkTextColor}" />
+                <Entry x:Name="passwordEntry"
+                       Placeholder="Password"
+                       Margin="0, 0, 0, 10"
+                       IsPassword="True"
+                       BackgroundColor="{StaticResource backgroundColor}"
+                       TextColor="{StaticResource darkTextColor}"
+                       PlaceholderColor="{StaticResource darkTextColor}"
+                       Text="{Binding Password}"
+                       TabIndex="2"
+                       IsTabStop="False"
+                       ReturnType="Next" />
+
+                <Label Text="Re-enter password"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource darkTextColor}" />
+                <Entry x:Name="passwordReEntry"
+                       Placeholder="Re-enter password"
+                       Margin="0, 0, 0, 10"
+                       IsPassword="True"
+                       BackgroundColor="{StaticResource backgroundColor}"
+                       TextColor="{StaticResource darkTextColor}"
+                       PlaceholderColor="{StaticResource darkTextColor}"
+                       Text="{Binding PasswordRe}"
+                       TabIndex="3"
+                       IsTabStop="False"
+                       ReturnType="Next" />
+
+                <Label Text="First name"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource darkTextColor}" />
+                <Entry x:Name="firstnameEntry"
+                       Placeholder="First name"
+                       Margin="0, 0, 0, 10"
+                       BackgroundColor="{StaticResource backgroundColor}"
+                       PlaceholderColor="{StaticResource darkTextColor}"
+                       TextColor="{StaticResource darkTextColor}"
+                       Text="{Binding Firstname}"
+                       TabIndex="3"
+                       IsTabStop="False"
+                       ReturnType="Next" />
+
+                <Label Text="Last name"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource darkTextColor}" />
+                <Entry x:Name="lastnameEntry"
+                       Placeholder="Last name"
+                       Margin="0, 0, 0, 10"
+                       BackgroundColor="{StaticResource backgroundColor}"
+                       TextColor="{StaticResource darkTextColor}"
+                       PlaceholderColor="{StaticResource darkTextColor}"
+                       Text="{Binding Lastname}"
+                       TabIndex="4"
+                       IsTabStop="False"
+                       ReturnType="Next" />
+
+                <Label Text="E-mail"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource darkTextColor}" />
+                <Entry x:Name="emailEntry"
+                       Placeholder="E-mail"
+                       Margin="0, 0, 0, 10"
+                       BackgroundColor="{StaticResource backgroundColor}"
+                       PlaceholderColor="{StaticResource darkTextColor}"
+                       TextColor="{StaticResource darkTextColor}"
+                       Text="{Binding Email}"
+                       Keyboard="Email"
+                       TabIndex="5"
+                       IsTabStop="False"
+                       ReturnType="Next" />
+
+                <Label Text="Phone number"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource darkTextColor}" />
+                <Entry x:Name="phonenumberEntry"
+                       Placeholder="Phone number"
+                       Margin="0, 0, 0, 0"
+                       BackgroundColor="{StaticResource backgroundColor}"
+                       TextColor="{StaticResource darkTextColor}"
+                       PlaceholderColor="{StaticResource darkTextColor}"
+                       Text="{Binding Phonenumber}"
+                       Keyboard="Telephone"
+                       TabIndex="6"
+                       IsTabStop="True"
+                       ReturnType="Go" />
+            </StackLayout>
+
+        </ScrollView>
+        <Button VerticalOptions="EndAndExpand"
+                HorizontalOptions="FillAndExpand"
+                Margin="0, 0, 0, 20"
+                Text="SIGNUP"
+                Style="{StaticResource secondaryButton}"
+                CornerRadius="25"
+                Command="{Binding OnSubmit}" />
+    </StackLayout>
+
+
+    <!--<TableView Intent="Form">
+       
+            <TableRoot>
+                <TableSection >
+                    <EntryCell x:Name="email"    Label="Email"  Completed="OnChange"/>
+                    
+                    <EntryCell x:Name="nickname" Label="Nick Name"  Completed="OnChange"/>
+                    <EntryCell Label="Last Name"  />
+                    <EntryCell Label ="First Name" />
+                    <EntryCell Label ="Password"  />
+                    <EntryCell Label="Re-type password"  />
+                </TableSection>
+            </TableRoot>
+        
+        </TableView>-->
+</ContentPage>

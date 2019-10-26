@@ -1,21 +1,33 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Threading.Tasks;
 using System.Windows.Input;
-using DaiGo.View;
+using DaiGo.Views;
 using Xamarin.Forms;
 
 namespace DaiGo.ViewModels
 {
     public class UserLoginViewModel : INotifyPropertyChanged
     {
+        public ICommand executeLogin { get; set; }
+        public ICommand executeSignUp { get; set; }
+        public ICommand directLogin { get; set; }
+
+        private ICommand executeLoginCommand { get; set; }
+
         public UserLoginViewModel()
         {
-            LoginCommand = new Command(OnLogin);
+            executeLogin = new Command(checkCredentials);
+            executeSignUp = new Command(OnSignup);
+            directLogin = new Command(OnLogin);
+            this.executeLoginCommand = new Command(async () => await LoginClicked());
+
         }
+
 
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
-        private void OnLogin()
+        void checkCredentials()
         {
             if (string.IsNullOrEmpty(Username))
             {
@@ -27,9 +39,20 @@ namespace DaiGo.ViewModels
             }
             else
             {
-                Application.Current.MainPage = new NavigationPage(new UserMainPage());
+                OnLogin();
             }
         }
+
+        void OnLogin()
+        {
+            Application.Current.MainPage = new NavigationPage(new UserMainPage());
+        }
+
+        void OnSignup()
+        {
+            Application.Current.MainPage = new NavigationPage(new UserSignUp());
+        }
+
         public string username;
         public string Username
         {
@@ -50,6 +73,11 @@ namespace DaiGo.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs("Password"));
             }
         }
-        public ICommand LoginCommand { get; set; }
+        async Task LoginClicked()
+        {
+            Application.Current.MainPage = new NavigationPage(new EditRequest());
+
+        }
     }
+
 }

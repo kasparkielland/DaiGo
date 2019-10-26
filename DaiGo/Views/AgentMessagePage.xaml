@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage NavigationPage.HasNavigationBar="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:vm="clr-namespace:DaiGo.ViewModels"
+             x:Class="DaiGo.Views.AgentMessagePage"
+             BackgroundColor="{StaticResource backgroundColor}">
+
+    <ContentPage.BindingContext>
+        <vm:AgentMessageViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Margin="20, 40, 20, 35">
+        <StackLayout.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Right"
+                                    Command="{Binding GoBack}" />
+        </StackLayout.GestureRecognizers>
+
+        <Frame Margin="0, 0, 0, 0"
+               BackgroundColor="{StaticResource backgroundColor}"
+               HasShadow="False"
+               Padding="2"
+               HorizontalOptions="Start">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding GoBack}" />
+            </Frame.GestureRecognizers>
+
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="StartAndExpand">
+                <Label FontFamily="{StaticResource FontAwesomeSolid}"
+                       Text="&#xf053;"
+                       TextColor="{StaticResource agentThemeColor}"
+                       FontAttributes="Bold"
+                       FontSize="Subtitle"
+                       VerticalOptions="CenterAndExpand" />
+                <Label HorizontalOptions="StartAndExpand"
+                       Text="Home"
+                       TextColor="{StaticResource agentThemeColor}"
+                       FontAttributes="Bold"
+                       FontSize="Subtitle"
+                       VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+        </Frame>
+        <Label Text="Messages"
+               FontSize="40"
+               FontAttributes="Italic"
+               Style="{StaticResource H1}"
+               TextColor="{StaticResource agentThemeColor}"
+               VerticalOptions="Center"
+               HorizontalOptions="End" />
+
+        <ScrollView IsClippedToBounds="True">
+            <ListView x:Name="agentMessageListView"
+                      SeparatorVisibility="None"
+                      IsPullToRefreshEnabled="True"
+                      ItemsSource="{Binding AgentQuote}"
+                      VerticalOptions="FillAndExpand"
+                      HasUnevenRows="True"
+                      BackgroundColor="{StaticResource backgroundColor}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <StackLayout Orientation="Horizontal"
+                                             BackgroundColor="WhiteSmoke">
+                                    <Label Text="{Binding RequestID}"
+                                           d:Text="{Binding .}"
+                                           HorizontalOptions="StartAndExpand"
+                                           FontSize="Small"
+                                           TextColor="{StaticResource darkTextColor}" />
+                                    <Label Text="{Binding QuoteAmount}"
+                                           d:Text="{Binding .}"
+                                           FontSize="Small"
+                                           TextColor="{StaticResource darkTextColor}" />
+                                    <Button Text="Contact"
+                                            FontSize="Large"
+                                            HorizontalOptions="EndAndExpand"
+                                            TextColor="{StaticResource darkTextColor}" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

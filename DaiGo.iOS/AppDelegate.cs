@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Foundation;
+using ImageCircle.Forms.Plugin.iOS;
 using KeyboardOverlap.Forms.Plugin.iOSUnified;
 using UIKit;
 
@@ -28,8 +29,13 @@ namespace DaiGo.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            ImageCircleRenderer.Init();
             LoadApplication(new App());
+
             KeyboardOverlapRenderer.Init();
+
+
+
             return base.FinishedLaunching(app, options);
         }
     }

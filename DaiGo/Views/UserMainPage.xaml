@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage NavigationPage.HasNavigationBar="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DaiGo.Views.UserMainPage"
+             xmlns:vm="clr-namespace:DaiGo.ViewModels"
+             BackgroundColor="{StaticResource backgroundColor}">
+
+    <ContentPage.BindingContext>
+        <vm:UserMainViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid Margin="0, 35, 0, 20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.25*" />
+            <RowDefinition Height="0.25*" />
+            <RowDefinition Height="0.6*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="0.5*" />
+        </Grid.ColumnDefinitions>
+        <Grid.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Right"
+                                    Command="{Binding executeProfileCommand}" />
+            <SwipeGestureRecognizer Direction="Left"
+                                    Command="{Binding executeMessageCommand}" />
+        </Grid.GestureRecognizers>
+
+
+        <ImageButton Margin="20, 0, 20, 0"
+                     Grid.Row="0"
+                     Grid.Column="0"
+                     HorizontalOptions="Start"
+                     VerticalOptions="Center"
+                     Command="{Binding executeProfileCommand}">
+            <ImageButton.Source>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
+                                 Glyph="&#xf2bd;"
+                                 Size="44"
+                                 Color="{StaticResource userThemeColor}" />
+            </ImageButton.Source>
+        </ImageButton>
+        <ImageButton Margin="20, 0, 20, 0"
+                     Grid.Row="0"
+                     Grid.Column="2"
+                     HorizontalOptions="End"
+                     VerticalOptions="Center"
+                     Command="{Binding executeMessageCommand}">
+            <ImageButton.Source>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
+                                 Glyph="&#xf01c;"
+                                 Size="44"
+                                 Color="{StaticResource userThemeColor}" />
+            </ImageButton.Source>
+        </ImageButton>
+        <Label Margin="50, 0, 50, 0"
+               Grid.Row="1"
+               Grid.ColumnSpan="3"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"
+               Text="{Binding WelcomeText}"
+               FontSize="Title"
+               TextColor="{StaticResource darkTextColor}"
+               LineBreakMode="WordWrap" />
+        <Frame Margin="20, 0, 20, 0"
+               Grid.Row="2"
+               Grid.ColumnSpan="3"
+               BackgroundColor="{StaticResource userThemeColor}"
+               CornerRadius="50"
+               HasShadow="False">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding executeQuicAccessCommand}" />
+            </Frame.GestureRecognizers>
+            <Grid>
+                <Label Text="{Binding QuickAccessText}"
+                       TextColor="{StaticResource lightTextColor}"
+                       BackgroundColor="{StaticResource userThemeColor}"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand"
+                       Margin="0, 0, 20, 0"
+                       Padding="5" />
+                <Label FontFamily="{StaticResource FontAwesomeSolid}"
+                       Text="&#xf054;"
+                       FontSize="40"
+                       TextColor="{StaticResource lightTextColor}"
+                       VerticalTextAlignment="Center"
+                       HorizontalOptions="End" />
+            </Grid>
+        </Frame>
+        <Frame Margin="0, 100, 0, -100"
+               Grid.Row="3"
+               Grid.ColumnSpan="3"
+               BackgroundColor="{StaticResource userThemeColor}"
+               CornerRadius="50">
+            <StackLayout>
+                <Entry Style="{StaticResource entryField}"
+                       Margin="10, 0, 10, 40"
+                       Grid.Row="2"
+                       Grid.ColumnSpan="3"
+                       VerticalOptions="Center"
+                       HorizontalOptions="CenterAndExpand"
+                       HeightRequest="50"
+                       WidthRequest="1000"
+                       Placeholder="What are you looking for?"
+                       Keyboard="Text"
+                       ReturnType="Search"
+                       Text="{Binding Subject}"
+                       ReturnCommand="{Binding executeRequestCommand}" />
+                <Button VerticalOptions="EndAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="0, 0, 0, 100"
+                        Style="{StaticResource primaryButton}"
+                        Text="SEARCH"
+                        CornerRadius="25"
+                        Command="{Binding executeRequestCommand}" />
+            </StackLayout>
+
+        </Frame>
+    </Grid>
+</ContentPage>

@@ -1,5 +1,4 @@
 ﻿using DaiGo.Models;
-using DaiGo.View;
 using DaiGo.Views;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -11,16 +10,20 @@ namespace DaiGo.ViewModels
     class UserMainViewModel : BaseViewModel
     {
 
-        public ICommand GoEditRequestCommand { get; }
-        public ICommand GoProfileCommand { get; }
-        public ICommand GoMessageCommand { get; }
+        public ICommand executeProfileCommand { get; set; }
+        public ICommand executeMessageCommand { get; set; }
+        public ICommand executeRequestCommand { get; set; }
+        public ICommand executeQuicAccessCommand { get; set; }
+
+
         public UserMainViewModel()
         {
             Title = "User Main Page";
-            this.GoProfileCommand = new Command(ProfileClicked);
-            this.GoMessageCommand = new Command(MessageClicked);
-            this.GoEditRequestCommand = new Command(async () => await SearchClicked(),
-                            () => !isBusy);
+            this.executeProfileCommand = new Command(ProfileClicked);
+            this.executeMessageCommand = new Command(MessageClicked);
+            this.executeRequestCommand = new Command(async () => await RequestSearchClicked(),
+                            () => !IsBusy);
+            this.executeQuicAccessCommand = new Command(QuicAccess);
 
 
         }
@@ -30,15 +33,16 @@ namespace DaiGo.ViewModels
         }
         void MessageClicked()
         {
-            Application.Current.MainPage = new NavigationPage(new NewItemPage());
+            Application.Current.MainPage = new NavigationPage(new UserMessagePage());
+        }
+        void QuicAccess()
+        {
+            Application.Current.MainPage = new NavigationPage(new UserMessagePage());
         }
 
 
         string subject;
         int requestID;
-        bool isBusy;
-
-
 
         public string Subject
         {
@@ -52,18 +56,7 @@ namespace DaiGo.ViewModels
             }
         }
 
-        public bool IsBusy
-        {
-            get
-            {
-                return isBusy;
-            }
-            set
-            {
-                isBusy = value;
-                //OnRequestButtonClicked.ChangeCanExecute();
-            }
-        }
+        public new bool IsBusy { get; set; }
         public int RequestID
         {
             get
@@ -76,13 +69,7 @@ namespace DaiGo.ViewModels
             }
         }
 
-
-        public Command OnRequestButtonClicked
-        {
-            get;
-        }
-
-        async Task SearchClicked()
+        async Task RequestSearchClicked()
         {
             //IsBusy = true;
 

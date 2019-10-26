@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage NavigationPage.HasNavigationBar="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DaiGo.Views.UserVerificationPage"
+             xmlns:vm="clr-namespace:DaiGo.ViewModels"
+             Title="{Binding Title}"
+             BackgroundColor="{StaticResource backgroundColor}">
+
+    <ContentPage.BindingContext>
+        <vm:UserVerificationViewModel />
+    </ContentPage.BindingContext>
+
+
+    <Grid Margin="0, 0, 0, 20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.4*" />
+            <RowDefinition Height="0.2*" />
+        </Grid.RowDefinitions>
+        <Frame Grid.Row="0"
+               Margin="0, -100, 0, 0"
+               BackgroundColor="{StaticResource userThemeColor}"
+               CornerRadius="50"
+               VerticalOptions="FillAndExpand">
+            <Label  Margin="0, 80, 0, 0"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="&#xf21d;"
+                    FontFamily="{StaticResource FontAwesomeSolid}"
+                    TextColor="{StaticResource agentThemeColor}"
+                    FontSize="200" />
+        </Frame>
+
+        <Label Grid.Row="1"
+               Style="{StaticResource H1}"
+               Text="We will be in touch with all appropriate agents"
+               HorizontalTextAlignment="Center"
+               VerticalOptions="CenterAndExpand" />
+        <Button Margin="20, 0, 20, 20"
+                Grid.Row="2"
+                Text="GO HOME"
+                CornerRadius="25"
+                Style="{StaticResource secondaryButton}"
+                Command="{Binding GoHomeCommand}"
+                VerticalOptions="EndAndExpand"
+                HorizontalOptions="FillAndExpand" />
+    </Grid>
+
+</ContentPage>

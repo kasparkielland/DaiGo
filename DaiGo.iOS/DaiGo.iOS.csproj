@@ -40,17 +40,20 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>bin\iPhone\Debug</OutputPath>
     <DefineConstants>DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer: Kaspar Kielland (8Q98R6ZUV6)</CodesignKey>
+    <CodesignKey>Apple Development: Kaspar Kielland (8Q98R6ZUV6)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignProvision>iOS Team Provisioning Profile: com.DaiGo.DaiGo</CodesignProvision>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-  </PropertyGroup>
+    <CodesignProvision>iOS Team Provisioning Profile: com.daigo</CodesignProvision>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchFastDev>true</MtouchFastDev>
+<RunCodeAnalysis>true</RunCodeAnalysis>  <MtouchFloat32>true</MtouchFloat32>
+</PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
@@ -60,7 +63,7 @@
     <MtouchArch>ARM64</MtouchArch>
     <CodesignKey>iPhone Developer</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-  </PropertyGroup>
+<RunCodeAnalysis>true</RunCodeAnalysis>  </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
@@ -73,94 +76,33 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\SearchBar.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\SearchBar.imageset\Search_Bar.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\MessageIconBlack.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\MessageIconBlack.imageset\Message_Icon-Black.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\SearchButton.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\SearchButton.imageset\Search_Button.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\SearchAreaBackgroundUserRed.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\SearchAreaBackgroundUserRed.imageset\Search_Area_Background-User_Red.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ProfileIconBlack.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ProfileIconBlack.imageset\Profile_Icon-Black.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\UserPageBackgroundFrameUserRed.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\UserPageBackgroundFrameUserRed.imageset\UserPageBackgroundFrameUserRed.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LogoutButton.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LogoutButton.imageset\Logout_Button.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-60x60-1.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-58x58-2.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-87x87-1.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-80x80-1.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-120x120-2.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-120x120-1.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-180x180-1.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-58x58.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-1024x1024-1.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-80x80.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-40x40-1.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\GoBack.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\GoBack.imageset\GoBack.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-40x40-2.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-40x40.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\DaiGo_launchScreen-1242x2688.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\DaiGo_launchScreen-828x1792.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\DaiGo_launchScreen-1125x2436.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\DaiGo_launchScreen-1242x2208.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\DaiGo_launchScreen-750x1334.png" />
+    <InterfaceDefinition Include="DaiGoLaunchScreen.storyboard" />
+    <ImageAsset Include="Assets.xcassets\DaiGo-logo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\DaiGo-logo.imageset\DaiGo_Logo-1024x1024.png" />
+    <ImageAsset Include="Assets.xcassets\DaiGo-logo.imageset\DaiGo_Logo-1024x1024-transparent-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-40x40-3.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-60x60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-58x58-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-87x87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-80x80-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-120x120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-120x120-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-180x180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-58x58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-87x87-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-80x80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\DaiGo_Logo-1024x1024.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -171,10 +113,18 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.2.0.815419" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
     <PackageReference Include="Xam.Plugins.Forms.KeyboardOverlap">
       <Version>1.0.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle">
+      <Version>3.0.0.5</Version>
+    </PackageReference>
+    <PackageReference Include="Corcav.Behaviors">
+      <Version>2.3.7</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>4.3.0.908675</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
@@ -192,9 +142,10 @@
     <Folder Include="Assets.xcassets\QuickAccessUserRed.imageset\" />
     <Folder Include="Assets.xcassets\SearchAreaBackgroundUserRed.imageset\" />
     <Folder Include="Assets.xcassets\SearchBar.imageset\" />
-    <Folder Include="Assets.xcassets\SearchButton.imageset\" />
     <Folder Include="Assets.xcassets\UserPageBackgroundFrameUserRed.imageset\" />
     <Folder Include="Xamarin\" />
+    <Folder Include="Assets.xcassets\DaiGo-logo.imageset\" />
+    <Folder Include="Assets.xcassets\.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />
