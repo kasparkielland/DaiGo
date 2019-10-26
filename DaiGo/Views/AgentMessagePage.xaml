@@ -37,7 +37,7 @@
                        FontSize="Subtitle"
                        VerticalOptions="CenterAndExpand" />
                 <Label HorizontalOptions="StartAndExpand"
-                       Text="Go back"
+                       Text="Home"
                        TextColor="{StaticResource agentThemeColor}"
                        FontAttributes="Bold"
                        FontSize="Subtitle"

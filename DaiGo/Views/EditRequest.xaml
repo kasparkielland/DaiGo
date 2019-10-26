@@ -14,6 +14,11 @@
     </ContentPage.BindingContext>
 
     <StackLayout Margin="20, 35, 20, 20">
+        <StackLayout.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Right"
+                                    Command="{Binding GoUserMainCommand}" />
+        </StackLayout.GestureRecognizers>
+
 
         <Frame Margin="0, 0, 0, 0"
                BackgroundColor="{StaticResource userThemeColor}"
@@ -44,7 +49,7 @@
                 <TapGestureRecognizer Command="{Binding GoUserMainCommand }" />
             </Frame.GestureRecognizers>
         </Frame>
-        <Label Text="Signup"
+        <Label Text="Edit Request"
                FontAttributes="Italic"
                FontSize="40"
                Style="{StaticResource H1}"
@@ -59,7 +64,7 @@
                        Text="Country"
                        VerticalTextAlignment="Center"
                        VerticalOptions="EndAndExpand"
-                       TextColor="{StaticResource darkTextColor}"
+                       TextColor="{StaticResource lightTextColor}"
                        FontSize="25" />
 
                 <Picker x:Name="CountryPicker"
@@ -74,7 +79,7 @@
                        Text="Price"
                        VerticalTextAlignment="Center"
                        VerticalOptions="EndAndExpand"
-                       TextColor="{StaticResource darkTextColor}"
+                       TextColor="{StaticResource lightTextColor}"
                        FontSize="25" />
 
                 <Grid Margin="0, 0, 0, 20"
@@ -92,7 +97,7 @@
                            HorizontalTextAlignment="End"
                            Text="Min:"
                            VerticalTextAlignment="Center"
-                           TextColor="{StaticResource darkTextColor}"
+                           TextColor="{StaticResource lightTextColor}"
                            FontSize="20" />
 
                     <Entry x:Name="MinPriceEntry"
@@ -185,7 +190,7 @@
                 Text="SEND REQUEST"
                 Style="{StaticResource secondaryButton}"
                 CornerRadius="25"
-                Command="{Binding GoAbout2Command}" />
+                Command="{Binding GoUserVerificationCommand}" />
     </StackLayout>
 
 </ContentPage>

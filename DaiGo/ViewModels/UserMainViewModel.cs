@@ -1,6 +1,5 @@
 ﻿using DaiGo.Models;
 using DaiGo.Views;
-using DaiGo.Views;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -23,7 +22,7 @@ namespace DaiGo.ViewModels
             this.executeProfileCommand = new Command(ProfileClicked);
             this.executeMessageCommand = new Command(MessageClicked);
             this.executeRequestCommand = new Command(async () => await RequestSearchClicked(),
-                            () => !isBusy);
+                            () => !IsBusy);
             this.executeQuicAccessCommand = new Command(QuicAccess);
 
 
@@ -44,9 +43,6 @@ namespace DaiGo.ViewModels
 
         string subject;
         int requestID;
-        bool isBusy;
-
-
 
         public string Subject
         {
@@ -60,18 +56,7 @@ namespace DaiGo.ViewModels
             }
         }
 
-        public bool IsBusy
-        {
-            get
-            {
-                return isBusy;
-            }
-            set
-            {
-                isBusy = value;
-                //OnRequestButtonClicked.ChangeCanExecute();
-            }
-        }
+        public new bool IsBusy { get; set; }
         public int RequestID
         {
             get

@@ -15,8 +15,8 @@ namespace DaiGo.ViewModels
     {
         public ObservableCollection<Item> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
-        public new ICommand GoAgentProfileCommand { get; set; }
-        public new ICommand GoAgentMessageCommand { get; set; }
+        public ICommand GoAgentProfileCommand { get; set; }
+        public ICommand GoAgentMessageCommand { get; set; }
 
 
         public AgentMainViewModel()

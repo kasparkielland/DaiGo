@@ -8,7 +8,7 @@ namespace DaiGo.ViewModels
 {
     public class UserMessageViewModel : INotifyPropertyChanged
     {
-        public new ICommand GoBack { get; set; }
+        public ICommand GoBack { get; set; }
 
         public UserMessageViewModel()
         {

@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace DaiGo.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class About2Page : ContentPage
+    public partial class UserVerificationPage : ContentPage
     {
-        public About2Page()
+        public UserVerificationPage()
         {
             InitializeComponent();
         }

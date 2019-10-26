@@ -1,6 +1,4 @@
 ﻿using DaiGo.Views;
-using DaiGo.Views;
-using System;
 using System.ComponentModel;
 using System.Windows.Input;
 
@@ -10,10 +8,10 @@ namespace DaiGo.ViewModels
 {
     public class UserIdentityViewModel : INotifyPropertyChanged
     {
-        public new ICommand GoToAgentCommand { get; set; }
-        public new ICommand LogoutCommand { get; set; }
-        public new ICommand GoToMainCommand { get; set; }
-        public new bool ActivateAgent
+        public ICommand GoToAgentCommand { get; set; }
+        public ICommand LogoutCommand { get; set; }
+        public ICommand GoToMainCommand { get; set; }
+        public bool ActivateAgent
         {
             get
             {
@@ -44,7 +42,7 @@ namespace DaiGo.ViewModels
         }
         void LogoutClicked()
         {
-            Application.Current.MainPage = new NavigationPage(new UserLoginPage());
+            Application.Current.MainPage = new NavigationPage(new LoginPage());
         }
         void ToMainClicked()
         {

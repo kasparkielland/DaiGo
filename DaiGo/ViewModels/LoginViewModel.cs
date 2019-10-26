@@ -3,24 +3,31 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using DaiGo.Views;
+using FormsControls.Base;
 using Xamarin.Forms;
 
 namespace DaiGo.ViewModels
 {
-    public class UserLoginViewModel : INotifyPropertyChanged
+    public class LoginViewModel : INotifyPropertyChanged
     {
         public ICommand executeLogin { get; set; }
         public ICommand executeSignUp { get; set; }
         public ICommand directLogin { get; set; }
+        //public IPageAnimation MyPageAnimation { get; set; }
 
-        private ICommand executeLoginCommand { get; set; }
-
-        public UserLoginViewModel()
+        public LoginViewModel()
         {
             executeLogin = new Command(checkCredentials);
             executeSignUp = new Command(OnSignup);
             directLogin = new Command(OnLogin);
-            this.executeLoginCommand = new Command(async () => await LoginClicked());
+
+            //TODO: Look into PageAnimation (see https://github.com/AlexandrNikulin/AnimationNavigationPage)
+            //      Installation = done, Declaration = REDO!!, Create = DO!!
+            //MyPageAnimation = new FlipPageAnimation()
+            //{
+            //    Duration = AnimationDuration.Long,
+            //    Subtype = AnimationSubtype.FromRight
+            //};
 
         }
 
@@ -50,7 +57,7 @@ namespace DaiGo.ViewModels
 
         void OnSignup()
         {
-            Application.Current.MainPage = new NavigationPage(new UserSignUp());
+            Application.Current.MainPage = new NavigationPage(new SignUpPage());
         }
 
         public string username;
@@ -73,11 +80,5 @@ namespace DaiGo.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs("Password"));
             }
         }
-        async Task LoginClicked()
-        {
-            Application.Current.MainPage = new NavigationPage(new EditRequest());
-
-        }
     }
-
 }

@@ -28,18 +28,13 @@ namespace DaiGo.Views
 
             var item = new Item
             {
-                
+
                 Description = "This is an item description.",
                 Offer = "User Offer Price"
             };
 
             viewModel = new ItemDetailViewModel(item);
             BindingContext = viewModel;
-        }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PopAsync();
         }
     }
 }

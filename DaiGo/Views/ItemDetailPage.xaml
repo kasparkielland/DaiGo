@@ -5,43 +5,100 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:vm="clr-namespace:DaiGo.ViewModels"
              x:Class="DaiGo.Views.ItemDetailPage"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             BackgroundColor="{StaticResource agentThemeColor}">
+    <!--
+    <ContentPage.BindingContext>
+        <vm:ItemDetailViewModel />
+    </ContentPage.BindingContext>
+    -->
+    <StackLayout Margin="20, 35, 20, 20">
+        <StackLayout.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Right"
+                                    Command="{Binding GoMainCommand}" />
+        </StackLayout.GestureRecognizers>
+        <Frame Margin="0, 0, 0, 0"
+               BackgroundColor="{StaticResource agentThemeColor}"
+               HasShadow="False"
+               Padding="2"
+               HorizontalOptions="StartAndExpand">
 
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="StartAndExpand">
 
-    <StackLayout Padding="40"
-                 BackgroundColor="{StaticResource agentThemeColor}">
-        <Button Text="&lt; Back"
-                FontSize="15"
-                HorizontalOptions="Start"
-                Clicked="Button_Clicked" />
-        <Label Text="Description"
+                <Label FontFamily="{StaticResource FontAwesomeSolid}"
+                       Text="&#xf053;"
+                       TextColor="{StaticResource lightTextColor}"
+                       FontAttributes="Bold"
+                       FontSize="Subtitle"
+                       VerticalTextAlignment="Center" />
+
+                <Label HorizontalOptions="StartAndExpand"
+                       Text="Go back"
+                       TextColor="{StaticResource lightTextColor}"
+                       FontAttributes="Bold"
+                       FontSize="Subtitle"
+                       VerticalTextAlignment="Center" />
+
+            </StackLayout>
+            <Frame.GestureRecognizers>
+
+                <TapGestureRecognizer Command="{Binding GoMainCommand }" />
+            </Frame.GestureRecognizers>
+        </Frame>
+        <Label Text="Make Offer"
+               FontAttributes="Italic"
+               FontSize="40"
                Style="{StaticResource H1}"
                TextColor="{StaticResource darkTextColor}"
-               VerticalOptions="EndAndExpand"
-               HorizontalOptions="End" />
+               VerticalOptions="Center"
+               HorizontalOptions="EndAndExpand" />
+        <ScrollView VerticalOptions="EndAndExpand">
+            <StackLayout Margin="20, 0, 20, 30">
+                <Label Margin="20, 0, 0, 0"
+                       HorizontalTextAlignment="Start"
+                       HorizontalOptions="StartAndExpand"
+                       Text="Description"
+                       VerticalTextAlignment="Center"
+                       VerticalOptions="EndAndExpand"
+                       TextColor="{StaticResource lightTextColor}"
+                       FontSize="25" />
+                <Editor x:Name="ItemDescriptionEditor"
+                        Margin="0, 0, 0, 20"
+                        HeightRequest="100"
+                        BackgroundColor="{StaticResource backgroundColor}"
+                        Placeholder="Describe your product"
+                        Text="{Binding ItemDescription, Mode=OneWayToSource}"
+                        TextColor="{StaticResource darkTextColor}"
+                        AutoSize="TextChanges"
+                        VerticalOptions="EndAndExpand"
+                        IsReadOnly="True" />
+                <Label Margin="20, 0, 0, 0"
+                       HorizontalTextAlignment="Start"
+                       Text="Category"
+                       VerticalTextAlignment="Center"
+                       VerticalOptions="EndAndExpand"
+                       TextColor="{StaticResource lightTextColor}"
+                       FontSize="25" />
 
-        <Entry Placeholder="{Binding Item.Description}"
-               HeightRequest="50"
-               Style="{StaticResource entryField}" />
+                <Entry x:Name="OfferingPrice"
+                       Text="{Binding OfferingPrice, Mode=TwoWay}"
+                       VerticalOptions="CenterAndExpand"
+                       BackgroundColor="{StaticResource backgroundColor}"
+                       Placeholder="Enter your offer"
+                       Keyboard="Numeric" />
+            </StackLayout>
 
-        <Label Text="Offer Price"
-               Style="{StaticResource H1}"
-               TextColor="{StaticResource darkTextColor}"
-               VerticalOptions="EndAndExpand"
-               HorizontalOptions="End" />
+        </ScrollView>
 
-        <Entry  Placeholder="{Binding Item.Offer}"
-                HeightRequest="50"
-                Style="{StaticResource entryField}" />
-
-        <Button Text="Send Quote"
-                Margin="50,0,50,0"
-                Style="{StaticResource primaryButton}"
-                Command="{Binding SendQuoteCommand}"
-                VerticalOptions="EndAndExpand" />
-
+        <Button VerticalOptions="EndAndExpand"
+                HorizontalOptions="FillAndExpand"
+                Margin="0, 0, 0, 20"
+                Text="SEND QUOTE"
+                Style="{StaticResource secondaryButton}"
+                CornerRadius="25"
+                Command="{Binding SendQuoteCommand}" />
     </StackLayout>
-
-
 </ContentPage>

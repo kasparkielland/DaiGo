@@ -26,7 +26,7 @@
 //        }
 //        void LogoutClicked()
 //        {
-//            Application.Current.MainPage = new NavigationPage(new UserLoginPage());
+//            Application.Current.MainPage = new NavigationPage(new LoginPage());
 //        }
 //        void ToItemsClicked()
 //        {
@@ -36,8 +36,6 @@
 //}
 
 using DaiGo.Views;
-using DaiGo.Views;
-using System;
 using System.ComponentModel;
 using System.Windows.Input;
 
@@ -47,10 +45,10 @@ namespace DaiGo.ViewModels
 {
     public class AgentIdentityViewModel : INotifyPropertyChanged
     {
-        public new ICommand GoToUserCommand { get; set; }
-        public new ICommand LogoutCommand { get; set; }
-        public new ICommand executeGoBackCommand { get; set; }
-        public new bool dectivateAgent
+        public ICommand GoToUserCommand { get; set; }
+        public ICommand LogoutCommand { get; set; }
+        public ICommand executeGoBackCommand { get; set; }
+        public bool dectivateAgent
         {
             get
             {
@@ -81,7 +79,7 @@ namespace DaiGo.ViewModels
         }
         void LogoutClicked()
         {
-            Application.Current.MainPage = new NavigationPage(new UserLoginPage());
+            Application.Current.MainPage = new NavigationPage(new LoginPage());
         }
         void GoBack()
         {

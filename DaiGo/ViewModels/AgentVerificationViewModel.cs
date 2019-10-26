@@ -6,19 +6,19 @@ using Xamarin.Forms;
 
 namespace DaiGo.ViewModels
 {
-    class About2ViewModel : BaseViewModel
+    public class AgentVerificationViewModel : BaseViewModel
     {
         public ICommand GoHomeCommand { get; }
-        public About2ViewModel()
+        public AgentVerificationViewModel()
         {
-            Title = "About2";
+            Title = "AgentVerification";
             this.GoHomeCommand = new Command(this.GoHomeClicked);
-                     
+
         }
         void GoHomeClicked()
         {
-            Application.Current.MainPage = new NavigationPage(new UserMainPage());
+            Application.Current.MainPage = new NavigationPage(new AgentMainPage());
         }
-        
+
     }
 }

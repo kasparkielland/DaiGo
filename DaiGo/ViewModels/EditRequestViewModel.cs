@@ -1,20 +1,18 @@
 ﻿using DaiGo.Views;
-using DaiGo.Views;
 using System.Windows.Input;
 using Xamarin.Forms;
 using System.Threading.Tasks;
-using DaiGo.ViewModels;
 using DaiGo.Models;
 
 namespace DaiGo.ViewModels
 {
     class EditRequestViewModel : BaseViewModel
     {
-        public ICommand GoAbout2Command { get; }
+        public ICommand GoUserVerificationCommand { get; }
         public ICommand GoUserMainCommand { get; }
         public EditRequestViewModel()
         {
-            this.GoAbout2Command = new Command(async () => await SaveRequest(),
+            this.GoUserVerificationCommand = new Command(async () => await SaveRequest(),
                                         () => !isBusy);
             this.GoUserMainCommand = new Command(BackClicked);
         }
@@ -155,7 +153,7 @@ namespace DaiGo.ViewModels
             });
 
             //IsBusy = false;
-            Application.Current.MainPage = new NavigationPage(new About2Page());
+            Application.Current.MainPage = new NavigationPage(new UserVerificationPage());
 
 
         }

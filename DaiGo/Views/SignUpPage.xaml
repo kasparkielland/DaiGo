@@ -5,13 +5,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="DaiGo.Views.UserSignUp"
+             x:Class="DaiGo.Views.SignUpPage"
              xmlns:vm="clr-namespace:DaiGo.ViewModels"
              Title="{Binding Title}"
              BackgroundColor="{StaticResource userThemeColor}">
 
     <ContentPage.BindingContext>
-        <vm:UserSignUpViewModel />
+        <vm:SignUpPageViewModel />
     </ContentPage.BindingContext>
 
     <StackLayout Margin="20, 40, 20, 20">
@@ -37,7 +37,7 @@
                        FontSize="Subtitle"
                        VerticalOptions="CenterAndExpand" />
                 <Label HorizontalOptions="StartAndExpand"
-                       Text="Back"
+                       Text="Go back"
                        TextColor="{StaticResource lightTextColor}"
                        FontAttributes="Bold"
                        FontSize="Subtitle"

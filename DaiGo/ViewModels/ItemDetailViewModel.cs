@@ -9,16 +9,23 @@ namespace DaiGo.ViewModels
     public class ItemDetailViewModel : BaseViewModel
     {
         public Item Item { get; set; }
-        public ICommand SendQuoteCommand { get; }
+        public ICommand SendQuoteCommand { get; set; }
+        public ICommand GoMainCommand { get; set; }
         public ItemDetailViewModel(Item item = null)
         {
             Title = item?.Offer;
             Item = item;
-            SendQuoteCommand = new Command(ToAboutClicked);
+            SendQuoteCommand = new Command(SendQuoteClicked);
+            GoMainCommand = new Command(GoMainClicked);
         }
-        void ToAboutClicked()
+        void SendQuoteClicked()
         {
-            Application.Current.MainPage = new NavigationPage(new AboutPage());
+            Application.Current.MainPage = new NavigationPage(new AgentVerificationPage());
+        }
+
+        void GoMainClicked()
+        {
+            Application.Current.MainPage = new NavigationPage(new AgentMainPage());
         }
     }
 }

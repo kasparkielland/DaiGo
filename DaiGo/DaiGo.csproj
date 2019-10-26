@@ -39,8 +39,8 @@
         <None Remove="View\.DS_Store" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Update="View\About2Page.xaml.cs">
-            <DependentUpon>About2Page.xaml</DependentUpon>
+        <Compile Update="View\UserVerificationPage.xaml.cs">
+            <DependentUpon>UserVerificationPage.xaml</DependentUpon>
         </Compile>
     </ItemGroup>
     <ItemGroup>
