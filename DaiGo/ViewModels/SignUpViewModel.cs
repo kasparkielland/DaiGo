@@ -1,4 +1,5 @@
-﻿using DaiGo.Views;
+﻿using DaiGo.Models;
+using DaiGo.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,28 +9,93 @@ using Xamarin.Forms;
 
 namespace DaiGo.ViewModels
 {
-    class SignUpPageViewModel : INotifyPropertyChanged
+    //class SignUpPageViewModel : INotifyPropertyChanged
+    class SignUpPageViewModel : BaseViewModel
     {
+        private string username;
+        private string password;
+        private string firstname;
+        private string lastname;
+        private string email;
+        private string phone;
+
         public ICommand GoBack { get; set; }
         public ICommand SignUpCommand { get; set; }
-
+        public UserProfile userProfile { get; set; }
         public SignUpPageViewModel()
         {
             GoBack = new Command(BackClicked);
             SignUpCommand = new Command(OnSignUp);
+            userProfile = new UserProfile
+            {
+                UserName = username,
+                Password = password,
+                FirstName = firstname,
+                LastName = lastname,
+                Email = email,
+                Phonenumber = phone
+            };
         }
 
-        public event PropertyChangedEventHandler PropertyChanged = delegate { };
-
-        void BackClicked()
+       // public event PropertyChangedEventHandler PropertyChanged = delegate { };
+       public string Username
         {
-            //Application.Current.MainPage.Navigation.PopAsync();
+            get => username;
+            set
+            {
+                SetProperty(ref username, value);
+            }
+        }
+        public string Password
+        {
+            get => password;
+            set
+            {
+                SetProperty(ref password, value);
+            }
+        }
+        public string Firstname
+        {
+            get => firstname;
+            set
+            {
+                SetProperty(ref firstname, value);
+            }
+        }
+        public string Lastname
+        {
+            get => lastname;
+            set
+            {
+                SetProperty(ref lastname, value);
+            }
+        }
+        public string Email
+        {
+            get => email;
+            set
+            {
+                SetProperty(ref email, value);
+            }
+        }
+        public string Phone
+        {
+            get => phone;
+            set
+            {
+                SetProperty(ref phone, value);
+            }
+        }
+        void BackClicked()
+
+        {
+   
             Application.Current.MainPage = new NavigationPage(new LoginPage());
         }
 
-        void OnSignUp()
+        async void OnSignUp()
         {
-            //Application.Current.MainPage.Navigation.PushAsync(new LoginPage());
+            await App.Database.SaveUserProfileAsync(userProfile);
             Application.Current.MainPage = new NavigationPage(new LoginPage());
         }
     }
