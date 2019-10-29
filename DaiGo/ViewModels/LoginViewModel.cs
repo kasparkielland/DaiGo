@@ -16,6 +16,8 @@ namespace DaiGo.ViewModels
     {
         private string username;
         private string password;
+        UserProfile userProfile;
+
         public ICommand executeLogin { get; set; }
         public ICommand executeSignUp { get; set; }
         public ICommand directLogin { get; set; }
@@ -23,6 +25,7 @@ namespace DaiGo.ViewModels
 
         public LoginViewModel()
         {
+            this.Username = username;
             executeLogin = new Command(checkCredentials);
             executeSignUp = new Command(OnSignup);
             directLogin = new Command(OnLogin);
