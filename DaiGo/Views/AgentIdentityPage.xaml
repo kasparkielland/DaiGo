@@ -36,7 +36,7 @@
                            BackgroundColor="{StaticResource agentThemeColor}"
                            HasShadow="False"
                            Padding="2"
-                           VerticalOptions="FillAndExpand"
+                           VerticalOptions="StartAndExpand"
                            HorizontalOptions="EndAndExpand">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding executeGoBackCommand}" />
