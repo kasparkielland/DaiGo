@@ -24,7 +24,15 @@ namespace DaiGo.ViewModels
         {
             return _database.Table<UserProfile>().ToListAsync();
         }
+        
+        public Task<List<UserProfile>> FindUserProfileAsync(string username, string password)
+        {
+           var userProfile = _database.Table<UserProfile>().Where(user => user.UserName == username).Where
+                (pass => pass.Password == password);
 
+            return userProfile.ToListAsync();
+                   
+        }
         public Task<int> SaveUserProfileAsync(UserProfile user)
         {
             return _database.InsertAsync(user);
