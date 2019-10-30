@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace DaiGo.ViewModels
 {
-    public class UserMessageViewModel : INotifyPropertyChanged
+    public class UserMessageViewModel : BaseViewModel
     {
         public ICommand GoBack { get; set; }
 

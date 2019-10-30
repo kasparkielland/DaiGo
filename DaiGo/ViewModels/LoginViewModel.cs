@@ -16,6 +16,8 @@ namespace DaiGo.ViewModels
     {
         private string username;
         private string password;
+        private int userID;
+        public int UserID;
         UserProfile userProfile;
 
         public ICommand executeLogin { get; set; }
@@ -26,6 +28,7 @@ namespace DaiGo.ViewModels
         public LoginViewModel()
         {
             this.Username = username;
+            this.UserID = userID;
             executeLogin = new Command(checkCredentials);
             executeSignUp = new Command(OnSignup);
             directLogin = new Command(OnLogin);
@@ -69,10 +72,10 @@ namespace DaiGo.ViewModels
         {
             try
             {
-                var userProfiles = await App.Database.FindUserProfileAsync(username, password);
-                if (userProfiles != null)
+                userProfile = await App.Database.FindUserProfileAsync(username, password);
+                if (userProfile != null)
                 {
-
+                    userID = userProfile.UserID;
                     Application.Current.MainPage = new NavigationPage(new UserMainPage());
                 }
                 else
@@ -103,6 +106,7 @@ namespace DaiGo.ViewModels
                 SetProperty(ref username, value);
             }
         }
+        
     //    public string password;
         public string Password
         {

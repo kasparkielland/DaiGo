@@ -9,7 +9,8 @@ namespace DaiGo.ViewModels
 {
     class UserMainViewModel : BaseViewModel
     {
-        private string username;
+        private string username = LoginViewModel.Username;
+        private int userID = LoginViewModel.UserID;
         private int count;
         public OberservableCollection<AgentQuote> AgentQuotesForThisUser{get; set;}
         public ICommand executeProfileCommand { get; set; }
@@ -23,6 +24,7 @@ namespace DaiGo.ViewModels
             WelcomeText = "Good Day, " + username;
             QuickAcessText = "You have " + count.Tostring() + " message"; 
             AgentQuotesForThisUser = new OberservableCollection<AgentQuote>();
+            this.Subject = subject;
             this.executeProfileCommand = new Command(ProfileClicked);
             this.executeMessageCommand = new Command(MessageClicked);
             this.executeRequestCommand = new Command(async () => await RequestSearchClicked());
@@ -32,22 +34,12 @@ namespace DaiGo.ViewModels
 
         }
 
-        public string Username
-        {
-            get => username;
-            set
-            {
-                var loginuser = new LoginViewModel();
-                username = loginuser.Username;
-                this.Username = username;
-             }
-
-        }
+       
         public void QuickAccess()
         {
                 count = 0;
-                
-                var request = App.Database.Name_Request_Async(username);
+                 
+                var request = App.Database.ThisUserRequestAsync(userID);
                 var quote = App.Database.GetAgentQuoteAsync();
                 foreach (var req in request)
                 {
@@ -79,7 +71,7 @@ namespace DaiGo.ViewModels
 
 
         private string subject;
-        private int requestID;
+        // private int requestID;
 
         public string Subject
         {
@@ -109,16 +101,15 @@ namespace DaiGo.ViewModels
 
         async Task RequestSearchClicked()
         {
-            //IsBusy = true;
+    
 
-            if (!string.IsNullOrWhiteSpace(subject))
-            {
-                var newUserRequest = new UserRequest()
-                {
-                    Subject = subject
-                };
-                await App.Database.SaveUserRequestAsync(newUserRequest);
-             }
+     //       if (!string.IsNullOrWhiteSpace(subject))
+     //       {
+    //            {
+    //                Subject = subject
+     //           };
+     //           await App.Database.SaveUserRequestAsync(newUserRequest);
+     //        }
 
             //    await App.Database.SaveUserRequestAsync(new UserRequest
             //    {
@@ -127,10 +118,9 @@ namespace DaiGo.ViewModels
             //    });
 
 
-                //IsBusy = false;
+     
             Application.Current.MainPage = new NavigationPage(new EditRequest());
-
-            }
+                     
         }
     }
 
