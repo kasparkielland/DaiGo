@@ -19,12 +19,12 @@ namespace DaiGo.ViewModels
         private string email;
         private string phone;
 
-        public ICommand GoBack { get; set; }
+        public ICommand GoBackCommand { get; set; }
         public ICommand SignUpCommand { get; set; }
         public UserProfile userProfile { get; set; }
         public SignUpPageViewModel()
         {
-            GoBack = new Command(BackClicked);
+            GoBackCommand = new Command(BackClicked);
             SignUpCommand = new Command(OnSignUp);
             userProfile = new UserProfile
             {

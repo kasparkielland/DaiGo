@@ -33,7 +33,7 @@ namespace DaiGo.ViewModels
             return userProfile.ToListAsync();
                    
         }
-         public Task<List<UserReqeust>> ThisUserRequestAsync(int userid)
+         public Task<List<UserRequest>> ThisUserRequestAsync(int userid)
         {
            
            return _database.Table<UserRequest>().Where(request => request.UserID == userid).ToListAsync(); 

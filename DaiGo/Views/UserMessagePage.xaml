@@ -58,7 +58,7 @@
             <ListView x:Name="UserMessageListView"
                       SeparatorVisibility="None"
                       IsPullToRefreshEnabled="True"
-                      ItemsSource="{Binding AgentQuote}"
+                      ItemsSource="{Binding AgentQuotesForThisUser}"
                       VerticalOptions="FillAndExpand"
                       HasUnevenRows="True"
                       BackgroundColor="{StaticResource backgroundColor}">
@@ -67,21 +67,31 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="10">
-                                <StackLayout Orientation="Horizontal"
-                                             BackgroundColor="WhiteSmoke">
+                                <StackLayout BackgroundColor="WhiteSmoke">
                                     <Label Text="{Binding RequestID}"
                                            d:Text="{Binding .}"
                                            HorizontalOptions="StartAndExpand"
                                            FontSize="Small"
                                            TextColor="{StaticResource darkTextColor}" />
-                                    <Label Text="{Binding QuoteAmount}"
+                                    <Label Text="{Binding Subject}"
+                                           d:Text="{Binding .}"
+                                           HorizontalOptions="StartAndExpand"
+                                           FontSize="Small"
+                                           TextColor="{StaticResource darkTextColor}" />
+                                    <Label Text="{Binding Description}"
+                                           d:Text="{Binding .}"
+                                           HorizontalOptions="StartAndExpand"
+                                           FontSize="Small"
+                                           TextColor="{StaticResource darkTextColor}" />
+                                    <Label Text="{Binding Quote}"
                                            d:Text="{Binding .}"
                                            FontSize="Small"
                                            TextColor="{StaticResource darkTextColor}" />
                                     <Button Text="Contact"
                                             FontSize="Large"
                                             HorizontalOptions="EndAndExpand"
-                                            TextColor="{StaticResource darkTextColor}" />
+                                            TextColor="{StaticResource darkTextColor}"
+                                            Command ="{Binding ContactAgentCommand}"/>
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>

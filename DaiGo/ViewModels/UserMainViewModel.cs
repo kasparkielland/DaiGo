@@ -3,16 +3,21 @@ using DaiGo.Views;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 
 namespace DaiGo.ViewModels
 {
     class UserMainViewModel : BaseViewModel
     {
-        private string username = LoginViewModel.Username;
-        private int userID = LoginViewModel.UserID;
+    
+        
+        public LoginViewModel loginViewModel = new LoginViewModel();
         private int count;
-        public OberservableCollection<AgentQuote> AgentQuotesForThisUser{get; set;}
+        public string WelcomeText;
+        public string QuickAcessText;
+        public ObservableCollection<AgentQuote> AgentQuotesForThisUser{get; set;}
         public ICommand executeProfileCommand { get; set; }
         public ICommand executeMessageCommand { get; set; }
         public ICommand executeRequestCommand { get; set; }
@@ -21,37 +26,40 @@ namespace DaiGo.ViewModels
 
         public UserMainViewModel()
         {
-            WelcomeText = "Good Day, " + username;
-            QuickAcessText = "You have " + count.Tostring() + " message"; 
-            AgentQuotesForThisUser = new OberservableCollection<AgentQuote>();
+            
+            WelcomeText = "Good Day, " + loginViewModel.Username;
+            QuickAcessText = "You have " + count.ToString() + " message"; 
+            AgentQuotesForThisUser = new ObservableCollection<AgentQuote>();
             this.Subject = subject;
             this.executeProfileCommand = new Command(ProfileClicked);
             this.executeMessageCommand = new Command(MessageClicked);
-            this.executeRequestCommand = new Command(async () => await RequestSearchClicked());
+            this.executeRequestCommand = new Command(RequestSearchClicked);
             //                () => !IsBusy);
             this.executeQuicAccessCommand = new Command(QuicAccess);
 
 
         }
-
        
+ 
         public void QuickAccess()
         {
                 count = 0;
-                 
-                var request = App.Database.ThisUserRequestAsync(userID);
-                var quote = App.Database.GetAgentQuoteAsync();
-                foreach (var req in request)
-                {
-                    if (req.RequestID == quote.RequestID)       
-                    {
+                var userID = loginViewModel.UserID; 
+                var requests = App.Database.ThisUserRequestAsync(userID);
+                var quotes = App.Database.GetAgentQuoteAsync();
+                
+                
+         //       foreach (var req in request)
+         //       {
+         //           if (req.RequestID == quote.RequestID)       
+         //           {
 
-                        count++;
-                        AgentQuotesForThisUser.Add(req);
+         //               count++;
+         //               AgentQuotesForThisUser.Add(req);
                         
-                    }
+         //           }
 
-                }
+          //      }
               
             
         }
@@ -86,7 +94,7 @@ namespace DaiGo.ViewModels
             }
         }
 
-        public new bool IsBusy { get; set; }
+     //   public new bool IsBusy { get; set; }
     //    public int RequestID
     //    {
     //        get
@@ -99,7 +107,8 @@ namespace DaiGo.ViewModels
     //        }
     //    }
 
-        async Task RequestSearchClicked()
+    //    async Task RequestSearchClicked()
+        public void RequestSearchClicked()
         {
     
 

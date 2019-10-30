@@ -16,20 +16,24 @@ namespace DaiGo.ViewModels
         private int maxPrice;
         private string description;
         private UserRequest thisUserRequest;
+        public UserMainViewModel userViewModel;
+        public LoginViewModel loginViewModel;
         public ICommand GoUserVerificationCommand { get; set;}
         public ICommand GoUserMainCommand { get;set; }
         public ICommand OnCategoryFrameClicked{get; set;}
         public EditRequestViewModel()
         {
+            userViewModel = new UserMainViewModel();
+            loginViewModel = new LoginViewModel();
             thisUserRequest = new UserRequest
             {
-                Subject = UserMainViewModel.Subject, 
+                Subject = userViewModel.Subject, 
                 Country = country, 
                 MinPrice = minPrice,
                 MaxPrice = maxPrice, 
                 Category = category,
                 Description = description,
-                UserID = LoginViewModel.UserID
+                UserID = loginViewModel.UserID
 
             };   
             this.OnCategoryFrameClicked = new Command(GoCategory);
@@ -113,7 +117,7 @@ namespace DaiGo.ViewModels
             }
             set
             {
-                SetProperty(description, value);
+                SetProperty(ref description, value);
             }
         }
  //       public int UserID
@@ -129,7 +133,7 @@ namespace DaiGo.ViewModels
  //       }
  
 
-        public GoCategory()
+        public void GoCategory()
         {
            //Category page has not yet established 
 
