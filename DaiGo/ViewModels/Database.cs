@@ -33,6 +33,21 @@ namespace DaiGo.ViewModels
             return userProfile.ToListAsync();
                    
         }
+         public Task<List<UserReqeust>> Name_Request_Async(string username)
+        {
+           // UserRequest Table do not have a field of "UserName", only have a field of "UserID"
+           // This task try to use "username" to find "user request" in UserRequest Table
+            
+           var name_id_table = _database.Table<UserProfile>().Where(user => user.UserName == username);
+           var id = username_userid_table.UserID;
+           var name_request_table = _database.Table<UserRequest>().Where(request => request.UserID == id); 
+           
+           return name_request_table.ToListAsync();
+                   
+        }
+
+
+
         public Task<int> SaveUserProfileAsync(UserProfile user)
         {
             return _database.InsertAsync(user);

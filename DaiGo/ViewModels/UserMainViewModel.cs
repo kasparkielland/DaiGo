@@ -9,7 +9,9 @@ namespace DaiGo.ViewModels
 {
     class UserMainViewModel : BaseViewModel
     {
-
+        private string username;
+        private int count;
+        public OberservableCollection<AgentQuote> AgentQuotesForThisUser{get; set;}
         public ICommand executeProfileCommand { get; set; }
         public ICommand executeMessageCommand { get; set; }
         public ICommand executeRequestCommand { get; set; }
@@ -18,15 +20,50 @@ namespace DaiGo.ViewModels
 
         public UserMainViewModel()
         {
-            Title = "User Main Page";
+            WelcomeText = "Good Day, " + username;
+            QuickAcessText = "You have " + count.Tostring() + " message"; 
+            AgentQuotesForThisUser = new OberservableCollection<AgentQuote>();
             this.executeProfileCommand = new Command(ProfileClicked);
             this.executeMessageCommand = new Command(MessageClicked);
-            this.executeRequestCommand = new Command(async () => await RequestSearchClicked(),
-                            () => !IsBusy);
+            this.executeRequestCommand = new Command(async () => await RequestSearchClicked());
+            //                () => !IsBusy);
             this.executeQuicAccessCommand = new Command(QuicAccess);
 
 
         }
+
+        public string Username
+        {
+            get => username;
+            set
+            {
+                var loginuser = new LoginViewModel();
+                username = loginuser.Username;
+                this.Username = username;
+             }
+
+        }
+        public void QuickAccess()
+        {
+                count = 0;
+                
+                var request = App.Database.Name_Request_Async(username);
+                var quote = App.Database.GetAgentQuoteAsync();
+                foreach (var req in request)
+                {
+                    if (req.RequestID == quote.RequestID)       
+                    {
+
+                        count++;
+                        AgentQuotesForThisUser.Add(req);
+                        
+                    }
+
+                }
+              
+            
+        }
+
         void ProfileClicked()
         {
             Application.Current.MainPage = new NavigationPage(new UserIdentityPage());
@@ -41,8 +78,8 @@ namespace DaiGo.ViewModels
         }
 
 
-        string subject;
-        int requestID;
+        private string subject;
+        private int requestID;
 
         public string Subject
         {
@@ -52,22 +89,23 @@ namespace DaiGo.ViewModels
             }
             set
             {
-                subject = value;
+                SetProperty(ref subject, value);
+                //subject = value;
             }
         }
 
         public new bool IsBusy { get; set; }
-        public int RequestID
-        {
-            get
-            {
-                return requestID;
-            }
-            set
-            {
-                requestID = value;
-            }
-        }
+    //    public int RequestID
+    //    {
+    //        get
+    //        {
+    //            return requestID;
+    //        }
+    //        set
+    //        {
+    //            //requestID = value;
+    //        }
+    //    }
 
         async Task RequestSearchClicked()
         {
@@ -75,15 +113,22 @@ namespace DaiGo.ViewModels
 
             if (!string.IsNullOrWhiteSpace(subject))
             {
-                await App.Database.SaveUserRequestAsync(new UserRequest
+                var newUserRequest = new UserRequest()
                 {
-                    RequestID = RequestID++,
                     Subject = subject
-                });
+                };
+                await App.Database.SaveUserRequestAsync(newUserRequest);
+             }
+
+            //    await App.Database.SaveUserRequestAsync(new UserRequest
+            //    {
+            //        RequestID = RequestID++,
+            //        Subject = subject
+            //    });
 
 
                 //IsBusy = false;
-                Application.Current.MainPage = new NavigationPage(new EditRequest());
+            Application.Current.MainPage = new NavigationPage(new EditRequest());
 
             }
         }
