@@ -99,7 +99,7 @@
                    TextColor="{StaticResource darkTextColor}"
                    VerticalOptions="StartAndExpand"
                    HorizontalOptions="EndAndExpand" />
-            <ScrollView>
+            <ScrollView IsClippedToBounds="True">
                 <ListView x:Name="ItemsListView"
                           ItemsSource="{Binding Items}"
                           VerticalOptions="FillAndExpand"

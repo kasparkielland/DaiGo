@@ -22,6 +22,7 @@ namespace DaiGo.ViewModels
             Application.Current.MainPage = new NavigationPage(new UserMainPage());
         }
 
+
         int requestID;
         string subject;
         string country;
