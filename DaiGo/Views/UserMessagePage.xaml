@@ -73,16 +73,7 @@
                                            HorizontalOptions="StartAndExpand"
                                            FontSize="Small"
                                            TextColor="{StaticResource darkTextColor}" />
-                                    <Label Text="{Binding Subject}"
-                                           d:Text="{Binding .}"
-                                           HorizontalOptions="StartAndExpand"
-                                           FontSize="Small"
-                                           TextColor="{StaticResource darkTextColor}" />
-                                    <Label Text="{Binding Description}"
-                                           d:Text="{Binding .}"
-                                           HorizontalOptions="StartAndExpand"
-                                           FontSize="Small"
-                                           TextColor="{StaticResource darkTextColor}" />
+                                   
                                     <Label Text="{Binding Quote}"
                                            d:Text="{Binding .}"
                                            FontSize="Small"

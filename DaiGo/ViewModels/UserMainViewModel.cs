@@ -11,57 +11,82 @@ namespace DaiGo.ViewModels
 {
     class UserMainViewModel : BaseViewModel
     {
-    
-        
+
+
         public LoginViewModel loginViewModel = new LoginViewModel();
         private int count;
-        public string WelcomeText;
-        public string QuickAcessText;
-        public ObservableCollection<AgentQuote> AgentQuotesForThisUser{get; set;}
-        public ICommand executeProfileCommand { get; set; }
-        public ICommand executeMessageCommand { get; set; }
-        public ICommand executeRequestCommand { get; set; }
-        public ICommand executeQuicAccessCommand { get; set; }
+        public string WelcomeText
+        {
+            get
+            {
+                return "Good Day, " + loginViewModel.Username;
+            }
+        }
+        public string QuickAccessText
+        {
+            get
+            {
+                return "You have " + count.ToString() + " messages";
+            }
+        }
+        private string subject;
+        public ObservableCollection<AgentQuote> AgentQuotesForThisUser{get; set;} = new ObservableCollection<AgentQuote>();
+        public ICommand ExecuteProfileCommand { get; set; }
+        public ICommand ExecuteMessageCommand { get; set; }
+        public ICommand ExecuteRequestCommand { get; set; }
+        public ICommand ExecuteQuicAccessCommand { get; set; }
 
 
         public UserMainViewModel()
         {
+           
             
-            WelcomeText = "Good Day, " + loginViewModel.Username;
-            QuickAcessText = "You have " + count.ToString() + " message"; 
-            AgentQuotesForThisUser = new ObservableCollection<AgentQuote>();
-            this.Subject = subject;
-            this.executeProfileCommand = new Command(ProfileClicked);
-            this.executeMessageCommand = new Command(MessageClicked);
-            this.executeRequestCommand = new Command(RequestSearchClicked);
-            //                () => !IsBusy);
-            this.executeQuicAccessCommand = new Command(QuicAccess);
+            this.ExecuteProfileCommand = new Command(ProfileClicked);
+            this.ExecuteMessageCommand = new Command(MessageClicked);
+            this.ExecuteRequestCommand = new Command(RequestSearchClicked);
+            this.ExecuteQuicAccessCommand = new Command(QuicAccess);
 
 
         }
+
        
- 
-        public void QuickAccess()
+
+
+        public string Subject
+        {
+            get
+            {
+                return subject;
+            }
+            set
+            {
+                SetProperty(ref subject, value);
+                //subject = value;
+            }
+        }
+        public async void QuickAccess()
         {
                 count = 0;
                 var userID = loginViewModel.UserID; 
-                var requests = App.Database.ThisUserRequestAsync(userID);
-                var quotes = App.Database.GetAgentQuoteAsync();
-                
-                
-         //       foreach (var req in request)
-         //       {
-         //           if (req.RequestID == quote.RequestID)       
-         //           {
+                var requests = await App.Database.ThisUserRequestAsync(userID);
+                var quotes = await App.Database.GetAgentQuoteAsync();
 
-         //               count++;
-         //               AgentQuotesForThisUser.Add(req);
-                        
-         //           }
 
-          //      }
-              
-            
+            foreach (var req in requests)
+            {
+                foreach (var quo in quotes)
+                {
+                    if (req.RequestID == quo.RequestID)
+                    {
+
+                        count++;
+                        AgentQuotesForThisUser.Add(quo);
+
+                    }
+
+                }
+
+            }
         }
 
         void ProfileClicked()
@@ -78,57 +103,12 @@ namespace DaiGo.ViewModels
         }
 
 
-        private string subject;
-        // private int requestID;
-
-        public string Subject
-        {
-            get
-            {
-                return subject;
-            }
-            set
-            {
-                SetProperty(ref subject, value);
-                //subject = value;
-            }
-        }
-
-     //   public new bool IsBusy { get; set; }
-    //    public int RequestID
-    //    {
-    //        get
-    //        {
-    //            return requestID;
-    //        }
-    //        set
-    //        {
-    //            //requestID = value;
-    //        }
-    //    }
-
-    //    async Task RequestSearchClicked()
-        public void RequestSearchClicked()
-        {
     
 
-     //       if (!string.IsNullOrWhiteSpace(subject))
-     //       {
-    //            {
-    //                Subject = subject
-     //           };
-     //           await App.Database.SaveUserRequestAsync(newUserRequest);
-     //        }
-
-            //    await App.Database.SaveUserRequestAsync(new UserRequest
-            //    {
-            //        RequestID = RequestID++,
-            //        Subject = subject
-            //    });
-
-
-     
-            Application.Current.MainPage = new NavigationPage(new EditRequest());
+    
+        public void RequestSearchClicked()
+        {
+           Application.Current.MainPage = new NavigationPage(new EditRequest());
                      
         }
     }

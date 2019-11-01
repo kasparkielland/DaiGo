@@ -12,26 +12,10 @@ namespace DaiGo.ViewModels
 {
     public class UserMessageViewModel : BaseViewModel
     {
-        public ObservableCollection<AgentQuote> AgentQuotesForThisUser
-        {
-            set
-            {
-                this.AgentQuotesForThisUser = UserMainViewModel.AgentQuotesForThisUser;
-            }
-        }
         
-        public ObservableCollection<UserRequest> QuoteDetail
-        {
-            set
-            {
-                var requestIDinQuote = AgentQuotesForThisUser.RequestID;
-                foreach (var req in requestIDinQuote)
-                    {
-                    QuoteDetail.Add(req);
+        UserMainViewModel userMainViewModel { get; set; } = new UserMainViewModel();
 
-                    }
-            }
-        }
+        public ObservableCollection<AgentQuote> AgentQuotesForThisUser { get; set; } = new ObservableCollection<AgentQuote>();
         
         public ICommand GoBackCommand { get; set; }
         public ICommand ContactAgentCommand{get; set;}
@@ -39,8 +23,8 @@ namespace DaiGo.ViewModels
 
         public UserMessageViewModel()
         {
-            AgentQuotesForThisUser = new ObservableCollection<AgentQuote>();
-            QuoteDetail = new ObservableCollection<UserRequest>();
+            AgentQuotesForThisUser = userMainViewModel.AgentQuotesForThisUser;
+            
             ContactAgentCommand = new Command(GoContactAgent);
             GoBackCommand = new Command(BackClicked);
 

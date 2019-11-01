@@ -8,26 +8,27 @@ namespace DaiGo.ViewModels
 {
     class EditRequestViewModel : BaseViewModel
     {
-        private string subject;
-        public string Subject;
+       
+        
         private string country;
         private string category;
         private int minPrice;
         private int maxPrice;
         private string description;
         private UserRequest thisUserRequest;
-        public UserMainViewModel userViewModel;
-        public LoginViewModel loginViewModel;
+        public UserMainViewModel userMainViewModel = new UserMainViewModel();
+        public LoginViewModel loginViewModel = new LoginViewModel();
+        
+        
         public ICommand GoUserVerificationCommand { get; set;}
         public ICommand GoUserMainCommand { get;set; }
         public ICommand OnCategoryFrameClicked{get; set;}
         public EditRequestViewModel()
         {
-            userViewModel = new UserMainViewModel();
-            loginViewModel = new LoginViewModel();
-            thisUserRequest = new UserRequest
+            
+           thisUserRequest = new UserRequest
             {
-                Subject = userViewModel.Subject, 
+                Subject = userMainViewModel.Subject, 
                 Country = country, 
                 MinPrice = minPrice,
                 MaxPrice = maxPrice, 
@@ -38,7 +39,7 @@ namespace DaiGo.ViewModels
             };   
             this.OnCategoryFrameClicked = new Command(GoCategory);
             this.GoUserVerificationCommand = new Command(async () => await SaveRequest());
-          //                              () => !isBusy);
+          
             this.GoUserMainCommand = new Command(BackClicked);
         }
 

@@ -17,11 +17,11 @@ namespace DaiGo.ViewModels
         private string firstname;
         private string lastname;
         private string email;
-        private string phone;
+        private string phonenumber;
 
         public ICommand GoBackCommand { get; set; }
         public ICommand SignUpCommand { get; set; }
-        public UserProfile userProfile { get; set; }
+        public UserProfile userProfile; 
         public SignUpPageViewModel()
         {
             GoBackCommand = new Command(BackClicked);
@@ -33,7 +33,7 @@ namespace DaiGo.ViewModels
                 FirstName = firstname,
                 LastName = lastname,
                 Email = email,
-                Phonenumber = phone
+                Phonenumber = phonenumber
             };
         }
 
@@ -78,12 +78,12 @@ namespace DaiGo.ViewModels
                 SetProperty(ref email, value);
             }
         }
-        public string Phone
+        public string Phonenumber
         {
-            get => phone;
+            get => phonenumber;
             set
             {
-                SetProperty(ref phone, value);
+                SetProperty(ref phonenumber, value);
             }
         }
         void BackClicked()

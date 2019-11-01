@@ -29,6 +29,8 @@ namespace DaiGo.ViewModels
         {
            var userProfile = _database.Table<UserProfile>().Where(user => user.UserName == username).Where
                 (pass => pass.Password == password);
+         
+
 
             return userProfile.ToListAsync();
                    

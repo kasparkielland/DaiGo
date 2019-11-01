@@ -8,6 +8,7 @@ using DaiGo.Models;
 using DaiGo.Views;
 using FormsControls.Base;
 using Xamarin.Forms;
+using System.Collections.Generic;
 
 namespace DaiGo.ViewModels
 {
@@ -18,7 +19,7 @@ namespace DaiGo.ViewModels
         private string password;
         private int userID;
         public int UserID;
-        UserProfile userProfile;
+            
 
         public ICommand executeLogin { get; set; }
         public ICommand executeSignUp { get; set; }
@@ -27,9 +28,9 @@ namespace DaiGo.ViewModels
 
         public LoginViewModel()
         {
-            this.Username = username;
-            this.UserID = userID;
-            executeLogin = new Command(checkCredentials);
+            //this.Username = username;
+            //this.UserID = userID;
+            executeLogin = new Command(CheckCredentials);
             executeSignUp = new Command(OnSignup);
             directLogin = new Command(OnLogin);
 
@@ -46,10 +47,10 @@ namespace DaiGo.ViewModels
     
     //   public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
-        void checkCredentials()
+        void CheckCredentials()
         {
           
-                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+                if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password))
                 {
                     App.Current.MainPage.DisplayAlert("Oops", "Entry cannot be empty", "OK");
                 }
@@ -71,11 +72,15 @@ namespace DaiGo.ViewModels
         async void OnLogin()
         {
             try
-            {
-                userProfile = await App.Database.FindUserProfileAsync(username, password);
-                if (userProfile != null)
+            {   
+                var userProfileList = await App.Database.FindUserProfileAsync(username, password);
+                if (userProfileList != null)
                 {
-                    userID = userProfile.UserID;
+                    foreach (var user in userProfileList)
+                    {
+                        userID = user.UserID;
+                    }
+                   
                     Application.Current.MainPage = new NavigationPage(new UserMainPage());
                 }
                 else
@@ -113,7 +118,7 @@ namespace DaiGo.ViewModels
             get { return password; }
             set
             {
-                //password = value;
+                password = value;
                 //PropertyChanged(this, new PropertyChangedEventArgs("Password"));
                 SetProperty(ref password, value);
             }
