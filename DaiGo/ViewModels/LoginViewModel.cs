@@ -28,11 +28,11 @@ namespace DaiGo.ViewModels
 
         public LoginViewModel()
         {
-            //this.Username = username;
-            //this.UserID = userID;
-            executeLogin = new Command(CheckCredentials);
+           //this.Username = username;
+           // this.UserID = userID;
+            executeLogin = new Command(async() =>await CheckCredentials());
             executeSignUp = new Command(OnSignup);
-            directLogin = new Command(OnLogin);
+            directLogin = new Command(async()=> await OnLogin());
 
             //TODO: Look into PageAnimation (see https://github.com/AlexandrNikulin/AnimationNavigationPage)
             //      Installation = done, Declaration = REDO!!, Create = DO!!
@@ -47,12 +47,12 @@ namespace DaiGo.ViewModels
     
     //   public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
-        void CheckCredentials()
+        async Task CheckCredentials()
         {
           
                 if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password))
                 {
-                    App.Current.MainPage.DisplayAlert("Oops", "Entry cannot be empty", "OK");
+                   await  App.Current.MainPage.DisplayAlert("Oops", "Entry cannot be empty", "OK");
                 }
                 //if (string.IsNullOrEmpty(Username))
                 //{
@@ -64,12 +64,12 @@ namespace DaiGo.ViewModels
                 //}
                 else
                 {
-                    OnLogin();
+                await OnLogin();
                 }
             
         }
 
-        async void OnLogin()
+        async Task OnLogin()
         {
             try
             {   
