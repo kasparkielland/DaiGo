@@ -8,11 +8,11 @@ namespace DaiGo.ViewModels
 {
     public class AgentMessageViewModel : INotifyPropertyChanged
     {
-        public ICommand GoBack { get; set; }
+        public ICommand GoBackCommand { get; set; }
 
         public AgentMessageViewModel()
         {
-            GoBack = new Command(BackClicked);
+            GoBackCommand = new Command(BackClicked);
 
         }
         public event PropertyChangedEventHandler PropertyChanged = delegate { };

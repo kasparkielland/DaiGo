@@ -12,28 +12,30 @@ namespace DaiGo.ViewModels
 {
     public class UserMessageViewModel : BaseViewModel
     {
-        
+
         UserMainViewModel userMainViewModel { get; set; } = new UserMainViewModel();
 
         public ObservableCollection<AgentQuote> AgentQuotesForThisUser { get; set; } = new ObservableCollection<AgentQuote>();
-        
+
         public ICommand GoBackCommand { get; set; }
-        public ICommand ContactAgentCommand{get; set;}
-        
+        public ICommand ContactAgentCommand { get; set; }
+
 
         public UserMessageViewModel()
         {
             AgentQuotesForThisUser = userMainViewModel.AgentQuotesForThisUser;
-            
+
             ContactAgentCommand = new Command(GoContactAgent);
             GoBackCommand = new Command(BackClicked);
 
         }
-        
+
         void GoContactAgent()
         {
+            // TODO
             // not implement yet
             // shall open an Email or Messenger so User can Contact with Agent
+            // Iggy: Insert code HERE
         }
         void BackClicked()
         {
