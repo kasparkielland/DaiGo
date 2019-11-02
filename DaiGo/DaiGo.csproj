@@ -19,6 +19,10 @@
         <PackageReference Include="Corcav.Behaviors" Version="2.3.7" />
         <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
         <PackageReference Include="XForms.Plugin.AnimationNavigationPage" Version="1.0.7" />
+        <PackageReference Include="Microsoft.Azure.Mobile.Client" Version="4.1.1" />
+        <PackageReference Include="Microsoft.AppCenter.Auth" Version="2.5.0" />
+        <PackageReference Include="Microsoft.AppCenter.Crashes" Version="2.5.0" />
+        <PackageReference Include="Microsoft.AppCenter.Analytics" Version="2.5.0" />
     </ItemGroup>
     <ItemGroup>
         <EmbeddedResource Remove="View\HomeScreen_User.xaml" />

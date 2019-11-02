@@ -6,7 +6,7 @@
   </item>
   <item>
     <bitmap
-        android:src="@drawable/Daigo_Logo"
+        android:src="@drawable/DaiGo_Logo_Transparent"
         android:tileMode="disabled"
         android:gravity="center"/>
   </item>
