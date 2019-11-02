@@ -53,6 +53,11 @@
                HorizontalOptions="End" />
 
         <ScrollView IsClippedToBounds="True">
+            <ScrollView.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Right"
+                                        Command="{Binding GoBack}" />
+            </ScrollView.GestureRecognizers>
+
             <ListView x:Name="agentMessageListView"
                       SeparatorVisibility="None"
                       IsPullToRefreshEnabled="True"

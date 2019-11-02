@@ -48,10 +48,15 @@ namespace DaiGo.ViewModels
             Application.Current.MainPage = new NavigationPage(new UserMainPage());
         }
 
-        //int requestID;
-       
-        // int userID;
-        //bool isBusy;
+        int requestID;
+        string subject;
+        string country;
+        string category;
+        int minPrice;
+        int maxPrice;
+        string description;
+        int userID;
+        bool isBusy;
 
         //public int RequestID
         //{

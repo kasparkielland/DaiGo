@@ -37,7 +37,7 @@
                        VerticalTextAlignment="Center" />
 
                 <Label HorizontalOptions="StartAndExpand"
-                       Text="Go back"
+                       Text="Back"
                        TextColor="{StaticResource lightTextColor}"
                        FontAttributes="Bold"
                        FontSize="Subtitle"
