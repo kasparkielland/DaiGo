@@ -64,7 +64,7 @@
                Grid.ColumnSpan="3"
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="CenterAndExpand"
-               Text="{Binding WelcomeText}"
+               Text="{Binding WelcomeText, Mode=TwoWay}"
                FontSize="Title"
                TextColor="{StaticResource darkTextColor}"
                LineBreakMode="WordWrap" />
@@ -78,7 +78,7 @@
                 <TapGestureRecognizer Command="{Binding executeQuicAccessCommand}" />
             </Frame.GestureRecognizers>
             <Grid>
-                <Label Text="{Binding QuickAccessText}"
+                <Label Text="{Binding QuickAccessText, Mode=TwoWay}"
                        TextColor="{StaticResource lightTextColor}"
                        BackgroundColor="{StaticResource userThemeColor}"
                        VerticalOptions="CenterAndExpand"
@@ -110,7 +110,7 @@
                        Placeholder="What are you looking for?"
                        Keyboard="Text"
                        ReturnType="Search"
-                       Text="{Binding Subject}"
+                       Text="{Binding Subject, Mode=TwoWay}"
                        ReturnCommand="{Binding executeRequestCommand}" />
                 <Button VerticalOptions="EndAndExpand"
                         HorizontalOptions="FillAndExpand"

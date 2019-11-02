@@ -8,12 +8,38 @@ namespace DaiGo.ViewModels
 {
     class EditRequestViewModel : BaseViewModel
     {
-        public ICommand GoUserVerificationCommand { get; }
-        public ICommand GoUserMainCommand { get; }
+       
+        
+        private string country;
+        private string category;
+        private int minPrice;
+        private int maxPrice;
+        private string description;
+        private UserRequest thisUserRequest;
+        public UserMainViewModel userMainViewModel = new UserMainViewModel();
+        public LoginViewModel loginViewModel = new LoginViewModel();
+        
+        
+        public ICommand GoUserVerificationCommand { get; set;}
+        public ICommand GoUserMainCommand { get;set; }
+        public ICommand OnCategoryFrameClicked{get; set;}
         public EditRequestViewModel()
         {
-            this.GoUserVerificationCommand = new Command(async () => await SaveRequest(),
-                                        () => !isBusy);
+            
+           thisUserRequest = new UserRequest
+            {
+                Subject = userMainViewModel.Subject, 
+                Country = country, 
+                MinPrice = minPrice,
+                MaxPrice = maxPrice, 
+                Category = category,
+                Description = description,
+                UserID = loginViewModel.UserID
+
+            };   
+            this.OnCategoryFrameClicked = new Command(GoCategory);
+            this.GoUserVerificationCommand = new Command(async () => await SaveRequest());
+          
             this.GoUserMainCommand = new Command(BackClicked);
         }
 
@@ -21,7 +47,6 @@ namespace DaiGo.ViewModels
         {
             Application.Current.MainPage = new NavigationPage(new UserMainPage());
         }
-
 
         int requestID;
         string subject;
@@ -33,28 +58,18 @@ namespace DaiGo.ViewModels
         int userID;
         bool isBusy;
 
-        public int RequestID
-        {
-            get
-            {
-                return requestID;
-            }
-            set
-            {
-                requestID = value;
-            }
-        }
-        public string Subject
-        {
-            get
-            {
-                return subject;
-            }
-            set
-            {
-                subject = value;
-            }
-        }
+        //public int RequestID
+        //{
+        //    get
+        //    {
+        //        return requestID;
+        //    }
+        //    set
+        //    {
+        //        requestID = value;
+        //    }
+        //}
+        
         public string Country
         {
             get
@@ -63,7 +78,7 @@ namespace DaiGo.ViewModels
             }
             set
             {
-                country = value;
+                SetProperty(ref country, value);
             }
         }
         public string Category
@@ -85,7 +100,7 @@ namespace DaiGo.ViewModels
             }
             set
             {
-                minPrice = value;
+                SetProperty(ref minPrice, value);
             }
         }
         public int MaxPrice
@@ -96,9 +111,10 @@ namespace DaiGo.ViewModels
             }
             set
             {
-                maxPrice = value;
+                SetProperty(ref maxPrice, value);
             }
         }
+        
         public string Description
         {
             get
@@ -107,56 +123,34 @@ namespace DaiGo.ViewModels
             }
             set
             {
-                description = value;
+                SetProperty(ref description, value);
             }
         }
-        public int UserID
-        {
-            get
-            {
-                return userID;
-            }
-            set
-            {
-                userID = value;
-            }
-        }
-        public bool IsBusy
-        {
-            get
-            {
-                return isBusy;
-            }
-            set
-            {
-                isBusy = value;
-                //OnRequestButtonClicked.ChangeCanExecute();
-            }
-        }
+ //       public int UserID
+ //       {
+ //           get
+ //           {
+ //               return userID;
+ //           }
+ //           set
+ //           {
+ //               userID = value;
+ //           }
+ //       }
+ 
 
-        public Command OnRequestButtonClicked
+        public void GoCategory()
         {
-            get;
+           //Category page has not yet established 
+
+           //Application.Current.MainPage = new NavigationPage(new CategoryPage());
         }
 
         async Task SaveRequest()
         {
-            //IsBusy = true;
-
-            await App.Database.SaveUserRequestAsync(new UserRequest
-            {
-                RequestID = RequestID++,
-                Country = Country,
-                Category = Category,
-                minPrice = MinPrice,
-                maxPrice = MaxPrice,
-                Description = Description
-            });
-
+             await App.Database.SaveUserRequestAsync(thisUserRequest);
             //IsBusy = false;
             Application.Current.MainPage = new NavigationPage(new UserVerificationPage());
-
-
         }
 
     }

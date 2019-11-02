@@ -24,9 +24,6 @@ namespace DaiGo.Views
             userMessageViewModel = new UserMessageViewModel();
             this.BindingContext = userMessageViewModel;
 
-            UserMessageListView.ItemsSource = new List<AgentQuote>
-            {
-            };
         }
     }
 }

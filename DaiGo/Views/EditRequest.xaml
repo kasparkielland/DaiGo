@@ -67,12 +67,12 @@
                        TextColor="{StaticResource lightTextColor}"
                        FontSize="25" />
 
-                <Picker x:Name="CountryPicker"
+                <Entry x:Name="CountryPicker"
                         Margin="0, 0, 0, 20"
-                        Title="Select preferred reseller location"
+                        Placeholder="Select preferred reseller location"
                         VerticalOptions="EndAndExpand"
-                        BackgroundColor="{StaticResource backgroundColor}">
-                </Picker>
+                        BackgroundColor="{StaticResource backgroundColor}" Text="{Binding Country}">
+                </Entry>
 
                 <Label Margin="20, 0, 0, 0"
                        HorizontalTextAlignment="Start"
@@ -106,7 +106,7 @@
                            VerticalOptions="CenterAndExpand"
                            BackgroundColor="{StaticResource backgroundColor}"
                            Placeholder="Enter lower price value"
-                           Keyboard="Numeric">
+                           Keyboard="Numeric" Text ="{Binding minPrice}">
 
                     </Entry>
 
@@ -124,7 +124,7 @@
                            VerticalOptions="CenterAndExpand"
                            BackgroundColor="{StaticResource backgroundColor}"
                            Placeholder="Enter upper price value"
-                           Keyboard="Numeric">
+                           Keyboard="Numeric" Text="{Binding maxPrice}">
 
                     </Entry>
                 </Grid>
