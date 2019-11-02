@@ -125,7 +125,7 @@
             <Switch HorizontalOptions="EndAndExpand"
                     VerticalOptions="Start"
                     Rotation="180"
-                    IsToggled="{Binding GoToUserCommand, Mode=TwoWay}"
+                    IsToggled="{Binding dectivateAgent, Mode=TwoWay}"
                     ThumbColor="{StaticResource agentThemeColor}"
                     OnColor="{StaticResource userThemeColor}" />
 
