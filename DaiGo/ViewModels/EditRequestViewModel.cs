@@ -8,8 +8,8 @@ namespace DaiGo.ViewModels
 {
     class EditRequestViewModel : BaseViewModel
     {
-       
-        
+
+
         private string country;
         private string category;
         private int minPrice;
@@ -18,28 +18,28 @@ namespace DaiGo.ViewModels
         private UserRequest thisUserRequest;
         public UserMainViewModel userMainViewModel = new UserMainViewModel();
         public LoginViewModel loginViewModel = new LoginViewModel();
-        
-        
-        public ICommand GoUserVerificationCommand { get; set;}
-        public ICommand GoUserMainCommand { get;set; }
-        public ICommand OnCategoryFrameClicked{get; set;}
+
+
+        public ICommand GoUserVerificationCommand { get; set; }
+        public ICommand GoUserMainCommand { get; set; }
+        public ICommand OnCategoryFrameClicked { get; set; }
         public EditRequestViewModel()
         {
-            
-           thisUserRequest = new UserRequest
-            {
-                Subject = userMainViewModel.Subject, 
-                Country = country, 
-                MinPrice = minPrice,
-                MaxPrice = maxPrice, 
-                Category = category,
-                Description = description,
-                UserID = loginViewModel.UserID
 
-            };   
+            thisUserRequest = new UserRequest
+            {
+                Subject = userMainViewModel.Subject,
+                //Country = country, 
+                //MinPrice = minPrice,
+                //MaxPrice = maxPrice, 
+                //Category = category,
+                //Description = description,
+                //UserID = loginViewModel.UserID
+
+            };
             this.OnCategoryFrameClicked = new Command(GoCategory);
             this.GoUserVerificationCommand = new Command(async () => await SaveRequest());
-          
+
             this.GoUserMainCommand = new Command(BackClicked);
         }
 
@@ -50,11 +50,11 @@ namespace DaiGo.ViewModels
 
         int requestID;
         string subject;
-        string country;
-        string category;
-        int minPrice;
-        int maxPrice;
-        string description;
+        //string country;
+        //string category;
+        //int minPrice;
+        //int maxPrice;
+        //string description;
         int userID;
         bool isBusy;
 
@@ -69,7 +69,7 @@ namespace DaiGo.ViewModels
         //        requestID = value;
         //    }
         //}
-        
+
         public string Country
         {
             get
@@ -114,7 +114,7 @@ namespace DaiGo.ViewModels
                 SetProperty(ref maxPrice, value);
             }
         }
-        
+
         public string Description
         {
             get
@@ -126,29 +126,29 @@ namespace DaiGo.ViewModels
                 SetProperty(ref description, value);
             }
         }
- //       public int UserID
- //       {
- //           get
- //           {
- //               return userID;
- //           }
- //           set
- //           {
- //               userID = value;
- //           }
- //       }
- 
+        //       public int UserID
+        //       {
+        //           get
+        //           {
+        //               return userID;
+        //           }
+        //           set
+        //           {
+        //               userID = value;
+        //           }
+        //       }
+
 
         public void GoCategory()
         {
-           //Category page has not yet established 
+            //Category page has not yet established 
 
-           //Application.Current.MainPage = new NavigationPage(new CategoryPage());
+            //Application.Current.MainPage = new NavigationPage(new CategoryPage());
         }
 
         async Task SaveRequest()
         {
-             await App.Database.SaveUserRequestAsync(thisUserRequest);
+            await App.Database.SaveUserRequestAsync(thisUserRequest);
             //IsBusy = false;
             Application.Current.MainPage = new NavigationPage(new UserVerificationPage());
         }

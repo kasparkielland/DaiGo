@@ -16,7 +16,7 @@
     <StackLayout Margin="20, 40, 20, 35">
         <StackLayout.GestureRecognizers>
             <SwipeGestureRecognizer Direction="Right"
-                                    Command="{Binding GoBack}" />
+                                    Command="{Binding GoBackCommand}" />
         </StackLayout.GestureRecognizers>
 
         <Frame Margin="0, 0, 0, 0"
@@ -25,7 +25,7 @@
                Padding="2"
                HorizontalOptions="Start">
             <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding GoBack}" />
+                <TapGestureRecognizer Command="{Binding GoBackCommand}" />
             </Frame.GestureRecognizers>
 
             <StackLayout Orientation="Horizontal"
@@ -55,7 +55,7 @@
         <ScrollView IsClippedToBounds="True">
             <ScrollView.GestureRecognizers>
                 <SwipeGestureRecognizer Direction="Right"
-                                        Command="{Binding GoBack}" />
+                                        Command="{Binding GoBackCommand}" />
             </ScrollView.GestureRecognizers>
 
             <ListView x:Name="agentMessageListView"

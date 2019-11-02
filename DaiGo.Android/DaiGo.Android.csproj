@@ -70,7 +70,7 @@
       <Version>2.3.7</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>4.3.0.908675</Version>
+      <Version>4.3.0.947036</Version>
     </PackageReference>
     <PackageReference Include="XForms.Plugin.AnimationNavigationPage">
       <Version>1.0.7</Version>

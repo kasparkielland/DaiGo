@@ -75,7 +75,7 @@
                                           HeightRequest="200"
                                           VerticalOptions="StartAndExpand"
                                           HorizontalOptions="CenterAndExpand" />
-                    <Label Text="{Binding Name}"
+                    <Label Text="{Binding Name, Mode=OneWayToSource}"
                            Style="{StaticResource H1}"
                            HorizontalTextAlignment="Center"
                            HorizontalOptions="CenterAndExpand"

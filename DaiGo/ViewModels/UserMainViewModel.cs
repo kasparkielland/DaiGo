@@ -30,7 +30,9 @@ namespace DaiGo.ViewModels
             }
         }
         private string subject;
-        public ObservableCollection<AgentQuote> AgentQuotesForThisUser{get; set;} = new ObservableCollection<AgentQuote>();
+
+        public ObservableCollection<AgentQuote> AgentQuotesForThisUser { get; set; } = new ObservableCollection<AgentQuote>();
+
         public ICommand executeProfileCommand { get; set; }
         public ICommand executeMessageCommand { get; set; }
         public ICommand executeRequestCommand { get; set; }
@@ -39,17 +41,19 @@ namespace DaiGo.ViewModels
 
         public UserMainViewModel()
         {
-           
-            
             this.executeProfileCommand = new Command(ProfileClicked);
             this.executeMessageCommand = new Command(MessageClicked);
             this.executeRequestCommand = new Command(RequestSearchClicked);
             this.executeQuicAccessCommand = new Command(QuicAccess);
 
+            this.executeProfileCommand = new Command(ProfileClicked);
+            this.executeMessageCommand = new Command(MessageClicked);
+            this.executeRequestCommand = new Command(RequestSearchClicked);
+            this.executeQuicAccessCommand = new Command(QuicAccess);
 
         }
 
-       
+
 
 
         public string Subject
@@ -66,10 +70,10 @@ namespace DaiGo.ViewModels
         }
         public async void QuickAccess()
         {
-                count = 0;
-                var userID = loginViewModel.UserID; 
-                var requests = await App.Database.ThisUserRequestAsync(userID);
-                var quotes = await App.Database.GetAgentQuoteAsync();
+            count = 0;
+            var userID = loginViewModel.UserID;
+            var requests = await App.Database.ThisUserRequestAsync(userID);
+            var quotes = await App.Database.GetAgentQuoteAsync();
 
 
             foreach (var req in requests)
@@ -103,13 +107,13 @@ namespace DaiGo.ViewModels
         }
 
 
-    
 
-    
+
+
         public void RequestSearchClicked()
         {
-           Application.Current.MainPage = new NavigationPage(new EditRequest());
-                     
+            Application.Current.MainPage = new NavigationPage(new EditRequest());
+
         }
     }
 
