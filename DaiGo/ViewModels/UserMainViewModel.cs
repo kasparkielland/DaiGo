@@ -13,7 +13,7 @@ namespace DaiGo.ViewModels
     {
 
 
-        public LoginViewModel loginViewModel = new LoginViewModel();
+        public LoginViewModel loginViewModel { get; set; } = new LoginViewModel();
         private int count;
         public string WelcomeText
         {
@@ -30,7 +30,9 @@ namespace DaiGo.ViewModels
             }
         }
         private string subject;
+
         public ObservableCollection<AgentQuote> AgentQuotesForThisUser { get; set; } = new ObservableCollection<AgentQuote>();
+
         public ICommand executeProfileCommand { get; set; }
         public ICommand executeMessageCommand { get; set; }
         public ICommand executeRequestCommand { get; set; }
@@ -39,13 +41,15 @@ namespace DaiGo.ViewModels
 
         public UserMainViewModel()
         {
-
-
             this.executeProfileCommand = new Command(ProfileClicked);
             this.executeMessageCommand = new Command(MessageClicked);
             this.executeRequestCommand = new Command(RequestSearchClicked);
             this.executeQuicAccessCommand = new Command(QuicAccess);
 
+            this.executeProfileCommand = new Command(ProfileClicked);
+            this.executeMessageCommand = new Command(MessageClicked);
+            this.executeRequestCommand = new Command(RequestSearchClicked);
+            this.executeQuicAccessCommand = new Command(QuicAccess);
 
         }
 
