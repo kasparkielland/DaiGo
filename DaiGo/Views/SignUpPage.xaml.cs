@@ -15,6 +15,7 @@ namespace DaiGo.Views
         {
             InitializeComponent();
             SignUpPageViewModel = new SignUpPageViewModel();
+            SignUpPageViewModel.navigation = Navigation;
             this.BindingContext = SignUpPageViewModel;
 
             //usernameEntry.Completed += (object sender, EventArgs e) =>

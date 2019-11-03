@@ -6,7 +6,6 @@ using Xamarin.Forms;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 
-
 namespace DaiGo.ViewModels
 {
     class UserMainViewModel : BaseViewModel
@@ -37,19 +36,15 @@ namespace DaiGo.ViewModels
         public ICommand executeMessageCommand { get; set; }
         public ICommand executeRequestCommand { get; set; }
         public ICommand executeQuicAccessCommand { get; set; }
+        public INavigation navigation { get; set; }
 
 
         public UserMainViewModel()
         {
-            this.executeProfileCommand = new Command(ProfileClicked);
-            this.executeMessageCommand = new Command(MessageClicked);
-            this.executeRequestCommand = new Command(RequestSearchClicked);
-            this.executeQuicAccessCommand = new Command(QuicAccess);
-
-            this.executeProfileCommand = new Command(ProfileClicked);
-            this.executeMessageCommand = new Command(MessageClicked);
-            this.executeRequestCommand = new Command(RequestSearchClicked);
-            this.executeQuicAccessCommand = new Command(QuicAccess);
+            this.executeProfileCommand = new Command(async () => await ProfileClicked());
+            this.executeMessageCommand = new Command(async () => await MessageClicked());
+            this.executeRequestCommand = new Command(async () => await RequestSearchClicked());
+            this.executeQuicAccessCommand = new Command(async () => await QuicAccess());
 
         }
 
@@ -68,7 +63,7 @@ namespace DaiGo.ViewModels
                 //subject = value;
             }
         }
-        public async void QuickAccess()
+        public async Task QuickAccess()
         {
             count = 0;
             var userID = loginViewModel.UserID;
@@ -93,26 +88,21 @@ namespace DaiGo.ViewModels
             }
         }
 
-        void ProfileClicked()
+        public async Task ProfileClicked()
         {
-            Application.Current.MainPage = new NavigationPage(new UserIdentityPage());
+            await navigation.PushAsync(new UserIdentityPage());
         }
-        void MessageClicked()
+        public async Task MessageClicked()
         {
-            Application.Current.MainPage = new NavigationPage(new UserMessagePage());
+            await navigation.PushAsync(new UserMessagePage());
         }
-        void QuicAccess()
+        public async Task QuicAccess()
         {
-            Application.Current.MainPage = new NavigationPage(new UserMessagePage());
+            await navigation.PushAsync(new UserMessagePage());
         }
-
-
-
-
-
-        public void RequestSearchClicked()
+        public async Task RequestSearchClicked()
         {
-            Application.Current.MainPage = new NavigationPage(new EditRequest());
+            await navigation.PushAsync(new EditRequest());
 
         }
     }

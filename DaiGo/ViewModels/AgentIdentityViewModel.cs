@@ -37,6 +37,7 @@
 
 using DaiGo.Views;
 using System.ComponentModel;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 using Xamarin.Forms;
@@ -48,6 +49,9 @@ namespace DaiGo.ViewModels
         public ICommand GoToUserCommand { get; set; }
         public ICommand LogoutCommand { get; set; }
         public ICommand executeGoBackCommand { get; set; }
+
+        public INavigation navigation { get; set; }
+
         public bool dectivateAgent
         {
             get
@@ -64,26 +68,32 @@ namespace DaiGo.ViewModels
 
         public AgentIdentityViewModel()
         {
-            this.GoToUserCommand = new Command(UserModeClicked);
-            this.LogoutCommand = new Command(LogoutClicked);
-            this.executeGoBackCommand = new Command(GoBack);
+            this.GoToUserCommand = new Command(async () => await UserModeClicked());
+            this.LogoutCommand = new Command(async () => await LogoutClicked());
+            this.executeGoBackCommand = new Command(async () => await GoBack());
         }
 
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
         bool _deactivateAgent;
 
-        void UserModeClicked()
+        private async Task UserModeClicked()
         {
-            Application.Current.MainPage = new NavigationPage(new UserIdentityPage());
+            navigation.RemovePage(navigation.NavigationStack[0]);
+            await navigation.PushAsync(new UserIdentityPage());
+            navigation.InsertPageBefore(new AgentMainPage(), navigation.NavigationStack[0]);
+            //Application.Current.MainPage = new NavigationPage(new UserIdentityPage());
         }
-        void LogoutClicked()
+        private async Task LogoutClicked()
         {
-            Application.Current.MainPage = new NavigationPage(new LoginPage());
+            navigation.InsertPageBefore(new LoginPage(), navigation.NavigationStack[0]);
+            await navigation.PopToRootAsync();
+            //Application.Current.MainPage = new NavigationPage(new LoginPage());
         }
-        void GoBack()
+        private async Task GoBack()
         {
-            Application.Current.MainPage = new NavigationPage(new AgentMainPage());
+            await navigation.PopToRootAsync();
+            //Application.Current.MainPage = new NavigationPage(new AgentMainPage());
         }
 
     }

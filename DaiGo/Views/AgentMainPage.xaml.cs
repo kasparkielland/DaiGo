@@ -12,15 +12,17 @@ namespace DaiGo.Views
     [DesignTimeVisible(false)]
     public partial class AgentMainPage : ContentPage
     {
-        AgentMainViewModel viewModel;
+        public AgentMainViewModel agentMainViewModel;
 
         public AgentMainPage()
         {
             InitializeComponent();
-
-            BindingContext = viewModel = new AgentMainViewModel();
+            agentMainViewModel = new AgentMainViewModel();
+            agentMainViewModel.navigation = Navigation;
+            this.BindingContext = agentMainViewModel;
         }
-
+        //TODO
+        // Put following code in VM
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             var item = args.SelectedItem as Item;
@@ -42,13 +44,8 @@ namespace DaiGo.Views
         {
             base.OnAppearing();
 
-            if (viewModel.Items.Count == 0)
-                viewModel.LoadItemsCommand.Execute(null);
-        }
-
-        async private void Button_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new AgentMessagePage());
+            if (agentMainViewModel.Items.Count == 0)
+                agentMainViewModel.LoadItemsCommand.Execute(null);
         }
     }
 }

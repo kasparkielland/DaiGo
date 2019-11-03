@@ -1,5 +1,6 @@
 ﻿using DaiGo.Views;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 using Xamarin.Forms;
@@ -8,16 +9,18 @@ namespace DaiGo.ViewModels
 {
     class UserVerificationViewModel : BaseViewModel
     {
-        public ICommand GoHomeCommand { get; }
+        public INavigation navigation { get; set; }
+        public ICommand GoHomeCommand { get; set; }
         public UserVerificationViewModel()
         {
             Title = "UserVerification";
-            this.GoHomeCommand = new Command(this.GoHomeClicked);
+            this.GoHomeCommand = new Command(async () => await GoHomeClicked());
 
         }
-        void GoHomeClicked()
+        private async Task GoHomeClicked()
         {
-            Application.Current.MainPage = new NavigationPage(new UserMainPage());
+            await navigation.PopToRootAsync();
+            //Application.Current.MainPage = new NavigationPage(new UserMainPage());
         }
 
     }

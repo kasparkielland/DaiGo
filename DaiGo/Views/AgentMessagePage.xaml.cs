@@ -20,19 +20,12 @@ namespace DaiGo.Views
         {
             InitializeComponent();
             agentMessageViewModel = new AgentMessageViewModel();
+            agentMessageViewModel.navigation = Navigation;
             this.BindingContext = agentMessageViewModel;
 
             agentMessageListView.ItemsSource = new List<UserRequest>
             {
             };
-
-
-
-        }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PopAsync();
         }
     }
 }

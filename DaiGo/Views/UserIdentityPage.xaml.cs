@@ -12,6 +12,7 @@ namespace DaiGo.Views
         {
             InitializeComponent();
             userIdentityViewModel = new UserIdentityViewModel();
+            userIdentityViewModel.navigation = Navigation;
             this.BindingContext = userIdentityViewModel;
 
         }

@@ -22,6 +22,7 @@ namespace DaiGo.Views
         {
             InitializeComponent();
             userMessageViewModel = new UserMessageViewModel();
+            userMessageViewModel.navigation = Navigation;
             this.BindingContext = userMessageViewModel;
 
         }

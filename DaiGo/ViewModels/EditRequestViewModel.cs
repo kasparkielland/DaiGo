@@ -19,6 +19,7 @@ namespace DaiGo.ViewModels
         public UserMainViewModel userMainViewModel = new UserMainViewModel();
         public LoginViewModel loginViewModel = new LoginViewModel();
 
+        public INavigation navigation { get; set; }
 
         public ICommand GoUserVerificationCommand { get; set; }
         public ICommand GoUserMainCommand { get; set; }
@@ -37,15 +38,15 @@ namespace DaiGo.ViewModels
                 //UserID = loginViewModel.UserID
 
             };
-            this.OnCategoryFrameClicked = new Command(GoCategory);
+            this.OnCategoryFrameClicked = new Command(async () => await GoCategory());
             this.GoUserVerificationCommand = new Command(async () => await SaveRequest());
-
-            this.GoUserMainCommand = new Command(BackClicked);
+            this.GoUserMainCommand = new Command(async () => await BackClicked());
         }
 
-        void BackClicked()
+        private async Task BackClicked()
         {
-            Application.Current.MainPage = new NavigationPage(new UserMainPage());
+            await navigation.PopToRootAsync();
+            //Application.Current.MainPage = new NavigationPage(new UserMainPage());
         }
 
         int requestID;
@@ -139,9 +140,10 @@ namespace DaiGo.ViewModels
         //       }
 
 
-        public void GoCategory()
+        private async Task GoCategory()
         {
             //Category page has not yet established 
+            //navigation.PushAsync(new CategoryPage());
 
             //Application.Current.MainPage = new NavigationPage(new CategoryPage());
         }
@@ -150,7 +152,8 @@ namespace DaiGo.ViewModels
         {
             await App.Database.SaveUserRequestAsync(thisUserRequest);
             //IsBusy = false;
-            Application.Current.MainPage = new NavigationPage(new UserVerificationPage());
+            await navigation.PushAsync(new UserVerificationPage());
+            //Application.Current.MainPage = new NavigationPage(new UserVerificationPage());
         }
 
     }

@@ -15,9 +15,11 @@ namespace DaiGo.ViewModels
     {
         public ObservableCollection<Item> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
+
         public ICommand GoAgentProfileCommand { get; set; }
         public ICommand GoAgentMessageCommand { get; set; }
 
+        public INavigation navigation { get; set; }
 
         public AgentMainViewModel()
         {
@@ -31,18 +33,20 @@ namespace DaiGo.ViewModels
             //    Items.Add(newItem);
             //    await DataStore.AddItemAsync(newItem);
             //});
-            this.GoAgentProfileCommand = new Command(AgentIconClicked);
-            this.GoAgentMessageCommand = new Command(MessageIconClicked);
+            this.GoAgentProfileCommand = new Command(async () => await AgentIconClicked());
+            this.GoAgentMessageCommand = new Command(async () => await MessageIconClicked());
         }
-        void AgentIconClicked()
+        private async Task AgentIconClicked()
         {
-            Application.Current.MainPage = new NavigationPage(new AgentIdentityPage());
+            await navigation.PushAsync(new AgentIdentityPage());
+            //Application.Current.MainPage = new NavigationPage(new AgentIdentityPage());
         }
-        void MessageIconClicked()
+        private async Task MessageIconClicked()
         {
-            Application.Current.MainPage = new NavigationPage(new AgentMessagePage());
+            await navigation.PushAsync(new AgentMessagePage());
+            //Application.Current.MainPage = new NavigationPage(new AgentMessagePage());
         }
-        async Task ExecuteLoadItemsCommand()
+        private async Task ExecuteLoadItemsCommand()
         {
             if (IsBusy)
                 return;

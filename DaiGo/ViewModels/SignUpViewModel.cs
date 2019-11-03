@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -19,13 +20,15 @@ namespace DaiGo.ViewModels
         private string email;
         private string phonenumber;
 
+        public INavigation navigation { get; set; }
+
         public ICommand GoBackCommand { get; set; }
         public ICommand SignUpCommand { get; set; }
-        public UserProfile userProfile; 
+        public UserProfile userProfile;
         public SignUpPageViewModel()
         {
-            GoBackCommand = new Command(BackClicked);
-            SignUpCommand = new Command(OnSignUp);
+            GoBackCommand = new Command(async () => await BackClicked());
+            SignUpCommand = new Command(async () => await OnSignUp());
             userProfile = new UserProfile
             {
                 UserName = username,
@@ -37,8 +40,8 @@ namespace DaiGo.ViewModels
             };
         }
 
-       // public event PropertyChangedEventHandler PropertyChanged = delegate { };
-       public string Username
+        // public event PropertyChangedEventHandler PropertyChanged = delegate { };
+        public string Username
         {
             get => username;
             set
@@ -86,17 +89,17 @@ namespace DaiGo.ViewModels
                 SetProperty(ref phonenumber, value);
             }
         }
-        void BackClicked()
-
+        private async Task BackClicked()
         {
-   
-            Application.Current.MainPage = new NavigationPage(new LoginPage());
+            await navigation.PopToRootAsync();
+            //Application.Current.MainPage = new NavigationPage(new LoginPage());
         }
 
-        async void OnSignUp()
+        private async Task OnSignUp()
         {
             await App.Database.SaveUserProfileAsync(userProfile);
-            Application.Current.MainPage = new NavigationPage(new LoginPage());
+            await navigation.PopToRootAsync();
+            //Application.Current.MainPage = new NavigationPage(new LoginPage());
         }
     }
 }

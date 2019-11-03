@@ -20,26 +20,28 @@ namespace DaiGo.ViewModels
         public ICommand GoBackCommand { get; set; }
         public ICommand ContactAgentCommand { get; set; }
 
+        public INavigation navigation { get; set; }
 
         public UserMessageViewModel()
         {
             AgentQuotesForThisUser = userMainViewModel.AgentQuotesForThisUser;
 
-            ContactAgentCommand = new Command(GoContactAgent);
-            GoBackCommand = new Command(BackClicked);
+            ContactAgentCommand = new Command(async () => await GoContactAgent());
+            GoBackCommand = new Command(async () => await BackClicked());
 
         }
 
-        void GoContactAgent()
+        private async Task GoContactAgent()
         {
             // TODO
             // not implement yet
             // shall open an Email or Messenger so User can Contact with Agent
             // Iggy: Insert code HERE
         }
-        void BackClicked()
+        private async Task BackClicked()
         {
-            Application.Current.MainPage = new NavigationPage(new UserMainPage());
+            await navigation.PopToRootAsync();
+            //Application.Current.MainPage = new NavigationPage(new UserMainPage());
         }
 
     }

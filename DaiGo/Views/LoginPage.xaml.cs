@@ -8,17 +8,18 @@ namespace DaiGo.Views
 {
     public partial class LoginPage : ContentPage
     {
-        public LoginViewModel LoginViewModel;
+        private LoginViewModel loginViewModel;
 
         public LoginPage()
         {
             InitializeComponent();
-            LoginViewModel = new LoginViewModel();
+            loginViewModel = new LoginViewModel();
             //MessagingCenter.Subscribe<LoginViewModel, string>(this, "LoginAlert", (sender, args) =>
             //{
             //    DisplayAlert("Login failed", args + "\nEntry fields cannot be empty", "Try again");
             //});
-            this.BindingContext = LoginViewModel;
+            loginViewModel.navigation = Navigation;
+            this.BindingContext = loginViewModel;
 
             //usernameEntry.Completed += (object sender, EventArgs e) =>
             //{

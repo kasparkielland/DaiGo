@@ -15,6 +15,7 @@ namespace DaiGo.Views
         {
             InitializeComponent();
             agentIdentityViewModel = new AgentIdentityViewModel();
+            agentIdentityViewModel.navigation = Navigation;
             this.BindingContext = agentIdentityViewModel;
         }
     }
