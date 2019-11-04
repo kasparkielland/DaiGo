@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaiGo", "DaiGo\DaiGo.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaiGo.Android", "DaiGo.Android\DaiGo.Android.csproj", "{37D1D8D6-EAE9-4AA8-B74D-62AF3A240098}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaiGo.UITest", "DaiGo.UITest\DaiGo.UITest.csproj", "{76C9095C-77A3-407D-AB13-2391DC531983}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{37D1D8D6-EAE9-4AA8-B74D-62AF3A240098}.Release|iPhone.Build.0 = Release|Any CPU
 		{37D1D8D6-EAE9-4AA8-B74D-62AF3A240098}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{37D1D8D6-EAE9-4AA8-B74D-62AF3A240098}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{76C9095C-77A3-407D-AB13-2391DC531983}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76C9095C-77A3-407D-AB13-2391DC531983}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76C9095C-77A3-407D-AB13-2391DC531983}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{76C9095C-77A3-407D-AB13-2391DC531983}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{76C9095C-77A3-407D-AB13-2391DC531983}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{76C9095C-77A3-407D-AB13-2391DC531983}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{76C9095C-77A3-407D-AB13-2391DC531983}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76C9095C-77A3-407D-AB13-2391DC531983}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76C9095C-77A3-407D-AB13-2391DC531983}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{76C9095C-77A3-407D-AB13-2391DC531983}.Release|iPhone.Build.0 = Release|Any CPU
+		{76C9095C-77A3-407D-AB13-2391DC531983}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{76C9095C-77A3-407D-AB13-2391DC531983}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
