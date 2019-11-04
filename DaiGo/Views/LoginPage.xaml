@@ -141,8 +141,8 @@
                                HasShadow="False"
                                VerticalOptions="EndAndExpand"
                                HorizontalOptions="EndAndExpand"
-                               IsEnabled="False"
-                               IsVisible="False">
+                               IsEnabled="True"
+                               IsVisible="True">
                             <StackLayout Orientation="Horizontal"
                                          Padding="5">
                                 <Label FontSize="Title"
@@ -172,8 +172,8 @@
                                HasShadow="False"
                                VerticalOptions="EndAndExpand"
                                HorizontalOptions="StartAndExpand"
-                               IsEnabled="False"
-                               IsVisible="False">
+                               IsEnabled="True"
+                               IsVisible="True">
                             <StackLayout Orientation="Horizontal"
                                          Padding="5">
                                 <Label FontSize="Title"
