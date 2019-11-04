@@ -5,6 +5,7 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System;
 
 namespace DaiGo.ViewModels
 {
@@ -14,11 +15,33 @@ namespace DaiGo.ViewModels
 
         public LoginViewModel loginViewModel { get; set; } = new LoginViewModel();
         private int count;
+        private int dateTime = DateTime.Now.Hour;
+
+        private string dashGreeting()
+        {
+            if (dateTime >= 0 && dateTime <= 11)
+            {
+                return "Good Morning ,";
+            }
+            else if (dateTime >= 12 && dateTime <= 17)
+            {
+                return "Good Afternoon, ";
+            }
+            else if (dateTime >= 18 && dateTime <= 23)
+            {
+                return "Good Evening, ";
+            }
+            else
+            {
+                return "Hello, ";
+            }
+        }
+
         public string WelcomeText
         {
             get
             {
-                return "Good Day, " + loginViewModel.Username;
+                return dashGreeting() + loginViewModel.Username;
             }
         }
         public string QuickAccessText
