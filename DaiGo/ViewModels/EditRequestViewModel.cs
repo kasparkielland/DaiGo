@@ -1,61 +1,76 @@
-﻿using DaiGo.View;
-using DaiGo.Views;
+﻿using DaiGo.Views;
 using System.Windows.Input;
 using Xamarin.Forms;
 using System.Threading.Tasks;
-using DaiGo.ViewModels;
 using DaiGo.Models;
 
 namespace DaiGo.ViewModels
 {
     class EditRequestViewModel : BaseViewModel
     {
-        public ICommand GoAbout2Command { get; }
-        public ICommand GoUserMainCommand { get; }
+
+
+        private string country;
+        private string category;
+        private int minPrice;
+        private int maxPrice;
+        private string description;
+        private UserRequest thisUserRequest;
+        public UserMainViewModel userMainViewModel = new UserMainViewModel();
+        public LoginViewModel loginViewModel = new LoginViewModel();
+
+        public INavigation navigation { get; set; }
+
+        public ICommand GoUserVerificationCommand { get; set; }
+        public ICommand GoUserMainCommand { get; set; }
+        public ICommand OnCategoryFrameClicked { get; set; }
         public EditRequestViewModel()
         {
-            this.GoAbout2Command = new Command(async () => await SaveRequest(),
-                                        () => !isBusy);
-            this.GoUserMainCommand = new Command(BackClicked);
+
+            thisUserRequest = new UserRequest
+            {
+                Subject = userMainViewModel.Subject,
+                //Country = country, 
+                //MinPrice = minPrice,
+                //MaxPrice = maxPrice, 
+                //Category = category,
+                //Description = description,
+                //UserID = loginViewModel.UserID
+
+            };
+            this.OnCategoryFrameClicked = new Command(async () => await GoCategory());
+            this.GoUserVerificationCommand = new Command(async () => await SaveRequest());
+            this.GoUserMainCommand = new Command(async () => await BackClicked());
         }
 
-        void BackClicked()
+        private async Task BackClicked()
         {
-            Application.Current.MainPage = new NavigationPage(new UserMainPage());
+            await navigation.PopToRootAsync();
+            //Application.Current.MainPage = new NavigationPage(new UserMainPage());
         }
 
         int requestID;
         string subject;
-        string country;
-        string category;
-        int minPrice;
-        int maxPrice;
-        string description;
+        //string country;
+        //string category;
+        //int minPrice;
+        //int maxPrice;
+        //string description;
         int userID;
         bool isBusy;
 
-        public int RequestID
-        {
-            get
-            {
-                return requestID;
-            }
-            set
-            {
-                requestID = value;
-            }
-        }
-        public string Subject
-        {
-            get
-            {
-                return subject;
-            }
-            set
-            {
-                subject = value;
-            }
-        }
+        //public int RequestID
+        //{
+        //    get
+        //    {
+        //        return requestID;
+        //    }
+        //    set
+        //    {
+        //        requestID = value;
+        //    }
+        //}
+
         public string Country
         {
             get
@@ -64,7 +79,7 @@ namespace DaiGo.ViewModels
             }
             set
             {
-                country = value;
+                SetProperty(ref country, value);
             }
         }
         public string Category
@@ -86,7 +101,7 @@ namespace DaiGo.ViewModels
             }
             set
             {
-                minPrice = value;
+                SetProperty(ref minPrice, value);
             }
         }
         public int MaxPrice
@@ -97,9 +112,10 @@ namespace DaiGo.ViewModels
             }
             set
             {
-                maxPrice = value;
+                SetProperty(ref maxPrice, value);
             }
         }
+
         public string Description
         {
             get
@@ -108,56 +124,36 @@ namespace DaiGo.ViewModels
             }
             set
             {
-                description = value;
+                SetProperty(ref description, value);
             }
         }
-        public int UserID
-        {
-            get
-            {
-                return userID;
-            }
-            set
-            {
-                userID = value;
-            }
-        }
-        public bool IsBusy
-        {
-            get
-            {
-                return isBusy;
-            }
-            set
-            {
-                isBusy = value;
-                //OnRequestButtonClicked.ChangeCanExecute();
-            }
-        }
+        //       public int UserID
+        //       {
+        //           get
+        //           {
+        //               return userID;
+        //           }
+        //           set
+        //           {
+        //               userID = value;
+        //           }
+        //       }
 
-        public Command OnRequestButtonClicked
+
+        private async Task GoCategory()
         {
-            get;
+            //Category page has not yet established 
+            //navigation.PushAsync(new CategoryPage());
+
+            //Application.Current.MainPage = new NavigationPage(new CategoryPage());
         }
 
         async Task SaveRequest()
         {
-            //IsBusy = true;
-
-            await App.Database.SaveUserRequestAsync(new UserRequest
-            {
-                RequestID = RequestID++,
-                Country = Country,
-                Category = Category,
-                minPrice = MinPrice,
-                maxPrice = MaxPrice,
-                Description = Description
-            });
-
+            await App.Database.SaveUserRequestAsync(thisUserRequest);
             //IsBusy = false;
-            Application.Current.MainPage = new NavigationPage(new About2Page());
-
-
+            await navigation.PushAsync(new UserVerificationPage());
+            //Application.Current.MainPage = new NavigationPage(new UserVerificationPage());
         }
 
     }

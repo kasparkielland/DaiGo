@@ -1,42 +1,76 @@
 ﻿using DaiGo.Models;
-using DaiGo.View;
 using DaiGo.Views;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
-
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System;
 
 namespace DaiGo.ViewModels
 {
     class UserMainViewModel : BaseViewModel
     {
 
-        public ICommand GoEditRequestCommand { get; }
-        public ICommand GoProfileCommand { get; }
-        public ICommand GoMessageCommand { get; }
+
+        public LoginViewModel loginViewModel { get; set; } = new LoginViewModel();
+        private int count;
+        private int dateTime = DateTime.Now.Hour;
+
+        private string dashGreeting()
+        {
+            if (dateTime >= 0 && dateTime <= 11)
+            {
+                return "Good Morning ,";
+            }
+            else if (dateTime >= 12 && dateTime <= 17)
+            {
+                return "Good Afternoon, ";
+            }
+            else if (dateTime >= 18 && dateTime <= 23)
+            {
+                return "Good Evening, ";
+            }
+            else
+            {
+                return "Hello, ";
+            }
+        }
+
+        public string WelcomeText
+        {
+            get
+            {
+                return dashGreeting(); // First name;
+            }
+        }
+        public string QuickAccessText
+        {
+            get
+            {
+                return "You have " + count.ToString() + " messages";
+            }
+        }
+        private string subject;
+
+        public ObservableCollection<AgentQuote> AgentQuotesForThisUser { get; set; } = new ObservableCollection<AgentQuote>();
+
+        public ICommand executeProfileCommand { get; set; }
+        public ICommand executeMessageCommand { get; set; }
+        public ICommand executeRequestCommand { get; set; }
+        public ICommand executeQuicAccessCommand { get; set; }
+        public INavigation navigation { get; set; }
+
+
         public UserMainViewModel()
         {
-            Title = "User Main Page";
-            this.GoProfileCommand = new Command(ProfileClicked);
-            this.GoMessageCommand = new Command(MessageClicked);
-            this.GoEditRequestCommand = new Command(async () => await SearchClicked(),
-                            () => !isBusy);
-
+            this.executeProfileCommand = new Command(async () => await ProfileClicked());
+            this.executeMessageCommand = new Command(async () => await MessageClicked());
+            this.executeRequestCommand = new Command(async () => await RequestSearchClicked());
+            this.executeQuicAccessCommand = new Command(async () => await QuicAccess());
 
         }
-        void ProfileClicked()
-        {
-            Application.Current.MainPage = new NavigationPage(new UserIdentityPage());
-        }
-        void MessageClicked()
-        {
-            Application.Current.MainPage = new NavigationPage(new NewItemPage());
-        }
 
-
-        string subject;
-        int requestID;
-        bool isBusy;
 
 
 
@@ -48,57 +82,51 @@ namespace DaiGo.ViewModels
             }
             set
             {
-                subject = value;
+                SetProperty(ref subject, value);
+                //subject = value;
             }
         }
-
-        public bool IsBusy
+        public async Task QuickAccess()
         {
-            get
-            {
-                return isBusy;
-            }
-            set
-            {
-                isBusy = value;
-                //OnRequestButtonClicked.ChangeCanExecute();
-            }
-        }
-        public int RequestID
-        {
-            get
-            {
-                return requestID;
-            }
-            set
-            {
-                requestID = value;
-            }
-        }
+            count = 0;
+            var userID = loginViewModel.UserID;
+            var requests = await App.Database.ThisUserRequestAsync(userID);
+            var quotes = await App.Database.GetAgentQuoteAsync();
 
 
-        public Command OnRequestButtonClicked
-        {
-            get;
-        }
-
-        async Task SearchClicked()
-        {
-            //IsBusy = true;
-
-            if (!string.IsNullOrWhiteSpace(subject))
+            foreach (var req in requests)
             {
-                await App.Database.SaveUserRequestAsync(new UserRequest
+                foreach (var quo in quotes)
                 {
-                    RequestID = RequestID++,
-                    Subject = subject
-                });
+                    if (req.RequestID == quo.RequestID)
+                    {
 
+                        count++;
+                        AgentQuotesForThisUser.Add(quo);
 
-                //IsBusy = false;
-                Application.Current.MainPage = new NavigationPage(new EditRequest());
+                    }
+
+                }
 
             }
+        }
+
+        public async Task ProfileClicked()
+        {
+            await navigation.PushAsync(new UserIdentityPage());
+        }
+        public async Task MessageClicked()
+        {
+            await navigation.PushAsync(new UserMessagePage());
+        }
+        public async Task QuicAccess()
+        {
+            await navigation.PushAsync(new UserMessagePage());
+        }
+        public async Task RequestSearchClicked()
+        {
+            await navigation.PushAsync(new EditRequest());
+
         }
     }
 

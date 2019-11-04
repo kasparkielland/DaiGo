@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage NavigationPage.HasNavigationBar="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:vm="clr-namespace:DaiGo.ViewModels"
+             Title="{Binding Title}"
+             x:Class="DaiGo.Views.EditRequest"
+             BackgroundColor="{StaticResource userThemeColor}">
+    <ContentPage.BindingContext>
+        <vm:EditRequestViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Margin="20, 35, 20, 20">
+        <StackLayout.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Right"
+                                    Command="{Binding GoUserMainCommand}" />
+        </StackLayout.GestureRecognizers>
+
+
+        <Frame Margin="0, 0, 0, 0"
+               BackgroundColor="{StaticResource userThemeColor}"
+               HasShadow="False"
+               Padding="2"
+               HorizontalOptions="StartAndExpand">
+
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="StartAndExpand">
+
+                <Label FontFamily="{StaticResource FontAwesomeSolid}"
+                       Text="&#xf053;"
+                       TextColor="{StaticResource lightTextColor}"
+                       FontAttributes="Bold"
+                       FontSize="Subtitle"
+                       VerticalTextAlignment="Center" />
+
+                <Label HorizontalOptions="StartAndExpand"
+                       Text="Back"
+                       TextColor="{StaticResource lightTextColor}"
+                       FontAttributes="Bold"
+                       FontSize="Subtitle"
+                       VerticalTextAlignment="Center" />
+
+            </StackLayout>
+            <Frame.GestureRecognizers>
+
+                <TapGestureRecognizer Command="{Binding GoUserMainCommand }" />
+            </Frame.GestureRecognizers>
+        </Frame>
+        <Label Text="Edit Request"
+               FontAttributes="Italic"
+               FontSize="40"
+               Style="{StaticResource H1}"
+               TextColor="{StaticResource darkTextColor}"
+               VerticalOptions="Center"
+               HorizontalOptions="EndAndExpand" />
+        <ScrollView VerticalOptions="EndAndExpand">
+            <StackLayout Margin="20, 0, 20, 30">
+                <Label Margin="20, 0, 0, 0"
+                       HorizontalTextAlignment="Start"
+                       HorizontalOptions="StartAndExpand"
+                       Text="Country"
+                       VerticalTextAlignment="Center"
+                       VerticalOptions="EndAndExpand"
+                       TextColor="{StaticResource lightTextColor}"
+                       FontSize="25" />
+
+                <Entry x:Name="CountryPicker"
+                        Margin="0, 0, 0, 20"
+                        Placeholder="Select preferred reseller location"
+                        VerticalOptions="EndAndExpand"
+                        BackgroundColor="{StaticResource backgroundColor}" Text="{Binding Country}">
+                </Entry>
+
+                <Label Margin="20, 0, 0, 0"
+                       HorizontalTextAlignment="Start"
+                       Text="Price"
+                       VerticalTextAlignment="Center"
+                       VerticalOptions="EndAndExpand"
+                       TextColor="{StaticResource lightTextColor}"
+                       FontSize="25" />
+
+                <Grid Margin="0, 0, 0, 20"
+                      VerticalOptions="EndAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*" />
+                        <RowDefinition Height="0.5*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.2*" />
+                        <ColumnDefinition Width="0.8*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0"
+                           Grid.Column="0"
+                           HorizontalTextAlignment="End"
+                           Text="Min:"
+                           VerticalTextAlignment="Center"
+                           TextColor="{StaticResource lightTextColor}"
+                           FontSize="20" />
+
+                    <Entry x:Name="MinPriceEntry"
+                           Grid.Row="0"
+                           Grid.Column="1"
+                           VerticalOptions="CenterAndExpand"
+                           BackgroundColor="{StaticResource backgroundColor}"
+                           Placeholder="Enter lower price value"
+                           Keyboard="Numeric" Text ="{Binding minPrice}">
+
+                    </Entry>
+
+                    <Label Grid.Row="1"
+                           Grid.Column="0"
+                           HorizontalTextAlignment="End"
+                           Text="Max:"
+                           VerticalTextAlignment="Center"
+                           TextColor="{StaticResource lightTextColor}"
+                           FontSize="20" />
+
+                    <Entry x:Name="MaxPriceEntry"
+                           Grid.Row="1"
+                           Grid.Column="1"
+                           VerticalOptions="CenterAndExpand"
+                           BackgroundColor="{StaticResource backgroundColor}"
+                           Placeholder="Enter upper price value"
+                           Keyboard="Numeric" Text="{Binding maxPrice}">
+
+                    </Entry>
+                </Grid>
+
+                <Label Margin="20, 0, 0, 0"
+                       HorizontalTextAlignment="Start"
+                       Text="Category"
+                       VerticalTextAlignment="Center"
+                       VerticalOptions="EndAndExpand"
+                       TextColor="{StaticResource lightTextColor}"
+                       FontSize="25" />
+
+                <Frame Margin="0, 0, 0, 20"
+                       CornerRadius="30"
+                       HeightRequest="50"
+                       Padding="5"
+                       BackgroundColor="{StaticResource backgroundColor}"
+                       VerticalOptions="EndAndExpand">
+
+                    <StackLayout Orientation="Horizontal">
+
+                        <Label HorizontalOptions="EndAndExpand"
+                               HorizontalTextAlignment="End"
+                               VerticalTextAlignment="Center"
+                               FontFamily="{StaticResource FontAwesomeSolid}"
+                               Text="&#xf054;"
+                               TextColor="{StaticResource userThemeColor}"
+                               FontSize="40" />
+
+                    </StackLayout>
+
+                    <Frame.GestureRecognizers>
+
+                        <TapGestureRecognizer Command="{Binding OnCategoryFrameClicked}" />
+
+                    </Frame.GestureRecognizers>
+
+                </Frame>
+
+                <Label Margin="20, 0, 0, 0"
+                       HorizontalTextAlignment="Start"
+                       Text="Description"
+                       VerticalTextAlignment="Center"
+                       VerticalOptions="EndAndExpand"
+                       TextColor="{StaticResource lightTextColor}"
+                       FontSize="25" />
+
+                <Editor x:Name="ItemDescriptionEditor"
+                        Margin="0, 0, 0, 20"
+                        HeightRequest="100"
+                        BackgroundColor="{StaticResource backgroundColor}"
+                        Placeholder="Describe your product"
+                        AutoSize="TextChanges"
+                        VerticalOptions="EndAndExpand" />
+
+            </StackLayout>
+
+        </ScrollView>
+
+        <Button VerticalOptions="EndAndExpand"
+                HorizontalOptions="FillAndExpand"
+                Margin="0, 0, 0, 20"
+                Text="SEND REQUEST"
+                Style="{StaticResource secondaryButton}"
+                CornerRadius="25"
+                Command="{Binding GoUserVerificationCommand}" />
+    </StackLayout>
+
+</ContentPage>

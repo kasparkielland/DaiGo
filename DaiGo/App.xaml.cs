@@ -2,12 +2,12 @@
 using Xamarin.Forms;
 using System.IO;
 using DaiGo.ViewModels;
+using DaiGo.Views;
 
 namespace DaiGo
 {
     public partial class App : Application
     {
-
         static Database database;
 
         public static Database Database
@@ -27,7 +27,7 @@ namespace DaiGo
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new View.UserLoginPage());
+            MainPage = new NavigationPage(new LoginPage());
 
         }
 

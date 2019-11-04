@@ -1,11 +1,10 @@
-﻿using System;
-
+﻿
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+
+
 using ImageCircle.Forms.Plugin.Droid;
 
 namespace DaiGo.Droid
@@ -20,9 +19,8 @@ namespace DaiGo.Droid
 
             base.OnCreate(savedInstanceState);
 
-            ImageCircleRenderer.Init();
-
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            ImageCircleRenderer.Init();
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }

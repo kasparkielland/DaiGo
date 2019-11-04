@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage NavigationPage.HasNavigationBar="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DaiGo.Views.AgentIdentityPage"
+             xmlns:vm="clr-namespace:DaiGo.ViewModels"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             Title="{Binding Title}"
+             BackgroundColor="{StaticResource backgroundColor}">
+    <ContentPage.BindingContext>
+        <vm:AgentIdentityViewModel />
+    </ContentPage.BindingContext>
+
+
+    <Grid Margin="0, 0, 0, 20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="0.2*" />
+        </Grid.RowDefinitions>
+        <Grid.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Left"
+                                    Command="{Binding executeGoBackCommand}" />
+        </Grid.GestureRecognizers>
+
+        <StackLayout Grid.Row="0">
+            <Frame Margin="0, -100, 0, 0"
+                   BackgroundColor="{StaticResource agentThemeColor}"
+                   CornerRadius="50"
+                   VerticalOptions="FillAndExpand"
+                   HorizontalOptions="FillAndExpand">
+                <StackLayout Margin="20, 35, 0, 0"
+                             VerticalOptions="FillAndExpand"
+                             HorizontalOptions="FillAndExpand">
+                    <Frame Margin="0, 80, 0, 0"
+                           BackgroundColor="{StaticResource agentThemeColor}"
+                           HasShadow="False"
+                           Padding="2"
+                           VerticalOptions="StartAndExpand"
+                           HorizontalOptions="EndAndExpand">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding executeGoBackCommand}" />
+                        </Frame.GestureRecognizers>
+
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="EndAndExpand"
+                                     Margin="0, 0, 0, 0">
+
+                            <Label HorizontalOptions="StartAndExpand"
+                                   Text="Back"
+                                   TextColor="{StaticResource lightTextColor}"
+                                   FontAttributes="Bold"
+                                   FontSize="Subtitle"
+                                   VerticalTextAlignment="Center" />
+                            <Label FontFamily="{StaticResource FontAwesomeSolid}"
+                                   Text="&#xf054;"
+                                   TextColor="{StaticResource lightTextColor}"
+                                   FontAttributes="Bold"
+                                   FontSize="Subtitle"
+                                   VerticalTextAlignment="Center" />
+
+
+                        </StackLayout>
+                    </Frame>
+                    <controls:CircleImage x:Name="agentPhoto"
+                                          Source="https://www.placecage.com/c/400/400"
+                                          Aspect="AspectFill"
+                                          BorderThickness="5"
+                                          BorderColor="{StaticResource lightTextColor}"
+                                          WidthRequest="200"
+                                          HeightRequest="200"
+                                          VerticalOptions="StartAndExpand"
+                                          HorizontalOptions="CenterAndExpand" />
+                    <Label Text="{Binding agentName}"
+                           Style="{StaticResource H1}"
+                           HorizontalTextAlignment="Center"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand" />
+                    <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="CenterAndExpand">
+                        <Label x:Name="fullStar"
+                               Text="&#xf005;&#xf005;&#xf005;"
+                               FontFamily="{StaticResource FontAwesomeSolid}"
+                               TextColor="{StaticResource yellowColor}"
+                               Style="{StaticResource H1}"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand" />
+                        <Label x:Name="halfStar"
+                               Margin="-5, 0, 0, 0"
+                               Text="&#xf5c0;"
+                               FontFamily="{StaticResource FontAwesomeSolid}"
+                               TextColor="{StaticResource yellowColor}"
+                               Style="{StaticResource H1}"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand" />
+                        <Label x:Name="emptyStar"
+                               Margin="-5, 0, 0, 0"
+                               Text="&#xf005;"
+                               FontFamily="{StaticResource FontAwesomeRegular}"
+                               TextColor="{StaticResource yellowColor}"
+                               Style="{StaticResource H1}"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="CenterAndExpand">
+                        <Label HorizontalOptions="CenterAndExpand"
+                               Text="{Binding avgRating}"
+                               Style="{StaticResource H4}" />
+                        <Label HorizontalOptions="CenterAndExpand"
+                               Text="{Binding ratingCount}"
+                               Style="{StaticResource H4}" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+
+        <Grid Grid.Row="1"
+              Margin="20, 0, 20, 0"
+              VerticalOptions="CenterAndExpand"
+              HorizontalOptions="FillAndExpand">
+            <Label Text="Change to user"
+                   FontSize="Large"
+                   TextColor="{StaticResource darkTextColor}" />
+            <Switch HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Start"
+                    Rotation="180"
+                    IsToggled="{Binding dectivateAgent, Mode=TwoWay}"
+                    ThumbColor="{StaticResource agentThemeColor}"
+                    OnColor="{StaticResource userThemeColor}" />
+
+        </Grid>
+
+
+        <Button Grid.Row="2"
+                VerticalOptions="EndAndExpand"
+                HorizontalOptions="FillAndExpand"
+                Margin="20, 0, 20, 20"
+                Text="LOGOUT"
+                Style="{StaticResource secondaryButton}"
+                CornerRadius="25"
+                Command="{Binding LogoutCommand}" />
+
+
+    </Grid>
+</ContentPage>

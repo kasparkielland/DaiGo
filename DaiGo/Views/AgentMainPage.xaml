@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage NavigationPage.HasNavigationBar="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DaiGo.Views.AgentMainPage"
+             Title="{Binding Title}"
+             x:Name="BrowseItemsPage"
+             BackgroundColor="{StaticResource backgroundColor}">
+
+    <Grid Margin="0, 35, 0, 10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.25*" />
+            <RowDefinition Height="0.25*" />
+            <RowDefinition Height="0.6*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="0.5*" />
+        </Grid.ColumnDefinitions>
+        <Grid.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Right"
+                                    Command="{Binding GoAgentProfileCommand}" />
+            <SwipeGestureRecognizer Direction="Left"
+                                    Command="{Binding GoAgentMessageCommand}" />
+        </Grid.GestureRecognizers>
+
+
+        <ImageButton Margin="20, 0, 20, 0"
+                     Grid.Row="0"
+                     Grid.Column="0"
+                     HorizontalOptions="Start"
+                     VerticalOptions="Center"
+                     Command="{Binding GoAgentProfileCommand}">
+            <ImageButton.Source>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
+                                 Glyph="&#xf2bd;"
+                                 Size="44"
+                                 Color="{StaticResource agentThemeColor}" />
+            </ImageButton.Source>
+        </ImageButton>
+        <ImageButton Margin="20, 0, 20, 0"
+                     Grid.Row="0"
+                     Grid.Column="2"
+                     HorizontalOptions="End"
+                     VerticalOptions="Center"
+                     Command="{Binding GoAgentMessageCommand}">
+            <ImageButton.Source>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
+                                 Glyph="&#xf01c;"
+                                 Size="44"
+                                 Color="{StaticResource agentThemeColor}" />
+            </ImageButton.Source>
+        </ImageButton>
+        <Label Margin="50, 0, 50, 0"
+               Grid.Row="1"
+               Grid.ColumnSpan="3"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"
+               Text="{Binding WelcomeText}"
+               FontSize="Title"
+               TextColor="{StaticResource darkTextColor}"
+               LineBreakMode="WordWrap" />
+        <Frame Margin="20, 0, 20, 0"
+               Grid.Row="2"
+               Grid.ColumnSpan="3"
+               BackgroundColor="{StaticResource agentThemeColor}"
+               CornerRadius="50"
+               HasShadow="False">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding GoAgentMessageCommand}" />
+            </Frame.GestureRecognizers>
+            <Grid>
+                <Label Text="{Binding QuickAccessText}"
+                       TextColor="{StaticResource lightTextColor}"
+                       BackgroundColor="{StaticResource agentThemeColor}"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand"
+                       Margin="0, 0, 20, 0"
+                       Padding="5" />
+                <Label FontFamily="{StaticResource FontAwesomeSolid}"
+                       Text="&#xf054;"
+                       FontSize="40"
+                       TextColor="{StaticResource lightTextColor}"
+                       VerticalTextAlignment="Center"
+                       HorizontalOptions="End" />
+            </Grid>
+        </Frame>
+        <StackLayout Margin="30, 0, 30, 35"
+                     Grid.Row="3"
+                     Grid.ColumnSpan="3">
+            <Label Text="Recent Listings"
+                   FontSize="40"
+                   FontAttributes="Italic"
+                   TextColor="{StaticResource darkTextColor}"
+                   VerticalOptions="StartAndExpand"
+                   HorizontalOptions="EndAndExpand" />
+            <ScrollView IsClippedToBounds="True">
+                <ListView x:Name="ItemsListView"
+                          ItemsSource="{Binding Items}"
+                          VerticalOptions="FillAndExpand"
+                          HasUnevenRows="True"
+                          SeparatorVisibility="None"
+                          BackgroundColor="{StaticResource backgroundColor}"
+                          RefreshCommand="{Binding LoadItemsCommand}"
+                          IsPullToRefreshEnabled="True"
+                          IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                          CachingStrategy="RecycleElement"
+                          ItemSelected="OnItemSelected">
+                    <d:ListView.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>First Request</x:String>
+                            <x:String>Second Request</x:String>
+                            <x:String>Third Request</x:String>
+                            <x:String>Fourth Request</x:String>
+                            <x:String>Fifth Request</x:String>
+                        </x:Array>
+                    </d:ListView.ItemsSource>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <StackLayout Orientation="Horizontal"
+                                                 Padding="5"
+                                                 BackgroundColor="WhiteSmoke">
+                                        <StackLayout HorizontalOptions="StartAndExpand">
+                                            <Label Text="{Binding Request}"
+                                                   d:Text="{Binding .}"
+                                                   TextColor="{StaticResource darkTextColor}" />
+                                            <Label Text="{Binding Description}"
+                                                   d:Text="Item description"
+                                                   TextColor="{StaticResource darkTextColor}" />
+                                        </StackLayout>
+                                        <Label Text="{Binding Offer}"
+                                               d:Text="Offer"
+                                               VerticalOptions="Center"
+                                               TextColor="{StaticResource darkTextColor}" />
+                                    </StackLayout>
+                                    <Label HeightRequest="3" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </StackLayout>
+    </Grid>
+</ContentPage>
