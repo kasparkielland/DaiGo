@@ -40,5 +40,19 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DaiGo.Android\DaiGo.Android.csproj">
+      <Project>{37D1D8D6-EAE9-4AA8-B74D-62AF3A240098}</Project>
+      <Name>DaiGo.Android</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\DaiGo.iOS\DaiGo.iOS.csproj">
+      <Project>{DA8E35D3-70DF-466C-A6C7-6434B5F34AF6}</Project>
+      <Name>DaiGo.iOS</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

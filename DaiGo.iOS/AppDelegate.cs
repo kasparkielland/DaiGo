@@ -23,6 +23,9 @@ namespace DaiGo.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+#if DEBUG
+            Xamarin.Calabash.Start();
+#endif
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
             global::Xamarin.Forms.Forms.Init();

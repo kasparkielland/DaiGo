@@ -21,6 +21,7 @@ namespace DaiGo.UITest
             //    #if ENABLE_TEST_CLOUD
             //    Xamarin.Calabash.Start();
             //    #endif
+            /*
             if (platform == Platform.Android)
             {
                 return ConfigureApp
@@ -37,6 +38,20 @@ namespace DaiGo.UITest
                 // code if the app is not included in the solution.
                 //.AppBundle ("../../../iOS/bin/iPhoneSimulator/Debug/XamarinForms.iOS.app")
                 .StartApp();
+            */
+
+            if (platform == Platform.Android)
+            {
+                return ConfigureApp
+                   .Android
+                   .EnableLocalScreenshots()
+                   .StartApp();
+            }
+
+            return ConfigureApp
+               .iOS
+               .EnableLocalScreenshots()
+               .StartApp();
         }
     }
 }
