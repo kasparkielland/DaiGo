@@ -91,14 +91,14 @@ namespace DaiGo.ViewModels
         }
         private async Task BackClicked()
         {
-            await navigation.PopToRootAsync();
+            await navigation.PopToRootAsync(false);
             //Application.Current.MainPage = new NavigationPage(new LoginPage());
         }
 
         private async Task OnSignUp()
         {
             await App.Database.SaveUserProfileAsync(userProfile);
-            await navigation.PopToRootAsync();
+            await navigation.PopToRootAsync(false);
             //Application.Current.MainPage = new NavigationPage(new LoginPage());
         }
     }

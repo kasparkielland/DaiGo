@@ -43,7 +43,7 @@ namespace DaiGo.ViewModels
         private async Task AgentModeClicked()
         {
             navigation.RemovePage(navigation.NavigationStack[0]);
-            await navigation.PushAsync(new AgentIdentityPage());
+            await navigation.PushAsync(new AgentIdentityPage(), false);
             navigation.InsertPageBefore(new AgentMainPage(), navigation.NavigationStack[0]);
             //Application.Current.MainPage = new NavigationPage(new AgentMainPage());
 
@@ -51,7 +51,7 @@ namespace DaiGo.ViewModels
         private async Task LogoutClicked()
         {
             navigation.InsertPageBefore(new LoginPage(), navigation.NavigationStack[0]);
-            await navigation.PopToRootAsync();
+            await navigation.PopToRootAsync(false);
 
             // Does the same as above code
             //navigation.RemovePage(navigation.NavigationStack[0]);
@@ -63,7 +63,7 @@ namespace DaiGo.ViewModels
 
         private async Task ToMainClicked()
         {
-            await navigation.PopToRootAsync();
+            await navigation.PopToRootAsync(false);
             //Application.Current.MainPage = new NavigationPage(new UserMainPage());
         }
 

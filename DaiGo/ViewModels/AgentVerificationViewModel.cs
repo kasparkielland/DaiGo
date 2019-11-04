@@ -21,7 +21,7 @@ namespace DaiGo.ViewModels
         }
         private async Task GoHomeClicked()
         {
-            await navigation.PopToRootAsync();
+            await navigation.PopToRootAsync(false);
             //Application.Current.MainPage = new NavigationPage(new AgentMainPage());
         }
 

@@ -26,13 +26,13 @@ namespace DaiGo.ViewModels
         }
         private async Task SendQuoteClicked()
         {
-            await navigation.PushAsync(new AgentVerificationPage());
+            await navigation.PushAsync(new AgentVerificationPage(), false);
             //Application.Current.MainPage = new NavigationPage(new AgentVerificationPage());
         }
 
         private async Task GoMainClicked()
         {
-            await navigation.PopToRootAsync();
+            await navigation.PopToRootAsync(false);
             //Application.Current.MainPage = new NavigationPage(new AgentMainPage());
         }
     }

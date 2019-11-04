@@ -28,7 +28,7 @@ namespace DaiGo.ViewModels
         {
             if (dateTime >= 0 && dateTime <= 11)
             {
-                return "Good Morning ,";
+                return "Good Morning,";
             }
             else if (dateTime >= 12 && dateTime <= 17)
             {
@@ -69,12 +69,12 @@ namespace DaiGo.ViewModels
         }
         private async Task AgentIconClicked()
         {
-            await navigation.PushAsync(new AgentIdentityPage());
+            await navigation.PushAsync(new AgentIdentityPage(), false);
             //Application.Current.MainPage = new NavigationPage(new AgentIdentityPage());
         }
         private async Task MessageIconClicked()
         {
-            await navigation.PushAsync(new AgentMessagePage());
+            await navigation.PushAsync(new AgentMessagePage(), false);
             //Application.Current.MainPage = new NavigationPage(new AgentMessagePage());
         }
         private async Task ExecuteLoadItemsCommand()

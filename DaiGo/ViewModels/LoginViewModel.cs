@@ -24,6 +24,7 @@ namespace DaiGo.ViewModels
         public ICommand executeLogin { get; set; }
         public ICommand executeSignUp { get; set; }
         public ICommand directLogin { get; set; }
+        public ICommand executeForgotPassword { get; set; }
         //public IPageAnimation MyPageAnimation { get; set; }
 
         public LoginViewModel()
@@ -33,6 +34,7 @@ namespace DaiGo.ViewModels
             executeLogin = new Command(async () => await CheckCredentials());
             executeSignUp = new Command(async () => await OnSignup());
             directLogin = new Command(async () => await OnLogin());
+            executeForgotPassword = new Command(async => await OnForgotPassword());
 
             //TODO: Look into PageAnimation (see https://github.com/AlexandrNikulin/AnimationNavigationPage)
             //      Installation = done, Declaration = REDO!!, Create = DO!!
@@ -80,7 +82,7 @@ namespace DaiGo.ViewModels
                     {
                         userID = user.UserID;
                     }
-                    await navigation.PushAsync(new UserMainPage());
+                    await navigation.PushAsync(new UserMainPage(), false);
                     navigation.RemovePage(navigation.NavigationStack[0]);
                 }
                 else
@@ -97,68 +99,16 @@ namespace DaiGo.ViewModels
 
         private async Task OnSignup()
         {
-            await navigation.PushAsync(new SignUpPage());
+            await navigation.PushAsync(new SignUpPage(), false);
         }
 
-        public void InsertPageBefore(Page page, Page before)
+        private async Task OnForgotPassword()
         {
-            throw new NotImplementedException();
+            //TODO
+            //Change for 'Forgot Password'
+            await App.Current.MainPage.DisplayAlert("Oops", "Entry cannot be empty", "OK");
         }
 
-        public Task<Page> PopAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Page> PopAsync(bool animated)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Page> PopModalAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Page> PopModalAsync(bool animated)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task PopToRootAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task PopToRootAsync(bool animated)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task PushAsync(Page page)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task PushAsync(Page page, bool animated)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task PushModalAsync(Page page)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task PushModalAsync(Page page, bool animated)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RemovePage(Page page)
-        {
-            throw new NotImplementedException();
-        }
 
         //     public string username;
         public string Username

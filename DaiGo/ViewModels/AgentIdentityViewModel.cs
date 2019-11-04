@@ -80,19 +80,19 @@ namespace DaiGo.ViewModels
         private async Task UserModeClicked()
         {
             navigation.RemovePage(navigation.NavigationStack[0]);
-            await navigation.PushAsync(new UserIdentityPage());
+            await navigation.PushAsync(new UserIdentityPage(), false);
             navigation.InsertPageBefore(new AgentMainPage(), navigation.NavigationStack[0]);
             //Application.Current.MainPage = new NavigationPage(new UserIdentityPage());
         }
         private async Task LogoutClicked()
         {
             navigation.InsertPageBefore(new LoginPage(), navigation.NavigationStack[0]);
-            await navigation.PopToRootAsync();
+            await navigation.PopToRootAsync(false);
             //Application.Current.MainPage = new NavigationPage(new LoginPage());
         }
         private async Task GoBack()
         {
-            await navigation.PopToRootAsync();
+            await navigation.PopToRootAsync(false);
             //Application.Current.MainPage = new NavigationPage(new AgentMainPage());
         }
 

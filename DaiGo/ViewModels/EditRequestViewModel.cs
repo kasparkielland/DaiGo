@@ -45,7 +45,7 @@ namespace DaiGo.ViewModels
 
         private async Task BackClicked()
         {
-            await navigation.PopToRootAsync();
+            await navigation.PopToRootAsync(false);
             //Application.Current.MainPage = new NavigationPage(new UserMainPage());
         }
 
@@ -152,7 +152,7 @@ namespace DaiGo.ViewModels
         {
             await App.Database.SaveUserRequestAsync(thisUserRequest);
             //IsBusy = false;
-            await navigation.PushAsync(new UserVerificationPage());
+            await navigation.PushAsync(new UserVerificationPage(), false);
             //Application.Current.MainPage = new NavigationPage(new UserVerificationPage());
         }
 

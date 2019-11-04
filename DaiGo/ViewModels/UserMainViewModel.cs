@@ -113,19 +113,19 @@ namespace DaiGo.ViewModels
 
         public async Task ProfileClicked()
         {
-            await navigation.PushAsync(new UserIdentityPage());
+            await navigation.PushAsync(new UserIdentityPage(), false);
         }
         public async Task MessageClicked()
         {
-            await navigation.PushAsync(new UserMessagePage());
+            await navigation.PushAsync(new UserMessagePage(), false);
         }
         public async Task QuicAccess()
         {
-            await navigation.PushAsync(new UserMessagePage());
+            await navigation.PushAsync(new UserMessagePage(), false);
         }
         public async Task RequestSearchClicked()
         {
-            await navigation.PushAsync(new EditRequest());
+            await navigation.PushAsync(new EditRequest(), false);
 
         }
     }
