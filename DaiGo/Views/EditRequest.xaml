@@ -65,14 +65,16 @@
                        VerticalTextAlignment="Center"
                        VerticalOptions="EndAndExpand"
                        TextColor="{StaticResource lightTextColor}"
-                       FontSize="25" />
+                       FontSize="25"
+                       IsEnabled="False" />
 
                 <Entry x:Name="CountryPicker"
-                        Margin="0, 0, 0, 20"
-                        Placeholder="Select preferred reseller location"
-                        VerticalOptions="EndAndExpand"
-                        BackgroundColor="{StaticResource backgroundColor}" Text="{Binding Country}">
-                </Entry>
+                       Margin="0, 0, 0, 20"
+                       Placeholder="Select preferred reseller location"
+                       VerticalOptions="EndAndExpand"
+                       BackgroundColor="{StaticResource backgroundColor}"
+                       Text="{Binding Country}" />
+
 
                 <Label Margin="20, 0, 0, 0"
                        HorizontalTextAlignment="Start"
@@ -106,7 +108,8 @@
                            VerticalOptions="CenterAndExpand"
                            BackgroundColor="{StaticResource backgroundColor}"
                            Placeholder="Enter lower price value"
-                           Keyboard="Numeric" Text ="{Binding minPrice}">
+                           Keyboard="Numeric"
+                           Text="{Binding minPrice}">
 
                     </Entry>
 
@@ -124,7 +127,8 @@
                            VerticalOptions="CenterAndExpand"
                            BackgroundColor="{StaticResource backgroundColor}"
                            Placeholder="Enter upper price value"
-                           Keyboard="Numeric" Text="{Binding maxPrice}">
+                           Keyboard="Numeric"
+                           Text="{Binding maxPrice}">
 
                     </Entry>
                 </Grid>
@@ -136,8 +140,14 @@
                        VerticalOptions="EndAndExpand"
                        TextColor="{StaticResource lightTextColor}"
                        FontSize="25" />
+                <Entry x:Name="CategoryPicker"
+                       Margin="0, 0, 0, 20"
+                       Placeholder="What is your request categorized as?"
+                       VerticalOptions="EndAndExpand"
+                       BackgroundColor="{StaticResource backgroundColor}"
+                       Text="{Binding Category}" />
 
-                <Frame Margin="0, 0, 0, 20"
+                <!--<Frame Margin="0, 0, 0, 20"
                        CornerRadius="30"
                        HeightRequest="50"
                        Padding="5"
@@ -162,7 +172,7 @@
 
                     </Frame.GestureRecognizers>
 
-                </Frame>
+                </Frame>-->
 
                 <Label Margin="20, 0, 0, 0"
                        HorizontalTextAlignment="Start"
@@ -178,7 +188,8 @@
                         BackgroundColor="{StaticResource backgroundColor}"
                         Placeholder="Describe your product"
                         AutoSize="TextChanges"
-                        VerticalOptions="EndAndExpand" />
+                        VerticalOptions="EndAndExpand"
+                        Text="{Binding Description, Mode=OneWayToSource}" />
 
             </StackLayout>
 

@@ -81,7 +81,7 @@ namespace DaiGo.ViewModels
         {
             navigation.RemovePage(navigation.NavigationStack[0]);
             await navigation.PushAsync(new UserIdentityPage(), false);
-            navigation.InsertPageBefore(new AgentMainPage(), navigation.NavigationStack[0]);
+            navigation.InsertPageBefore(new UserMainPage(), navigation.NavigationStack[0]);
             //Application.Current.MainPage = new NavigationPage(new UserIdentityPage());
         }
         private async Task LogoutClicked()

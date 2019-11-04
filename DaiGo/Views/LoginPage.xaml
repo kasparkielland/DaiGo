@@ -29,10 +29,10 @@
             <RowDefinition Height="55*" />
             <RowDefinition Height="45*" />
         </Grid.RowDefinitions>
-        <Grid.GestureRecognizers>
+        <!--<Grid.GestureRecognizers>
             <SwipeGestureRecognizer Direction="Up"
                                     Command="{Binding directLogin}" />
-        </Grid.GestureRecognizers>
+        </Grid.GestureRecognizers>-->
         <StackLayout Grid.Row="0"
                      VerticalOptions="FillAndExpand"
                      HorizontalOptions="FillAndExpand">
@@ -140,7 +140,9 @@
                                WidthRequest="150"
                                HasShadow="False"
                                VerticalOptions="EndAndExpand"
-                               HorizontalOptions="EndAndExpand">
+                               HorizontalOptions="EndAndExpand"
+                               IsEnabled="False"
+                               IsVisible="False">
                             <StackLayout Orientation="Horizontal"
                                          Padding="5">
                                 <Label FontSize="Title"
@@ -168,7 +170,9 @@
                                WidthRequest="150"
                                HasShadow="False"
                                VerticalOptions="EndAndExpand"
-                               HorizontalOptions="StartAndExpand">
+                               HorizontalOptions="StartAndExpand"
+                               IsEnabled="False"
+                               IsVisible="False">
                             <StackLayout Orientation="Horizontal"
                                          Padding="5">
                                 <Label FontSize="Title"
