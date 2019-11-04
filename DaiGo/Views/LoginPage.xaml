@@ -77,7 +77,8 @@
                                TextColor="{StaticResource darkTextColor}"
                                Text="{Binding Username, Mode = TwoWay}"
                                TabIndex="1"
-                               ReturnType="Next" Completed="UsernameEntry_Completed"/>
+                               ReturnType="Next"
+                               Completed="UsernameEntry_Completed" />
                         <Entry x:Name="passwordEntry"
                                Placeholder="Password"
                                Margin="0, 10, 0, 0"
@@ -87,15 +88,46 @@
                                PlaceholderColor="{StaticResource darkTextColor}"
                                Text="{Binding Password, Mode = TwoWay}"
                                TabIndex="2"
-                               ReturnType="Done" Completed="PasswordEntry_Completed"/>
-                        <Label Text="Forgot password?"
-                               TextColor="{StaticResource lightTextColor}"
-                               FontSize="Micro"
-                               HorizontalOptions="EndAndExpand">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding executeForgotPassword}" />
-                            </Label.GestureRecognizers>
-                        </Label>
+                               ReturnType="Done"
+                               Completed="PasswordEntry_Completed" />
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Forgot password?"
+                                   TextColor="{StaticResource lightTextColor}"
+                                   FontSize="Micro"
+                                   HorizontalOptions="StartAndExpand"
+                                   VerticalOptions="StartAndExpand">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding executeForgotPassword}" />
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                            <Frame CornerRadius="25"
+                                   BackgroundColor="{StaticResource lightgrayColor}"
+                                   BorderColor="{StaticResource darkgrayColor}"
+                                   Margin="0, 10, 15, -25"
+                                   Padding="0"
+                                   WidthRequest="150"
+                                   HeightRequest="50"
+                                   HasShadow="False"
+                                   VerticalOptions="EndAndExpand">
+                                <StackLayout Orientation="Horizontal"
+                                             Padding="5">
+                                    <Label FontSize="35"
+                                           Text="&#xf1a0;"
+                                           FontFamily="{StaticResource FontAwesomeBrands}"
+                                           VerticalOptions="CenterAndExpand"
+                                           TextColor="{StaticResource darkTextColor}" />
+                                    <Label Text="Login with Google"
+                                           VerticalOptions="CenterAndExpand"
+                                           FontSize="13" />
+                                </StackLayout>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="GoogleButton"
+                                                          Command="{Binding GoogleButtonCommand}" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+
+                        </StackLayout>
                     </StackLayout>
 
                 </StackLayout>
@@ -111,7 +143,8 @@
                         Style="{StaticResource primaryButton}"
                         CornerRadius="25"
                         Command="{Binding executeSignUp}" />
-                <Button x:Name="LoginButton" Text="LOGIN"
+                <Button x:Name="LoginButton"
+                        Text="LOGIN"
                         WidthRequest="150"
                         Style="{StaticResource secondaryButton}"
                         CornerRadius="25"

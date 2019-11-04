@@ -25,6 +25,7 @@ namespace DaiGo.ViewModels
         public ICommand executeSignUp { get; set; }
         public ICommand directLogin { get; set; }
         public ICommand executeForgotPassword { get; set; }
+        public ICommand GoogleButtonCommand { get; set; }
         //public IPageAnimation MyPageAnimation { get; set; }
 
         public LoginViewModel()
@@ -35,6 +36,8 @@ namespace DaiGo.ViewModels
             executeSignUp = new Command(async () => await OnSignup());
             directLogin = new Command(async () => await OnLogin());
             executeForgotPassword = new Command(async () => await OnForgotPassword());
+            GoogleButtonCommand = new Command(async () => await OnGoogleLogin());
+
 
             //TODO: Look into PageAnimation (see https://github.com/AlexandrNikulin/AnimationNavigationPage)
             //      Installation = done, Declaration = REDO!!, Create = DO!!
@@ -106,7 +109,14 @@ namespace DaiGo.ViewModels
         {
             //TODO
             //Change for 'Forgot Password'
-            await App.Current.MainPage.DisplayAlert("Oops", "Entry cannot be empty", "OK");
+            await App.Current.MainPage.DisplayAlert("Reset Password", "So you want to reset your password?", "Yes");
+        }
+
+        private async Task OnGoogleLogin()
+        {
+            //TODO
+            //Change for 'Google login'
+            await App.Current.MainPage.DisplayAlert("Login with Google", "This logs you in with Google", "Cool");
         }
 
 
