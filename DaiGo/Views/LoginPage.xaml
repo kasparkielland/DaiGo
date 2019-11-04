@@ -90,46 +90,80 @@
                                TabIndex="2"
                                ReturnType="Done"
                                Completed="PasswordEntry_Completed" />
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Forgot password?"
-                                   TextColor="{StaticResource lightTextColor}"
-                                   FontSize="Micro"
-                                   HorizontalOptions="StartAndExpand"
-                                   VerticalOptions="StartAndExpand">
-                                <Label.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding executeForgotPassword}" />
-                                </Label.GestureRecognizers>
-                            </Label>
-
-                            <Frame CornerRadius="25"
-                                   BackgroundColor="{StaticResource lightgrayColor}"
-                                   BorderColor="{StaticResource darkgrayColor}"
-                                   Margin="0, 10, 15, -25"
-                                   Padding="0"
-                                   WidthRequest="150"
-                                   HeightRequest="50"
-                                   HasShadow="False"
-                                   VerticalOptions="EndAndExpand">
-                                <StackLayout Orientation="Horizontal"
-                                             Padding="5">
-                                    <Label FontSize="35"
-                                           Text="&#xf1a0;"
-                                           FontFamily="{StaticResource FontAwesomeBrands}"
-                                           VerticalOptions="CenterAndExpand"
-                                           TextColor="{StaticResource darkTextColor}" />
-                                    <Label Text="Login with Google"
-                                           VerticalOptions="CenterAndExpand"
-                                           FontSize="13" />
-                                </StackLayout>
-                                <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer x:Name="GoogleButton"
-                                                          Command="{Binding GoogleButtonCommand}" />
-                                </Frame.GestureRecognizers>
-                            </Frame>
-
-                        </StackLayout>
+                        <Label Text="Forgot password?"
+                               TextColor="{StaticResource lightTextColor}"
+                               FontSize="Micro"
+                               HorizontalOptions="StartAndExpand"
+                               VerticalOptions="StartAndExpand">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding executeForgotPassword}" />
+                            </Label.GestureRecognizers>
+                        </Label>
                     </StackLayout>
-
+                    <StackLayout Orientation="Horizontal"
+                                 Padding="0"
+                                 HorizontalOptions="FillAndExpand"
+                                 VerticalOptions="CenterAndExpand"
+                                 Margin="0, 0, 0, 0">
+                        <Frame CornerRadius="25"
+                               BackgroundColor="{StaticResource darkTextColor}"
+                               Padding="0"
+                               HeightRequest="50"
+                               WidthRequest="150"
+                               HasShadow="False"
+                               VerticalOptions="EndAndExpand"
+                               HorizontalOptions="EndAndExpand">
+                            <StackLayout Orientation="Horizontal"
+                                         Padding="5">
+                                <Label FontSize="Title"
+                                       Text="&#xf1a0;"
+                                       FontFamily="{StaticResource FontAwesomeBrands}"
+                                       VerticalOptions="CenterAndExpand"
+                                       HorizontalTextAlignment="Start"
+                                       MinimumWidthRequest="50"
+                                       HorizontalOptions="FillAndExpand"
+                                       TextColor="{StaticResource lightTextColor}" />
+                                <Label Text="Login with Google"
+                                       VerticalOptions="CenterAndExpand"
+                                       FontSize="Small"
+                                       TextColor="{StaticResource lightTextColor}" />
+                            </StackLayout>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="GoogleButton"
+                                                      Command="{Binding GoogleButtonCommand}" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Frame CornerRadius="25"
+                               BackgroundColor="{StaticResource darkTextColor}"
+                               Padding="0"
+                               HeightRequest="50"
+                               WidthRequest="150"
+                               HasShadow="False"
+                               VerticalOptions="EndAndExpand"
+                               HorizontalOptions="StartAndExpand">
+                            <StackLayout Orientation="Horizontal"
+                                         Padding="5">
+                                <Label FontSize="Title"
+                                       Text="&#xf09a;"
+                                       FontFamily="{StaticResource FontAwesomeBrands}"
+                                       VerticalOptions="CenterAndExpand"
+                                       HorizontalTextAlignment="Start"
+                                       HorizontalOptions="StartAndExpand"
+                                       MinimumWidthRequest="50"
+                                       TextColor="{StaticResource lightTextColor}" />
+                                <Label Text="Login with Facebook"
+                                       VerticalOptions="CenterAndExpand"
+                                       FontSize="Small"
+                                       HorizontalTextAlignment="Start"
+                                       HorizontalOptions="Start"
+                                       TextColor="{StaticResource lightTextColor}" />
+                            </StackLayout>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="FacebookButton"
+                                                      Command="{Binding FacebookButtonCommand}" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                    </StackLayout>
                 </StackLayout>
             </Frame>
             <StackLayout Margin="0, -30, 0, 0"
@@ -138,7 +172,9 @@
                          VerticalOptions="StartAndExpand">
                 <Button Text="SIGNUP"
                         WidthRequest="150"
+                        HeightRequest="50"
                         BorderWidth="2"
+                        HorizontalOptions="StartAndExpand"
                         BorderColor="{StaticResource darkTextColor}"
                         Style="{StaticResource primaryButton}"
                         CornerRadius="25"
@@ -146,6 +182,8 @@
                 <Button x:Name="LoginButton"
                         Text="LOGIN"
                         WidthRequest="150"
+                        HeightRequest="50"
+                        HorizontalOptions="EndAndExpand"
                         Style="{StaticResource secondaryButton}"
                         CornerRadius="25"
                         Command="{Binding executeLogin}" />

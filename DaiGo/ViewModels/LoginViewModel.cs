@@ -26,6 +26,7 @@ namespace DaiGo.ViewModels
         public ICommand directLogin { get; set; }
         public ICommand executeForgotPassword { get; set; }
         public ICommand GoogleButtonCommand { get; set; }
+        public ICommand FacebookButtonCommand { get; set; }
         //public IPageAnimation MyPageAnimation { get; set; }
 
         public LoginViewModel()
@@ -37,6 +38,7 @@ namespace DaiGo.ViewModels
             directLogin = new Command(async () => await OnLogin());
             executeForgotPassword = new Command(async () => await OnForgotPassword());
             GoogleButtonCommand = new Command(async () => await OnGoogleLogin());
+            FacebookButtonCommand = new Command(async () => await OnFacebookLogin());
 
 
             //TODO: Look into PageAnimation (see https://github.com/AlexandrNikulin/AnimationNavigationPage)
@@ -118,7 +120,12 @@ namespace DaiGo.ViewModels
             //Change for 'Google login'
             await App.Current.MainPage.DisplayAlert("Login with Google", "This logs you in with Google", "Cool");
         }
-
+        private async Task OnFacebookLogin()
+        {
+            //TODO
+            //Change for 'Google login'
+            await App.Current.MainPage.DisplayAlert("Login with Facebook", "This logs you in with Facebook", "Cool");
+        }
 
         //     public string username;
         public string Username

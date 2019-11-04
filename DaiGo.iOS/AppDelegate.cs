@@ -24,6 +24,7 @@ namespace DaiGo.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
             global::Xamarin.Forms.Forms.Init();
             ImageCircleRenderer.Init();
             LoadApplication(new App());

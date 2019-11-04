@@ -22,6 +22,7 @@ namespace DaiGo.Droid
         public override void OnCreate(Bundle savedInstanceState, PersistableBundle persistentState)
         {
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
             base.OnCreate(savedInstanceState, persistentState);
             Log.Debug(TAG, "SplashActivity.OnCreate");
         }
