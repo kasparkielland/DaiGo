@@ -69,31 +69,59 @@
                         </StackLayout>
                     </StackLayout>
                     <StackLayout VerticalOptions="StartAndExpand">
-                        <Entry x:Name="usernameEntry"
-                               Placeholder="Username"
-                               Margin="0, 10, 0, 0"
-                               BackgroundColor="{StaticResource backgroundColor}"
-                               PlaceholderColor="{StaticResource darkTextColor}"
-                               TextColor="{StaticResource darkTextColor}"
-                               Text="{Binding Username, Mode = TwoWay}"
-                               TabIndex="1"
-                               ReturnType="Next"
-                               Completed="UsernameEntry_Completed" />
-                        <Entry x:Name="passwordEntry"
-                               Placeholder="Password"
-                               Margin="0, 10, 0, 0"
-                               IsPassword="True"
-                               BackgroundColor="{StaticResource backgroundColor}"
-                               TextColor="{StaticResource darkTextColor}"
-                               PlaceholderColor="{StaticResource darkTextColor}"
-                               Text="{Binding Password, Mode = TwoWay}"
-                               TabIndex="2"
-                               ReturnType="Done"
-                               Completed="PasswordEntry_Completed" />
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="FillAndExpand"
+                                     VerticalOptions="FillAndExpand">
+                            <Label Text="&#xf47f;"
+                                   VerticalOptions="CenterAndExpand"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="End"
+                                   FontSize="Subtitle"
+                                   FontFamily="{StaticResource FontAwesomeSolid}"
+                                   TextColor="{StaticResource darkTextColor}" />
+                            <Entry x:Name="usernameEntry"
+                                   Placeholder="Username"
+                                   Margin="0, 10, 0, 0"
+                                   BackgroundColor="{StaticResource backgroundColor}"
+                                   PlaceholderColor="{StaticResource darkTextColor}"
+                                   TextColor="{StaticResource darkTextColor}"
+                                   Text="{Binding Username, Mode = TwoWay}"
+                                   TabIndex="1"
+                                   ReturnType="Next"
+                                   Completed="UsernameEntry_Completed"
+                                   HorizontalOptions="FillAndExpand" />
+
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="FillAndExpand"
+                                     VerticalOptions="FillAndExpand">
+                            <Label Text="&#xf084;"
+                                   VerticalOptions="CenterAndExpand"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="End"
+                                   FontSize="Subtitle"
+                                   FontFamily="{StaticResource FontAwesomeSolid}"
+                                   TextColor="{StaticResource darkTextColor}" />
+                            <Entry x:Name="passwordEntry"
+                                   Placeholder="Password"
+                                   Margin="0, 10, 0, 0"
+                                   IsPassword="True"
+                                   BackgroundColor="{StaticResource backgroundColor}"
+                                   TextColor="{StaticResource darkTextColor}"
+                                   PlaceholderColor="{StaticResource darkTextColor}"
+                                   Text="{Binding Password, Mode = TwoWay}"
+                                   TabIndex="2"
+                                   ReturnType="Done"
+                                   Completed="PasswordEntry_Completed"
+                                   HorizontalOptions="FillAndExpand" />
+
+
+                        </StackLayout>
+
                         <Label Text="Forgot password?"
                                TextColor="{StaticResource lightTextColor}"
                                FontSize="Micro"
-                               HorizontalOptions="StartAndExpand"
+                               HorizontalOptions="EndAndExpand"
                                VerticalOptions="StartAndExpand">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding executeForgotPassword}" />
