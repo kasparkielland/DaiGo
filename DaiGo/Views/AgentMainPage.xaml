@@ -24,9 +24,11 @@
         </Grid.ColumnDefinitions>
         <Grid.GestureRecognizers>
             <SwipeGestureRecognizer Direction="Right"
-                                    Command="{Binding GoAgentProfileCommand}" />
+                                    Command="{Binding GoAgentProfileCommand}"
+                                    AutomationId="AgentMain_ProfileSwipe" />
             <SwipeGestureRecognizer Direction="Left"
-                                    Command="{Binding GoAgentMessageCommand}" />
+                                    Command="{Binding GoAgentMessageCommand}"
+                                    AutomationId="AgentMain_MessageSwipe" />
         </Grid.GestureRecognizers>
 
 
@@ -35,7 +37,8 @@
                      Grid.Column="0"
                      HorizontalOptions="Start"
                      VerticalOptions="Center"
-                     Command="{Binding GoAgentProfileCommand}">
+                     Command="{Binding GoAgentProfileCommand}"
+                     AutomationId="AgentMain_ProfileButton">
             <ImageButton.Source>
                 <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
                                  Glyph="&#xf2bd;"
@@ -48,7 +51,8 @@
                      Grid.Column="2"
                      HorizontalOptions="End"
                      VerticalOptions="Center"
-                     Command="{Binding GoAgentMessageCommand}">
+                     Command="{Binding GoAgentMessageCommand}"
+                     AutomationId="AgentMain_MessageButton">
             <ImageButton.Source>
                 <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
                                  Glyph="&#xf01c;"
@@ -70,7 +74,8 @@
                Grid.ColumnSpan="3"
                BackgroundColor="{StaticResource agentThemeColor}"
                CornerRadius="50"
-               HasShadow="False">
+               HasShadow="False"
+               AutomationId="AgentMain_QuicAccessButton">
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding GoAgentMessageCommand}" />
             </Frame.GestureRecognizers>

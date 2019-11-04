@@ -27,9 +27,11 @@
         </Grid.ColumnDefinitions>
         <Grid.GestureRecognizers>
             <SwipeGestureRecognizer Direction="Right"
-                                    Command="{Binding executeProfileCommand}" />
+                                    Command="{Binding executeProfileCommand}"
+                                    AutomationId="UserMain_ProfileSwipe" />
             <SwipeGestureRecognizer Direction="Left"
-                                    Command="{Binding executeMessageCommand}" />
+                                    Command="{Binding executeMessageCommand}"
+                                    AutomationId="UserMain_MessageSwipe" />
         </Grid.GestureRecognizers>
 
 
@@ -38,7 +40,8 @@
                      Grid.Column="0"
                      HorizontalOptions="Start"
                      VerticalOptions="Center"
-                     Command="{Binding executeProfileCommand}">
+                     Command="{Binding executeProfileCommand}"
+                     AutomationId="UserMain_ProfileButton">
             <ImageButton.Source>
                 <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
                                  Glyph="&#xf2bd;"
@@ -51,7 +54,8 @@
                      Grid.Column="2"
                      HorizontalOptions="End"
                      VerticalOptions="Center"
-                     Command="{Binding executeMessageCommand}">
+                     Command="{Binding executeMessageCommand}"
+                     AutomationId="UserMain_MessageButton">
             <ImageButton.Source>
                 <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
                                  Glyph="&#xf01c;"
@@ -75,7 +79,8 @@
                CornerRadius="50"
                HasShadow="False">
             <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding executeQuicAccessCommand}" />
+                <TapGestureRecognizer Command="{Binding executeQuicAccessCommand}"
+                                      AutomationId="UserMain_QuickAccessButton" />
             </Frame.GestureRecognizers>
             <Grid>
                 <Label Text="{Binding QuickAccessText, Mode=TwoWay}"
@@ -118,7 +123,8 @@
                         Style="{StaticResource primaryButton}"
                         Text="SEARCH"
                         CornerRadius="25"
-                        Command="{Binding executeRequestCommand}" />
+                        Command="{Binding executeRequestCommand}"
+                        AutomationId="UserMain_SearchButton" />
             </StackLayout>
 
         </Frame>

@@ -16,7 +16,8 @@
     <StackLayout Margin="20, 35, 20, 20">
         <StackLayout.GestureRecognizers>
             <SwipeGestureRecognizer Direction="Right"
-                                    Command="{Binding GoUserMainCommand}" />
+                                    Command="{Binding GoUserMainCommand}"
+                                    AutomationId="EditRequest_BackSwipe" />
         </StackLayout.GestureRecognizers>
 
 
@@ -45,8 +46,8 @@
 
             </StackLayout>
             <Frame.GestureRecognizers>
-
-                <TapGestureRecognizer Command="{Binding GoUserMainCommand }" />
+                <TapGestureRecognizer Command="{Binding GoUserMainCommand }"
+                                      AutomationId="EditRequest_BackButton" />
             </Frame.GestureRecognizers>
         </Frame>
         <Label Text="Edit Request"
@@ -201,7 +202,8 @@
                 Text="SEND REQUEST"
                 Style="{StaticResource secondaryButton}"
                 CornerRadius="25"
-                Command="{Binding GoUserVerificationCommand}" />
+                Command="{Binding GoUserVerificationCommand}"
+                AutomationId="EditRequest_SendRequestButton" />
     </StackLayout>
 
 </ContentPage>

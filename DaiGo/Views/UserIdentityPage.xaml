@@ -23,7 +23,8 @@
         </Grid.RowDefinitions>
         <Grid.GestureRecognizers>
             <SwipeGestureRecognizer Direction="Left"
-                                    Command="{Binding GoToMainCommand}" />
+                                    Command="{Binding GoToMainCommand}"
+                                    AutomationId="UserIdentity_BackSwipe" />
         </Grid.GestureRecognizers>
         <StackLayout>
             <Frame Margin="0, -100, 0, 0"
@@ -43,7 +44,8 @@
                            VerticalOptions="StartAndExpand"
                            HorizontalOptions="EndAndExpand">
                         <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding GoToMainCommand}" />
+                            <TapGestureRecognizer Command="{Binding GoToMainCommand}"
+                                                  AutomationId="UserIdentity_BackButton" />
                         </Frame.GestureRecognizers>
 
                         <StackLayout Orientation="Horizontal"
@@ -95,7 +97,8 @@
                     VerticalOptions="StartAndExpand"
                     IsToggled="{Binding ActivateAgent, Mode=TwoWay}"
                     ThumbColor="{StaticResource userThemeColor}"
-                    OnColor="{StaticResource agentThemeColor}" />
+                    OnColor="{StaticResource agentThemeColor}"
+                    AutomationId="UserIdentity_ChangeToAgentSwitch" />
 
         </Grid>
 
@@ -106,7 +109,8 @@
                 Text="LOGOUT"
                 Style="{StaticResource secondaryButton}"
                 CornerRadius="25"
-                Command="{Binding LogoutCommand}" />
+                Command="{Binding LogoutCommand}"
+                AutomationId="UserIdentity_LogoutButton" />
 
 
     </Grid>

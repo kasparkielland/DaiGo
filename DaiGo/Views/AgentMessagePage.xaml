@@ -16,7 +16,8 @@
     <StackLayout Margin="20, 40, 20, 35">
         <StackLayout.GestureRecognizers>
             <SwipeGestureRecognizer Direction="Right"
-                                    Command="{Binding GoBackCommand}" />
+                                    Command="{Binding GoBackCommand}"
+                                    AutomationId="AgentMessage_BackSwipe" />
         </StackLayout.GestureRecognizers>
 
         <Frame Margin="0, 0, 0, 0"
@@ -25,7 +26,8 @@
                Padding="2"
                HorizontalOptions="Start">
             <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                <TapGestureRecognizer Command="{Binding GoBackCommand}"
+                                      AutomationId="AgentMessage_BackButton" />
             </Frame.GestureRecognizers>
 
             <StackLayout Orientation="Horizontal"
@@ -53,11 +55,6 @@
                HorizontalOptions="End" />
 
         <ScrollView IsClippedToBounds="True">
-            <ScrollView.GestureRecognizers>
-                <SwipeGestureRecognizer Direction="Right"
-                                        Command="{Binding GoBackCommand}" />
-            </ScrollView.GestureRecognizers>
-
             <ListView x:Name="agentMessageListView"
                       SeparatorVisibility="None"
                       IsPullToRefreshEnabled="True"
@@ -83,7 +80,8 @@
                                     <Button Text="Contact"
                                             FontSize="Large"
                                             HorizontalOptions="EndAndExpand"
-                                            TextColor="{StaticResource darkTextColor}" />
+                                            TextColor="{StaticResource darkTextColor}"
+                                            AutomationId="AgentMessage_ChatButton" />
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>

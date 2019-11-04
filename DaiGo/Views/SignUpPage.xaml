@@ -17,7 +17,8 @@
     <StackLayout Margin="20, 40, 20, 20">
         <StackLayout.GestureRecognizers>
             <SwipeGestureRecognizer Direction="Right"
-                                    Command="{Binding GoBackCommand}" />
+                                    Command="{Binding GoBackCommand}"
+                                    AutomationId="Signup_BackSwipe" />
         </StackLayout.GestureRecognizers>
 
         <Frame Margin="0, 0, 0, 0"
@@ -25,7 +26,8 @@
                HasShadow="False"
                Padding="2">
             <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                <TapGestureRecognizer Command="{Binding GoBackCommand}"
+                                      AutomationId="Login_BackButton" />
             </Frame.GestureRecognizers>
 
             <StackLayout Orientation="Horizontal"
@@ -174,7 +176,8 @@
                 Text="SIGNUP"
                 Style="{StaticResource secondaryButton}"
                 CornerRadius="25"
-                Command="{Binding SignUpCommand}" />
+                Command="{Binding SignUpCommand}"
+                AutomationId="Signup_SignupButton" />
     </StackLayout>
 
 

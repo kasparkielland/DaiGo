@@ -160,7 +160,8 @@
                             </StackLayout>
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer x:Name="GoogleButton"
-                                                      Command="{Binding GoogleButtonCommand}" />
+                                                      Command="{Binding GoogleButtonCommand}"
+                                                      AutomationId="LoginPage_GoogleLoginButton" />
                             </Frame.GestureRecognizers>
                         </Frame>
                         <Frame CornerRadius="25"
@@ -192,7 +193,8 @@
                             </StackLayout>
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer x:Name="FacebookButton"
-                                                      Command="{Binding FacebookButtonCommand}" />
+                                                      Command="{Binding FacebookButtonCommand}"
+                                                      AutomationId="LoginPage_FacebookLoginButton" />
                             </Frame.GestureRecognizers>
                         </Frame>
                     </StackLayout>
@@ -210,7 +212,8 @@
                         BorderColor="{StaticResource darkTextColor}"
                         Style="{StaticResource primaryButton}"
                         CornerRadius="25"
-                        Command="{Binding executeSignUp}" />
+                        Command="{Binding executeSignUp}"
+                        AutomationId="LoginPage_SignupButton" />
                 <Button x:Name="LoginButton"
                         Text="LOGIN"
                         WidthRequest="150"
@@ -218,7 +221,8 @@
                         HorizontalOptions="EndAndExpand"
                         Style="{StaticResource secondaryButton}"
                         CornerRadius="25"
-                        Command="{Binding executeLogin}" />
+                        Command="{Binding executeLogin}"
+                        AutomationId="LoginPage_LoginButton" />
             </StackLayout>
         </StackLayout>
 

@@ -49,6 +49,7 @@
                 Style="{StaticResource secondaryButton}"
                 Command="{Binding GoHomeCommand}"
                 VerticalOptions="EndAndExpand"
-                HorizontalOptions="FillAndExpand" />
+                HorizontalOptions="FillAndExpand"
+                AutomationId="AgentVerification_GoHomeButton" />
     </Grid>
 </ContentPage>

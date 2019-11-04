@@ -17,7 +17,8 @@
     <StackLayout Margin="20, 35, 20, 20">
         <StackLayout.GestureRecognizers>
             <SwipeGestureRecognizer Direction="Right"
-                                    Command="{Binding GoMainCommand}" />
+                                    Command="{Binding GoMainCommand}"
+                                    AutomationId="ItemDetail_BackSwipe" />
         </StackLayout.GestureRecognizers>
         <Frame Margin="0, 0, 0, 0"
                BackgroundColor="{StaticResource agentThemeColor}"
@@ -44,8 +45,8 @@
 
             </StackLayout>
             <Frame.GestureRecognizers>
-
-                <TapGestureRecognizer Command="{Binding GoMainCommand }" />
+                <TapGestureRecognizer Command="{Binding GoMainCommand }"
+                                      AutomationId="ItemDetail_BackButton" />
             </Frame.GestureRecognizers>
         </Frame>
         <Label Text="Make Offer"
@@ -99,6 +100,7 @@
                 Text="SEND QUOTE"
                 Style="{StaticResource secondaryButton}"
                 CornerRadius="25"
-                Command="{Binding SendQuoteCommand}" />
+                Command="{Binding SendQuoteCommand}"
+                AutomationId="ItemDetail_SendQuoteButton" />
     </StackLayout>
 </ContentPage>

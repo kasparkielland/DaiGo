@@ -11,6 +11,8 @@
         <Compile Remove="Helpers\**" />
         <EmbeddedResource Remove="Helpers\**" />
         <None Remove="Helpers\**" />
+        <EmbeddedResource Remove="Views\SignUpSuccessPage.xaml" />
+        <Compile Remove="Views\SignUpSuccessPage.xaml.cs" />
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />

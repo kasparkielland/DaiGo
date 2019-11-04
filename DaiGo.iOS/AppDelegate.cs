@@ -26,6 +26,10 @@ namespace DaiGo.iOS
 #if DEBUG
             Xamarin.Calabash.Start();
 #endif
+#if ENABLE_TEST_CLOUD
+            // requires Xamarin Test Cloud Agent
+            Xamarin.Calabash.Start();
+#endif
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
             global::Xamarin.Forms.Forms.Init();
