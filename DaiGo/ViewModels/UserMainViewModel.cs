@@ -41,7 +41,7 @@ namespace DaiGo.ViewModels
         {
             get
             {
-                return dashGreeting() + loginViewModel.Username;
+                return dashGreeting(); // First name;
             }
         }
         public string QuickAccessText

@@ -21,6 +21,37 @@ namespace DaiGo.ViewModels
 
         public INavigation navigation { get; set; }
 
+        private int dateTime = DateTime.Now.Hour;
+
+
+        private string dashGreeting()
+        {
+            if (dateTime >= 0 && dateTime <= 11)
+            {
+                return "Good Morning ,";
+            }
+            else if (dateTime >= 12 && dateTime <= 17)
+            {
+                return "Good Afternoon, ";
+            }
+            else if (dateTime >= 18 && dateTime <= 23)
+            {
+                return "Good Evening, ";
+            }
+            else
+            {
+                return "Hello, ";
+            }
+        }
+
+        public string WelcomeText
+        {
+            get
+            {
+                return dashGreeting(); // + First name;
+            }
+        }
+
         public AgentMainViewModel()
         {
             Title = "Browse";
