@@ -34,7 +34,7 @@ namespace DaiGo.ViewModels
             executeLogin = new Command(async () => await CheckCredentials());
             executeSignUp = new Command(async () => await OnSignup());
             directLogin = new Command(async () => await OnLogin());
-            executeForgotPassword = new Command(async => await OnForgotPassword());
+            executeForgotPassword = new Command(async () => await OnForgotPassword());
 
             //TODO: Look into PageAnimation (see https://github.com/AlexandrNikulin/AnimationNavigationPage)
             //      Installation = done, Declaration = REDO!!, Create = DO!!

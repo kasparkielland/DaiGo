@@ -13,13 +13,13 @@ namespace DaiGo.Views
     [DesignTimeVisible(false)]
     public partial class ItemDetailPage : ContentPage
     {
-        ItemDetailViewModel viewModel;
+        ItemDetailViewModel itemDetailViewModel;
 
-        public ItemDetailPage(ItemDetailViewModel viewModel)
+        public ItemDetailPage(ItemDetailViewModel itemDetailViewModel)
         {
             InitializeComponent();
-
-            BindingContext = this.viewModel = viewModel;
+            itemDetailViewModel.navigation = Navigation;
+            BindingContext = this.itemDetailViewModel = itemDetailViewModel;
         }
 
         public ItemDetailPage()
@@ -32,9 +32,9 @@ namespace DaiGo.Views
                 Description = "This is an item description.",
                 Offer = "User Offer Price"
             };
-
-            viewModel = new ItemDetailViewModel(item);
-            BindingContext = viewModel;
+            itemDetailViewModel.navigation = Navigation;
+            itemDetailViewModel = new ItemDetailViewModel(item);
+            BindingContext = itemDetailViewModel;
         }
     }
 }
