@@ -177,7 +177,7 @@
                             <StackLayout Orientation="Horizontal"
                                          Padding="5">
                                 <Label FontSize="Title"
-                                       Text="&#xf09a;"
+                                       Text="&#xf39e;"
                                        FontFamily="{StaticResource FontAwesomeBrands}"
                                        VerticalOptions="CenterAndExpand"
                                        HorizontalTextAlignment="Start"

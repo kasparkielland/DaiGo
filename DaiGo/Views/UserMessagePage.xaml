@@ -51,7 +51,12 @@
                TextColor="{StaticResource userThemeColor}"
                VerticalOptions="Center"
                HorizontalOptions="End" />
-
+        <Button Text="View Chat"
+                FontSize="Large"
+                HorizontalOptions="EndAndExpand"
+                TextColor="{StaticResource darkTextColor}"
+                Command="{Binding ContactAgentCommand}"
+                AutomationId="UserMessage_ViewChatButton" />
         <ScrollView IsClippedToBounds="True">
             <ScrollView.GestureRecognizers>
                 <SwipeGestureRecognizer Direction="Right"
@@ -64,28 +69,39 @@
                       VerticalOptions="FillAndExpand"
                       HasUnevenRows="True"
                       BackgroundColor="{StaticResource backgroundColor}">
-
+                <d:ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>First Message</x:String>
+                        <x:String>Second Message</x:String>
+                        <x:String>Third Message</x:String>
+                    </x:Array>
+                </d:ListView.ItemsSource>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="10">
-                                <StackLayout BackgroundColor="WhiteSmoke">
-                                    <Label Text="{Binding RequestID}"
-                                           d:Text="{Binding .}"
-                                           HorizontalOptions="StartAndExpand"
-                                           FontSize="Small"
-                                           TextColor="{StaticResource darkTextColor}" />
-
-                                    <Label Text="{Binding Quote}"
-                                           d:Text="{Binding .}"
-                                           FontSize="Small"
-                                           TextColor="{StaticResource darkTextColor}" />
+                                <StackLayout BackgroundColor="WhiteSmoke"
+                                             Orientation="Horizontal">
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding RequestID}"
+                                               d:Text="{Binding .}"
+                                               HorizontalOptions="StartAndExpand"
+                                               FontSize="Small"
+                                               TextColor="{StaticResource darkTextColor}" />
+                                        <Label Text="{Binding Quote}"
+                                               d:Text="{Binding .}"
+                                               FontSize="Small"
+                                               TextColor="{StaticResource darkTextColor}" />
+                                    </StackLayout>
                                     <Button Text="Contact"
                                             FontSize="Large"
                                             HorizontalOptions="EndAndExpand"
                                             TextColor="{StaticResource darkTextColor}"
                                             Command="{Binding ContactAgentCommand}"
                                             AutomationId="UserMessage_ChatButton" />
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ContactAgentCommand}" />
+                                    </StackLayout.GestureRecognizers>
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>

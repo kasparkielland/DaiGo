@@ -39,7 +39,7 @@
                        FontSize="Subtitle"
                        VerticalOptions="CenterAndExpand" />
                 <Label HorizontalOptions="StartAndExpand"
-                       Text="Home"
+                       Text="Back"
                        TextColor="{StaticResource agentThemeColor}"
                        FontAttributes="Bold"
                        FontSize="Subtitle"
@@ -53,7 +53,12 @@
                TextColor="{StaticResource agentThemeColor}"
                VerticalOptions="Center"
                HorizontalOptions="End" />
-
+        <Button Text="View Chat"
+                FontSize="Large"
+                HorizontalOptions="EndAndExpand"
+                TextColor="{StaticResource darkTextColor}"
+                Command="{Binding ContactUserCommand}"
+                AutomationId="AgentMessage_ViewChatButton" />
         <ScrollView IsClippedToBounds="True">
             <ListView x:Name="agentMessageListView"
                       SeparatorVisibility="None"
@@ -62,26 +67,40 @@
                       VerticalOptions="FillAndExpand"
                       HasUnevenRows="True"
                       BackgroundColor="{StaticResource backgroundColor}">
+                <d:ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>First Message</x:String>
+                        <x:String>Second Message</x:String>
+                        <x:String>Third Message</x:String>
+                    </x:Array>
+                </d:ListView.ItemsSource>
+
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="10">
                                 <StackLayout Orientation="Horizontal"
                                              BackgroundColor="WhiteSmoke">
-                                    <Label Text="{Binding RequestID}"
-                                           d:Text="{Binding .}"
-                                           HorizontalOptions="StartAndExpand"
-                                           FontSize="Small"
-                                           TextColor="{StaticResource darkTextColor}" />
-                                    <Label Text="{Binding QuoteAmount}"
-                                           d:Text="{Binding .}"
-                                           FontSize="Small"
-                                           TextColor="{StaticResource darkTextColor}" />
+                                    <StackLayout>
+                                        <Label Text="{Binding RequestID}"
+                                               d:Text="{Binding .}"
+                                               HorizontalOptions="StartAndExpand"
+                                               FontSize="Small"
+                                               TextColor="{StaticResource darkTextColor}" />
+                                        <Label Text="{Binding QuoteAmount}"
+                                               d:Text="{Binding .}"
+                                               FontSize="Small"
+                                               TextColor="{StaticResource darkTextColor}" />
+                                    </StackLayout>
                                     <Button Text="Contact"
                                             FontSize="Large"
                                             HorizontalOptions="EndAndExpand"
                                             TextColor="{StaticResource darkTextColor}"
+                                            Command="{Binding ContactUserCommand}"
                                             AutomationId="AgentMessage_ChatButton" />
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ContactUserCommand}" />
+                                    </StackLayout.GestureRecognizers>
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>

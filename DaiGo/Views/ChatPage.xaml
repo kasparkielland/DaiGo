@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="DaiGo.Views.ChatPage" 
-             xmlns:local="clr-namespace:DaiGo.Helpers" 
-             xmlns:partials="clr-namespace:DaiGo.Views.Partials" 
+<ContentPage NavigationPage.HasNavigationBar="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DaiGo.Views.ChatPage"
+             xmlns:local="clr-namespace:DaiGo.Helpers"
+             xmlns:partials="clr-namespace:DaiGo.Views.Partials"
              xmlns:controls="clr-namespace:DaiGo.Controls"
              BackgroundColor="{StaticResource backgroundColor}">
 
@@ -11,7 +12,7 @@
     <ContentPage.Resources>
 
         <ResourceDictionary>
-            <local:ChatTemplateSelector x:Key="MessageTemplateSelector"/>
+            <local:ChatTemplateSelector x:Key="MessageTemplateSelector" />
         </ResourceDictionary>
 
 
@@ -20,9 +21,11 @@
 
 
 
-    <Grid RowSpacing="0" 
-           ColumnSpacing="0">
+    <Grid RowSpacing="0"
+          ColumnSpacing="0"
+          Margin="20, 35, 20, 35">
         <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="1" />
             <RowDefinition Height="Auto" />
@@ -30,59 +33,83 @@
         </Grid.RowDefinitions>
 
 
-        <Label HorizontalOptions="StartAndExpand"
-                       Text="Back"
-                       TextColor="{StaticResource userThemeColor}"
+        <Frame Grid.Row="0"
+               Margin="0, 0, 0, 0"
+               BackgroundColor="{StaticResource backgroundColor}"
+               HasShadow="False"
+               Padding="2"
+               HorizontalOptions="Start"
+               VerticalOptions="StartAndExpand">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding GoBackCommand}"
+                                      AutomationId="Chat_BackButton" />
+            </Frame.GestureRecognizers>
+
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="StartAndExpand">
+                <Label FontFamily="{StaticResource FontAwesomeSolid}"
+                       Text="&#xf053;"
+                       TextColor="{StaticResource darkTextColor}"
                        FontAttributes="Bold"
-                       FontSize="Default"
-                       VerticalOptions="Start" />
+                       FontSize="Subtitle"
+                       VerticalOptions="CenterAndExpand" />
+                <Label HorizontalOptions="StartAndExpand"
+                       Text="Back"
+                       TextColor="{StaticResource darkTextColor}"
+                       FontAttributes="Bold"
+                       FontSize="Subtitle"
+                       VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+        </Frame>
 
-
-        <controls:ExtendedListView Grid.Row="0" 
-                 ItemTemplate="{StaticResource MessageTemplateSelector}" 
-                 ItemsSource="{Binding Messages}" 
-                 Margin="0"
-                 ItemTapped="OnListTapped"
-                 Rotation="180" 
-                 FlowDirection="RightToLeft"
-                 HasUnevenRows="True" x:Name="ChatList"
-                 VerticalOptions="FillAndExpand" 
-                 SeparatorColor="Transparent"
-                 ItemAppearingCommand="{Binding MessageAppearingCommand}"
-                 ItemDisappearingCommand="{Binding MessageDisappearingCommand}">
+        <controls:ExtendedListView Grid.Row="1"
+                                   ItemTemplate="{StaticResource MessageTemplateSelector}"
+                                   ItemsSource="{Binding Messages}"
+                                   Margin="0"
+                                   ItemTapped="OnListTapped"
+                                   Rotation="180"
+                                   FlowDirection="RightToLeft"
+                                   HasUnevenRows="True"
+                                   x:Name="ChatList"
+                                   VerticalOptions="FillAndExpand"
+                                   SeparatorColor="Transparent"
+                                   BackgroundColor="{StaticResource backgroundColor}"
+                                   ItemAppearingCommand="{Binding MessageAppearingCommand}"
+                                   ItemDisappearingCommand="{Binding MessageDisappearingCommand}">
         </controls:ExtendedListView>
-        <Frame HorizontalOptions="EndAndExpand" 
-                                 Margin="0,0,2,15"
-                                 VerticalOptions="End"
-                                 HasShadow="false" 
-                                 Grid.Row="0"  
-                                 HeightRequest="50" WidthRequest="50"
-                                 CornerRadius="25"
-                                 Padding="1"
-                                 BackgroundColor="White"   
-                                 IsVisible="{Binding ShowScrollTap,Mode=TwoWay}">
+        <Frame HorizontalOptions="EndAndExpand"
+               Margin="0,0,2,15"
+               VerticalOptions="End"
+               HasShadow="false"
+               Grid.Row="1"
+               HeightRequest="50"
+               WidthRequest="50"
+               CornerRadius="25"
+               Padding="1"
+               BackgroundColor="{StaticResource backgroundColor}"
+               IsVisible="{Binding ShowScrollTap,Mode=TwoWay}">
             <StackLayout Spacing="3">
                 <Label Text="{Binding PendingMessageCount}"
-                              HorizontalOptions="CenterAndExpand"
-                              IsVisible="{Binding PendingMessageCountVisible}"
-                              VerticalTextAlignment="Center"
-                              TextColor="{DynamicResource primary}"/>
+                       HorizontalOptions="CenterAndExpand"
+                       IsVisible="{Binding PendingMessageCountVisible}"
+                       VerticalTextAlignment="Center"
+                       TextColor="{DynamicResource primary}" />
                 <Image Source="ic_scrolldown"
-                               WidthRequest="30"
-                               HeightRequest="30"
-                               VerticalOptions="CenterAndExpand"/>
+                       WidthRequest="30"
+                       HeightRequest="30"
+                       VerticalOptions="CenterAndExpand" />
 
             </StackLayout>
             <Frame.GestureRecognizers>
-                <TapGestureRecognizer Tapped="ScrollTap"/>
+                <TapGestureRecognizer Tapped="ScrollTap" />
             </Frame.GestureRecognizers>
         </Frame>
         <BoxView HorizontalOptions="FillAndExpand"
                  HeightRequest="1"
-                 BackgroundColor="LightGray"
-                 Grid.Row="1"/>
-        <partials:ChatInputBarView Grid.Row="2"
+                 BackgroundColor="{StaticResource backgroundColor}"
+                 Grid.Row="2" />
+        <partials:ChatInputBarView Grid.Row="3"
                                    Margin="0,0,10,0"
-                                   x:Name="chatInput"/>
+                                   x:Name="chatInput" />
     </Grid>
 </ContentPage>

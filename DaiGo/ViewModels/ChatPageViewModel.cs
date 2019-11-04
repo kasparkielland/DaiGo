@@ -7,94 +7,90 @@ using System.Windows.Input;
 using DaiGo.Models;
 using Xamarin.Forms;
 using DaiGo.Views;
+using System.Threading.Tasks;
 
 namespace DaiGo.ViewModels
 {
-	class ChatPageViewModel : INotifyPropertyChanged
-	{
+    class ChatPageViewModel : INotifyPropertyChanged
+    {
+        public bool ShowScrollTap { get; set; } = false;
+        public bool LastMessageVisible { get; set; } = true;
+        public int PendingMessageCount { get; set; } = 0;
+        public bool PendingMessageCountVisible { get { return PendingMessageCount > 0; } }
 
-		public ICommand GoBack { get; set; }
+        public Queue<Message> DelayedMessages { get; set; } = new Queue<Message>();
+        public ObservableCollection<Message> Messages { get; set; } = new ObservableCollection<Message>();
+        public string TextToSend { get; set; }
+        public ICommand OnSendCommand { get; set; }
+        public ICommand MessageAppearingCommand { get; set; }
+        public ICommand MessageDisappearingCommand { get; set; }
+        public ICommand GoBackCommand { get; set; }
 
-		void BackClicked()
-		{
-			Application.Current.MainPage = new NavigationPage(new UserMainPage());
-		}
+        public INavigation navigation { get; set; }
 
-
-
-		public bool ShowScrollTap { get; set; } = false;
-		public bool LastMessageVisible { get; set; } = true;
-		public int PendingMessageCount { get; set; } = 0;
-		public bool PendingMessageCountVisible { get { return PendingMessageCount > 0; } }
-
-		public Queue<Message> DelayedMessages { get; set; } = new Queue<Message>();
-		public ObservableCollection<Message> Messages { get; set; } = new ObservableCollection<Message>();
-		public string TextToSend { get; set; }
-		public ICommand OnSendCommand { get; set; }
-		public ICommand MessageAppearingCommand { get; set; }
-		public ICommand MessageDisappearingCommand { get; set; }
-
-		public ChatPageViewModel()
-		{
-			GoBack = new Command(BackClicked);
+        public ChatPageViewModel()
+        {
+            GoBackCommand = new Command(async () => BackClicked());
 
 
-			Messages.Insert(0, new Message() { Text = "Hello" });
-			Messages.Insert(0, new Message() { Text = "Hello, how are you going?", User = App.User });
+            Messages.Insert(0, new Message() { Text = "Hello" });
+            Messages.Insert(0, new Message() { Text = "Hello, how are you going?", User = App.User });
 
-			MessageAppearingCommand = new Command<Message>(OnMessageAppearing);
-			MessageDisappearingCommand = new Command<Message>(OnMessageDisappearing);
+            MessageAppearingCommand = new Command<Message>(OnMessageAppearing);
+            MessageDisappearingCommand = new Command<Message>(OnMessageDisappearing);
 
-			OnSendCommand = new Command(() =>
-			{
-				if (!string.IsNullOrEmpty(TextToSend))
-				{
-					Messages.Insert(0, new Message() { Text = TextToSend, User = App.User });
-					TextToSend = string.Empty;
-				}
+            OnSendCommand = new Command(() =>
+            {
+                if (!string.IsNullOrEmpty(TextToSend))
+                {
+                    Messages.Insert(0, new Message() { Text = TextToSend, User = App.User });
+                    TextToSend = string.Empty;
+                }
 
-			});
+            });
+        }
 
-
-
-
-		}
-
-		void OnMessageAppearing(Message message)
-		{
-			var idx = Messages.IndexOf(message);
-			if (idx <= 6)
-			{
-				Device.BeginInvokeOnMainThread(() =>
-				{
-					while (DelayedMessages.Count > 0)
-					{
-						Messages.Insert(0, DelayedMessages.Dequeue());
-					}
-					ShowScrollTap = false;
-					LastMessageVisible = true;
-					PendingMessageCount = 0;
-				});
-			}
-		}
-
-		void OnMessageDisappearing(Message message)
-		{
-			var idx = Messages.IndexOf(message);
-			if (idx >= 6)
-			{
-				Device.BeginInvokeOnMainThread(() =>
-				{
-					ShowScrollTap = true;
-					LastMessageVisible = false;
-				});
-
-			}
-		}
+        private async Task BackClicked()
+        {
+            await navigation.PopAsync(true);
+        }
 
 
-		public event PropertyChangedEventHandler PropertyChanged;
+        void OnMessageAppearing(Message message)
+        {
+            var idx = Messages.IndexOf(message);
+            if (idx <= 6)
+            {
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    while (DelayedMessages.Count > 0)
+                    {
+                        Messages.Insert(0, DelayedMessages.Dequeue());
+                    }
+                    ShowScrollTap = false;
+                    LastMessageVisible = true;
+                    PendingMessageCount = 0;
+                });
+            }
+        }
 
-	}
+        void OnMessageDisappearing(Message message)
+        {
+            var idx = Messages.IndexOf(message);
+            if (idx >= 6)
+            {
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    ShowScrollTap = true;
+                    LastMessageVisible = false;
+                });
+
+            }
+        }
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+    }
 }
 

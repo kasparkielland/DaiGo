@@ -33,10 +33,7 @@ namespace DaiGo.ViewModels
 
         private async Task GoContactAgent()
         {
-            // TODO
-            // not implement yet
-            // shall open an Email or Messenger so User can Contact with Agent
-            // Iggy: Insert code HERE
+            await navigation.PushAsync(new ChatPage(), true);
         }
         private async Task BackClicked()
         {
