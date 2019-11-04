@@ -8,9 +8,6 @@
         <DebugSymbols>true</DebugSymbols>
     </PropertyGroup>
     <ItemGroup>
-        <Compile Remove="Helpers\**" />
-        <EmbeddedResource Remove="Helpers\**" />
-        <None Remove="Helpers\**" />
         <EmbeddedResource Remove="Views\SignUpSuccessPage.xaml" />
         <Compile Remove="Views\SignUpSuccessPage.xaml.cs" />
     </ItemGroup>
@@ -49,6 +46,18 @@
         </Compile>
     </ItemGroup>
     <ItemGroup>
+        <EmbeddedResource Update="Views\Cells\IncomingViewCell.xaml">
+          <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Views\Cells\OutgoingViewCell.xaml">
+          <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Views\ChatPage.xaml">
+          <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Views\Partials\ChatInputBarView.xaml">
+          <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+        </EmbeddedResource>
         <EmbeddedResource Update="View\AgentMessagePage.xaml">
             <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
         </EmbeddedResource>

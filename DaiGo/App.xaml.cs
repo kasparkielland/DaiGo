@@ -9,8 +9,8 @@ namespace DaiGo
     public partial class App : Application
     {
         static Database database;
-
-        public static Database Database
+		public static string User = "Rendy";
+		public static Database Database
         {
             get
             {
@@ -27,7 +27,7 @@ namespace DaiGo
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage());
+            MainPage = new NavigationPage(new ChatPage());
 
         }
 
