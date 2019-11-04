@@ -21,19 +21,19 @@ namespace DaiGo.ViewModels
         {
             if (dateTime >= 0 && dateTime <= 11)
             {
-                return "Good Morning ,";
+                return "Good Morning!";
             }
             else if (dateTime >= 12 && dateTime <= 17)
             {
-                return "Good Afternoon, ";
+                return "Good Afternoon!";
             }
             else if (dateTime >= 18 && dateTime <= 23)
             {
-                return "Good Evening, ";
+                return "Good Evening!";
             }
             else
             {
-                return "Hello, ";
+                return "Hello!";
             }
         }
 
@@ -41,7 +41,7 @@ namespace DaiGo.ViewModels
         {
             get
             {
-                return dashGreeting(); // First name;
+                return dashGreeting();
             }
         }
         public string QuickAccessText
